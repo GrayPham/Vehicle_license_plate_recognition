@@ -16,5 +16,10 @@ namespace Vehicle_license_plate_recognition
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
