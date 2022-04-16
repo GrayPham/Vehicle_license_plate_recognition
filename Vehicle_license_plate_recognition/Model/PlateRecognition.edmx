@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Assignment">
           <Key>
             <PropertyRef Name="Id" />
@@ -43,9 +43,19 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Phone" Type="varbinary" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="BirthDate" Type="datetime" />
           <Property Name="IdContract" Type="int" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="IdStaff" Type="int" />
         </EntityType>
         <EntityType Name="NguoiGui">
           <Key>
@@ -58,15 +68,19 @@
           <Property Name="DeliveryTime" Type="datetime" />
           <Property Name="ReturnTime" Type="datetime" />
           <Property Name="IdPayment" Type="int" />
-          <Property Name="LicensePlates" Type="int" />
+          <Property Name="LicensePlates" Type="varchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
             <PropertyRef Name="IdStaff" />
           </Key>
           <Property Name="IdStaff" Type="int" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="HoVaTenNV" Type="nvarchar" MaxLength="100" />
           <Property Name="NgayAdd" Type="datetime" />
+          <Property Name="Phone" Type="char" MaxLength="15" />
           <Property Name="LastUpdate" Type="datetime" />
           <Property Name="LayOff" Type="bit" />
           <Property Name="LayOffDate" Type="datetime" />
@@ -130,7 +144,7 @@
             <PropertyRef Name="IdPayment" />
           </Key>
           <Property Name="IdPayment" Type="int" Nullable="false" />
-          <Property Name="Price" Type="real" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="int" />
         </EntityType>
         <EntityType Name="TypeofOperation">
@@ -152,7 +166,7 @@
           <Key>
             <PropertyRef Name="LicensePlates" />
           </Key>
-          <Property Name="LicensePlates" Type="int" Nullable="false" />
+          <Property Name="LicensePlates" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="PlaceID" Type="nchar" MaxLength="10" />
           <Property Name="IdVehicleType" Type="int" />
         </EntityType>
@@ -189,6 +203,18 @@
             </Principal>
             <Dependent Role="Customers">
               <PropertyRef Name="IdContract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Login_NV">
+          <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
+          <End Role="Login" Type="Self.Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
+            </Principal>
+            <Dependent Role="Login">
+              <PropertyRef Name="IdStaff" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -372,6 +398,7 @@
           <EntitySet Name="Capacity" EntityType="Self.Capacity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NguoiGui" EntityType="Self.NguoiGui" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
@@ -394,6 +421,10 @@
           <AssociationSet Name="FK_Customers_Contract" Association="Self.FK_Customers_Contract">
             <End Role="Contract" EntitySet="Contract" />
             <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Login_NV" Association="Self.FK_Login_NV">
+            <End Role="NV" EntitySet="NV" />
+            <End Role="Login" EntitySet="Login" />
           </AssociationSet>
           <AssociationSet Name="FK_NguoiGui_ThanhToan" Association="Self.FK_NguoiGui_ThanhToan">
             <End Role="ThanhToan" EntitySet="ThanhToan" />
@@ -444,8 +475,7 @@
             <End Role="VehiclePark" EntitySet="VehiclePark" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLiNhaXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -531,6 +561,11 @@
           <NavigationProperty Name="Schedule" Relationship="Self.FK_NV_Schedule" FromRole="NV" ToRole="Schedule" />
           <NavigationProperty Name="ThanhToan" Relationship="Self.FK_NV_ThanhToan" FromRole="NV" ToRole="ThanhToan" />
           <NavigationProperty Name="Operations" Relationship="Self.FK_Operation_NV" FromRole="NV" ToRole="Operation" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Logins" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="NV" ToRole="Login" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -916,6 +951,11 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Logins" EntityType="QuanLiNhaXeModel.Login" />
+          <AssociationSet Name="FK_Login_NV" Association="QuanLiNhaXeModel.FK_Login_NV">
+            <End Role="NV" EntitySet="NVs" />
+            <End Role="Login" EntitySet="Logins" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -928,6 +968,29 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdStaff" Type="Int32" />
+          <NavigationProperty Name="NV" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="Login" ToRole="NV" />
+        </EntityType>
+        <Association Name="FK_Login_NV">
+          <End Type="QuanLiNhaXeModel.NV" Role="NV" Multiplicity="0..1" />
+          <End Type="QuanLiNhaXeModel.Login" Role="Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
+            </Principal>
+            <Dependent Role="Login">
+              <PropertyRef Name="IdStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -997,6 +1060,10 @@
           <EntitySetMapping Name="NVs">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NV">
               <MappingFragment StoreEntitySet="NV">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
                 <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
                 <ScalarProperty Name="HoVaTenNV" ColumnName="HoVaTenNV" />
                 <ScalarProperty Name="NgayAdd" ColumnName="NgayAdd" />
@@ -1124,6 +1191,17 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLiNhaXeModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLiNhaXeModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="QuanLiNhaXeModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
