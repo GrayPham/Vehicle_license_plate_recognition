@@ -46,10 +46,7 @@ namespace Vehicle_license_plate_recognition
             }
 
 
-            FormMenu a = new FormMenu();
-            this.Visible = false; //ẩn thôi chứ khum tắt
-            a.ShowDialog();
-            this.Visible = true; //mở lại
+           
 
         }
 
