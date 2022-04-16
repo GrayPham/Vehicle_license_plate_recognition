@@ -36,6 +36,7 @@ namespace Vehicle_license_plate_recognition.Model
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public Nullable<bool> isStaff { get; set; }
     
         public virtual ICollection<Contract> Contracts { get; set; }
         public virtual Schedule Schedule { get; set; }

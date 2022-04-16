@@ -89,6 +89,7 @@
           <Property Name="IdPayment" Type="int" />
           <Property Name="isManage" Type="bit" />
           <Property Name="isOfficeStaff" Type="bit" />
+          <Property Name="isStaff" Type="bit" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -522,7 +523,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" />
           <Property Name="BirthDate" Type="DateTime" Precision="3" />
           <Property Name="IdContract" Type="Int32" />
           <NavigationProperty Name="Contract" Relationship="Self.FK_Customers_Contract" FromRole="Customers" ToRole="Contract" />
@@ -538,7 +539,7 @@
           <Property Name="DeliveryTime" Type="DateTime" Precision="3" />
           <Property Name="ReturnTime" Type="DateTime" Precision="3" />
           <Property Name="IdPayment" Type="Int32" />
-          <Property Name="LicensePlates" Type="Int32" />
+          <Property Name="LicensePlates" Type="String" Unicode="true" MaxLength="15" />
           <NavigationProperty Name="ThanhToan" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="NguoiGui" ToRole="ThanhToan" />
           <NavigationProperty Name="VehiclePark" Relationship="Self.FK_NguoiGui_VehiclePark" FromRole="NguoiGui" ToRole="VehiclePark" />
         </EntityType>
@@ -566,6 +567,7 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="Logins" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="NV" ToRole="Login" />
+          <Property Name="isStaff" Type="Boolean" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -629,7 +631,7 @@
             <PropertyRef Name="IdPayment" />
           </Key>
           <Property Name="IdPayment" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="Single" />
+          <Property Name="Price" Type="Decimal" />
           <Property Name="IdTVehicle" Type="Int32" />
           <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="ThanhToan" ToRole="NguoiGui" />
           <NavigationProperty Name="NVs" Relationship="Self.FK_NV_ThanhToan" FromRole="ThanhToan" ToRole="NV" />
@@ -1060,6 +1062,7 @@
           <EntitySetMapping Name="NVs">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NV">
               <MappingFragment StoreEntitySet="NV">
+                <ScalarProperty Name="isStaff" ColumnName="isStaff" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
