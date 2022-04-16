@@ -36,5 +36,12 @@ namespace Vehicle_license_plate_recognition
                 MessageBox.Show("The new password do not match so enter the same password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin a = new FormLogin();
+            a.ShowDialog();
+        }
     }
 }

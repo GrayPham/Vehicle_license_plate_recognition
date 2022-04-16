@@ -82,19 +82,19 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // editRemoveToolStripMenuItem
             // 
             this.editRemoveToolStripMenuItem.Name = "editRemoveToolStripMenuItem";
-            this.editRemoveToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.editRemoveToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.editRemoveToolStripMenuItem.Text = "Edit";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // statusToolStripMenuItem
@@ -150,10 +150,10 @@
             // label_logout
             // 
             this.label_logout.AutoSize = true;
-            this.label_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_logout.Location = new System.Drawing.Point(1011, 9);
+            this.label_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_logout.Location = new System.Drawing.Point(1023, 13);
             this.label_logout.Name = "label_logout";
-            this.label_logout.Size = new System.Drawing.Size(77, 22);
+            this.label_logout.Size = new System.Drawing.Size(65, 20);
             this.label_logout.TabIndex = 5;
             this.label_logout.Text = "Log out";
             // 
@@ -170,7 +170,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.Text = "FormMenu";
             this.menuStrip1.ResumeLayout(false);

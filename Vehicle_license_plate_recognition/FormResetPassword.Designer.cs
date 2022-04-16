@@ -36,11 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_newpass = new System.Windows.Forms.TextBox();
             this.label_newpass = new System.Windows.Forms.Label();
+            this.button_cancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button_cancel);
             this.groupBox1.Controls.Add(this.label_status);
             this.groupBox1.Controls.Add(this.button_reset);
             this.groupBox1.Controls.Add(this.textBox_confirm);
@@ -50,7 +52,7 @@
             this.groupBox1.Controls.Add(this.label_newpass);
             this.groupBox1.Location = new System.Drawing.Point(25, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(840, 433);
+            this.groupBox1.Size = new System.Drawing.Size(840, 415);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -68,7 +70,7 @@
             // button_reset
             // 
             this.button_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_reset.Location = new System.Drawing.Point(297, 309);
+            this.button_reset.Location = new System.Drawing.Point(297, 281);
             this.button_reset.Name = "button_reset";
             this.button_reset.Size = new System.Drawing.Size(348, 36);
             this.button_reset.TabIndex = 26;
@@ -79,7 +81,7 @@
             // textBox_confirm
             // 
             this.textBox_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_confirm.Location = new System.Drawing.Point(297, 250);
+            this.textBox_confirm.Location = new System.Drawing.Point(297, 215);
             this.textBox_confirm.Name = "textBox_confirm";
             this.textBox_confirm.Size = new System.Drawing.Size(348, 27);
             this.textBox_confirm.TabIndex = 25;
@@ -88,7 +90,7 @@
             // 
             this.label_confirm.AutoSize = true;
             this.label_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_confirm.Location = new System.Drawing.Point(121, 253);
+            this.label_confirm.Location = new System.Drawing.Point(104, 222);
             this.label_confirm.Name = "label_confirm";
             this.label_confirm.Size = new System.Drawing.Size(169, 20);
             this.label_confirm.TabIndex = 24;
@@ -116,11 +118,22 @@
             // 
             this.label_newpass.AutoSize = true;
             this.label_newpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_newpass.Location = new System.Drawing.Point(121, 158);
+            this.label_newpass.Location = new System.Drawing.Point(104, 155);
             this.label_newpass.Name = "label_newpass";
             this.label_newpass.Size = new System.Drawing.Size(139, 20);
             this.label_newpass.TabIndex = 16;
             this.label_newpass.Text = "New Password:";
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_cancel.Location = new System.Drawing.Point(297, 323);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(348, 36);
+            this.button_cancel.TabIndex = 28;
+            this.button_cancel.Text = "Cancel";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
             // FormResetPassword
             // 
@@ -146,5 +159,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_newpass;
         private System.Windows.Forms.Label label_newpass;
+        private System.Windows.Forms.Button button_cancel;
     }
 }

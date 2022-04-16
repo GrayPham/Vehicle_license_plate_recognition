@@ -105,7 +105,7 @@
             // textBox_pass
             // 
             this.textBox_pass.Font = new System.Drawing.Font("Symbol", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_pass.Location = new System.Drawing.Point(136, 177);
+            this.textBox_pass.Location = new System.Drawing.Point(146, 177);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.PasswordChar = '*';
             this.textBox_pass.Size = new System.Drawing.Size(308, 28);
@@ -113,7 +113,7 @@
             // 
             // textBox_username
             // 
-            this.textBox_username.Location = new System.Drawing.Point(136, 132);
+            this.textBox_username.Location = new System.Drawing.Point(146, 132);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(308, 27);
             this.textBox_username.TabIndex = 21;

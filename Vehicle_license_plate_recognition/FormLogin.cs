@@ -17,6 +17,10 @@ namespace Vehicle_license_plate_recognition
         {
             InitializeComponent();
         }
+
+        Color label_forgot;
+        Color label_account;
+
         //TẠO DATABASE
         QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
         private void button_Login_Click(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
-                if(q.isOfficeStaff == true)
+                if (q.isOfficeStaff == true)
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
                     FormMenu menuForm = new FormMenu();
@@ -40,7 +44,7 @@ namespace Vehicle_license_plate_recognition
                     menuForm.ShowDialog();
                     this.Visible = true; //mở lại
                 }
-                
+
             }
             //NOTE: "Please check your username and password again!"
             catch (Exception ex)
@@ -56,12 +60,14 @@ namespace Vehicle_license_plate_recognition
             Application.Exit();
         }
 
-        private void label_forgot_Click(object sender, EventArgs e)
-        {
-            FormForgotPassword q = new FormForgotPassword();
-            this.Visible = false;
-            q.ShowDialog();
-            this.Visible = true;
-        }
+
+            private void label_forgot_Click(object sender, EventArgs e)
+            {
+                FormForgotPassword q = new FormForgotPassword();
+                this.Visible = false;
+                q.ShowDialog();
+                this.Visible = true;
+            }
+        
     }
 }
