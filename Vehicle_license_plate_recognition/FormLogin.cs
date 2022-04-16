@@ -31,11 +31,14 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
-
-                FormMenu menuForm = new FormMenu();
-                this.Visible = false; //ẩn thôi chứ khum tắt
-                menuForm.ShowDialog();
-                this.Visible = true; //mở lại
+                if(q.isOfficeStaff == true)
+                {
+                    FormMenu menuForm = new FormMenu();
+                    this.Visible = false; //ẩn thôi chứ khum tắt
+                    menuForm.ShowDialog();
+                    this.Visible = true; //mở lại
+                }
+                
             }
             catch (Exception)
             {
