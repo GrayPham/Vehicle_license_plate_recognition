@@ -71,6 +71,9 @@
     <Compile Include="Model\Customer.cs">
       <DependentUpon>PlateRecognition.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Login.cs">
+      <DependentUpon>PlateRecognition.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\NguoiGui.cs">
       <DependentUpon>PlateRecognition.tt</DependentUpon>
     </Compile>
