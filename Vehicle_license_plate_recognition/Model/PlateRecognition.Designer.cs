@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Wìnorm\FinalProject\Vehicle_license_plate_recognition\Vehicle_license_plate_recognition\Model\PlateRecognition.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\Năm 3 kì 2\Winform\Project\Vehicle_license_plate_recognition\Vehicle_license_plate_recognition\Model\PlateRecognition.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

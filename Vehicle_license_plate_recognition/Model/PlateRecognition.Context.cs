@@ -43,6 +43,7 @@ namespace Vehicle_license_plate_recognition.Model
         public DbSet<TypeofOperation> TypeofOperations { get; set; }
         public DbSet<TypeVehicle> TypeVehicles { get; set; }
         public DbSet<VehiclePark> VehicleParks { get; set; }
+        public DbSet<Login> Logins { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
