@@ -68,9 +68,9 @@
             // 
             this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(222, 45);
+            this.pictureBox_logo.Location = new System.Drawing.Point(215, 45);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(100, 67);
+            this.pictureBox_logo.Size = new System.Drawing.Size(107, 67);
             this.pictureBox_logo.TabIndex = 24;
             this.pictureBox_logo.TabStop = false;
             // 
@@ -105,7 +105,7 @@
             // textBox_pass
             // 
             this.textBox_pass.Font = new System.Drawing.Font("Symbol", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_pass.Location = new System.Drawing.Point(148, 177);
+            this.textBox_pass.Location = new System.Drawing.Point(136, 177);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.PasswordChar = '*';
             this.textBox_pass.Size = new System.Drawing.Size(308, 28);
@@ -113,7 +113,7 @@
             // 
             // textBox_username
             // 
-            this.textBox_username.Location = new System.Drawing.Point(148, 132);
+            this.textBox_username.Location = new System.Drawing.Point(136, 132);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(308, 27);
             this.textBox_username.TabIndex = 21;
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 534);
+            this.ClientSize = new System.Drawing.Size(762, 534);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
