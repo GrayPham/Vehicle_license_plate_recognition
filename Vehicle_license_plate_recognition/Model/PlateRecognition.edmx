@@ -68,7 +68,7 @@
           <Property Name="DeliveryTime" Type="datetime" />
           <Property Name="ReturnTime" Type="datetime" />
           <Property Name="IdPayment" Type="int" />
-          <Property Name="LicensePlates" Type="varchar" MaxLength="15" />
+          <Property Name="LicensePlates" Type="int" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
@@ -80,7 +80,7 @@
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="HoVaTenNV" Type="nvarchar" MaxLength="100" />
           <Property Name="NgayAdd" Type="datetime" />
-          <Property Name="Phone" Type="char" MaxLength="15" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="LastUpdate" Type="datetime" />
           <Property Name="LayOff" Type="bit" />
           <Property Name="LayOffDate" Type="datetime" />
@@ -167,7 +167,7 @@
           <Key>
             <PropertyRef Name="LicensePlates" />
           </Key>
-          <Property Name="LicensePlates" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="LicensePlates" Type="int" Nullable="false" />
           <Property Name="PlaceID" Type="nchar" MaxLength="10" />
           <Property Name="IdVehicleType" Type="int" />
         </EntityType>
@@ -523,7 +523,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="BirthDate" Type="DateTime" Precision="3" />
           <Property Name="IdContract" Type="Int32" />
           <NavigationProperty Name="Contract" Relationship="Self.FK_Customers_Contract" FromRole="Customers" ToRole="Contract" />
@@ -539,7 +539,7 @@
           <Property Name="DeliveryTime" Type="DateTime" Precision="3" />
           <Property Name="ReturnTime" Type="DateTime" Precision="3" />
           <Property Name="IdPayment" Type="Int32" />
-          <Property Name="LicensePlates" Type="String" Unicode="true" MaxLength="15" />
+          <Property Name="LicensePlates" Type="Int32" />
           <NavigationProperty Name="ThanhToan" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="NguoiGui" ToRole="ThanhToan" />
           <NavigationProperty Name="VehiclePark" Relationship="Self.FK_NguoiGui_VehiclePark" FromRole="NguoiGui" ToRole="VehiclePark" />
         </EntityType>
@@ -565,7 +565,7 @@
           <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Logins" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="NV" ToRole="Login" />
           <Property Name="isStaff" Type="Boolean" />
         </EntityType>
@@ -631,7 +631,7 @@
             <PropertyRef Name="IdPayment" />
           </Key>
           <Property Name="IdPayment" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="Decimal" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="Int32" />
           <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="ThanhToan" ToRole="NguoiGui" />
           <NavigationProperty Name="NVs" Relationship="Self.FK_NV_ThanhToan" FromRole="ThanhToan" ToRole="NV" />

@@ -16,7 +16,7 @@ namespace Vehicle_license_plate_recognition.Model
     {
         public int Id { get; set; }
         public string FullName { get; set; }
-        public byte[] Phone { get; set; }
+        public string Phone { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
         public Nullable<int> IdContract { get; set; }
     

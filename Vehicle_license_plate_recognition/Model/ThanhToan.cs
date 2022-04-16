@@ -21,7 +21,7 @@ namespace Vehicle_license_plate_recognition.Model
         }
     
         public int IdPayment { get; set; }
-        public Nullable<float> Price { get; set; }
+        public Nullable<decimal> Price { get; set; }
         public Nullable<int> IdTVehicle { get; set; }
     
         public virtual ICollection<NguoiGui> NguoiGuis { get; set; }
