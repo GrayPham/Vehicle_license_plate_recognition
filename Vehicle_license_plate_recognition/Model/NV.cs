@@ -18,6 +18,7 @@ namespace Vehicle_license_plate_recognition.Model
         {
             this.Contracts = new HashSet<Contract>();
             this.Operations = new HashSet<Operation>();
+            this.Logins = new HashSet<Login>();
         }
     
         public int IdStaff { get; set; }
@@ -31,10 +32,15 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<int> IdPayment { get; set; }
         public Nullable<bool> isManage { get; set; }
         public Nullable<bool> isOfficeStaff { get; set; }
+        public string Account { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
     
         public virtual ICollection<Contract> Contracts { get; set; }
         public virtual Schedule Schedule { get; set; }
         public virtual ThanhToan ThanhToan { get; set; }
         public virtual ICollection<Operation> Operations { get; set; }
+        public virtual ICollection<Login> Logins { get; set; }
     }
 }
