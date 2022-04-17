@@ -33,16 +33,9 @@ namespace Vehicle_license_plate_recognition
         public static string to;
         private void button_getcode_Click(object sender, EventArgs e)
         {
-            //????????
-            if (string.IsNullOrEmpty(textBox_email.Text))
-            {
-                MessageBox.Show("Please provide your Email!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                textBox_email.Select();
-                return;
-            }
             string from, pass, messageBody;
             Random rand = new Random();
-            randomCode = (rand.Next(99999)).ToString();
+            randomCode = (rand.Next(999999)).ToString();
 
 
             MailMessage message = new MailMessage();
@@ -76,9 +69,10 @@ namespace Vehicle_license_plate_recognition
             if (randomCode == (textBox_zipcode.Text).ToString())
             {
                 to = textBox_email.Text;
-                FormResetPassword rp = new FormResetPassword();           
+                FormResetPassword rp = new FormResetPassword();
+                this.Visible = false; //ẩn thôi chứ khum tắt
                 rp.ShowDialog(); //show chạy song song khác với showDialog dừng chạy form hiện tại rồi mở form mà mình muốn mở
-                this.Hide();
+                this.Visible = true; //mở lại
             }
             else
             {

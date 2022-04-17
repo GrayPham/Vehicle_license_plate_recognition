@@ -23,6 +23,12 @@ namespace Vehicle_license_plate_recognition
         string emailForgot = FormForgotPassword.to;
         private void button_reset_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(textBox_newpass.Text) || string.IsNullOrEmpty(textBox_confirm.Text))
+            {
+                MessageBox.Show("Please provide your New Password and Confirm!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_newpass.Select();
+                return;
+            }    
             if (textBox_newpass.Text == textBox_confirm.Text)
             {
 
