@@ -18,8 +18,8 @@ namespace Vehicle_license_plate_recognition
             InitializeComponent();
         }
 
-        Color label_forgot;
-        Color label_account;
+        Color label_forgotcolor;
+        Color label_accountcolor;
 
         //TẠO DATABASE
         QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
@@ -60,14 +60,27 @@ namespace Vehicle_license_plate_recognition
             Application.Exit();
         }
 
+        private void label_forgot_MouseLeave(object sender, EventArgs e)
+        {
+            //label_forgot.ForeColor = Color.AliceBlue;
+        }
 
-            private void label_forgot_Click(object sender, EventArgs e)
-            {
-                FormForgotPassword q = new FormForgotPassword();
-                this.Visible = false;
-                q.ShowDialog();
-                this.Visible = true;
-            }
-        
+        private void label_forgot_Click(object sender, EventArgs e)
+        {
+            //label_forgot.ForeColor = Color.AliceBlue;
+            FormForgotPassword q = new FormForgotPassword();
+              this.Visible = false;
+              q.ShowDialog();
+              this.Visible = true;
+
+        }
+
+        private void label_register_Click(object sender, EventArgs e)
+        {
+            FormRegister a = new FormRegister();
+            this.Visible = false; //ẩn thôi chứ khum tắt
+            a.ShowDialog(); //show chạy song song khác với showDialog dừng chạy form hiện tại rồi mở form mà mình muốn mở
+            this.Visible = true; //mở lại
+        }
     }
 }

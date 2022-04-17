@@ -64,7 +64,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1100, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1560, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,7 +121,7 @@
             // 
             // button_attendance
             // 
-            this.button_attendance.Location = new System.Drawing.Point(963, 495);
+            this.button_attendance.Location = new System.Drawing.Point(1380, 563);
             this.button_attendance.Name = "button_attendance";
             this.button_attendance.Size = new System.Drawing.Size(113, 49);
             this.button_attendance.TabIndex = 2;
@@ -130,7 +130,7 @@
             // 
             // button_shift
             // 
-            this.button_shift.Location = new System.Drawing.Point(12, 495);
+            this.button_shift.Location = new System.Drawing.Point(12, 563);
             this.button_shift.Name = "button_shift";
             this.button_shift.Size = new System.Drawing.Size(121, 49);
             this.button_shift.TabIndex = 3;
@@ -144,24 +144,25 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1076, 431);
+            this.dataGridView1.Size = new System.Drawing.Size(1481, 497);
             this.dataGridView1.TabIndex = 4;
             // 
             // label_logout
             // 
             this.label_logout.AutoSize = true;
-            this.label_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_logout.Location = new System.Drawing.Point(1023, 13);
+            this.label_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_logout.Location = new System.Drawing.Point(1352, 9);
             this.label_logout.Name = "label_logout";
-            this.label_logout.Size = new System.Drawing.Size(65, 20);
+            this.label_logout.Size = new System.Drawing.Size(100, 29);
             this.label_logout.TabIndex = 5;
             this.label_logout.Text = "Log out";
+            this.label_logout.Click += new System.EventHandler(this.label_logout_Click);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 562);
+            this.ClientSize = new System.Drawing.Size(1560, 634);
             this.Controls.Add(this.label_logout);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_shift);
@@ -173,6 +174,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.Text = "FormMenu";
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.label_pass = new System.Windows.Forms.Label();
-            this.label_signup = new System.Windows.Forms.Label();
+            this.label_register = new System.Windows.Forms.Label();
             this.label_username = new System.Windows.Forms.Label();
             this.textBox_pass = new System.Windows.Forms.TextBox();
             this.textBox_username = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             // 
             this.groupBox1.Controls.Add(this.pictureBox_logo);
             this.groupBox1.Controls.Add(this.label_pass);
-            this.groupBox1.Controls.Add(this.label_signup);
+            this.groupBox1.Controls.Add(this.label_register);
             this.groupBox1.Controls.Add(this.label_username);
             this.groupBox1.Controls.Add(this.textBox_pass);
             this.groupBox1.Controls.Add(this.textBox_username);
@@ -68,9 +68,9 @@
             // 
             this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(215, 45);
+            this.pictureBox_logo.Location = new System.Drawing.Point(223, 45);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(107, 67);
+            this.pictureBox_logo.Size = new System.Drawing.Size(107, 81);
             this.pictureBox_logo.TabIndex = 24;
             this.pictureBox_logo.TabStop = false;
             // 
@@ -83,15 +83,16 @@
             this.label_pass.TabIndex = 12;
             this.label_pass.Text = "Password:";
             // 
-            // label_signup
+            // label_register
             // 
-            this.label_signup.AutoSize = true;
-            this.label_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_signup.Location = new System.Drawing.Point(34, 272);
-            this.label_signup.Name = "label_signup";
-            this.label_signup.Size = new System.Drawing.Size(183, 18);
-            this.label_signup.TabIndex = 23;
-            this.label_signup.Text = "Don\'t you have a account?";
+            this.label_register.AutoSize = true;
+            this.label_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_register.Location = new System.Drawing.Point(34, 272);
+            this.label_register.Name = "label_register";
+            this.label_register.Size = new System.Drawing.Size(183, 18);
+            this.label_register.TabIndex = 23;
+            this.label_register.Text = "Don\'t you have a account?";
+            this.label_register.Click += new System.EventHandler(this.label_register_Click);
             // 
             // label_username
             // 
@@ -132,6 +133,7 @@
             // 
             this.label_forgot.AutoSize = true;
             this.label_forgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_forgot.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_forgot.Location = new System.Drawing.Point(34, 238);
             this.label_forgot.Name = "label_forgot";
             this.label_forgot.Size = new System.Drawing.Size(129, 18);
@@ -183,7 +185,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label_signup;
+        private System.Windows.Forms.Label label_register;
         private System.Windows.Forms.TextBox textBox_pass;
         private System.Windows.Forms.TextBox textBox_username;
         private System.Windows.Forms.Button button_cancel;
