@@ -34,7 +34,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label_email = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btn_Register = new System.Windows.Forms.Button();
+            this.btn_registration = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -110,17 +110,17 @@
             this.txtPassword.Size = new System.Drawing.Size(304, 27);
             this.txtPassword.TabIndex = 28;
             // 
-            // btn_Register
+            // btn_registration
             // 
-            this.btn_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Register.Location = new System.Drawing.Point(198, 336);
-            this.btn_Register.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Register.Name = "btn_Register";
-            this.btn_Register.Size = new System.Drawing.Size(265, 42);
-            this.btn_Register.TabIndex = 29;
-            this.btn_Register.Text = "Register";
-            this.btn_Register.UseVisualStyleBackColor = true;
-            this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
+            this.btn_registration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_registration.Location = new System.Drawing.Point(198, 336);
+            this.btn_registration.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_registration.Name = "btn_registration";
+            this.btn_registration.Size = new System.Drawing.Size(265, 42);
+            this.btn_registration.TabIndex = 29;
+            this.btn_registration.Text = "Registration";
+            this.btn_registration.UseVisualStyleBackColor = true;
+            this.btn_registration.Click += new System.EventHandler(this.btn_registration_Click);
             // 
             // btn_Cancel
             // 
@@ -149,7 +149,7 @@
             this.groupBox1.Controls.Add(this.label_status);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btn_Cancel);
-            this.groupBox1.Controls.Add(this.btn_Register);
+            this.groupBox1.Controls.Add(this.btn_registration);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label_email);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -195,7 +195,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label_email;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btn_Register;
+        private System.Windows.Forms.Button btn_registration;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
