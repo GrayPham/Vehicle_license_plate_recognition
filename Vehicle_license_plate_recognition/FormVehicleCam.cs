@@ -96,6 +96,14 @@ namespace Vehicle_license_plate_recognition
             //FormBorderStyle = FormBorderStyle.None;
             //WindowState = FormWindowState.Maximized;
             //TopMost = true;
+            if (pictureBox_camera.Image == null)
+            {
+                btn_Save.Enabled = false;
+                btn_charge.Enabled = false;
+                btn_contract.Enabled = false;
+                btn_Check.Enabled = false;
+            }
+
         }
 
 
