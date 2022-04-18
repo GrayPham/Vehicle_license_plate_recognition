@@ -64,7 +64,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1560, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1514, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,7 +121,7 @@
             // 
             // button_attendance
             // 
-            this.button_attendance.Location = new System.Drawing.Point(1380, 563);
+            this.button_attendance.Location = new System.Drawing.Point(1380, 734);
             this.button_attendance.Name = "button_attendance";
             this.button_attendance.Size = new System.Drawing.Size(113, 49);
             this.button_attendance.TabIndex = 2;
@@ -130,7 +130,7 @@
             // 
             // button_shift
             // 
-            this.button_shift.Location = new System.Drawing.Point(12, 563);
+            this.button_shift.Location = new System.Drawing.Point(12, 734);
             this.button_shift.Name = "button_shift";
             this.button_shift.Size = new System.Drawing.Size(121, 49);
             this.button_shift.TabIndex = 3;
@@ -144,7 +144,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1481, 497);
+            this.dataGridView1.Size = new System.Drawing.Size(1481, 664);
             this.dataGridView1.TabIndex = 4;
             // 
             // label_logout
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 634);
+            this.ClientSize = new System.Drawing.Size(1514, 815);
             this.Controls.Add(this.label_logout);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_shift);
@@ -173,6 +173,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.menuStrip1.ResumeLayout(false);

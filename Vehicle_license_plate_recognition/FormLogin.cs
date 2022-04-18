@@ -44,6 +44,14 @@ namespace Vehicle_license_plate_recognition
                     menuForm.ShowDialog();
                     this.Visible = true; //mở lại
                 }
+                if (q.isStaff == true)
+                {
+                    //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
+                    FormStaff staffForm = new FormStaff();
+                    this.Visible = false; //ẩn thôi chứ khum tắt
+                    staffForm.ShowDialog();
+                    this.Visible = true; //mở lại
+                }
 
             }
             //NOTE: "Please check your username and password again!"

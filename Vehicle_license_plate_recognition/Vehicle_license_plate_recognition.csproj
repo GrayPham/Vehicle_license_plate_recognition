@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge.Video">
+      <HintPath>D:\Năm 2\Thư viện hỗ trợ Winform\Thư viện hỗ trợ camera\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>D:\Năm 2\Thư viện hỗ trợ Winform\Thư viện hỗ trợ camera\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -87,6 +93,18 @@
     </Compile>
     <Compile Include="FormResetPassword.Designer.cs">
       <DependentUpon>FormResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaff.Designer.cs">
+      <DependentUpon>FormStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehicleCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVehicleCam.Designer.cs">
+      <DependentUpon>FormVehicleCam.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Assignment.cs">
       <DependentUpon>PlateRecognition.tt</DependentUpon>
@@ -173,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormResetPassword.resx">
       <DependentUpon>FormResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStaff.resx">
+      <DependentUpon>FormStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVehicleCam.resx">
+      <DependentUpon>FormVehicleCam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

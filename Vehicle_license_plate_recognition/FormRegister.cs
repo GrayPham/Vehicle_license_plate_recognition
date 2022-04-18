@@ -23,35 +23,34 @@ namespace Vehicle_license_plate_recognition
             Application.Exit();
         }
 
-        private void btn_Register_Click(object sender, EventArgs e)
+        private void btn_registration_Click(object sender, EventArgs e)
         {
-            if(txtEmail.Text == "" || txtPassword.Text == "" || txtUsername.Text == "")
+            if (string.IsNullOrWhiteSpace(txtUsername.Text) &&
+               string.IsNullOrWhiteSpace(txtEmail.Text) &&
+               string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show("Please fill in the gaps!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtEmail.Select();
+                MessageBox.Show("Please fill all the fields!", "Warning!",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
             string username = txtUsername.Text;
             string email = txtEmail.Text;
             string pass = txtPassword.Text;
+            try 
+            {
+                NV q = new NV();
+                q.Account = username;
 
-            //var p = user.nvs insert into login (username, password, email)" + "values ( @un, @pw, @email)
-            //command.parameters.add("@un", sqldbtype.nchar).value = txtusername.text;
-            //command.parameters.add("@email", sqldbtype.nvarchar).value = txtemail.text;
-            //command.parameters.add("@pw", sqldbtype.nchar).value = txtpassword.text;
-            //db.openconnection();
-            //if ((command.executenonquery() == 1))
-            //{
-            //    db.closeconnection();
-            //    messagebox.show("successfully!");
-            //}
-            //else
-            //{
-            //    db.closeconnection();
-            //    messagebox.show("error!");
-
-            //}
+                test.NVs.Add(q);
+                test.SaveChanges();
+                MessageBox.Show("Wellcome ", txtUsername.Text + "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Select();
+                return;
+            }
         }
     }
 }
