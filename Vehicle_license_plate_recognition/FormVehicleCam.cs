@@ -122,7 +122,7 @@ namespace Vehicle_license_plate_recognition
         {
             Setting setting = new Setting();
             // Goi len server va tra ve ket qua
-            String server_ip = "172.16.31.115";
+            String server_ip = "192.168.1.21";
             String server_path = "http://" + server_ip + ":8000/detect";
             try
             {
