@@ -62,12 +62,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Phone" Type="varchar" MaxLength="50" />
-          <Property Name="BirthDate" Type="datetime" />
           <Property Name="DeliveryTime" Type="datetime" />
           <Property Name="ReturnTime" Type="datetime" />
-          <Property Name="IdPayment" Type="int" />
           <Property Name="LicensePlates" Type="int" />
         </EntityType>
         <EntityType Name="NV">
@@ -86,7 +82,6 @@
           <Property Name="LayOffDate" Type="datetime" />
           <Property Name="Absences" Type="int" />
           <Property Name="IdSchedule" Type="int" />
-          <Property Name="IdPayment" Type="int" />
           <Property Name="isManage" Type="bit" />
           <Property Name="isOfficeStaff" Type="bit" />
           <Property Name="isStaff" Type="bit" />
@@ -147,6 +142,8 @@
           <Property Name="IdPayment" Type="int" Nullable="false" />
           <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="int" />
+          <Property Name="IdStaff" Type="int" />
+          <Property Name="IdNguoiGui" Type="int" />
         </EntityType>
         <EntityType Name="TypeofOperation">
           <Key>
@@ -219,18 +216,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NguoiGui_ThanhToan">
-          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1" />
-          <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ThanhToan">
-              <PropertyRef Name="IdPayment" />
-            </Principal>
-            <Dependent Role="NguoiGui">
-              <PropertyRef Name="IdPayment" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NguoiGui_VehiclePark">
           <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="0..1" />
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
@@ -252,18 +237,6 @@
             </Principal>
             <Dependent Role="NV">
               <PropertyRef Name="IdSchedule" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NV_ThanhToan">
-          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1" />
-          <End Role="NV" Type="Self.NV" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ThanhToan">
-              <PropertyRef Name="IdPayment" />
-            </Principal>
-            <Dependent Role="NV">
-              <PropertyRef Name="IdPayment" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -324,6 +297,30 @@
             </Principal>
             <Dependent Role="Schedule">
               <PropertyRef Name="IdAssignment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_NguoiGui">
+          <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiGui">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="IdNguoiGui" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_NV">
+          <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="IdStaff" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -427,20 +424,12 @@
             <End Role="NV" EntitySet="NV" />
             <End Role="Login" EntitySet="Login" />
           </AssociationSet>
-          <AssociationSet Name="FK_NguoiGui_ThanhToan" Association="Self.FK_NguoiGui_ThanhToan">
-            <End Role="ThanhToan" EntitySet="ThanhToan" />
-            <End Role="NguoiGui" EntitySet="NguoiGui" />
-          </AssociationSet>
           <AssociationSet Name="FK_NguoiGui_VehiclePark" Association="Self.FK_NguoiGui_VehiclePark">
             <End Role="VehiclePark" EntitySet="VehiclePark" />
             <End Role="NguoiGui" EntitySet="NguoiGui" />
           </AssociationSet>
           <AssociationSet Name="FK_NV_Schedule" Association="Self.FK_NV_Schedule">
             <End Role="Schedule" EntitySet="Schedule" />
-            <End Role="NV" EntitySet="NV" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NV_ThanhToan" Association="Self.FK_NV_ThanhToan">
-            <End Role="ThanhToan" EntitySet="ThanhToan" />
             <End Role="NV" EntitySet="NV" />
           </AssociationSet>
           <AssociationSet Name="FK_Operation_NV" Association="Self.FK_Operation_NV">
@@ -462,6 +451,14 @@
           <AssociationSet Name="FK_Schedule_Assignment" Association="Self.FK_Schedule_Assignment">
             <End Role="Assignment" EntitySet="Assignment" />
             <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_NguoiGui" Association="Self.FK_ThanhToan_NguoiGui">
+            <End Role="NguoiGui" EntitySet="NguoiGui" />
+            <End Role="ThanhToan" EntitySet="ThanhToan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_NV" Association="Self.FK_ThanhToan_NV">
+            <End Role="NV" EntitySet="NV" />
+            <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
           <AssociationSet Name="FK_ThanhToan_TypeVehicle" Association="Self.FK_ThanhToan_TypeVehicle">
             <End Role="TypeVehicle" EntitySet="TypeVehicle" />
@@ -533,15 +530,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="BirthDate" Type="DateTime" Precision="3" />
           <Property Name="DeliveryTime" Type="DateTime" Precision="3" />
           <Property Name="ReturnTime" Type="DateTime" Precision="3" />
-          <Property Name="IdPayment" Type="Int32" />
           <Property Name="LicensePlates" Type="Int32" />
-          <NavigationProperty Name="ThanhToan" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="NguoiGui" ToRole="ThanhToan" />
-          <NavigationProperty Name="VehiclePark" Relationship="Self.FK_NguoiGui_VehiclePark" FromRole="NguoiGui" ToRole="VehiclePark" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
@@ -555,12 +546,10 @@
           <Property Name="LayOffDate" Type="DateTime" Precision="3" />
           <Property Name="Absences" Type="Int32" />
           <Property Name="IdSchedule" Type="Int32" />
-          <Property Name="IdPayment" Type="Int32" />
           <Property Name="isManage" Type="Boolean" />
           <Property Name="isOfficeStaff" Type="Boolean" />
           <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_NV" FromRole="NV" ToRole="Contract" />
           <NavigationProperty Name="Schedule" Relationship="Self.FK_NV_Schedule" FromRole="NV" ToRole="Schedule" />
-          <NavigationProperty Name="ThanhToan" Relationship="Self.FK_NV_ThanhToan" FromRole="NV" ToRole="ThanhToan" />
           <NavigationProperty Name="Operations" Relationship="Self.FK_Operation_NV" FromRole="NV" ToRole="Operation" />
           <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -568,6 +557,7 @@
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Logins" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="NV" ToRole="Login" />
           <Property Name="isStaff" Type="Boolean" />
+          <NavigationProperty Name="ThanhToans" Relationship="QuanLiNhaXeModel.FK_ThanhToan_NV" FromRole="NV" ToRole="ThanhToan" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -633,9 +623,9 @@
           <Property Name="IdPayment" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="Int32" />
-          <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="ThanhToan" ToRole="NguoiGui" />
-          <NavigationProperty Name="NVs" Relationship="Self.FK_NV_ThanhToan" FromRole="ThanhToan" ToRole="NV" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="ThanhToan" ToRole="TypeVehicle" />
+          <Property Name="IdStaff" Type="Int32" />
+          <Property Name="IdNguoiGui" Type="Int32" />
         </EntityType>
         <EntityType Name="TypeofOperation">
           <Key>
@@ -727,18 +717,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NguoiGui_ThanhToan">
-          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1" />
-          <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ThanhToan">
-              <PropertyRef Name="IdPayment" />
-            </Principal>
-            <Dependent Role="NguoiGui">
-              <PropertyRef Name="IdPayment" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NguoiGui_VehiclePark">
           <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="0..1" />
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
@@ -760,18 +738,6 @@
             </Principal>
             <Dependent Role="NV">
               <PropertyRef Name="IdSchedule" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NV_ThanhToan">
-          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1" />
-          <End Role="NV" Type="Self.NV" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ThanhToan">
-              <PropertyRef Name="IdPayment" />
-            </Principal>
-            <Dependent Role="NV">
-              <PropertyRef Name="IdPayment" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -883,20 +849,12 @@
             <End Role="Contract" EntitySet="Contracts" />
             <End Role="Customers" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK_NguoiGui_ThanhToan" Association="Self.FK_NguoiGui_ThanhToan">
-            <End Role="ThanhToan" EntitySet="ThanhToans" />
-            <End Role="NguoiGui" EntitySet="NguoiGuis" />
-          </AssociationSet>
           <AssociationSet Name="FK_NguoiGui_VehiclePark" Association="Self.FK_NguoiGui_VehiclePark">
             <End Role="VehiclePark" EntitySet="VehicleParks" />
             <End Role="NguoiGui" EntitySet="NguoiGuis" />
           </AssociationSet>
           <AssociationSet Name="FK_NV_Schedule" Association="Self.FK_NV_Schedule">
             <End Role="Schedule" EntitySet="Schedules" />
-            <End Role="NV" EntitySet="NVs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NV_ThanhToan" Association="Self.FK_NV_ThanhToan">
-            <End Role="ThanhToan" EntitySet="ThanhToans" />
             <End Role="NV" EntitySet="NVs" />
           </AssociationSet>
           <AssociationSet Name="FK_Operation_NV" Association="Self.FK_Operation_NV">
@@ -958,6 +916,14 @@
             <End Role="NV" EntitySet="NVs" />
             <End Role="Login" EntitySet="Logins" />
           </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_NguoiGui" Association="QuanLiNhaXeModel.FK_ThanhToan_NguoiGui">
+            <End Role="NguoiGui" EntitySet="NguoiGuis" />
+            <End Role="ThanhToan" EntitySet="ThanhToans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_NV" Association="QuanLiNhaXeModel.FK_ThanhToan_NV">
+            <End Role="NV" EntitySet="NVs" />
+            <End Role="ThanhToan" EntitySet="ThanhToans" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -989,6 +955,30 @@
               <PropertyRef Name="IdStaff" />
             </Principal>
             <Dependent Role="Login">
+              <PropertyRef Name="IdStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_NguoiGui">
+          <End Type="QuanLiNhaXeModel.NguoiGui" Role="NguoiGui" Multiplicity="0..1" />
+          <End Type="QuanLiNhaXeModel.ThanhToan" Role="ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiGui">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="IdNguoiGui" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_NV">
+          <End Type="QuanLiNhaXeModel.NV" Role="NV" Multiplicity="0..1" />
+          <End Type="QuanLiNhaXeModel.ThanhToan" Role="ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
+            </Principal>
+            <Dependent Role="ThanhToan">
               <PropertyRef Name="IdStaff" />
             </Dependent>
           </ReferentialConstraint>
@@ -1049,12 +1039,8 @@
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NguoiGui">
               <MappingFragment StoreEntitySet="NguoiGui">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
                 <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
                 <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
-                <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
                 <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1075,7 +1061,6 @@
                 <ScalarProperty Name="LayOffDate" ColumnName="LayOffDate" />
                 <ScalarProperty Name="Absences" ColumnName="Absences" />
                 <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
-                <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
                 <ScalarProperty Name="isManage" ColumnName="isManage" />
                 <ScalarProperty Name="isOfficeStaff" ColumnName="isOfficeStaff" />
               </MappingFragment>
@@ -1138,6 +1123,8 @@
           <EntitySetMapping Name="ThanhToans">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.ThanhToan">
               <MappingFragment StoreEntitySet="ThanhToan">
+                <ScalarProperty Name="IdNguoiGui" ColumnName="IdNguoiGui" />
+                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
                 <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="IdTVehicle" ColumnName="IdTVehicle" />

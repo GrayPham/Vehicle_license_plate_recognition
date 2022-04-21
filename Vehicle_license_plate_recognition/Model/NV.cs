@@ -19,6 +19,7 @@ namespace Vehicle_license_plate_recognition.Model
             this.Contracts = new HashSet<Contract>();
             this.Operations = new HashSet<Operation>();
             this.Logins = new HashSet<Login>();
+            this.ThanhToans = new HashSet<ThanhToan>();
         }
     
         public int IdStaff { get; set; }
@@ -29,7 +30,6 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<System.DateTime> LayOffDate { get; set; }
         public Nullable<int> Absences { get; set; }
         public Nullable<int> IdSchedule { get; set; }
-        public Nullable<int> IdPayment { get; set; }
         public Nullable<bool> isManage { get; set; }
         public Nullable<bool> isOfficeStaff { get; set; }
         public string Account { get; set; }
@@ -40,8 +40,8 @@ namespace Vehicle_license_plate_recognition.Model
     
         public virtual ICollection<Contract> Contracts { get; set; }
         public virtual Schedule Schedule { get; set; }
-        public virtual ThanhToan ThanhToan { get; set; }
         public virtual ICollection<Operation> Operations { get; set; }
         public virtual ICollection<Login> Logins { get; set; }
+        public virtual ICollection<ThanhToan> ThanhToans { get; set; }
     }
 }

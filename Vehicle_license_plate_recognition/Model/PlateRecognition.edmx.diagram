@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="QuanLiNhaXeModel.PlacePark" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Schedule" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.ThanhToan" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.ThanhToan" Width="1.5" PointX="1.875" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.TypeofOperation" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.TypeVehicle" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.VehiclePark" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
@@ -25,10 +25,8 @@
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Parking_Capacity" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Contract_NV" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Customers_Contract" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLiNhaXeModel.FK_NguoiGui_ThanhToan" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NguoiGui_VehiclePark" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NV_Schedule" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLiNhaXeModel.FK_NV_ThanhToan" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Operation_NV" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Operation_TypeofOperation" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_PlacePark_Parking" ManuallyRouted="false" />
@@ -37,6 +35,8 @@
         <AssociationConnector Association="QuanLiNhaXeModel.FK_VehiclePark_TypeVehicle" ManuallyRouted="false" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Login" Width="1.5" PointX="7.5" PointY="16.375" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Login_NV" />
+        <AssociationConnector Association="QuanLiNhaXeModel.FK_ThanhToan_NguoiGui" />
+        <AssociationConnector Association="QuanLiNhaXeModel.FK_ThanhToan_NV" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -15,15 +15,8 @@ namespace Vehicle_license_plate_recognition.Model
     public partial class NguoiGui
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
-        public string Phone { get; set; }
-        public Nullable<System.DateTime> BirthDate { get; set; }
         public Nullable<System.DateTime> DeliveryTime { get; set; }
         public Nullable<System.DateTime> ReturnTime { get; set; }
-        public Nullable<int> IdPayment { get; set; }
         public Nullable<int> LicensePlates { get; set; }
-    
-        public virtual ThanhToan ThanhToan { get; set; }
-        public virtual VehiclePark VehiclePark { get; set; }
     }
 }
