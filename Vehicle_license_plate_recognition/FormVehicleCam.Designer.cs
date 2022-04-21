@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_done = new System.Windows.Forms.Button();
@@ -102,9 +103,11 @@
             // 
             // pictureBox_recognize
             // 
+            this.pictureBox_recognize.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_recognize.Image")));
             this.pictureBox_recognize.Location = new System.Drawing.Point(1099, 128);
             this.pictureBox_recognize.Name = "pictureBox_recognize";
             this.pictureBox_recognize.Size = new System.Drawing.Size(421, 146);
+            this.pictureBox_recognize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_recognize.TabIndex = 35;
             this.pictureBox_recognize.TabStop = false;
             // 
@@ -213,6 +216,8 @@
             // 
             // richTextBox_licenseplates
             // 
+            this.richTextBox_licenseplates.Enabled = false;
+            this.richTextBox_licenseplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_licenseplates.Location = new System.Drawing.Point(1099, 58);
             this.richTextBox_licenseplates.Name = "richTextBox_licenseplates";
             this.richTextBox_licenseplates.Size = new System.Drawing.Size(421, 51);
