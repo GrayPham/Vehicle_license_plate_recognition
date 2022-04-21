@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\NVBLL.cs" />
+    <Compile Include="Controller\Setting.cs" />
+    <Compile Include="Controller\Staff\GuiXe.cs" />
     <Compile Include="FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +157,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PlateRecognition.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\QuanLiNhaXe.cs" />
     <Compile Include="Model\Schedule.cs">
       <DependentUpon>PlateRecognition.tt</DependentUpon>
     </Compile>
@@ -246,6 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\BienDai\" />
+    <Folder Include="Image\BienVuong\" />
+    <Folder Include="Image\KhuonMat\NguoiGui\" />
+    <Folder Include="Image\KhuonMat\NhanVien\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

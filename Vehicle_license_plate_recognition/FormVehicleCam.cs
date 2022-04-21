@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //Add thư viện để kết nối với camera
 using AForge.Video;
 using AForge.Video.DirectShow;
+using Vehicle_license_plate_recognition.Controller;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -127,7 +128,24 @@ namespace Vehicle_license_plate_recognition
 
         private void btn_Check_Click(object sender, EventArgs e)
         {
+            Setting setting = new Setting();
+            // Goi len server va tra ve ket qua
+            String server_ip = "192.168.1.21";
+            String server_path = "http://" + server_ip + ":8000/detect";
+            try
+            {
+                // Convert image to B64
+                String B64 = setting.ConvertImageToBase64String(pictureBox_camera.Image);
+                String retStr = setting.sendPOST(server_path, B64);
+                richTextBox_licenseplates.Text = retStr;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception", ex.ToString())   ;
+            }
+            
 
+            
         }
 
         private void btn_contract_Click(object sender, EventArgs e)

@@ -328,9 +328,9 @@
         private System.Windows.Forms.Button btn_Check;
         private System.Windows.Forms.Button btn_parking;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox_camera;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox_recognize;
         private System.Windows.Forms.Button button_done;
+        public System.Windows.Forms.PictureBox pictureBox_camera;
     }
 }
