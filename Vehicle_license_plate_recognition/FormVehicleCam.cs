@@ -40,6 +40,10 @@ namespace Vehicle_license_plate_recognition
             //camera này phải tạo 1 cái frame khác để chụp ảnh
             video.NewFrame += Video_NewFrame;
             video.Start();
+
+                btn_parking.Enabled = true;
+                btn_charge.Enabled = true;
+                btn_Check.Enabled = true;
         }
         //chụp ảnh
         private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -59,6 +63,11 @@ namespace Vehicle_license_plate_recognition
             }
             else
                 MessageBox.Show("Please turn on camera!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btn_parking.Enabled = false;
+                btn_charge.Enabled = false;
+                btn_Check.Enabled = false;
+            
         }
         //cam đang mở tắt nó đi tránh nó chạy ngầm 
         protected override void OnClosed(EventArgs e)
@@ -98,9 +107,8 @@ namespace Vehicle_license_plate_recognition
             //TopMost = true;
             if (pictureBox_camera.Image == null)
             {
-                btn_Save.Enabled = false;
+                btn_parking.Enabled = false;
                 btn_charge.Enabled = false;
-                btn_contract.Enabled = false;
                 btn_Check.Enabled = false;
             }
 

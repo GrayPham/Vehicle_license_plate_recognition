@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //hỗ trợ gửi mail
 using System.Net;
 using System.Net.Mail;
+using Vehicle_license_plate_recognition.Model;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -33,27 +34,42 @@ namespace Vehicle_license_plate_recognition
         public static string to;
         private void button_getcode_Click(object sender, EventArgs e)
         {
-            string from, pass, messageBody;
-            Random rand = new Random();
-            randomCode = (rand.Next(999999)).ToString();
-
-
-            MailMessage message = new MailMessage();
-            to = (textBox_email.Text).ToString();
-            from = "20110431@student.hcmute.edu.vn";
-            pass = "26112001";
-            messageBody = "Your reset code is " + randomCode;
-            message.To.Add(to);
-            message.From = new MailAddress(from);
-            message.Body = messageBody;
-            message.Subject = "Your code: ";
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 25); //SMTP là giao thức tiêu chuẩn để gửi email
-            smtp.EnableSsl = true;  //là 1 chứng chỉ bảo mật 
-            //smtp.Port = 25; //cổng nhận gmail
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //thông qua mạng
-            smtp.Credentials = new NetworkCredential(from, pass); //hỗ trợ đăng nhập cho bạn
             try
             {
+                QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
+                var q = test.NVs.Where(user => user.Email == textBox_email.Text).FirstOrDefault();
+
+                if (!(textBox_email.Text).EndsWith("@gmail.com"))
+                {
+
+                     MessageBox.Show("Syntax error", "Syntax", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     return; 
+                }
+                if(!(textBox_email.Text).Equals(q))
+                {
+                    MessageBox.Show("Email is not exit!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }    
+
+                string from, pass, messageBody;
+                Random rand = new Random();
+                randomCode = (rand.Next(999999)).ToString();
+
+
+                MailMessage message = new MailMessage();
+                to = (textBox_email.Text).ToString();
+                from = "20110431@student.hcmute.edu.vn";
+                pass = "26112001";
+                messageBody = "Your reset code is " + randomCode;
+                message.To.Add(to);
+                message.From = new MailAddress(from);
+                message.Body = messageBody;
+                message.Subject = "Your code: ";
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 25); //SMTP là giao thức tiêu chuẩn để gửi email
+                smtp.EnableSsl = true;  //là 1 chứng chỉ bảo mật 
+                                        //smtp.Port = 25; //cổng nhận gmail
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //thông qua mạng
+                smtp.Credentials = new NetworkCredential(from, pass); //hỗ trợ đăng nhập cho bạn
                 smtp.Send(message);
                 MessageBox.Show("Code send successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -115,6 +131,5 @@ namespace Vehicle_license_plate_recognition
                 textBox_zipcode.ForeColor = Color.Gray;
             }
         }
-
     }
 }

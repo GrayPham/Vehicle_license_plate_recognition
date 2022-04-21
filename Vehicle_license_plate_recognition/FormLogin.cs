@@ -16,13 +16,46 @@ namespace Vehicle_license_plate_recognition
         public FormLogin()
         {
             InitializeComponent();
+            textBox_username.ForeColor = Color.LightGray;
+            textBox_username.Text = "Enter your Username";
+            this.textBox_username.Leave += new System.EventHandler(this.textBox_username_Leave);
+            this.textBox_username.Enter += new System.EventHandler(this.textBox_username_Enter);
+
+            this.label_forgot.MouseEnter += new System.EventHandler(this.label_forgot_MouseEnter);
+            this.label_forgot.MouseLeave += new System.EventHandler(this.label_forgot_MouseLeave);
+
         }
 
-        Color label_forgotcolor;
-        Color label_accountcolor;
+        private void textBox_username_Enter(object sender, EventArgs e)
+        {
+            if (textBox_username.Text == "Enter your Username")
+            {
+                textBox_username.Text = "";
+                textBox_username.ForeColor = Color.Black;
+            }
+        }
 
-        //TẠO DATABASE
-        QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
+        private void textBox_username_Leave(object sender, EventArgs e)
+        {
+            if (textBox_username.Text == "")
+            {
+                textBox_username.Text = "Enter your Username";
+                textBox_username.ForeColor = Color.Gray;
+            }
+        }
+
+        private void label_forgot_MouseEnter(object sender, EventArgs e)
+        {
+            label_forgot.ForeColor = Color.Blue;
+        }
+
+        private void label_forgot_MouseLeave(object sender, EventArgs e)
+        {
+            label_forgot.ForeColor = Color.Black;
+        }
+
+            //TẠO DATABASE
+            QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
         private void button_Login_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_username.Text) || string.IsNullOrEmpty(textBox_pass.Text))
@@ -68,10 +101,6 @@ namespace Vehicle_license_plate_recognition
             Application.Exit();
         }
 
-        private void label_forgot_MouseLeave(object sender, EventArgs e)
-        {
-            //label_forgot.ForeColor = Color.AliceBlue;
-        }
 
         private void label_forgot_Click(object sender, EventArgs e)
         {
@@ -90,5 +119,6 @@ namespace Vehicle_license_plate_recognition
             a.ShowDialog(); //show chạy song song khác với showDialog dừng chạy form hiện tại rồi mở form mà mình muốn mở
             this.Visible = true; //mở lại
         }
+
     }
 }

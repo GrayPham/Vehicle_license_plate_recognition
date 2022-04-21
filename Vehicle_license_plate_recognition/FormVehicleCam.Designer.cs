@@ -44,9 +44,8 @@
             this.richTextBox_licenseplates = new System.Windows.Forms.RichTextBox();
             this.label_licenseplates = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.btn_contract = new System.Windows.Forms.Button();
             this.btn_Check = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_parking = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -78,9 +77,8 @@
             this.groupBox1.Controls.Add(this.richTextBox_licenseplates);
             this.groupBox1.Controls.Add(this.label_licenseplates);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.btn_contract);
             this.groupBox1.Controls.Add(this.btn_Check);
-            this.groupBox1.Controls.Add(this.btn_Save);
+            this.groupBox1.Controls.Add(this.btn_parking);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.pictureBox_camera);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -94,7 +92,7 @@
             // 
             this.button_done.BackColor = System.Drawing.Color.Transparent;
             this.button_done.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_done.Location = new System.Drawing.Point(1189, 678);
+            this.button_done.Location = new System.Drawing.Point(1189, 656);
             this.button_done.Name = "button_done";
             this.button_done.Size = new System.Drawing.Size(176, 36);
             this.button_done.TabIndex = 36;
@@ -114,7 +112,7 @@
             // 
             this.btn_charge.BackColor = System.Drawing.Color.Transparent;
             this.btn_charge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_charge.Location = new System.Drawing.Point(1189, 636);
+            this.btn_charge.Location = new System.Drawing.Point(1189, 614);
             this.btn_charge.Name = "btn_charge";
             this.btn_charge.Size = new System.Drawing.Size(176, 36);
             this.btn_charge.TabIndex = 31;
@@ -242,23 +240,11 @@
             this.dateTimePicker2.TabIndex = 27;
             this.dateTimePicker2.Value = new System.DateTime(2022, 4, 3, 0, 0, 0, 0);
             // 
-            // btn_contract
-            // 
-            this.btn_contract.BackColor = System.Drawing.Color.Transparent;
-            this.btn_contract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_contract.Location = new System.Drawing.Point(1189, 592);
-            this.btn_contract.Name = "btn_contract";
-            this.btn_contract.Size = new System.Drawing.Size(176, 38);
-            this.btn_contract.TabIndex = 30;
-            this.btn_contract.Text = "Contract";
-            this.btn_contract.UseVisualStyleBackColor = false;
-            this.btn_contract.Click += new System.EventHandler(this.btn_contract_Click);
-            // 
             // btn_Check
             // 
             this.btn_Check.BackColor = System.Drawing.Color.Transparent;
             this.btn_Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Check.Location = new System.Drawing.Point(1189, 551);
+            this.btn_Check.Location = new System.Drawing.Point(1189, 529);
             this.btn_Check.Name = "btn_Check";
             this.btn_Check.Size = new System.Drawing.Size(176, 35);
             this.btn_Check.TabIndex = 29;
@@ -266,17 +252,17 @@
             this.btn_Check.UseVisualStyleBackColor = false;
             this.btn_Check.Click += new System.EventHandler(this.btn_Check_Click);
             // 
-            // btn_Save
+            // btn_parking
             // 
-            this.btn_Save.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Save.Location = new System.Drawing.Point(1189, 507);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(176, 38);
-            this.btn_Save.TabIndex = 28;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = false;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            this.btn_parking.BackColor = System.Drawing.Color.Transparent;
+            this.btn_parking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_parking.Location = new System.Drawing.Point(1189, 570);
+            this.btn_parking.Name = "btn_parking";
+            this.btn_parking.Size = new System.Drawing.Size(176, 38);
+            this.btn_parking.TabIndex = 28;
+            this.btn_parking.Text = "Parking";
+            this.btn_parking.UseVisualStyleBackColor = false;
+            this.btn_parking.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // comboBox1
             // 
@@ -339,9 +325,8 @@
         private System.Windows.Forms.RichTextBox richTextBox_licenseplates;
         private System.Windows.Forms.Label label_licenseplates;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button btn_contract;
         private System.Windows.Forms.Button btn_Check;
-        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_parking;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox_camera;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
