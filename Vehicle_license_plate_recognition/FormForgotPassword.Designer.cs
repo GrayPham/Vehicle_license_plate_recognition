@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_syntax = new System.Windows.Forms.Label();
             this.label_status = new System.Windows.Forms.Label();
             this.button_verifycode = new System.Windows.Forms.Button();
             this.textBox_zipcode = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label_syntax);
             this.groupBox1.Controls.Add(this.label_status);
             this.groupBox1.Controls.Add(this.button_verifycode);
             this.groupBox1.Controls.Add(this.textBox_zipcode);
@@ -55,6 +57,17 @@
             this.groupBox1.Size = new System.Drawing.Size(842, 421);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // label_syntax
+            // 
+            this.label_syntax.AutoSize = true;
+            this.label_syntax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_syntax.ForeColor = System.Drawing.Color.Red;
+            this.label_syntax.Location = new System.Drawing.Point(262, 186);
+            this.label_syntax.Name = "label_syntax";
+            this.label_syntax.Size = new System.Drawing.Size(45, 18);
+            this.label_syntax.TabIndex = 28;
+            this.label_syntax.Text = "Event";
             // 
             // label_status
             // 
@@ -120,16 +133,17 @@
             // textBox_email
             // 
             this.textBox_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_email.Location = new System.Drawing.Point(265, 172);
+            this.textBox_email.Location = new System.Drawing.Point(265, 156);
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.Size = new System.Drawing.Size(348, 27);
             this.textBox_email.TabIndex = 18;
+            this.textBox_email.Click += new System.EventHandler(this.textBox_email_Click);
             // 
             // label_email
             // 
             this.label_email.AutoSize = true;
             this.label_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_email.Location = new System.Drawing.Point(172, 175);
+            this.label_email.Location = new System.Drawing.Point(172, 159);
             this.label_email.Name = "label_email";
             this.label_email.Size = new System.Drawing.Size(62, 20);
             this.label_email.TabIndex = 16;
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_email;
         private System.Windows.Forms.Label label_email;
+        private System.Windows.Forms.Label label_syntax;
     }
 }
