@@ -28,60 +28,72 @@ namespace Vehicle_license_plate_recognition
             textBox_zipcode.Text = "Please enter code";
             this.textBox_zipcode.Leave += new System.EventHandler(this.textBox_zipcode_Leave);
             this.textBox_zipcode.Enter += new System.EventHandler(this.textBox_zipcode_Enter);
+
+            label_syntax.Visible = false;
+            this.textBox_email.Click += new System.EventHandler(this.textBox_email_Click);
         }
 
         string randomCode;
         public static string to;
         private void button_getcode_Click(object sender, EventArgs e)
         {
-            try
+            if(textBox_email.Text == "example@gmail.com")
+            {
+                label_syntax.Text = "Empty email!!!";
+                label_syntax.Visible = true;
+                //return;
+            }
+            if (!(textBox_email.Text).EndsWith("@gmail.com"))
+            {
+                label_syntax.Text = "Syntax Error";
+                label_syntax.Visible = true;
+                return;
+            }
+            else if(textBox_email.Text != "example@gmail.com")
             {
                 QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
                 var q = test.NVs.Where(user => user.Email == textBox_email.Text).FirstOrDefault();
 
-                if (!(textBox_email.Text).EndsWith("@gmail.com"))
-                {
 
-                     MessageBox.Show("Syntax error", "Syntax", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     return; 
+                if (q != null)
+                {
+                    string from, pass, messageBody;
+                    Random rand = new Random();
+                    randomCode = (rand.Next(999999)).ToString();
+
+
+                    MailMessage message = new MailMessage();
+                    to = (textBox_email.Text).ToString();
+                    from = "20110431@student.hcmute.edu.vn";
+                    pass = "26112001";
+                    messageBody = "Your reset code is " + randomCode;
+                    message.To.Add(to);
+                    message.From = new MailAddress(from);
+                    message.Body = messageBody;
+                    message.Subject = "Your code: ";
+                    SmtpClient smtp = new SmtpClient("smtp.gmail.com", 25); //SMTP là giao thức tiêu chuẩn để gửi email
+                    smtp.EnableSsl = true;  //là 1 chứng chỉ bảo mật 
+                                            //smtp.Port = 25; //cổng nhận gmail
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //thông qua mạng
+                    smtp.Credentials = new NetworkCredential(from, pass); //hỗ trợ đăng nhập cho bạn
+                    smtp.Send(message);
+                    MessageBox.Show("Code send successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if(!(textBox_email.Text).Equals(q))
-                {
+
+                else
                     MessageBox.Show("Email is not exit!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }    
-
-                string from, pass, messageBody;
-                Random rand = new Random();
-                randomCode = (rand.Next(999999)).ToString();
 
 
-                MailMessage message = new MailMessage();
-                to = (textBox_email.Text).ToString();
-                from = "20110431@student.hcmute.edu.vn";
-                pass = "26112001";
-                messageBody = "Your reset code is " + randomCode;
-                message.To.Add(to);
-                message.From = new MailAddress(from);
-                message.Body = messageBody;
-                message.Subject = "Your code: ";
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 25); //SMTP là giao thức tiêu chuẩn để gửi email
-                smtp.EnableSsl = true;  //là 1 chứng chỉ bảo mật 
-                                        //smtp.Port = 25; //cổng nhận gmail
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //thông qua mạng
-                smtp.Credentials = new NetworkCredential(from, pass); //hỗ trợ đăng nhập cho bạn
-                smtp.Send(message);
-                MessageBox.Show("Code send successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
         private void button_verifycode_Click(object sender, EventArgs e)
         {
+            if (textBox_zipcode.Text == "ePlease enter code")
+            {
+                MessageBox.Show("Please provide your zip code!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (randomCode == (textBox_zipcode.Text).ToString())
             {
                 to = textBox_email.Text;
@@ -92,7 +104,7 @@ namespace Vehicle_license_plate_recognition
             }
             else
             {
-                MessageBox.Show("Wrong Code!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed code!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,6 +142,12 @@ namespace Vehicle_license_plate_recognition
                 textBox_zipcode.Text = "Please enter code";
                 textBox_zipcode.ForeColor = Color.Gray;
             }
+        }
+
+        private void textBox_email_Click(object sender, EventArgs e)
+        {
+            label_syntax.Visible = false;
+
         }
     }
 }

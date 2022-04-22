@@ -69,7 +69,7 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
-                if (q.isOfficeStaff == true)
+                if (q.isOfficeStaff == true && q != null)
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
                     FormMenu menuForm = new FormMenu();
@@ -77,12 +77,20 @@ namespace Vehicle_license_plate_recognition
                     menuForm.ShowDialog();
                     this.Visible = true; //mở lại
                 }
-                if (q.isStaff == true)
+                if (q.isStaff == true && q != null)
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
                     FormStaff staffForm = new FormStaff();
                     this.Visible = false; //ẩn thôi chứ khum tắt
                     staffForm.ShowDialog();
+                    this.Visible = true; //mở lại
+                }
+                if (q.isManage == true && q != null)
+                {
+                    //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
+                    FormManager managerForm = new FormManager();
+                    this.Visible = false; //ẩn thôi chứ khum tắt
+                    managerForm.ShowDialog();
                     this.Visible = true; //mở lại
                 }
 
