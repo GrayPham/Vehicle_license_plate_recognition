@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle_license_plate_recognition", "Vehicle_license_plate_recognition\Vehicle_license_plate_recognition.csproj", "{7CB1C3B6-FE6A-4A1F-A2F0-916519E1F770}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tesst", "tesst\tesst.csproj", "{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,26 @@ Global
 		{7CB1C3B6-FE6A-4A1F-A2F0-916519E1F770}.Release|x64.Build.0 = Release|Any CPU
 		{7CB1C3B6-FE6A-4A1F-A2F0-916519E1F770}.Release|x86.ActiveCfg = Release|Any CPU
 		{7CB1C3B6-FE6A-4A1F-A2F0-916519E1F770}.Release|x86.Build.0 = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|x64.Build.0 = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Debug|x86.Build.0 = Debug|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|ARM.Build.0 = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|ARM64.Build.0 = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|x64.ActiveCfg = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|x64.Build.0 = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|x86.ActiveCfg = Release|Any CPU
+		{7CDE540D-5621-42B0-A19A-90DA2AC88E7C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
