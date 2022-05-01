@@ -17,8 +17,8 @@ namespace Vehicle_license_plate_recognition.Model
         public TypeVehicle()
         {
             this.Capacities = new HashSet<Capacity>();
+            this.NguoiGuis = new HashSet<NguoiGui>();
             this.ThanhToans = new HashSet<ThanhToan>();
-            this.VehicleParks = new HashSet<VehiclePark>();
         }
     
         public int IdVehicle { get; set; }
@@ -26,7 +26,7 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<float> UnitPrice { get; set; }
     
         public virtual ICollection<Capacity> Capacities { get; set; }
+        public virtual ICollection<NguoiGui> NguoiGuis { get; set; }
         public virtual ICollection<ThanhToan> ThanhToans { get; set; }
-        public virtual ICollection<VehiclePark> VehicleParks { get; set; }
     }
 }

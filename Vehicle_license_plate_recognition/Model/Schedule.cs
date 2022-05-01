@@ -14,11 +14,6 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class Schedule
     {
-        public Schedule()
-        {
-            this.NVs = new HashSet<NV>();
-        }
-    
         public int Id { get; set; }
         public Nullable<int> MaxEmployees { get; set; }
         public Nullable<int> NumberOfShift { get; set; }
@@ -27,6 +22,5 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<int> OneShiftTime { get; set; }
     
         public virtual Assignment Assignment { get; set; }
-        public virtual ICollection<NV> NVs { get; set; }
     }
 }

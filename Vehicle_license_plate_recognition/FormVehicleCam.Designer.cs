@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Park = new System.Windows.Forms.ComboBox();
+            this.lbLoaiHinh = new System.Windows.Forms.Label();
             this.button_done = new System.Windows.Forms.Button();
             this.pictureBox_recognize = new System.Windows.Forms.PictureBox();
             this.btn_charge = new System.Windows.Forms.Button();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox_Park);
+            this.groupBox1.Controls.Add(this.lbLoaiHinh);
             this.groupBox1.Controls.Add(this.button_done);
             this.groupBox1.Controls.Add(this.pictureBox_recognize);
             this.groupBox1.Controls.Add(this.btn_charge);
@@ -88,6 +92,23 @@
             this.groupBox1.Size = new System.Drawing.Size(1578, 845);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBox_Park
+            // 
+            this.comboBox_Park.FormattingEnabled = true;
+            this.comboBox_Park.Location = new System.Drawing.Point(1100, 467);
+            this.comboBox_Park.Name = "comboBox_Park";
+            this.comboBox_Park.Size = new System.Drawing.Size(421, 24);
+            this.comboBox_Park.TabIndex = 38;
+            // 
+            // lbLoaiHinh
+            // 
+            this.lbLoaiHinh.AutoSize = true;
+            this.lbLoaiHinh.Location = new System.Drawing.Point(1225, 448);
+            this.lbLoaiHinh.Name = "lbLoaiHinh";
+            this.lbLoaiHinh.Size = new System.Drawing.Size(45, 16);
+            this.lbLoaiHinh.TabIndex = 37;
+            this.lbLoaiHinh.Text = "Check";
             // 
             // button_done
             // 
@@ -165,7 +186,7 @@
             this.panel2.Controls.Add(this.radioButton_bicycle);
             this.panel2.Controls.Add(this.radioButton_motorbike);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel2.Location = new System.Drawing.Point(1099, 409);
+            this.panel2.Location = new System.Drawing.Point(1100, 377);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(353, 57);
             this.panel2.TabIndex = 34;
@@ -173,6 +194,7 @@
             // radioButton_car
             // 
             this.radioButton_car.AutoSize = true;
+            this.radioButton_car.Checked = true;
             this.radioButton_car.Location = new System.Drawing.Point(248, 13);
             this.radioButton_car.Name = "radioButton_car";
             this.radioButton_car.Size = new System.Drawing.Size(60, 24);
@@ -180,6 +202,7 @@
             this.radioButton_car.TabStop = true;
             this.radioButton_car.Text = "Car";
             this.radioButton_car.UseVisualStyleBackColor = true;
+            this.radioButton_car.CheckedChanged += new System.EventHandler(this.radioButton_car_CheckedChanged);
             // 
             // radioButton_bicycle
             // 
@@ -188,9 +211,9 @@
             this.radioButton_bicycle.Name = "radioButton_bicycle";
             this.radioButton_bicycle.Size = new System.Drawing.Size(92, 24);
             this.radioButton_bicycle.TabIndex = 18;
-            this.radioButton_bicycle.TabStop = true;
             this.radioButton_bicycle.Text = "Bicycle";
             this.radioButton_bicycle.UseVisualStyleBackColor = true;
+            this.radioButton_bicycle.CheckedChanged += new System.EventHandler(this.radioButton_bicycle_CheckedChanged);
             // 
             // radioButton_motorbike
             // 
@@ -199,16 +222,16 @@
             this.radioButton_motorbike.Name = "radioButton_motorbike";
             this.radioButton_motorbike.Size = new System.Drawing.Size(112, 24);
             this.radioButton_motorbike.TabIndex = 17;
-            this.radioButton_motorbike.TabStop = true;
             this.radioButton_motorbike.Text = "Motorbike";
             this.radioButton_motorbike.UseVisualStyleBackColor = true;
+            this.radioButton_motorbike.CheckedChanged += new System.EventHandler(this.radioButton_motorbike_CheckedChanged);
             // 
             // label_vehicleclassification
             // 
             this.label_vehicleclassification.AutoSize = true;
             this.label_vehicleclassification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label_vehicleclassification.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label_vehicleclassification.Location = new System.Drawing.Point(1095, 377);
+            this.label_vehicleclassification.Location = new System.Drawing.Point(1096, 345);
             this.label_vehicleclassification.Name = "label_vehicleclassification";
             this.label_vehicleclassification.Size = new System.Drawing.Size(192, 20);
             this.label_vehicleclassification.TabIndex = 33;
@@ -267,7 +290,7 @@
             this.btn_parking.TabIndex = 28;
             this.btn_parking.Text = "Parking";
             this.btn_parking.UseVisualStyleBackColor = false;
-            this.btn_parking.Click += new System.EventHandler(this.btn_Save_Click);
+            this.btn_parking.Click += new System.EventHandler(this.btn_parking_Click);
             // 
             // comboBox1
             // 
@@ -337,5 +360,7 @@
         private System.Windows.Forms.PictureBox pictureBox_recognize;
         private System.Windows.Forms.Button button_done;
         public System.Windows.Forms.PictureBox pictureBox_camera;
+        private System.Windows.Forms.Label lbLoaiHinh;
+        private System.Windows.Forms.ComboBox comboBox_Park;
     }
 }

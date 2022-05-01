@@ -14,16 +14,10 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class PlacePark
     {
-        public PlacePark()
-        {
-            this.VehicleParks = new HashSet<VehiclePark>();
-        }
-    
         public string Id { get; set; }
-        public Nullable<int> IdPark { get; set; }
+        public string IdPark { get; set; }
         public Nullable<bool> Status { get; set; }
     
         public virtual Parking Parking { get; set; }
-        public virtual ICollection<VehiclePark> VehicleParks { get; set; }
     }
 }

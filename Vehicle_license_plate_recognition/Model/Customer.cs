@@ -14,12 +14,17 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class Customer
     {
+        public Customer()
+        {
+            this.Contracts = new HashSet<Contract>();
+        }
+    
         public int Id { get; set; }
         public string FullName { get; set; }
         public string Phone { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
-        public Nullable<int> IdContract { get; set; }
+        public string Email { get; set; }
     
-        public virtual Contract Contract { get; set; }
+        public virtual ICollection<Contract> Contracts { get; set; }
     }
 }

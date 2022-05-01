@@ -12,16 +12,15 @@ namespace Vehicle_license_plate_recognition.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeofOperation
+    public partial class ScheduleEmploy
     {
-        public TypeofOperation()
+        public ScheduleEmploy()
         {
-            this.Operations = new HashSet<Operation>();
+            this.NVs = new HashSet<NV>();
         }
     
-        public int ProcessID { get; set; }
-        public string ProcessName { get; set; }
+        public int IdSchedule { get; set; }
     
-        public virtual ICollection<Operation> Operations { get; set; }
+        public virtual ICollection<NV> NVs { get; set; }
     }
 }
