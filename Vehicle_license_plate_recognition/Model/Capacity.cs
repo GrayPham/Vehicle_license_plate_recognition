@@ -14,18 +14,14 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class Capacity
     {
-        public Capacity()
-        {
-            this.Parkings = new HashSet<Parking>();
-        }
-    
         public int Id { get; set; }
         public Nullable<int> IdVehicle { get; set; }
         public Nullable<int> MaxCapacity { get; set; }
         public Nullable<int> MinCapacity { get; set; }
         public Nullable<int> CurrentCapacity { get; set; }
+        public string IdPark { get; set; }
     
+        public virtual Parking Parking { get; set; }
         public virtual TypeVehicle TypeVehicle { get; set; }
-        public virtual ICollection<Parking> Parkings { get; set; }
     }
 }

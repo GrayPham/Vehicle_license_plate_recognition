@@ -17,14 +17,17 @@ namespace Vehicle_license_plate_recognition.Model
         public NV()
         {
             this.Contracts = new HashSet<Contract>();
-            this.Operations = new HashSet<Operation>();
             this.Logins = new HashSet<Login>();
             this.ThanhToans = new HashSet<ThanhToan>();
         }
     
         public int IdStaff { get; set; }
+        public string Account { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
         public string HoVaTenNV { get; set; }
         public Nullable<System.DateTime> NgayAdd { get; set; }
+        public string Phone { get; set; }
         public Nullable<System.DateTime> LastUpdate { get; set; }
         public Nullable<bool> LayOff { get; set; }
         public Nullable<System.DateTime> LayOffDate { get; set; }
@@ -32,16 +35,12 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<int> IdSchedule { get; set; }
         public Nullable<bool> isManage { get; set; }
         public Nullable<bool> isOfficeStaff { get; set; }
-        public string Account { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
         public Nullable<bool> isStaff { get; set; }
+        public string ImagePath { get; set; }
     
         public virtual ICollection<Contract> Contracts { get; set; }
-        public virtual Schedule Schedule { get; set; }
-        public virtual ICollection<Operation> Operations { get; set; }
         public virtual ICollection<Login> Logins { get; set; }
+        public virtual ScheduleEmploy ScheduleEmploy { get; set; }
         public virtual ICollection<ThanhToan> ThanhToans { get; set; }
     }
 }

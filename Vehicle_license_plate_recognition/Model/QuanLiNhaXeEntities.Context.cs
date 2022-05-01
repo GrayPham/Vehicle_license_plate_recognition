@@ -32,18 +32,16 @@ namespace Vehicle_license_plate_recognition.Model
         public DbSet<Capacity> Capacities { get; set; }
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Login> Logins { get; set; }
         public DbSet<NguoiGui> NguoiGuis { get; set; }
         public DbSet<NV> NVs { get; set; }
-        public DbSet<Operation> Operations { get; set; }
         public DbSet<Parking> Parkings { get; set; }
         public DbSet<PlacePark> PlaceParks { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<ScheduleEmploy> ScheduleEmploys { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<ThanhToan> ThanhToans { get; set; }
-        public DbSet<TypeofOperation> TypeofOperations { get; set; }
         public DbSet<TypeVehicle> TypeVehicles { get; set; }
-        public DbSet<VehiclePark> VehicleParks { get; set; }
-        public DbSet<Login> Logins { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

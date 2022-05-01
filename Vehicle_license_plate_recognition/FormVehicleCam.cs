@@ -12,16 +12,18 @@ using System.Windows.Forms;
 //Add thư viện để kết nối với camera
 using AForge.Video;
 using AForge.Video.DirectShow;
-using Vehicle_license_plate_recognition.Controller;
+using Vehicle_license_plate_recognition.Controller.Staff;
 
 namespace Vehicle_license_plate_recognition
 {
+    
     public partial class FormVehicleCam : Form
     {
         //tạo 2 biến xem hiện tại có bao nhiêu camera kết nối với máy tính của ta
         private FilterInfoCollection cam;
         //camera cụ thể ta chọn để chup
         private VideoCaptureDevice video;
+        GuiXeORThanhToan nv = new GuiXeORThanhToan();
         public FormVehicleCam()
         {
             InitializeComponent();
@@ -115,17 +117,39 @@ namespace Vehicle_license_plate_recognition
                 btn_Check.Enabled = false;
             }
 
+
+            fillCombo();
+            //comboBox_Park.SelectedValue = "Id";
         }
+        public void fillCombo(int index = 0)
+        {
+            int TypeVehicle =loaixe();
+            comboBox_Park.DisplayMember = "Name";
+            comboBox_Park.ValueMember = "Id";
+            comboBox_Park.DataSource = nv.GetAllParkActive(TypeVehicle);
 
-
+            comboBox1.SelectedIndex = index;
+        }
+        private int loaixe()
+        {
+            int loaixe;
+            if (radioButton_car.Checked)
+            {
+                loaixe = 3;
+            }
+            else if (radioButton_motorbike.Checked)
+            {
+                loaixe = 2;
+            }
+            else
+            {
+                loaixe = 1;
+            }
+            return loaixe; 
+        }
         private void button_done_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
         private void btn_Check_Click(object sender, EventArgs e)
@@ -140,6 +164,24 @@ namespace Vehicle_license_plate_recognition
                 String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
                 String retStr = sendPOST(server_path, B64);
                 richTextBox_licenseplates.Text = retStr;
+                if (retStr.Count() <15)
+                {
+                    if (nv.isParked(retStr) == true)
+                    {
+                        lbLoaiHinh.Text = "Tinh Tien";
+                        btn_parking.Enabled = false;
+                    }
+                    else
+                    {
+                        lbLoaiHinh.Text = "Gui Xe";
+                        btn_charge.Enabled = false;
+                    }
+                }
+                else
+                {
+                    lbLoaiHinh.Text = "Anh Khong nhan dien duoc";
+                }    
+
             }
             catch (Exception ex)
             {
@@ -239,6 +281,38 @@ namespace Vehicle_license_plate_recognition
             catch (Exception ex)
             {
                 return "Exception" + ex.ToString();
+            }
+        }
+
+        private void btn_parking_Click(object sender, EventArgs e)
+        {
+            if (radioButton_car.Checked)
+            {
+
+            }
+        }
+
+        private void radioButton_motorbike_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_motorbike.Checked)
+            {
+                fillCombo();
+            }
+        }
+
+        private void radioButton_bicycle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_bicycle.Checked)
+            {
+                fillCombo();
+            }
+        }
+
+        private void radioButton_car_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_car.Checked)
+            {
+                fillCombo();
             }
         }
     }

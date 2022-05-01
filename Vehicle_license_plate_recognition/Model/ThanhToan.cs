@@ -18,8 +18,10 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> IdTVehicle { get; set; }
         public Nullable<int> IdStaff { get; set; }
-        public Nullable<int> IdNguoiGui { get; set; }
+        public string LicensePlates { get; set; }
     
+        public virtual NguoiGui NguoiGui { get; set; }
+        public virtual NV NV { get; set; }
         public virtual TypeVehicle TypeVehicle { get; set; }
     }
 }
