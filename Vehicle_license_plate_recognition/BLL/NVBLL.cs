@@ -24,9 +24,14 @@ namespace Vehicle_license_plate_recognition.BLL
             return liPlates;
         }
 
-        internal List<Parking> GetAllParkActive()
+        internal List<Parking> GetAllParkActive(int TypeVehicle)
         {
-            List<Parking> parkActive = new List<Parking>(); 
+            List<Parking> parkActive = (from park in db.Parkings
+                                        join capa in db.Capacities on park.Id equals capa.IdPark
+                                        where capa.MaxCapacity > capa.CurrentCapacity
+                                        && capa.IdVehicle == TypeVehicle
+                                        select park).ToList<Parking>();
+ 
             return parkActive;
         }
     }

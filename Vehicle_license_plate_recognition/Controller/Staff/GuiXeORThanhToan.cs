@@ -29,10 +29,10 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
         {
             return true;
         }
-        public bool GetAllParkActive()
+        public List<Parking> GetAllParkActive(int TypeVehicle)
         {
-            List<Parking> getPark = nvbll.GetAllParkActive();
-            return true;
+            List<Parking> getPark = nvbll.GetAllParkActive(TypeVehicle);
+            return getPark;
         }
 
     }

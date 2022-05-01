@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Park = new System.Windows.Forms.ComboBox();
+            this.lbLoaiHinh = new System.Windows.Forms.Label();
             this.button_done = new System.Windows.Forms.Button();
             this.pictureBox_recognize = new System.Windows.Forms.PictureBox();
             this.btn_charge = new System.Windows.Forms.Button();
@@ -50,8 +52,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.lbLoaiHinh = new System.Windows.Forms.Label();
-            this.comboBox_Park = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
@@ -92,6 +92,23 @@
             this.groupBox1.Size = new System.Drawing.Size(1578, 845);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBox_Park
+            // 
+            this.comboBox_Park.FormattingEnabled = true;
+            this.comboBox_Park.Location = new System.Drawing.Point(1100, 467);
+            this.comboBox_Park.Name = "comboBox_Park";
+            this.comboBox_Park.Size = new System.Drawing.Size(421, 24);
+            this.comboBox_Park.TabIndex = 38;
+            // 
+            // lbLoaiHinh
+            // 
+            this.lbLoaiHinh.AutoSize = true;
+            this.lbLoaiHinh.Location = new System.Drawing.Point(1225, 448);
+            this.lbLoaiHinh.Name = "lbLoaiHinh";
+            this.lbLoaiHinh.Size = new System.Drawing.Size(45, 16);
+            this.lbLoaiHinh.TabIndex = 37;
+            this.lbLoaiHinh.Text = "Check";
             // 
             // button_done
             // 
@@ -177,6 +194,7 @@
             // radioButton_car
             // 
             this.radioButton_car.AutoSize = true;
+            this.radioButton_car.Checked = true;
             this.radioButton_car.Location = new System.Drawing.Point(248, 13);
             this.radioButton_car.Name = "radioButton_car";
             this.radioButton_car.Size = new System.Drawing.Size(60, 24);
@@ -184,6 +202,7 @@
             this.radioButton_car.TabStop = true;
             this.radioButton_car.Text = "Car";
             this.radioButton_car.UseVisualStyleBackColor = true;
+            this.radioButton_car.CheckedChanged += new System.EventHandler(this.radioButton_car_CheckedChanged);
             // 
             // radioButton_bicycle
             // 
@@ -192,9 +211,9 @@
             this.radioButton_bicycle.Name = "radioButton_bicycle";
             this.radioButton_bicycle.Size = new System.Drawing.Size(92, 24);
             this.radioButton_bicycle.TabIndex = 18;
-            this.radioButton_bicycle.TabStop = true;
             this.radioButton_bicycle.Text = "Bicycle";
             this.radioButton_bicycle.UseVisualStyleBackColor = true;
+            this.radioButton_bicycle.CheckedChanged += new System.EventHandler(this.radioButton_bicycle_CheckedChanged);
             // 
             // radioButton_motorbike
             // 
@@ -203,9 +222,9 @@
             this.radioButton_motorbike.Name = "radioButton_motorbike";
             this.radioButton_motorbike.Size = new System.Drawing.Size(112, 24);
             this.radioButton_motorbike.TabIndex = 17;
-            this.radioButton_motorbike.TabStop = true;
             this.radioButton_motorbike.Text = "Motorbike";
             this.radioButton_motorbike.UseVisualStyleBackColor = true;
+            this.radioButton_motorbike.CheckedChanged += new System.EventHandler(this.radioButton_motorbike_CheckedChanged);
             // 
             // label_vehicleclassification
             // 
@@ -297,23 +316,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "Jpeg image|*.jpeg|Png image|*.png|Gif image|*.gif";
-            // 
-            // lbLoaiHinh
-            // 
-            this.lbLoaiHinh.AutoSize = true;
-            this.lbLoaiHinh.Location = new System.Drawing.Point(1225, 448);
-            this.lbLoaiHinh.Name = "lbLoaiHinh";
-            this.lbLoaiHinh.Size = new System.Drawing.Size(45, 16);
-            this.lbLoaiHinh.TabIndex = 37;
-            this.lbLoaiHinh.Text = "Check";
-            // 
-            // comboBox_Park
-            // 
-            this.comboBox_Park.FormattingEnabled = true;
-            this.comboBox_Park.Location = new System.Drawing.Point(1100, 467);
-            this.comboBox_Park.Name = "comboBox_Park";
-            this.comboBox_Park.Size = new System.Drawing.Size(421, 24);
-            this.comboBox_Park.TabIndex = 38;
             // 
             // FormVehicleCam
             // 

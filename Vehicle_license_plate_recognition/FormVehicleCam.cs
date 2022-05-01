@@ -23,6 +23,7 @@ namespace Vehicle_license_plate_recognition
         private FilterInfoCollection cam;
         //camera cụ thể ta chọn để chup
         private VideoCaptureDevice video;
+        GuiXeORThanhToan nv = new GuiXeORThanhToan();
         public FormVehicleCam()
         {
             InitializeComponent();
@@ -115,18 +116,45 @@ namespace Vehicle_license_plate_recognition
                 btn_charge.Enabled = false;
                 btn_Check.Enabled = false;
             }
-            comboBox_Park.Enabled = false; // load nha xe
+
+
+            fillCombo();
+            //comboBox_Park.SelectedValue = "Id";
         }
+        public void fillCombo(int index = 0)
+        {
+            int TypeVehicle =loaixe();
+            comboBox_Park.DisplayMember = "Name";
+            comboBox_Park.ValueMember = "Id";
+            comboBox_Park.DataSource = nv.GetAllParkActive(TypeVehicle);
 
-
+            comboBox1.SelectedIndex = index;
+        }
+        private int loaixe()
+        {
+            int loaixe;
+            if (radioButton_car.Checked)
+            {
+                loaixe = 3;
+            }
+            else if (radioButton_motorbike.Checked)
+            {
+                loaixe = 2;
+            }
+            else
+            {
+                loaixe = 1;
+            }
+            return loaixe; 
+        }
         private void button_done_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btn_Check_Click(object sender, EventArgs e)
         {
-            GuiXeORThanhToan nv = new GuiXeORThanhToan();
+            
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.43.202";
             String server_path = "http://" + server_ip + ":8000/detect";
@@ -261,6 +289,30 @@ namespace Vehicle_license_plate_recognition
             if (radioButton_car.Checked)
             {
 
+            }
+        }
+
+        private void radioButton_motorbike_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_motorbike.Checked)
+            {
+                fillCombo();
+            }
+        }
+
+        private void radioButton_bicycle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_bicycle.Checked)
+            {
+                fillCombo();
+            }
+        }
+
+        private void radioButton_car_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_car.Checked)
+            {
+                fillCombo();
             }
         }
     }
