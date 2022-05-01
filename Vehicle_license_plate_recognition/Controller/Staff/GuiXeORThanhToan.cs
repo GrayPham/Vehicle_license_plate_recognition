@@ -53,5 +53,58 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             
             return true;
         }
+
+        internal double CalculateParking(string LicensePlate, int typeVehicle, int idStaff, DateTime returnTime)
+        {
+            double price = nvbll.GetPriceofVehicle(typeVehicle);
+            DateTime DeliveryTime = nvbll.GetDeleveryTime(LicensePlate);
+            double priceAVehicle = PriceAVehicle(DeliveryTime, returnTime, price);
+            return priceAVehicle;
+        }
+        private double PriceAVehicle(DateTime DeliveryTime, DateTime ReturnTime, double UnitPrice)
+        {
+            double price = 0;
+            double ADayPrice= 8 *UnitPrice;
+            double AWeekPrice = 3 * ADayPrice;
+            double AMouthPrice = 2 * AWeekPrice;
+
+            int NumDayOfMouth = 30;
+            int NumDayOfWeek = 7;
+            //int NumHoursOfDay = 24;
+            if (ReturnTime >= DeliveryTime)
+            {
+                DateTime TimeTemp = ReturnTime;
+                ReturnTime = DeliveryTime;
+                DeliveryTime = TimeTemp;
+            }
+            TimeSpan interval = ReturnTime.Subtract(DeliveryTime);
+            int NumDate = interval.Days;
+            int NumHoure = interval.Hours;
+            if (NumDate >= NumDayOfMouth)
+            {
+                int NumOfMouth = Convert.ToInt32(NumDate / NumDayOfMouth);
+                price = price + NumOfMouth * AMouthPrice;
+                NumDate = NumDate - NumOfMouth* NumDayOfMouth;
+            }
+            if(NumDate >= NumDayOfWeek)
+            {
+                int NumOfWeek = Convert.ToInt32(NumDate / NumDayOfWeek);
+                int NumDayLeft = NumDate - NumOfWeek * NumDayOfWeek;
+                price = price + NumOfWeek * AWeekPrice +NumDayLeft* ADayPrice;
+
+            }
+            
+            if(NumHoure >= 1)
+            {
+                price = price+ NumHoure * UnitPrice;
+            }
+            else
+            {
+                price = price+ UnitPrice;
+            }
+            
+            return price;
+
+        }
     }
 }

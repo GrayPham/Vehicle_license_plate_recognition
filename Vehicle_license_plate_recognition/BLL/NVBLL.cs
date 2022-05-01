@@ -49,5 +49,18 @@ namespace Vehicle_license_plate_recognition.BLL
 
 
         }
+
+        internal DateTime GetDeleveryTime(string licensePlate)
+        {
+            List<NguoiGui> first = db.NguoiGuis.Where(user => user.LicensePlates == licensePlate).ToList<NguoiGui>();
+            DateTime deleveryTime = (DateTime)first[0].DeliveryTime;
+            return deleveryTime;
+        }
+
+        internal double GetPriceofVehicle(int typeVehicle)
+        {
+            var vehicle = db.TypeVehicles.Where(vehi => vehi.IdVehicle == typeVehicle).FirstOrDefault();
+            return (double)vehicle.UnitPrice;
+        }
     }
 }

@@ -130,7 +130,7 @@ namespace Vehicle_license_plate_recognition
         {
             int TypeVehicle =loaixe();
             comboBox_Park.DisplayMember = "Name";
-            comboBox_Park.ValueMember = "Id";
+            comboBox_Park.ValueMember = "Name";
             comboBox_Park.DataSource = nv.GetAllParkActive(TypeVehicle);
 
             comboBox1.SelectedIndex = index;
@@ -163,22 +163,29 @@ namespace Vehicle_license_plate_recognition
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.43.202";
             String server_path = "http://" + server_ip + ":8000/detect";
+            int IdStaff = 322;
+            int TypeVehicle = loaixe();
             try
             {
                 // Convert image to B64
-                String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
-                String retStr = sendPOST(server_path, B64);
-                richTextBox_licenseplates.Text = retStr;
+                //String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
+                //String retStr = sendPOST(server_path, B64);
+                //richTextBox_licenseplates.Text = retStr;
+                String retStr = "123";
                 if (retStr.Count() <15)
                 {
                     if (nv.isParked(retStr) == true)
                     {
-                        lbLoaiHinh.Text = "Tinh Tien";
+                        
                         btn_parking.Enabled = false;
+                        DateTime ReturnTime = DateTime.Now;
+                        double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
+                        lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr + Price;
+
                     }
                     else
                     {
-                        lbLoaiHinh.Text = "Gui Xe";
+                        lbLoaiHinh.Text = "Gui Xe Bien So: " + retStr ;
                         btn_charge.Enabled = false;
                     }
                 }
@@ -201,7 +208,7 @@ namespace Vehicle_license_plate_recognition
 
         private void btn_charge_Click(object sender, EventArgs e)
         {
-           
+            
         }
         public string sendGet(string uri)
         {
@@ -285,7 +292,7 @@ namespace Vehicle_license_plate_recognition
                 return "Exception" + ex.ToString();
             }
         }
-
+        // Thiếu cung cấp chỗ đỗ xe cho xe
         private void btn_parking_Click(object sender, EventArgs e)
         {
 
