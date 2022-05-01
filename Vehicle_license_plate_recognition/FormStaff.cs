@@ -42,5 +42,12 @@ namespace Vehicle_license_plate_recognition
             //}
         }
 
+        private void button_timekeeping_Click(object sender, EventArgs e)
+        {
+            FormFaceRecognition formFaceRecognition = new FormFaceRecognition();
+            this.Visible=false;
+            formFaceRecognition.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

@@ -43,7 +43,7 @@
             this.button_timekeeping.TabIndex = 8;
             this.button_timekeeping.Text = "Timekeeping";
             this.button_timekeeping.UseVisualStyleBackColor = true;
-            this.button_timekeeping.Click += new System.EventHandler(this.FormStaff_Load);
+            this.button_timekeeping.Click += new System.EventHandler(this.button_timekeeping_Click);
             // 
             // button_working
             // 
