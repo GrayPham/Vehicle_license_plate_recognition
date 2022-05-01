@@ -239,7 +239,6 @@
             // 
             // richTextBox_licenseplates
             // 
-            this.richTextBox_licenseplates.Enabled = false;
             this.richTextBox_licenseplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_licenseplates.Location = new System.Drawing.Point(1099, 58);
             this.richTextBox_licenseplates.Name = "richTextBox_licenseplates";

@@ -117,7 +117,7 @@ namespace Vehicle_license_plate_recognition
             //TopMost = true;
             if (pictureBox_camera.Image == null)
             {
-                btn_parking.Enabled = false;
+                btn_parking.Enabled = true;
                 btn_charge.Enabled = false;
                 btn_Check.Enabled = false;
             }
@@ -197,10 +197,7 @@ namespace Vehicle_license_plate_recognition
             
         }
 
-        private void btn_contract_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btn_charge_Click(object sender, EventArgs e)
         {
@@ -291,14 +288,24 @@ namespace Vehicle_license_plate_recognition
 
         private void btn_parking_Click(object sender, EventArgs e)
         {
+
             int TypeVehicle = loaixe();
             DateTime DeliveryTime = dateTimePicker2.Value;
             string LicensePlates = richTextBox_licenseplates.Text;
-            
-            //if (nv.PostSentCar(DeliveryTime, LicensePlates, PlaceID, TypeVehicle, ImagePath) == true)
-            //{
+            Image image = pictureBox_recognize.Image;
+            string IdPark = comboBox_Park.SelectedValue.ToString();
+            if (nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image) == true)
+            {
+                richTextBox_licenseplates.Text = "";
+                pictureBox_recognize.Image = null;
+            }
+            else
+            {
+                MessageBox.Show("Loi Post Car");
+            }
 
-            //}
+            
+            
 
         }
 

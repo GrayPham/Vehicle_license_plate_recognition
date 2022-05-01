@@ -27,12 +27,27 @@ namespace Vehicle_license_plate_recognition.BLL
         internal List<Parking> GetAllParkActive(int TypeVehicle)
         {
             List<Parking> parkActive = (from park in db.Parkings
-                                        join capa in db.Capacities on park.Id equals capa.IdPark
+                                        join capa in db.Capacities on park.Name equals capa.IdPark
                                         where capa.MaxCapacity > capa.CurrentCapacity
-                                        && capa.IdVehicle == TypeVehicle
+                                        && capa.IdVehicleType == TypeVehicle
+                                        && park.isDelete ==false
                                         select park).ToList<Parking>();
  
             return parkActive;
+        }
+
+        public void PostSentCar(DateTime deliveryTime, string licensePlates, string idPark, int typeVehicle, string path)
+        {
+            NguoiGui nguoiGui = new NguoiGui();
+            nguoiGui.IdVehicleType = typeVehicle;
+            nguoiGui.DeliveryTime = deliveryTime;
+            nguoiGui.LicensePlates = licensePlates;
+            nguoiGui.ImagePath = path;
+            nguoiGui.IdPlacePark = idPark;
+            db.NguoiGuis.Add(nguoiGui);
+            db.SaveChanges();
+
+
         }
     }
 }

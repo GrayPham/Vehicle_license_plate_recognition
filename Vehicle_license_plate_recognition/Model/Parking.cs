@@ -21,7 +21,6 @@ namespace Vehicle_license_plate_recognition.Model
             this.PlaceParks = new HashSet<PlacePark>();
         }
     
-        public string Id { get; set; }
         public string Name { get; set; }
         public Nullable<bool> isDelete { get; set; }
         public Nullable<System.DateTime> DeleteDate { get; set; }

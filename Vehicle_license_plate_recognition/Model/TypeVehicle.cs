@@ -18,6 +18,7 @@ namespace Vehicle_license_plate_recognition.Model
         {
             this.Capacities = new HashSet<Capacity>();
             this.NguoiGuis = new HashSet<NguoiGui>();
+            this.PlaceParks = new HashSet<PlacePark>();
             this.ThanhToans = new HashSet<ThanhToan>();
         }
     
@@ -27,6 +28,7 @@ namespace Vehicle_license_plate_recognition.Model
     
         public virtual ICollection<Capacity> Capacities { get; set; }
         public virtual ICollection<NguoiGui> NguoiGuis { get; set; }
+        public virtual ICollection<PlacePark> PlaceParks { get; set; }
         public virtual ICollection<ThanhToan> ThanhToans { get; set; }
     }
 }

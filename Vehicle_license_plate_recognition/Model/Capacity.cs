@@ -14,8 +14,7 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class Capacity
     {
-        public int Id { get; set; }
-        public Nullable<int> IdVehicle { get; set; }
+        public int IdVehicleType { get; set; }
         public Nullable<int> MaxCapacity { get; set; }
         public Nullable<int> MinCapacity { get; set; }
         public Nullable<int> CurrentCapacity { get; set; }

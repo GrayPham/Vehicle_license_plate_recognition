@@ -15,10 +15,11 @@ namespace Vehicle_license_plate_recognition.Model
     public partial class PlacePark
     {
         public string Id { get; set; }
+        public Nullable<int> IdVehicleType { get; set; }
         public string IdPark { get; set; }
         public Nullable<bool> Status { get; set; }
-        public string IdCap { get; set; }
     
         public virtual Parking Parking { get; set; }
+        public virtual TypeVehicle TypeVehicle { get; set; }
     }
 }

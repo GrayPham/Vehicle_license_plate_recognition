@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Assignment">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,14 +14,14 @@
         </EntityType>
         <EntityType Name="Capacity">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdVehicleType" />
+            <PropertyRef Name="IdPark" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="IdVehicle" Type="int" />
+          <Property Name="IdVehicleType" Type="int" Nullable="false" />
           <Property Name="MaxCapacity" Type="int" />
           <Property Name="MinCapacity" Type="int" />
           <Property Name="CurrentCapacity" Type="int" />
-          <Property Name="IdPark" Type="nchar" MaxLength="10" />
+          <Property Name="IdPark" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
@@ -67,7 +67,7 @@
           <Property Name="LicensePlates" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="PlaceID" Type="nchar" MaxLength="10" />
           <Property Name="IdVehicleType" Type="int" />
-          <Property Name="IdPlacePark" Type="nchar" MaxLength="10" />
+          <Property Name="IdPlacePark" Type="nvarchar" MaxLength="50" />
           <Property Name="ImagePath" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="NV">
@@ -93,10 +93,9 @@
         </EntityType>
         <EntityType Name="Parking">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
           </Key>
-          <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="isDelete" Type="bit" />
           <Property Name="DeleteDate" Type="datetime" />
         </EntityType>
@@ -105,8 +104,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="IdCap" Type="nchar" MaxLength="10" />
-          <Property Name="IdPark" Type="nchar" MaxLength="10" />
+          <Property Name="IdVehicleType" Type="int" />
+          <Property Name="IdPark" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Schedule">
@@ -154,12 +153,12 @@
           <Property Name="NameVehicle" Type="nvarchar" MaxLength="50" />
           <Property Name="UnitPrice" Type="real" />
         </EntityType>
-        <Association Name="FK_Capacity_Parking">
-          <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
+        <Association Name="FK_Capacity_Parking1">
+          <End Role="Parking" Type="Self.Parking" Multiplicity="1" />
           <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parking">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Capacity">
               <PropertyRef Name="IdPark" />
@@ -167,14 +166,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Capacity_TypeVehicle">
-          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="1" />
           <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeVehicle">
               <PropertyRef Name="IdVehicle" />
             </Principal>
             <Dependent Role="Capacity">
-              <PropertyRef Name="IdVehicle" />
+              <PropertyRef Name="IdVehicleType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -219,10 +218,10 @@
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parking">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="NguoiGui">
-              <PropertyRef Name="PlaceID" />
+              <PropertyRef Name="IdPlacePark" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -255,10 +254,22 @@
           <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parking">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="PlacePark">
               <PropertyRef Name="IdPark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlacePark_TypeVehicle">
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeVehicle">
+              <PropertyRef Name="IdVehicle" />
+            </Principal>
+            <Dependent Role="PlacePark">
+              <PropertyRef Name="IdVehicleType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -356,7 +367,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeVehicle" EntityType="Self.TypeVehicle" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Capacity_Parking" Association="Self.FK_Capacity_Parking">
+          <AssociationSet Name="FK_Capacity_Parking1" Association="Self.FK_Capacity_Parking1">
             <End Role="Parking" EntitySet="Parking" />
             <End Role="Capacity" EntitySet="Capacity" />
           </AssociationSet>
@@ -392,6 +403,10 @@
             <End Role="Parking" EntitySet="Parking" />
             <End Role="PlacePark" EntitySet="PlacePark" />
           </AssociationSet>
+          <AssociationSet Name="FK_PlacePark_TypeVehicle" Association="Self.FK_PlacePark_TypeVehicle">
+            <End Role="TypeVehicle" EntitySet="TypeVehicle" />
+            <End Role="PlacePark" EntitySet="PlacePark" />
+          </AssociationSet>
           <AssociationSet Name="FK_Schedule_Assignment" Association="Self.FK_Schedule_Assignment">
             <End Role="Assignment" EntitySet="Assignment" />
             <End Role="Schedule" EntitySet="Schedule" />
@@ -409,7 +424,8 @@
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLiNhaXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -423,15 +439,15 @@
         </EntityType>
         <EntityType Name="Capacity">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdVehicleType" />
+            <PropertyRef Name="IdPark" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="IdVehicle" Type="Int32" />
+          <Property Name="IdVehicleType" Type="Int32" Nullable="false" />
           <Property Name="MaxCapacity" Type="Int32" />
           <Property Name="MinCapacity" Type="Int32" />
           <Property Name="CurrentCapacity" Type="Int32" />
-          <Property Name="IdPark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Parking" Relationship="Self.FK_Capacity_Parking" FromRole="Capacity" ToRole="Parking" />
+          <Property Name="IdPark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Parking" Relationship="Self.FK_Capacity_Parking1" FromRole="Capacity" ToRole="Parking" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_Capacity_TypeVehicle" FromRole="Capacity" ToRole="TypeVehicle" />
         </EntityType>
         <EntityType Name="Contract">
@@ -482,11 +498,11 @@
           <Property Name="LicensePlates" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PlaceID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="IdVehicleType" Type="Int32" />
+          <Property Name="IdPlacePark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Parking" Relationship="Self.FK_NguoiGui_Parking" FromRole="NguoiGui" ToRole="Parking" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_NguoiGui_TypeVehicle" FromRole="NguoiGui" ToRole="TypeVehicle" />
           <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_NguoiGui1" FromRole="NguoiGui" ToRole="ThanhToan" />
-          <Property Name="IdPlacePark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
@@ -515,13 +531,12 @@
         </EntityType>
         <EntityType Name="Parking">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="isDelete" Type="Boolean" />
           <Property Name="DeleteDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Capacities" Relationship="Self.FK_Capacity_Parking" FromRole="Parking" ToRole="Capacity" />
+          <NavigationProperty Name="Capacities" Relationship="Self.FK_Capacity_Parking1" FromRole="Parking" ToRole="Capacity" />
           <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_Parking" FromRole="Parking" ToRole="NguoiGui" />
           <NavigationProperty Name="PlaceParks" Relationship="Self.FK_PlacePark_Parking" FromRole="Parking" ToRole="PlacePark" />
         </EntityType>
@@ -530,10 +545,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="IdPark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IdVehicleType" Type="Int32" />
+          <Property Name="IdPark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Parking" Relationship="Self.FK_PlacePark_Parking" FromRole="PlacePark" ToRole="Parking" />
-          <Property Name="IdCap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_PlacePark_TypeVehicle" FromRole="PlacePark" ToRole="TypeVehicle" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
@@ -586,6 +602,7 @@
           <Property Name="UnitPrice" Type="Single" />
           <NavigationProperty Name="Capacities" Relationship="Self.FK_Capacity_TypeVehicle" FromRole="TypeVehicle" ToRole="Capacity" />
           <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_TypeVehicle" FromRole="TypeVehicle" ToRole="NguoiGui" />
+          <NavigationProperty Name="PlaceParks" Relationship="Self.FK_PlacePark_TypeVehicle" FromRole="TypeVehicle" ToRole="PlacePark" />
           <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="TypeVehicle" ToRole="ThanhToan" />
         </EntityType>
         <Association Name="FK_Schedule_Assignment">
@@ -600,12 +617,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Capacity_Parking">
-          <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
+        <Association Name="FK_Capacity_Parking1">
+          <End Role="Parking" Type="Self.Parking" Multiplicity="1" />
           <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parking">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Capacity">
               <PropertyRef Name="IdPark" />
@@ -613,14 +630,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Capacity_TypeVehicle">
-          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="1" />
           <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeVehicle">
               <PropertyRef Name="IdVehicle" />
             </Principal>
             <Dependent Role="Capacity">
-              <PropertyRef Name="IdVehicle" />
+              <PropertyRef Name="IdVehicleType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -665,10 +682,10 @@
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parking">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="NguoiGui">
-              <PropertyRef Name="PlaceID" />
+              <PropertyRef Name="IdPlacePark" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -725,10 +742,22 @@
           <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parking">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="PlacePark">
               <PropertyRef Name="IdPark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlacePark_TypeVehicle">
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeVehicle">
+              <PropertyRef Name="IdVehicle" />
+            </Principal>
+            <Dependent Role="PlacePark">
+              <PropertyRef Name="IdVehicleType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -763,7 +792,7 @@
             <End Role="Assignment" EntitySet="Assignments" />
             <End Role="Schedule" EntitySet="Schedules" />
           </AssociationSet>
-          <AssociationSet Name="FK_Capacity_Parking" Association="Self.FK_Capacity_Parking">
+          <AssociationSet Name="FK_Capacity_Parking1" Association="Self.FK_Capacity_Parking1">
             <End Role="Parking" EntitySet="Parkings" />
             <End Role="Capacity" EntitySet="Capacities" />
           </AssociationSet>
@@ -805,6 +834,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_PlacePark_Parking" Association="Self.FK_PlacePark_Parking">
             <End Role="Parking" EntitySet="Parkings" />
+            <End Role="PlacePark" EntitySet="PlaceParks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlacePark_TypeVehicle" Association="Self.FK_PlacePark_TypeVehicle">
+            <End Role="TypeVehicle" EntitySet="TypeVehicles" />
             <End Role="PlacePark" EntitySet="PlaceParks" />
           </AssociationSet>
           <AssociationSet Name="FK_ThanhToan_TypeVehicle" Association="Self.FK_ThanhToan_TypeVehicle">
@@ -870,8 +903,7 @@
           <EntitySetMapping Name="Capacities">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Capacity">
               <MappingFragment StoreEntitySet="Capacity">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdVehicle" ColumnName="IdVehicle" />
+                <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
                 <ScalarProperty Name="MaxCapacity" ColumnName="MaxCapacity" />
                 <ScalarProperty Name="MinCapacity" ColumnName="MinCapacity" />
                 <ScalarProperty Name="CurrentCapacity" ColumnName="CurrentCapacity" />
@@ -920,12 +952,12 @@
           <EntitySetMapping Name="NguoiGuis">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NguoiGui">
               <MappingFragment StoreEntitySet="NguoiGui">
-                <ScalarProperty Name="IdPlacePark" ColumnName="IdPlacePark" />
                 <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
                 <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
                 <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
                 <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
                 <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
+                <ScalarProperty Name="IdPlacePark" ColumnName="IdPlacePark" />
                 <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -955,7 +987,6 @@
           <EntitySetMapping Name="Parkings">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Parking">
               <MappingFragment StoreEntitySet="Parking">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="isDelete" ColumnName="isDelete" />
                 <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
@@ -965,8 +996,8 @@
           <EntitySetMapping Name="PlaceParks">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.PlacePark">
               <MappingFragment StoreEntitySet="PlacePark">
-                <ScalarProperty Name="IdCap" ColumnName="IdCap" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
                 <ScalarProperty Name="IdPark" ColumnName="IdPark" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
