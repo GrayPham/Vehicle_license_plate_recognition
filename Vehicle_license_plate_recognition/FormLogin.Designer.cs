@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.label_pass = new System.Windows.Forms.Label();
             this.label_register = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label_tieudeLOGINFORM = new System.Windows.Forms.Label();
             this.button_Login = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,20 @@
             this.groupBox1.Size = new System.Drawing.Size(558, 450);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // guna2GradientTileButton1
+            // 
+            this.guna2GradientTileButton1.CheckedState.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.CustomImages.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(87, 385);
+            this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
+            this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(383, 42);
+            this.guna2GradientTileButton1.TabIndex = 25;
+            this.guna2GradientTileButton1.Text = "Bé Như siêu ngốc";
             // 
             // pictureBox_logo
             // 
@@ -168,20 +182,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // guna2GradientTileButton1
-            // 
-            this.guna2GradientTileButton1.CheckedState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.CustomImages.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(87, 247);
-            this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
-            this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Size = new System.Drawing.Size(383, 180);
-            this.guna2GradientTileButton1.TabIndex = 25;
-            this.guna2GradientTileButton1.Text = "Bé Như siêu ngốc";
             // 
             // FormLogin
             // 
