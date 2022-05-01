@@ -50,6 +50,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.lbLoaiHinh = new System.Windows.Forms.Label();
+            this.comboBox_Park = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox_Park);
+            this.groupBox1.Controls.Add(this.lbLoaiHinh);
             this.groupBox1.Controls.Add(this.button_done);
             this.groupBox1.Controls.Add(this.pictureBox_recognize);
             this.groupBox1.Controls.Add(this.btn_charge);
@@ -165,7 +169,7 @@
             this.panel2.Controls.Add(this.radioButton_bicycle);
             this.panel2.Controls.Add(this.radioButton_motorbike);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel2.Location = new System.Drawing.Point(1099, 409);
+            this.panel2.Location = new System.Drawing.Point(1100, 377);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(353, 57);
             this.panel2.TabIndex = 34;
@@ -208,7 +212,7 @@
             this.label_vehicleclassification.AutoSize = true;
             this.label_vehicleclassification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label_vehicleclassification.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label_vehicleclassification.Location = new System.Drawing.Point(1095, 377);
+            this.label_vehicleclassification.Location = new System.Drawing.Point(1096, 345);
             this.label_vehicleclassification.Name = "label_vehicleclassification";
             this.label_vehicleclassification.Size = new System.Drawing.Size(192, 20);
             this.label_vehicleclassification.TabIndex = 33;
@@ -267,7 +271,7 @@
             this.btn_parking.TabIndex = 28;
             this.btn_parking.Text = "Parking";
             this.btn_parking.UseVisualStyleBackColor = false;
-            this.btn_parking.Click += new System.EventHandler(this.btn_Save_Click);
+            this.btn_parking.Click += new System.EventHandler(this.btn_parking_Click);
             // 
             // comboBox1
             // 
@@ -293,6 +297,23 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "Jpeg image|*.jpeg|Png image|*.png|Gif image|*.gif";
+            // 
+            // lbLoaiHinh
+            // 
+            this.lbLoaiHinh.AutoSize = true;
+            this.lbLoaiHinh.Location = new System.Drawing.Point(1225, 448);
+            this.lbLoaiHinh.Name = "lbLoaiHinh";
+            this.lbLoaiHinh.Size = new System.Drawing.Size(45, 16);
+            this.lbLoaiHinh.TabIndex = 37;
+            this.lbLoaiHinh.Text = "Check";
+            // 
+            // comboBox_Park
+            // 
+            this.comboBox_Park.FormattingEnabled = true;
+            this.comboBox_Park.Location = new System.Drawing.Point(1100, 467);
+            this.comboBox_Park.Name = "comboBox_Park";
+            this.comboBox_Park.Size = new System.Drawing.Size(421, 24);
+            this.comboBox_Park.TabIndex = 38;
             // 
             // FormVehicleCam
             // 
@@ -337,5 +358,7 @@
         private System.Windows.Forms.PictureBox pictureBox_recognize;
         private System.Windows.Forms.Button button_done;
         public System.Windows.Forms.PictureBox pictureBox_camera;
+        private System.Windows.Forms.Label lbLoaiHinh;
+        private System.Windows.Forms.ComboBox comboBox_Park;
     }
 }

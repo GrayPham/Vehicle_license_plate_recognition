@@ -16,16 +16,18 @@ namespace Vehicle_license_plate_recognition.Model
     {
         public Parking()
         {
+            this.Capacities = new HashSet<Capacity>();
+            this.NguoiGuis = new HashSet<NguoiGui>();
             this.PlaceParks = new HashSet<PlacePark>();
         }
     
-        public int Id { get; set; }
-        public Nullable<int> IdCapacity { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public Nullable<bool> isDelete { get; set; }
         public Nullable<System.DateTime> DeleteDate { get; set; }
     
-        public virtual Capacity Capacity { get; set; }
+        public virtual ICollection<Capacity> Capacities { get; set; }
+        public virtual ICollection<NguoiGui> NguoiGuis { get; set; }
         public virtual ICollection<PlacePark> PlaceParks { get; set; }
     }
 }

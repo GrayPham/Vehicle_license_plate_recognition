@@ -12,10 +12,11 @@ using System.Windows.Forms;
 //Add thư viện để kết nối với camera
 using AForge.Video;
 using AForge.Video.DirectShow;
-using Vehicle_license_plate_recognition.Controller;
+using Vehicle_license_plate_recognition.Controller.Staff;
 
 namespace Vehicle_license_plate_recognition
 {
+    
     public partial class FormVehicleCam : Form
     {
         //tạo 2 biến xem hiện tại có bao nhiêu camera kết nối với máy tính của ta
@@ -114,7 +115,7 @@ namespace Vehicle_license_plate_recognition
                 btn_charge.Enabled = false;
                 btn_Check.Enabled = false;
             }
-
+            comboBox_Park.Enabled = false; // load nha xe
         }
 
 
@@ -123,14 +124,9 @@ namespace Vehicle_license_plate_recognition
             Application.Exit();
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Check_Click(object sender, EventArgs e)
         {
-            
+            GuiXeORThanhToan nv = new GuiXeORThanhToan();
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.43.202";
             String server_path = "http://" + server_ip + ":8000/detect";
@@ -140,6 +136,24 @@ namespace Vehicle_license_plate_recognition
                 String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
                 String retStr = sendPOST(server_path, B64);
                 richTextBox_licenseplates.Text = retStr;
+                if (retStr.Count() <15)
+                {
+                    if (nv.isParked(retStr) == true)
+                    {
+                        lbLoaiHinh.Text = "Tinh Tien";
+                        btn_parking.Enabled = false;
+                    }
+                    else
+                    {
+                        lbLoaiHinh.Text = "Gui Xe";
+                        btn_charge.Enabled = false;
+                    }
+                }
+                else
+                {
+                    lbLoaiHinh.Text = "Anh Khong nhan dien duoc";
+                }    
+
             }
             catch (Exception ex)
             {
@@ -239,6 +253,14 @@ namespace Vehicle_license_plate_recognition
             catch (Exception ex)
             {
                 return "Exception" + ex.ToString();
+            }
+        }
+
+        private void btn_parking_Click(object sender, EventArgs e)
+        {
+            if (radioButton_car.Checked)
+            {
+
             }
         }
     }

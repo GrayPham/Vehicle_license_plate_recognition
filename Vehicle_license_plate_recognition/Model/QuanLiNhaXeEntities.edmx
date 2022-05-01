@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Assignment">
           <Key>
             <PropertyRef Name="Id" />
@@ -21,6 +21,7 @@
           <Property Name="MaxCapacity" Type="int" />
           <Property Name="MinCapacity" Type="int" />
           <Property Name="CurrentCapacity" Type="int" />
+          <Property Name="IdPark" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
@@ -45,7 +46,7 @@
           <Property Name="FullName" Type="nvarchar" MaxLength="100" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="BirthDate" Type="datetime" />
-          <Property Name="IdContract" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -59,12 +60,14 @@
         </EntityType>
         <EntityType Name="NguoiGui">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="LicensePlates" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="DeliveryTime" Type="datetime" />
           <Property Name="ReturnTime" Type="datetime" />
-          <Property Name="LicensePlates" Type="int" />
+          <Property Name="LicensePlates" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PlaceID" Type="nchar" MaxLength="10" />
+          <Property Name="IdVehicleType" Type="int" />
+          <Property Name="ImagePath" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
@@ -85,23 +88,13 @@
           <Property Name="isManage" Type="bit" />
           <Property Name="isOfficeStaff" Type="bit" />
           <Property Name="isStaff" Type="bit" />
-        </EntityType>
-        <EntityType Name="Operation">
-          <Key>
-            <PropertyRef Name="IdActivity" />
-          </Key>
-          <Property Name="IdActivity" Type="int" Nullable="false" />
-          <Property Name="IdNV" Type="int" />
-          <Property Name="ProcessId" Type="int" />
-          <Property Name="ProcessCategoryType" Type="nvarchar" MaxLength="100" />
-          <Property Name="ImplementationDate" Type="datetime" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Parking">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="IdCapacity" Type="int" />
+          <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="isDelete" Type="bit" />
           <Property Name="DeleteDate" Type="datetime" />
@@ -111,7 +104,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="IdPark" Type="int" />
+          <Property Name="IdPark" Type="nchar" MaxLength="10" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Schedule">
@@ -124,6 +117,12 @@
           <Property Name="Workday" Type="int" />
           <Property Name="IdAssignment" Type="int" />
           <Property Name="OneShiftTime" Type="int" />
+        </EntityType>
+        <EntityType Name="ScheduleEmploy">
+          <Key>
+            <PropertyRef Name="IdSchedule" />
+          </Key>
+          <Property Name="IdSchedule" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -143,14 +142,7 @@
           <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="int" />
           <Property Name="IdStaff" Type="int" />
-          <Property Name="IdNguoiGui" Type="int" />
-        </EntityType>
-        <EntityType Name="TypeofOperation">
-          <Key>
-            <PropertyRef Name="ProcessID" />
-          </Key>
-          <Property Name="ProcessID" Type="int" Nullable="false" />
-          <Property Name="ProcessName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LicensePlates" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TypeVehicle">
           <Key>
@@ -160,14 +152,18 @@
           <Property Name="NameVehicle" Type="nvarchar" MaxLength="50" />
           <Property Name="UnitPrice" Type="real" />
         </EntityType>
-        <EntityType Name="VehiclePark">
-          <Key>
-            <PropertyRef Name="LicensePlates" />
-          </Key>
-          <Property Name="LicensePlates" Type="int" Nullable="false" />
-          <Property Name="PlaceID" Type="nchar" MaxLength="10" />
-          <Property Name="IdVehicleType" Type="int" />
-        </EntityType>
+        <Association Name="FK_Capacity_Parking">
+          <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
+          <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parking">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Capacity">
+              <PropertyRef Name="IdPark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Capacity_TypeVehicle">
           <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
           <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
@@ -177,6 +173,18 @@
             </Principal>
             <Dependent Role="Capacity">
               <PropertyRef Name="IdVehicle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="IdRenter" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -192,18 +200,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Customers_Contract">
-          <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
-          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contract">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Customers">
-              <PropertyRef Name="IdContract" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Login_NV">
           <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
           <End Role="Login" Type="Self.Login" Multiplicity="*" />
@@ -216,63 +212,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NguoiGui_VehiclePark">
-          <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="0..1" />
+        <Association Name="FK_NguoiGui_Parking">
+          <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="VehiclePark">
-              <PropertyRef Name="LicensePlates" />
+            <Principal Role="Parking">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="NguoiGui">
-              <PropertyRef Name="LicensePlates" />
+              <PropertyRef Name="PlaceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NV_Schedule">
-          <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+        <Association Name="FK_NguoiGui_TypeVehicle">
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeVehicle">
+              <PropertyRef Name="IdVehicle" />
+            </Principal>
+            <Dependent Role="NguoiGui">
+              <PropertyRef Name="IdVehicleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NV_ScheduleEmploy">
+          <End Role="ScheduleEmploy" Type="Self.ScheduleEmploy" Multiplicity="0..1" />
           <End Role="NV" Type="Self.NV" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Schedule">
-              <PropertyRef Name="Id" />
+            <Principal Role="ScheduleEmploy">
+              <PropertyRef Name="IdSchedule" />
             </Principal>
             <Dependent Role="NV">
               <PropertyRef Name="IdSchedule" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Operation_NV">
-          <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
-          <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NV">
-              <PropertyRef Name="IdStaff" />
-            </Principal>
-            <Dependent Role="Operation">
-              <PropertyRef Name="IdNV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Operation_TypeofOperation">
-          <End Role="TypeofOperation" Type="Self.TypeofOperation" Multiplicity="0..1" />
-          <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeofOperation">
-              <PropertyRef Name="ProcessID" />
-            </Principal>
-            <Dependent Role="Operation">
-              <PropertyRef Name="ProcessId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Parking_Capacity">
-          <End Role="Capacity" Type="Self.Capacity" Multiplicity="0..1" />
-          <End Role="Parking" Type="Self.Parking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Capacity">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Parking">
-              <PropertyRef Name="IdCapacity" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -300,15 +272,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ThanhToan_NguoiGui">
+        <Association Name="FK_ThanhToan_NguoiGui1">
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NguoiGui">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="LicensePlates" />
             </Principal>
             <Dependent Role="ThanhToan">
-              <PropertyRef Name="IdNguoiGui" />
+              <PropertyRef Name="LicensePlates" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -333,30 +305,6 @@
             </Principal>
             <Dependent Role="ThanhToan">
               <PropertyRef Name="IdTVehicle" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VehiclePark_PlacePark">
-          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="0..1" />
-          <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PlacePark">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="VehiclePark">
-              <PropertyRef Name="PlaceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VehiclePark_TypeVehicle">
-          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
-          <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeVehicle">
-              <PropertyRef Name="IdVehicle" />
-            </Principal>
-            <Dependent Role="VehiclePark">
-              <PropertyRef Name="IdVehicleType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -399,50 +347,44 @@
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NguoiGui" EntityType="Self.NguoiGui" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parking" EntityType="Self.Parking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlacePark" EntityType="Self.PlacePark" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScheduleEmploy" EntityType="Self.ScheduleEmploy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TypeofOperation" EntityType="Self.TypeofOperation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeVehicle" EntityType="Self.TypeVehicle" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VehiclePark" EntityType="Self.VehiclePark" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Capacity_Parking" Association="Self.FK_Capacity_Parking">
+            <End Role="Parking" EntitySet="Parking" />
+            <End Role="Capacity" EntitySet="Capacity" />
+          </AssociationSet>
           <AssociationSet Name="FK_Capacity_TypeVehicle" Association="Self.FK_Capacity_TypeVehicle">
             <End Role="TypeVehicle" EntitySet="TypeVehicle" />
             <End Role="Capacity" EntitySet="Capacity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Customers" Association="Self.FK_Contract_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Contract" EntitySet="Contract" />
           </AssociationSet>
           <AssociationSet Name="FK_Contract_NV" Association="Self.FK_Contract_NV">
             <End Role="NV" EntitySet="NV" />
             <End Role="Contract" EntitySet="Contract" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customers_Contract" Association="Self.FK_Customers_Contract">
-            <End Role="Contract" EntitySet="Contract" />
-            <End Role="Customers" EntitySet="Customers" />
-          </AssociationSet>
           <AssociationSet Name="FK_Login_NV" Association="Self.FK_Login_NV">
             <End Role="NV" EntitySet="NV" />
             <End Role="Login" EntitySet="Login" />
           </AssociationSet>
-          <AssociationSet Name="FK_NguoiGui_VehiclePark" Association="Self.FK_NguoiGui_VehiclePark">
-            <End Role="VehiclePark" EntitySet="VehiclePark" />
+          <AssociationSet Name="FK_NguoiGui_Parking" Association="Self.FK_NguoiGui_Parking">
+            <End Role="Parking" EntitySet="Parking" />
             <End Role="NguoiGui" EntitySet="NguoiGui" />
           </AssociationSet>
-          <AssociationSet Name="FK_NV_Schedule" Association="Self.FK_NV_Schedule">
-            <End Role="Schedule" EntitySet="Schedule" />
+          <AssociationSet Name="FK_NguoiGui_TypeVehicle" Association="Self.FK_NguoiGui_TypeVehicle">
+            <End Role="TypeVehicle" EntitySet="TypeVehicle" />
+            <End Role="NguoiGui" EntitySet="NguoiGui" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NV_ScheduleEmploy" Association="Self.FK_NV_ScheduleEmploy">
+            <End Role="ScheduleEmploy" EntitySet="ScheduleEmploy" />
             <End Role="NV" EntitySet="NV" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Operation_NV" Association="Self.FK_Operation_NV">
-            <End Role="NV" EntitySet="NV" />
-            <End Role="Operation" EntitySet="Operation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Operation_TypeofOperation" Association="Self.FK_Operation_TypeofOperation">
-            <End Role="TypeofOperation" EntitySet="TypeofOperation" />
-            <End Role="Operation" EntitySet="Operation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Parking_Capacity" Association="Self.FK_Parking_Capacity">
-            <End Role="Capacity" EntitySet="Capacity" />
-            <End Role="Parking" EntitySet="Parking" />
           </AssociationSet>
           <AssociationSet Name="FK_PlacePark_Parking" Association="Self.FK_PlacePark_Parking">
             <End Role="Parking" EntitySet="Parking" />
@@ -452,7 +394,7 @@
             <End Role="Assignment" EntitySet="Assignment" />
             <End Role="Schedule" EntitySet="Schedule" />
           </AssociationSet>
-          <AssociationSet Name="FK_ThanhToan_NguoiGui" Association="Self.FK_ThanhToan_NguoiGui">
+          <AssociationSet Name="FK_ThanhToan_NguoiGui1" Association="Self.FK_ThanhToan_NguoiGui1">
             <End Role="NguoiGui" EntitySet="NguoiGui" />
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
@@ -464,16 +406,9 @@
             <End Role="TypeVehicle" EntitySet="TypeVehicle" />
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
-          <AssociationSet Name="FK_VehiclePark_PlacePark" Association="Self.FK_VehiclePark_PlacePark">
-            <End Role="PlacePark" EntitySet="PlacePark" />
-            <End Role="VehiclePark" EntitySet="VehiclePark" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VehiclePark_TypeVehicle" Association="Self.FK_VehiclePark_TypeVehicle">
-            <End Role="TypeVehicle" EntitySet="TypeVehicle" />
-            <End Role="VehiclePark" EntitySet="VehiclePark" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLiNhaXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -494,8 +429,9 @@
           <Property Name="MaxCapacity" Type="Int32" />
           <Property Name="MinCapacity" Type="Int32" />
           <Property Name="CurrentCapacity" Type="Int32" />
+          <Property Name="IdPark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Parking" Relationship="Self.FK_Capacity_Parking" FromRole="Capacity" ToRole="Parking" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_Capacity_TypeVehicle" FromRole="Capacity" ToRole="TypeVehicle" />
-          <NavigationProperty Name="Parkings" Relationship="Self.FK_Parking_Capacity" FromRole="Capacity" ToRole="Parking" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
@@ -511,8 +447,8 @@
           <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
           <Property Name="isDelete" Type="Boolean" />
           <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Contract_Customers" FromRole="Contract" ToRole="Customers" />
           <NavigationProperty Name="NV" Relationship="Self.FK_Contract_NV" FromRole="Contract" ToRole="NV" />
-          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Contract" FromRole="Contract" ToRole="Customers" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -520,27 +456,47 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BirthDate" Type="DateTime" Precision="3" />
-          <Property Name="IdContract" Type="Int32" />
-          <NavigationProperty Name="Contract" Relationship="Self.FK_Customers_Contract" FromRole="Customers" ToRole="Contract" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_Customers" FromRole="Customers" ToRole="Contract" />
         </EntityType>
-        <EntityType Name="NguoiGui">
+        <EntityType Name="Login">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdStaff" Type="Int32" />
+          <NavigationProperty Name="NV" Relationship="Self.FK_Login_NV" FromRole="Login" ToRole="NV" />
+        </EntityType>
+        <EntityType Name="NguoiGui">
+          <Key>
+            <PropertyRef Name="LicensePlates" />
+          </Key>
           <Property Name="DeliveryTime" Type="DateTime" Precision="3" />
           <Property Name="ReturnTime" Type="DateTime" Precision="3" />
-          <Property Name="LicensePlates" Type="Int32" />
+          <Property Name="LicensePlates" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlaceID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IdVehicleType" Type="Int32" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Parking" Relationship="Self.FK_NguoiGui_Parking" FromRole="NguoiGui" ToRole="Parking" />
+          <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_NguoiGui_TypeVehicle" FromRole="NguoiGui" ToRole="TypeVehicle" />
+          <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_NguoiGui1" FromRole="NguoiGui" ToRole="ThanhToan" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
             <PropertyRef Name="IdStaff" />
           </Key>
           <Property Name="IdStaff" Type="Int32" Nullable="false" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="HoVaTenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NgayAdd" Type="DateTime" Precision="3" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LastUpdate" Type="DateTime" Precision="3" />
           <Property Name="LayOff" Type="Boolean" />
           <Property Name="LayOffDate" Type="DateTime" Precision="3" />
@@ -548,39 +504,23 @@
           <Property Name="IdSchedule" Type="Int32" />
           <Property Name="isManage" Type="Boolean" />
           <Property Name="isOfficeStaff" Type="Boolean" />
-          <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_NV" FromRole="NV" ToRole="Contract" />
-          <NavigationProperty Name="Schedule" Relationship="Self.FK_NV_Schedule" FromRole="NV" ToRole="Schedule" />
-          <NavigationProperty Name="Operations" Relationship="Self.FK_Operation_NV" FromRole="NV" ToRole="Operation" />
-          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Logins" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="NV" ToRole="Login" />
           <Property Name="isStaff" Type="Boolean" />
-          <NavigationProperty Name="ThanhToans" Relationship="QuanLiNhaXeModel.FK_ThanhToan_NV" FromRole="NV" ToRole="ThanhToan" />
-        </EntityType>
-        <EntityType Name="Operation">
-          <Key>
-            <PropertyRef Name="IdActivity" />
-          </Key>
-          <Property Name="IdActivity" Type="Int32" Nullable="false" />
-          <Property Name="IdNV" Type="Int32" />
-          <Property Name="ProcessId" Type="Int32" />
-          <Property Name="ProcessCategoryType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImplementationDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="NV" Relationship="Self.FK_Operation_NV" FromRole="Operation" ToRole="NV" />
-          <NavigationProperty Name="TypeofOperation" Relationship="Self.FK_Operation_TypeofOperation" FromRole="Operation" ToRole="TypeofOperation" />
+          <Property Name="ImagePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_NV" FromRole="NV" ToRole="Contract" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_Login_NV" FromRole="NV" ToRole="Login" />
+          <NavigationProperty Name="ScheduleEmploy" Relationship="Self.FK_NV_ScheduleEmploy" FromRole="NV" ToRole="ScheduleEmploy" />
+          <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_NV" FromRole="NV" ToRole="ThanhToan" />
         </EntityType>
         <EntityType Name="Parking">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="IdCapacity" Type="Int32" />
+          <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="isDelete" Type="Boolean" />
           <Property Name="DeleteDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Capacity" Relationship="Self.FK_Parking_Capacity" FromRole="Parking" ToRole="Capacity" />
+          <NavigationProperty Name="Capacities" Relationship="Self.FK_Capacity_Parking" FromRole="Parking" ToRole="Capacity" />
+          <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_Parking" FromRole="Parking" ToRole="NguoiGui" />
           <NavigationProperty Name="PlaceParks" Relationship="Self.FK_PlacePark_Parking" FromRole="Parking" ToRole="PlacePark" />
         </EntityType>
         <EntityType Name="PlacePark">
@@ -588,10 +528,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="IdPark" Type="Int32" />
+          <Property Name="IdPark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Parking" Relationship="Self.FK_PlacePark_Parking" FromRole="PlacePark" ToRole="Parking" />
-          <NavigationProperty Name="VehicleParks" Relationship="Self.FK_VehiclePark_PlacePark" FromRole="PlacePark" ToRole="VehiclePark" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
@@ -604,7 +543,13 @@
           <Property Name="IdAssignment" Type="Int32" />
           <Property Name="OneShiftTime" Type="Int32" />
           <NavigationProperty Name="Assignment" Relationship="Self.FK_Schedule_Assignment" FromRole="Schedule" ToRole="Assignment" />
-          <NavigationProperty Name="NVs" Relationship="Self.FK_NV_Schedule" FromRole="Schedule" ToRole="NV" />
+        </EntityType>
+        <EntityType Name="ScheduleEmploy">
+          <Key>
+            <PropertyRef Name="IdSchedule" />
+          </Key>
+          <Property Name="IdSchedule" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NVs" Relationship="Self.FK_NV_ScheduleEmploy" FromRole="ScheduleEmploy" ToRole="NV" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -623,17 +568,11 @@
           <Property Name="IdPayment" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="Int32" />
-          <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="ThanhToan" ToRole="TypeVehicle" />
           <Property Name="IdStaff" Type="Int32" />
-          <Property Name="IdNguoiGui" Type="Int32" />
-        </EntityType>
-        <EntityType Name="TypeofOperation">
-          <Key>
-            <PropertyRef Name="ProcessID" />
-          </Key>
-          <Property Name="ProcessID" Type="Int32" Nullable="false" />
-          <Property Name="ProcessName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Operations" Relationship="Self.FK_Operation_TypeofOperation" FromRole="TypeofOperation" ToRole="Operation" />
+          <Property Name="LicensePlates" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NguoiGui" Relationship="Self.FK_ThanhToan_NguoiGui1" FromRole="ThanhToan" ToRole="NguoiGui" />
+          <NavigationProperty Name="NV" Relationship="Self.FK_ThanhToan_NV" FromRole="ThanhToan" ToRole="NV" />
+          <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="ThanhToan" ToRole="TypeVehicle" />
         </EntityType>
         <EntityType Name="TypeVehicle">
           <Key>
@@ -643,19 +582,8 @@
           <Property Name="NameVehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UnitPrice" Type="Single" />
           <NavigationProperty Name="Capacities" Relationship="Self.FK_Capacity_TypeVehicle" FromRole="TypeVehicle" ToRole="Capacity" />
+          <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_TypeVehicle" FromRole="TypeVehicle" ToRole="NguoiGui" />
           <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="TypeVehicle" ToRole="ThanhToan" />
-          <NavigationProperty Name="VehicleParks" Relationship="Self.FK_VehiclePark_TypeVehicle" FromRole="TypeVehicle" ToRole="VehiclePark" />
-        </EntityType>
-        <EntityType Name="VehiclePark">
-          <Key>
-            <PropertyRef Name="LicensePlates" />
-          </Key>
-          <Property Name="LicensePlates" Type="Int32" Nullable="false" />
-          <Property Name="PlaceID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="IdVehicleType" Type="Int32" />
-          <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_VehiclePark" FromRole="VehiclePark" ToRole="NguoiGui" />
-          <NavigationProperty Name="PlacePark" Relationship="Self.FK_VehiclePark_PlacePark" FromRole="VehiclePark" ToRole="PlacePark" />
-          <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_VehiclePark_TypeVehicle" FromRole="VehiclePark" ToRole="TypeVehicle" />
         </EntityType>
         <Association Name="FK_Schedule_Assignment">
           <End Role="Assignment" Type="Self.Assignment" Multiplicity="0..1" />
@@ -666,6 +594,18 @@
             </Principal>
             <Dependent Role="Schedule">
               <PropertyRef Name="IdAssignment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Capacity_Parking">
+          <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
+          <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parking">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Capacity">
+              <PropertyRef Name="IdPark" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -681,15 +621,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Parking_Capacity">
-          <End Role="Capacity" Type="Self.Capacity" Multiplicity="0..1" />
-          <End Role="Parking" Type="Self.Parking" Multiplicity="*" />
+        <Association Name="FK_Contract_Customers">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Capacity">
+            <Principal Role="Customers">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Parking">
-              <PropertyRef Name="IdCapacity" />
+            <Dependent Role="Contract">
+              <PropertyRef Name="IdRenter" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -705,63 +645,75 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Customers_Contract">
-          <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
-          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+        <Association Name="FK_Login_NV">
+          <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
+          <End Role="Login" Type="Self.Login" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Contract">
-              <PropertyRef Name="Id" />
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
             </Principal>
-            <Dependent Role="Customers">
-              <PropertyRef Name="IdContract" />
+            <Dependent Role="Login">
+              <PropertyRef Name="IdStaff" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NguoiGui_VehiclePark">
-          <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="0..1" />
+        <Association Name="FK_NguoiGui_Parking">
+          <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="VehiclePark">
-              <PropertyRef Name="LicensePlates" />
+            <Principal Role="Parking">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="NguoiGui">
+              <PropertyRef Name="PlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NguoiGui_TypeVehicle">
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeVehicle">
+              <PropertyRef Name="IdVehicle" />
+            </Principal>
+            <Dependent Role="NguoiGui">
+              <PropertyRef Name="IdVehicleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_NguoiGui1">
+          <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiGui">
+              <PropertyRef Name="LicensePlates" />
+            </Principal>
+            <Dependent Role="ThanhToan">
               <PropertyRef Name="LicensePlates" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NV_Schedule">
-          <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+        <Association Name="FK_NV_ScheduleEmploy">
+          <End Role="ScheduleEmploy" Type="Self.ScheduleEmploy" Multiplicity="0..1" />
           <End Role="NV" Type="Self.NV" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Schedule">
-              <PropertyRef Name="Id" />
+            <Principal Role="ScheduleEmploy">
+              <PropertyRef Name="IdSchedule" />
             </Principal>
             <Dependent Role="NV">
               <PropertyRef Name="IdSchedule" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Operation_NV">
+        <Association Name="FK_ThanhToan_NV">
           <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
-          <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NV">
               <PropertyRef Name="IdStaff" />
             </Principal>
-            <Dependent Role="Operation">
-              <PropertyRef Name="IdNV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Operation_TypeofOperation">
-          <End Role="TypeofOperation" Type="Self.TypeofOperation" Multiplicity="0..1" />
-          <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeofOperation">
-              <PropertyRef Name="ProcessID" />
-            </Principal>
-            <Dependent Role="Operation">
-              <PropertyRef Name="ProcessId" />
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="IdStaff" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -777,18 +729,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_VehiclePark_PlacePark">
-          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="0..1" />
-          <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PlacePark">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="VehiclePark">
-              <PropertyRef Name="PlaceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ThanhToan_TypeVehicle">
           <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
@@ -801,85 +741,72 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_VehiclePark_TypeVehicle">
-          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
-          <End Role="VehiclePark" Type="Self.VehiclePark" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeVehicle">
-              <PropertyRef Name="IdVehicle" />
-            </Principal>
-            <Dependent Role="VehiclePark">
-              <PropertyRef Name="IdVehicleType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="QuanLiNhaXeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Assignments" EntityType="Self.Assignment" />
           <EntitySet Name="Capacities" EntityType="Self.Capacity" />
           <EntitySet Name="Contracts" EntityType="Self.Contract" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="NguoiGuis" EntityType="Self.NguoiGui" />
           <EntitySet Name="NVs" EntityType="Self.NV" />
-          <EntitySet Name="Operations" EntityType="Self.Operation" />
           <EntitySet Name="Parkings" EntityType="Self.Parking" />
           <EntitySet Name="PlaceParks" EntityType="Self.PlacePark" />
           <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="ScheduleEmploys" EntityType="Self.ScheduleEmploy" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="ThanhToans" EntityType="Self.ThanhToan" />
-          <EntitySet Name="TypeofOperations" EntityType="Self.TypeofOperation" />
           <EntitySet Name="TypeVehicles" EntityType="Self.TypeVehicle" />
-          <EntitySet Name="VehicleParks" EntityType="Self.VehiclePark" />
           <AssociationSet Name="FK_Schedule_Assignment" Association="Self.FK_Schedule_Assignment">
             <End Role="Assignment" EntitySet="Assignments" />
             <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Capacity_Parking" Association="Self.FK_Capacity_Parking">
+            <End Role="Parking" EntitySet="Parkings" />
+            <End Role="Capacity" EntitySet="Capacities" />
           </AssociationSet>
           <AssociationSet Name="FK_Capacity_TypeVehicle" Association="Self.FK_Capacity_TypeVehicle">
             <End Role="TypeVehicle" EntitySet="TypeVehicles" />
             <End Role="Capacity" EntitySet="Capacities" />
           </AssociationSet>
-          <AssociationSet Name="FK_Parking_Capacity" Association="Self.FK_Parking_Capacity">
-            <End Role="Capacity" EntitySet="Capacities" />
-            <End Role="Parking" EntitySet="Parkings" />
+          <AssociationSet Name="FK_Contract_Customers" Association="Self.FK_Contract_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Contract" EntitySet="Contracts" />
           </AssociationSet>
           <AssociationSet Name="FK_Contract_NV" Association="Self.FK_Contract_NV">
             <End Role="NV" EntitySet="NVs" />
             <End Role="Contract" EntitySet="Contracts" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customers_Contract" Association="Self.FK_Customers_Contract">
-            <End Role="Contract" EntitySet="Contracts" />
-            <End Role="Customers" EntitySet="Customers" />
+          <AssociationSet Name="FK_Login_NV" Association="Self.FK_Login_NV">
+            <End Role="NV" EntitySet="NVs" />
+            <End Role="Login" EntitySet="Logins" />
           </AssociationSet>
-          <AssociationSet Name="FK_NguoiGui_VehiclePark" Association="Self.FK_NguoiGui_VehiclePark">
-            <End Role="VehiclePark" EntitySet="VehicleParks" />
+          <AssociationSet Name="FK_NguoiGui_Parking" Association="Self.FK_NguoiGui_Parking">
+            <End Role="Parking" EntitySet="Parkings" />
             <End Role="NguoiGui" EntitySet="NguoiGuis" />
           </AssociationSet>
-          <AssociationSet Name="FK_NV_Schedule" Association="Self.FK_NV_Schedule">
-            <End Role="Schedule" EntitySet="Schedules" />
+          <AssociationSet Name="FK_NguoiGui_TypeVehicle" Association="Self.FK_NguoiGui_TypeVehicle">
+            <End Role="TypeVehicle" EntitySet="TypeVehicles" />
+            <End Role="NguoiGui" EntitySet="NguoiGuis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_NguoiGui1" Association="Self.FK_ThanhToan_NguoiGui1">
+            <End Role="NguoiGui" EntitySet="NguoiGuis" />
+            <End Role="ThanhToan" EntitySet="ThanhToans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NV_ScheduleEmploy" Association="Self.FK_NV_ScheduleEmploy">
+            <End Role="ScheduleEmploy" EntitySet="ScheduleEmploys" />
             <End Role="NV" EntitySet="NVs" />
           </AssociationSet>
-          <AssociationSet Name="FK_Operation_NV" Association="Self.FK_Operation_NV">
+          <AssociationSet Name="FK_ThanhToan_NV" Association="Self.FK_ThanhToan_NV">
             <End Role="NV" EntitySet="NVs" />
-            <End Role="Operation" EntitySet="Operations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Operation_TypeofOperation" Association="Self.FK_Operation_TypeofOperation">
-            <End Role="TypeofOperation" EntitySet="TypeofOperations" />
-            <End Role="Operation" EntitySet="Operations" />
+            <End Role="ThanhToan" EntitySet="ThanhToans" />
           </AssociationSet>
           <AssociationSet Name="FK_PlacePark_Parking" Association="Self.FK_PlacePark_Parking">
             <End Role="Parking" EntitySet="Parkings" />
             <End Role="PlacePark" EntitySet="PlaceParks" />
           </AssociationSet>
-          <AssociationSet Name="FK_VehiclePark_PlacePark" Association="Self.FK_VehiclePark_PlacePark">
-            <End Role="PlacePark" EntitySet="PlaceParks" />
-            <End Role="VehiclePark" EntitySet="VehicleParks" />
-          </AssociationSet>
           <AssociationSet Name="FK_ThanhToan_TypeVehicle" Association="Self.FK_ThanhToan_TypeVehicle">
             <End Role="TypeVehicle" EntitySet="TypeVehicles" />
             <End Role="ThanhToan" EntitySet="ThanhToans" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VehiclePark_TypeVehicle" Association="Self.FK_VehiclePark_TypeVehicle">
-            <End Role="TypeVehicle" EntitySet="TypeVehicles" />
-            <End Role="VehiclePark" EntitySet="VehicleParks" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -911,19 +838,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="Logins" EntityType="QuanLiNhaXeModel.Login" />
-          <AssociationSet Name="FK_Login_NV" Association="QuanLiNhaXeModel.FK_Login_NV">
-            <End Role="NV" EntitySet="NVs" />
-            <End Role="Login" EntitySet="Logins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhToan_NguoiGui" Association="QuanLiNhaXeModel.FK_ThanhToan_NguoiGui">
-            <End Role="NguoiGui" EntitySet="NguoiGuis" />
-            <End Role="ThanhToan" EntitySet="ThanhToans" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThanhToan_NV" Association="QuanLiNhaXeModel.FK_ThanhToan_NV">
-            <End Role="NV" EntitySet="NVs" />
-            <End Role="ThanhToan" EntitySet="ThanhToans" />
-          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -936,53 +850,6 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="Login">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdStaff" Type="Int32" />
-          <NavigationProperty Name="NV" Relationship="QuanLiNhaXeModel.FK_Login_NV" FromRole="Login" ToRole="NV" />
-        </EntityType>
-        <Association Name="FK_Login_NV">
-          <End Type="QuanLiNhaXeModel.NV" Role="NV" Multiplicity="0..1" />
-          <End Type="QuanLiNhaXeModel.Login" Role="Login" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NV">
-              <PropertyRef Name="IdStaff" />
-            </Principal>
-            <Dependent Role="Login">
-              <PropertyRef Name="IdStaff" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ThanhToan_NguoiGui">
-          <End Type="QuanLiNhaXeModel.NguoiGui" Role="NguoiGui" Multiplicity="0..1" />
-          <End Type="QuanLiNhaXeModel.ThanhToan" Role="ThanhToan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NguoiGui">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ThanhToan">
-              <PropertyRef Name="IdNguoiGui" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ThanhToan_NV">
-          <End Type="QuanLiNhaXeModel.NV" Role="NV" Multiplicity="0..1" />
-          <End Type="QuanLiNhaXeModel.ThanhToan" Role="ThanhToan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NV">
-              <PropertyRef Name="IdStaff" />
-            </Principal>
-            <Dependent Role="ThanhToan">
-              <PropertyRef Name="IdStaff" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1005,6 +872,7 @@
                 <ScalarProperty Name="MaxCapacity" ColumnName="MaxCapacity" />
                 <ScalarProperty Name="MinCapacity" ColumnName="MinCapacity" />
                 <ScalarProperty Name="CurrentCapacity" ColumnName="CurrentCapacity" />
+                <ScalarProperty Name="IdPark" ColumnName="IdPark" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1031,31 +899,43 @@
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="IdContract" ColumnName="IdContract" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="QuanLiNhaXeModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NguoiGuis">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NguoiGui">
               <MappingFragment StoreEntitySet="NguoiGui">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
                 <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
                 <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
+                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+                <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NVs">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NV">
               <MappingFragment StoreEntitySet="NV">
-                <ScalarProperty Name="isStaff" ColumnName="isStaff" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
                 <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="HoVaTenNV" ColumnName="HoVaTenNV" />
                 <ScalarProperty Name="NgayAdd" ColumnName="NgayAdd" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
                 <ScalarProperty Name="LayOff" ColumnName="LayOff" />
                 <ScalarProperty Name="LayOffDate" ColumnName="LayOffDate" />
@@ -1063,17 +943,8 @@
                 <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
                 <ScalarProperty Name="isManage" ColumnName="isManage" />
                 <ScalarProperty Name="isOfficeStaff" ColumnName="isOfficeStaff" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Operations">
-            <EntityTypeMapping TypeName="QuanLiNhaXeModel.Operation">
-              <MappingFragment StoreEntitySet="Operation">
-                <ScalarProperty Name="IdActivity" ColumnName="IdActivity" />
-                <ScalarProperty Name="IdNV" ColumnName="IdNV" />
-                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
-                <ScalarProperty Name="ProcessCategoryType" ColumnName="ProcessCategoryType" />
-                <ScalarProperty Name="ImplementationDate" ColumnName="ImplementationDate" />
+                <ScalarProperty Name="isStaff" ColumnName="isStaff" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1081,7 +952,6 @@
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Parking">
               <MappingFragment StoreEntitySet="Parking">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdCapacity" ColumnName="IdCapacity" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="isDelete" ColumnName="isDelete" />
                 <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
@@ -1109,6 +979,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleEmploys">
+            <EntityTypeMapping TypeName="QuanLiNhaXeModel.ScheduleEmploy">
+              <MappingFragment StoreEntitySet="ScheduleEmploy">
+                <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1123,19 +1000,11 @@
           <EntitySetMapping Name="ThanhToans">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.ThanhToan">
               <MappingFragment StoreEntitySet="ThanhToan">
-                <ScalarProperty Name="IdNguoiGui" ColumnName="IdNguoiGui" />
-                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
                 <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="IdTVehicle" ColumnName="IdTVehicle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TypeofOperations">
-            <EntityTypeMapping TypeName="QuanLiNhaXeModel.TypeofOperation">
-              <MappingFragment StoreEntitySet="TypeofOperation">
-                <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
-                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
+                <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1145,15 +1014,6 @@
                 <ScalarProperty Name="IdVehicle" ColumnName="IdVehicle" />
                 <ScalarProperty Name="NameVehicle" ColumnName="NameVehicle" />
                 <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VehicleParks">
-            <EntityTypeMapping TypeName="QuanLiNhaXeModel.VehiclePark">
-              <MappingFragment StoreEntitySet="VehiclePark">
-                <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
-                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
-                <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1181,17 +1041,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLiNhaXeModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLiNhaXeModel.Store.sp_upgraddiagrams" />
-          <EntitySetMapping Name="Logins">
-            <EntityTypeMapping TypeName="QuanLiNhaXeModel.Login">
-              <MappingFragment StoreEntitySet="Login">
-                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

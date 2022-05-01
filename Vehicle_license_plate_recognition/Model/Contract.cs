@@ -14,11 +14,6 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class Contract
     {
-        public Contract()
-        {
-            this.Customers = new HashSet<Customer>();
-        }
-    
         public int Id { get; set; }
         public string NameContract { get; set; }
         public string Information { get; set; }
@@ -30,7 +25,7 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<bool> isDelete { get; set; }
         public Nullable<System.DateTime> DeleteDate { get; set; }
     
+        public virtual Customer Customer { get; set; }
         public virtual NV NV { get; set; }
-        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

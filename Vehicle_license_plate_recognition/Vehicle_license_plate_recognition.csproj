@@ -69,7 +69,7 @@
   <ItemGroup>
     <Compile Include="BLL\NVBLL.cs" />
     <Compile Include="Controller\Setting.cs" />
-    <Compile Include="Controller\Staff\GuiXe.cs" />
+    <Compile Include="Controller\Staff\GuiXeORThanhToan.cs" />
     <Compile Include="FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,74 +119,68 @@
       <DependentUpon>FormVehicleCam.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Assignment.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Capacity.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Contract.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Login.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NguoiGui.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NV.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Operation.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Parking.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PlacePark.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PlateRecognition.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlateRecognition.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PlateRecognition.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PlateRecognition.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlateRecognition.edmx</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\QuanLiNhaXe.cs" />
+    <Compile Include="Model\QuanLiNhaXeEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiNhaXeEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QuanLiNhaXeEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QuanLiNhaXeEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Model\Schedule.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScheduleEmploy.cs">
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ThanhToan.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\TypeofOperation.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TypeVehicle.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\VehiclePark.cs">
-      <DependentUpon>PlateRecognition.tt</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,17 +217,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Model\PlateRecognition.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PlateRecognition.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="AI\BienSoXeDoc\data\a" />
     <None Include="AI\BienSoXeDoc\wpod-net_update1.h5" />
     <None Include="AI\BienSoXeDoc\wpod-net_update1.json" />
     <None Include="AI\BienSoXeDoc\__pycache__\lib_detection.cpython-39.pyc" />
     <None Include="AI\BienSoXeDoc\__pycache__\read_plate.cpython-39.pyc" />
-    <None Include="Model\PlateRecognition.edmx.diagram">
-      <DependentUpon>PlateRecognition.edmx</DependentUpon>
+    <EntityDeploy Include="Model\QuanLiNhaXeEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLiNhaXeEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QuanLiNhaXeEntities.edmx.diagram">
+      <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1311,15 +1305,15 @@
     <Content Include="AI\BienSoXeDoc\test\test2.jpg" />
     <Content Include="AI\BienSoXeDoc\trainSVM.py" />
     <Content Include="Image\BienDai\442.jpg" />
-    <Content Include="Model\PlateRecognition.Context.tt">
+    <Content Include="Model\QuanLiNhaXeEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PlateRecognition.Context.cs</LastGenOutput>
-      <DependentUpon>PlateRecognition.edmx</DependentUpon>
+      <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
+      <LastGenOutput>QuanLiNhaXeEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\PlateRecognition.tt">
+    <Content Include="Model\QuanLiNhaXeEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PlateRecognition.edmx</DependentUpon>
-      <LastGenOutput>PlateRecognition.cs</LastGenOutput>
+      <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
+      <LastGenOutput>QuanLiNhaXeEntities.cs</LastGenOutput>
     </Content>
     <None Include="Resources\logo CLC Circle.png" />
   </ItemGroup>
