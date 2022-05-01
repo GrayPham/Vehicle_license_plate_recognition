@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Assignment">
           <Key>
             <PropertyRef Name="Id" />
@@ -67,6 +67,7 @@
           <Property Name="LicensePlates" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="PlaceID" Type="nchar" MaxLength="10" />
           <Property Name="IdVehicleType" Type="int" />
+          <Property Name="IdPlacePark" Type="nchar" MaxLength="10" />
           <Property Name="ImagePath" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="NV">
@@ -104,6 +105,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdCap" Type="nchar" MaxLength="10" />
           <Property Name="IdPark" Type="nchar" MaxLength="10" />
           <Property Name="Status" Type="bit" />
         </EntityType>
@@ -407,8 +409,7 @@
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLiNhaXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -485,6 +486,7 @@
           <NavigationProperty Name="Parking" Relationship="Self.FK_NguoiGui_Parking" FromRole="NguoiGui" ToRole="Parking" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_NguoiGui_TypeVehicle" FromRole="NguoiGui" ToRole="TypeVehicle" />
           <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_NguoiGui1" FromRole="NguoiGui" ToRole="ThanhToan" />
+          <Property Name="IdPlacePark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="NV">
           <Key>
@@ -531,6 +533,7 @@
           <Property Name="IdPark" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Parking" Relationship="Self.FK_PlacePark_Parking" FromRole="PlacePark" ToRole="Parking" />
+          <Property Name="IdCap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
@@ -917,6 +920,7 @@
           <EntitySetMapping Name="NguoiGuis">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NguoiGui">
               <MappingFragment StoreEntitySet="NguoiGui">
+                <ScalarProperty Name="IdPlacePark" ColumnName="IdPlacePark" />
                 <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
                 <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
                 <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
@@ -961,6 +965,7 @@
           <EntitySetMapping Name="PlaceParks">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.PlacePark">
               <MappingFragment StoreEntitySet="PlacePark">
+                <ScalarProperty Name="IdCap" ColumnName="IdCap" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdPark" ColumnName="IdPark" />
                 <ScalarProperty Name="Status" ColumnName="Status" />

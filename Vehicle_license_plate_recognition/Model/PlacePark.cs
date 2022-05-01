@@ -17,6 +17,7 @@ namespace Vehicle_license_plate_recognition.Model
         public string Id { get; set; }
         public string IdPark { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string IdCap { get; set; }
     
         public virtual Parking Parking { get; set; }
     }

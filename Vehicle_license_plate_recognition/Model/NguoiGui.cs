@@ -25,6 +25,7 @@ namespace Vehicle_license_plate_recognition.Model
         public string PlaceID { get; set; }
         public Nullable<int> IdVehicleType { get; set; }
         public string ImagePath { get; set; }
+        public string IdPlacePark { get; set; }
     
         public virtual Parking Parking { get; set; }
         public virtual TypeVehicle TypeVehicle { get; set; }

@@ -69,17 +69,13 @@
   <ItemGroup>
     <Compile Include="BLL\NVBLL.cs" />
     <Compile Include="Controller\Setting.cs" />
-
-    <Compile Include="Controller\Staff\GuiXe.cs" />
     <Compile Include="FormFaceRecognition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormFaceRecognition.Designer.cs">
       <DependentUpon>FormFaceRecognition.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Controller\Staff\GuiXeORThanhToan.cs" />
-
     <Compile Include="FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>

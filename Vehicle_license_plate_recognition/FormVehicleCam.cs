@@ -135,7 +135,7 @@ namespace Vehicle_license_plate_recognition
 
             comboBox1.SelectedIndex = index;
         }
-        private int loaixe()
+        public int loaixe()
         {
             int loaixe;
             if (radioButton_car.Checked)
@@ -291,10 +291,15 @@ namespace Vehicle_license_plate_recognition
 
         private void btn_parking_Click(object sender, EventArgs e)
         {
-            if (radioButton_car.Checked)
-            {
+            int TypeVehicle = loaixe();
+            DateTime DeliveryTime = dateTimePicker2.Value;
+            string LicensePlates = richTextBox_licenseplates.Text;
+            
+            //if (nv.PostSentCar(DeliveryTime, LicensePlates, PlaceID, TypeVehicle, ImagePath) == true)
+            //{
 
-            }
+            //}
+
         }
 
         private void radioButton_motorbike_CheckedChanged(object sender, EventArgs e)
