@@ -70,6 +70,11 @@ namespace Vehicle_license_plate_recognition
                 btn_parking.Enabled = false;
                 btn_charge.Enabled = false;
                 btn_Check.Enabled = false;
+
+             FormStaff a = new FormStaff();
+             this.Visible = false;
+             a.ShowDialog();
+            this.Visible = true;
             
         }
         //cam đang mở tắt nó đi tránh nó chạy ngầm 
