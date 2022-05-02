@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUserStaff = new Guna.UI2.WinForms.Guna2TextBox();
+
             this.comboBox_Park = new System.Windows.Forms.ComboBox();
             this.lbLoaiHinh = new System.Windows.Forms.Label();
             this.button_done = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtUserStaff);
+
             this.groupBox1.Controls.Add(this.comboBox_Park);
             this.groupBox1.Controls.Add(this.lbLoaiHinh);
             this.groupBox1.Controls.Add(this.button_done);
@@ -108,31 +108,7 @@
             this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 40;
             this.label1.Text = "ID Staff";
-            // 
-            // txtUserStaff
-            // 
-            this.txtUserStaff.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtUserStaff.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserStaff.DefaultText = "322";
-            this.txtUserStaff.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtUserStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtUserStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUserStaff.DisabledState.Parent = this.txtUserStaff;
-            this.txtUserStaff.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUserStaff.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserStaff.FocusedState.Parent = this.txtUserStaff;
-            this.txtUserStaff.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserStaff.HoverState.Parent = this.txtUserStaff;
-            this.txtUserStaff.Location = new System.Drawing.Point(809, 578);
-            this.txtUserStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtUserStaff.Name = "txtUserStaff";
-            this.txtUserStaff.PasswordChar = '\0';
-            this.txtUserStaff.PlaceholderText = "";
-            this.txtUserStaff.SelectedText = "";
-            this.txtUserStaff.SelectionStart = 3;
-            this.txtUserStaff.ShadowDecoration.Parent = this.txtUserStaff;
-            this.txtUserStaff.Size = new System.Drawing.Size(267, 44);
-            this.txtUserStaff.TabIndex = 39;
+            
             // 
             // comboBox_Park
             // 
@@ -410,7 +386,7 @@
         private System.Windows.Forms.Label lbLoaiHinh;
         private System.Windows.Forms.ComboBox comboBox_Park;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtUserStaff;
+
         private System.Windows.Forms.TextBox txtPrice;
     }
 }
