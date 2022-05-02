@@ -39,12 +39,12 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             // Get current working directory (..\bin\Debug)
             string workingDirectory = Environment.CurrentDirectory;
             string Dir = Directory.GetParent(workingDirectory).Parent.FullName;
-            
+            string time = String.Format("{0:s}", deliveryTime);
             if (typeVehicle == 3)
             {
                 string filename = licensePlates;
                 Bitmap imageB = new Bitmap(image);
-                string path = Dir + "\\Image\\BienDai\\" + filename;
+                string path = Dir + "\\Image\\BienDai\\" + filename + "_" + time;
                 imageB.Save(path +("." + ImageFormat.Png.ToString()));
                 string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
                 if(place != null)
@@ -115,11 +115,28 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
 
         }
 
-        internal void PostThanhToan(int typeVehicle, decimal Price, int idStaff, DateTime chargeTime, string licenseplates)
+        internal bool PostThanhToan(int typeVehicle, decimal Price, int idStaff, DateTime chargeTime, string licenseplates)
         {
             string time = String.Format("{0:s}", chargeTime); // "2008-03-09T16:05:07"               SortableDateTime
             string idPayment = licenseplates + '_'+ typeVehicle + '_' + time ;
-            nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates);
+            if(nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates) == true)
+            {
+                try
+                {
+                    parkDistribution.returePlaceVehicle(licenseplates);
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+            }
+            else
+            {
+                // PostPayment bị lỗi
+                return false;
+            }
         }
     }
 }

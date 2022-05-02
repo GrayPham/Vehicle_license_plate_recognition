@@ -44,7 +44,7 @@ namespace Vehicle_license_plate_recognition.BLL
             nguoiGui.DeliveryTime = deliveryTime;
             nguoiGui.LicensePlates = licensePlates;
             nguoiGui.ImagePath = path;
-            nguoiGui.IdPlacePark = idPark;
+            nguoiGui.IdPark = idPark;
             nguoiGui.PlaceID = place;
             db.NguoiGuis.Add(nguoiGui);
             db.SaveChanges();
@@ -70,17 +70,27 @@ namespace Vehicle_license_plate_recognition.BLL
             return (double)vehicle.UnitPrice;
         }
 
-        internal void PostPayment(string idPayment, decimal price, int typeVehicle, int idStaff, DateTime chargeTime, string licenseplates)
+        internal bool PostPayment(string idPayment, decimal price, int typeVehicle, int idStaff, DateTime chargeTime, string licenseplates)
         {
-            ThanhToan tt = new ThanhToan();
-            tt.IdPayment = idPayment;
-            tt.Price = price;
-            tt.IdTVehicle = typeVehicle;
-            tt.IdStaff = idStaff;
-            tt.ChargeTime = chargeTime;
-            tt.LicensePlates = licenseplates;
-            db.ThanhToans.Add(tt);
-            db.SaveChanges();
+            try
+            {
+                ThanhToan tt = new ThanhToan();
+                tt.IdPayment = idPayment;
+                tt.Price = price;
+                tt.IdTVehicle = typeVehicle;
+                tt.IdStaff = idStaff;
+                tt.ChargeTime = chargeTime;
+                tt.LicensePlates = licenseplates;
+                db.ThanhToans.Add(tt);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            
         }
     }
 }

@@ -15,5 +15,11 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             string idPlacePark = pParkDAO.GetPlaceVehicle(typeVehicle,IdPark);
             return idPlacePark;
         }
+
+        internal void returePlaceVehicle(string licenseplates)
+        {
+            
+            pParkDAO.returePlaceVehicle(licenseplates);
+        }
     }
 }

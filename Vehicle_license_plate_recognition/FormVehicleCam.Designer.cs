@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-
             this.comboBox_Park = new System.Windows.Forms.ComboBox();
             this.lbLoaiHinh = new System.Windows.Forms.Label();
             this.button_done = new System.Windows.Forms.Button();
@@ -54,7 +55,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtIdStaff = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
@@ -72,9 +74,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIdStaff);
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.label1);
-
             this.groupBox1.Controls.Add(this.comboBox_Park);
             this.groupBox1.Controls.Add(this.lbLoaiHinh);
             this.groupBox1.Controls.Add(this.button_done);
@@ -99,6 +101,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(1420, 445);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPrice.TabIndex = 41;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -108,7 +117,6 @@
             this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 40;
             this.label1.Text = "ID Staff";
-            
             // 
             // comboBox_Park
             // 
@@ -333,12 +341,20 @@
             // 
             this.saveFileDialog1.Filter = "Jpeg image|*.jpeg|Png image|*.png|Gif image|*.gif";
             // 
-            // txtPrice
+            // txtIdStaff
             // 
-            this.txtPrice.Location = new System.Drawing.Point(1420, 445);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 22);
-            this.txtPrice.TabIndex = 41;
+            this.txtIdStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdStaff.Location = new System.Drawing.Point(803, 583);
+            this.txtIdStaff.Name = "txtIdStaff";
+            this.txtIdStaff.ReadOnly = true;
+            this.txtIdStaff.Size = new System.Drawing.Size(273, 38);
+            this.txtIdStaff.TabIndex = 42;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // FormVehicleCam
             // 
@@ -388,5 +404,7 @@
         private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        internal System.Windows.Forms.TextBox txtIdStaff;
     }
 }

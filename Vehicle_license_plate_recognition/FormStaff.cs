@@ -28,6 +28,7 @@ namespace Vehicle_license_plate_recognition
         {
             FormVehicleCam formVehicleCam = new FormVehicleCam();
             this.Visible = false;
+            formVehicleCam.txtIdStaff.Text = txtIDStaff.Text;
             formVehicleCam.ShowDialog();
             this.Visible = true;
         }

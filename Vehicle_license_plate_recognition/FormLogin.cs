@@ -81,6 +81,7 @@ namespace Vehicle_license_plate_recognition
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
                     FormStaff staffForm = new FormStaff();
+                    staffForm.txtIDStaff.Text = q.IdStaff.ToString();
                     this.Visible = false; //ẩn thôi chứ khum tắt
                     staffForm.ShowDialog();
                     this.Visible = true; //mở lại

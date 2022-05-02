@@ -16,5 +16,17 @@ namespace Vehicle_license_plate_recognition.BLL
             db.SaveChanges();
             return place != null ? place.Id : null;
         }
+
+        internal void returePlaceVehicle(string licenseplates)
+        {
+            PlacePark place = (from placeP in db.PlaceParks
+                               join nguoiGui in db.NguoiGuis
+                               on placeP.Id equals nguoiGui.PlaceID
+                               where nguoiGui.LicensePlates == licenseplates
+                               select placeP).FirstOrDefault();
+            place.Status = true;
+            
+            db.SaveChanges();
+        }
     }
 }

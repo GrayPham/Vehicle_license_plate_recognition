@@ -163,7 +163,7 @@ namespace Vehicle_license_plate_recognition
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.43.202";
             String server_path = "http://" + server_ip + ":8000/detect";
-            int IdStaff = 322;
+            int IdStaff = Convert.ToInt32( txtIdStaff.Text);
             int TypeVehicle = loaixe();
             try
             {
@@ -171,6 +171,9 @@ namespace Vehicle_license_plate_recognition
                 //String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
                 //String retStr = sendPOST(server_path, B64);
                 //richTextBox_licenseplates.Text = retStr;
+                
+
+                //TEst
                 String retStr = "123";
                 if (retStr.Count() <15)
                 {
@@ -214,7 +217,11 @@ namespace Vehicle_license_plate_recognition
             int IdStaff = 322;
             string licenseplates= richTextBox_licenseplates.Text;
             decimal price =Convert.ToDecimal( txtPrice.Text) ;
-            nv.PostThanhToan(TypeVehicle, price,IdStaff, ChargeTime, licenseplates);
+            
+            if(nv.PostThanhToan(TypeVehicle, price,IdStaff, ChargeTime, licenseplates) == true)
+            {
+                txtPrice.Text = "";
+            }
         }
         public string sendGet(string uri)
         {
