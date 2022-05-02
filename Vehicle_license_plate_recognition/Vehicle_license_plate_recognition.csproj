@@ -96,10 +96,10 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManager.cs">
+    <Compile Include="Manager\FormManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManager.Designer.cs">
+    <Compile Include="Manager\FormManager.Designer.cs">
       <DependentUpon>FormManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
@@ -207,7 +207,7 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManager.resx">
+    <EmbeddedResource Include="Manager\FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
