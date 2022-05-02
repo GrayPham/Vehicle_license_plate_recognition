@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtUserStaff = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBox_Park = new System.Windows.Forms.ComboBox();
             this.lbLoaiHinh = new System.Windows.Forms.Label();
             this.button_done = new System.Windows.Forms.Button();
@@ -52,8 +54,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.txtUserStaff = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtUserStaff);
             this.groupBox1.Controls.Add(this.comboBox_Park);
@@ -97,10 +99,45 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(689, 587);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 32);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "ID Staff";
+            // 
+            // txtUserStaff
+            // 
+            this.txtUserStaff.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtUserStaff.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUserStaff.DefaultText = "322";
+            this.txtUserStaff.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUserStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUserStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserStaff.DisabledState.Parent = this.txtUserStaff;
+            this.txtUserStaff.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserStaff.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUserStaff.FocusedState.Parent = this.txtUserStaff;
+            this.txtUserStaff.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUserStaff.HoverState.Parent = this.txtUserStaff;
+            this.txtUserStaff.Location = new System.Drawing.Point(809, 578);
+            this.txtUserStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserStaff.Name = "txtUserStaff";
+            this.txtUserStaff.PasswordChar = '\0';
+            this.txtUserStaff.PlaceholderText = "";
+            this.txtUserStaff.SelectedText = "";
+            this.txtUserStaff.SelectionStart = 3;
+            this.txtUserStaff.ShadowDecoration.Parent = this.txtUserStaff;
+            this.txtUserStaff.Size = new System.Drawing.Size(267, 44);
+            this.txtUserStaff.TabIndex = 39;
+            // 
             // comboBox_Park
             // 
             this.comboBox_Park.FormattingEnabled = true;
-            this.comboBox_Park.Location = new System.Drawing.Point(1100, 467);
+            this.comboBox_Park.Location = new System.Drawing.Point(1099, 473);
             this.comboBox_Park.Name = "comboBox_Park";
             this.comboBox_Park.Size = new System.Drawing.Size(421, 24);
             this.comboBox_Park.TabIndex = 38;
@@ -269,7 +306,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(427, 27);
             this.dateTimePicker2.TabIndex = 27;
-            this.dateTimePicker2.Value = new System.DateTime(2022, 4, 3, 0, 0, 0, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2022, 5, 2, 0, 0, 0, 0);
             // 
             // btn_Check
             // 
@@ -320,40 +357,12 @@
             // 
             this.saveFileDialog1.Filter = "Jpeg image|*.jpeg|Png image|*.png|Gif image|*.gif";
             // 
-            // txtUserStaff
+            // txtPrice
             // 
-            this.txtUserStaff.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtUserStaff.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserStaff.DefaultText = "322";
-            this.txtUserStaff.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtUserStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtUserStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUserStaff.DisabledState.Parent = this.txtUserStaff;
-            this.txtUserStaff.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUserStaff.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserStaff.FocusedState.Parent = this.txtUserStaff;
-            this.txtUserStaff.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserStaff.HoverState.Parent = this.txtUserStaff;
-            this.txtUserStaff.Location = new System.Drawing.Point(809, 578);
-            this.txtUserStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtUserStaff.Name = "txtUserStaff";
-            this.txtUserStaff.PasswordChar = '\0';
-            this.txtUserStaff.PlaceholderText = "";
-            this.txtUserStaff.SelectedText = "";
-            this.txtUserStaff.SelectionStart = 3;
-            this.txtUserStaff.ShadowDecoration.Parent = this.txtUserStaff;
-            this.txtUserStaff.Size = new System.Drawing.Size(267, 44);
-            this.txtUserStaff.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(689, 587);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 32);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "ID Staff";
+            this.txtPrice.Location = new System.Drawing.Point(1420, 445);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPrice.TabIndex = 41;
             // 
             // FormVehicleCam
             // 
@@ -402,5 +411,6 @@
         private System.Windows.Forms.ComboBox comboBox_Park;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtUserStaff;
+        private System.Windows.Forms.TextBox txtPrice;
     }
 }

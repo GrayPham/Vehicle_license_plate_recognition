@@ -18,6 +18,7 @@ namespace Vehicle_license_plate_recognition.BLL
             db.SaveChanges();
             
         }
+
         public List<NguoiGui> getAllLiPlate(string bienso)
         {
             List<NguoiGui> liPlates = (from LicensePlates in db.NguoiGuis where LicensePlates.LicensePlates == bienso select LicensePlates).ToList();
@@ -36,7 +37,7 @@ namespace Vehicle_license_plate_recognition.BLL
             return parkActive;
         }
 
-        public void PostSentCar(DateTime deliveryTime, string licensePlates, string idPark, int typeVehicle, string path)
+        public void PostSentCar(DateTime deliveryTime, string licensePlates, string idPark, int typeVehicle, string path, string place)
         {
             NguoiGui nguoiGui = new NguoiGui();
             nguoiGui.IdVehicleType = typeVehicle;
@@ -44,12 +45,18 @@ namespace Vehicle_license_plate_recognition.BLL
             nguoiGui.LicensePlates = licensePlates;
             nguoiGui.ImagePath = path;
             nguoiGui.IdPlacePark = idPark;
+            nguoiGui.PlaceID = place;
             db.NguoiGuis.Add(nguoiGui);
             db.SaveChanges();
 
 
         }
-
+        public void PostReturnVehicle(string licensePlates, DateTime returnTime)
+        {
+            NguoiGui user = db.NguoiGuis.Where(x => x.LicensePlates == licensePlates).FirstOrDefault();
+            user.ReturnTime = returnTime;
+            db.SaveChanges();
+        }
         internal DateTime GetDeleveryTime(string licensePlate)
         {
             List<NguoiGui> first = db.NguoiGuis.Where(user => user.LicensePlates == licensePlate).ToList<NguoiGui>();
@@ -61,6 +68,19 @@ namespace Vehicle_license_plate_recognition.BLL
         {
             var vehicle = db.TypeVehicles.Where(vehi => vehi.IdVehicle == typeVehicle).FirstOrDefault();
             return (double)vehicle.UnitPrice;
+        }
+
+        internal void PostPayment(string idPayment, decimal price, int typeVehicle, int idStaff, DateTime chargeTime, string licenseplates)
+        {
+            ThanhToan tt = new ThanhToan();
+            tt.IdPayment = idPayment;
+            tt.Price = price;
+            tt.IdTVehicle = typeVehicle;
+            tt.IdStaff = idStaff;
+            tt.ChargeTime = chargeTime;
+            tt.LicensePlates = licenseplates;
+            db.ThanhToans.Add(tt);
+            db.SaveChanges();
         }
     }
 }

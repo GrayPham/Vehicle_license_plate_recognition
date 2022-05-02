@@ -118,8 +118,8 @@ namespace Vehicle_license_plate_recognition
             if (pictureBox_camera.Image == null)
             {
                 btn_parking.Enabled = true;
-                btn_charge.Enabled = false;
-                btn_Check.Enabled = false;
+                btn_charge.Enabled = true;
+                btn_Check.Enabled = true;
             }
 
 
@@ -180,7 +180,8 @@ namespace Vehicle_license_plate_recognition
                         btn_parking.Enabled = false;
                         DateTime ReturnTime = DateTime.Now;
                         double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
-                        lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr + Price;
+                        lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr ;
+                        txtPrice.Text = Price.ToString();
 
                     }
                     else
@@ -208,7 +209,12 @@ namespace Vehicle_license_plate_recognition
 
         private void btn_charge_Click(object sender, EventArgs e)
         {
-            
+            DateTime ChargeTime = DateTime.Now;
+            int TypeVehicle = loaixe();
+            int IdStaff = 322;
+            string licenseplates= richTextBox_licenseplates.Text;
+            decimal price =Convert.ToDecimal( txtPrice.Text) ;
+            nv.PostThanhToan(TypeVehicle, price,IdStaff, ChargeTime, licenseplates);
         }
         public string sendGet(string uri)
         {
