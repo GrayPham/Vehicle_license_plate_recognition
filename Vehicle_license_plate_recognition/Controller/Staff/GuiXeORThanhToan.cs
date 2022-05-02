@@ -16,9 +16,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
     public class GuiXeORThanhToan
     {
         NVBLL nvbll = new NVBLL();
-        private int xedap = 1;
-        private int xemay = 2;
-        private int xeOto = 3;
+        ParkDistribution parkDistribution = new ParkDistribution();
         public bool isParked(string bienso)
         {
             List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso);
@@ -48,7 +46,16 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
                 Bitmap imageB = new Bitmap(image);
                 string path = Dir + "\\Image\\BienDai\\" + filename;
                 imageB.Save(path +("." + ImageFormat.Png.ToString()));
-                nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, path);
+                string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
+                if(place != null)
+                {
+                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, path, place);
+                }
+                else
+                {
+                    // Ngoại lệ neu Bai se hết chỗ trống
+                }
+                
             }
             
             return true;
@@ -59,6 +66,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             double price = nvbll.GetPriceofVehicle(typeVehicle);
             DateTime DeliveryTime = nvbll.GetDeleveryTime(LicensePlate);
             double priceAVehicle = PriceAVehicle(DeliveryTime, returnTime, price);
+            nvbll.PostReturnVehicle(LicensePlate, returnTime);
             return priceAVehicle;
         }
         private double PriceAVehicle(DateTime DeliveryTime, DateTime ReturnTime, double UnitPrice)
@@ -71,7 +79,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             int NumDayOfMouth = 30;
             int NumDayOfWeek = 7;
             //int NumHoursOfDay = 24;
-            if (ReturnTime >= DeliveryTime)
+            if (ReturnTime < DeliveryTime)
             {
                 DateTime TimeTemp = ReturnTime;
                 ReturnTime = DeliveryTime;
@@ -105,6 +113,13 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             
             return price;
 
+        }
+
+        internal void PostThanhToan(int typeVehicle, decimal Price, int idStaff, DateTime chargeTime, string licenseplates)
+        {
+            string time = String.Format("{0:s}", chargeTime); // "2008-03-09T16:05:07"               SortableDateTime
+            string idPayment = licenseplates + '_'+ typeVehicle + '_' + time ;
+            nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates);
         }
     }
 }

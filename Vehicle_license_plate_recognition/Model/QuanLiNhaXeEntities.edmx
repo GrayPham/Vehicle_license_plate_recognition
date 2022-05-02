@@ -139,10 +139,11 @@
           <Key>
             <PropertyRef Name="IdPayment" />
           </Key>
-          <Property Name="IdPayment" Type="int" Nullable="false" />
+          <Property Name="IdPayment" Type="nchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="int" />
           <Property Name="IdStaff" Type="int" />
+          <Property Name="ChargeTime" Type="datetime" />
           <Property Name="LicensePlates" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TypeVehicle">
@@ -583,7 +584,7 @@
           <Key>
             <PropertyRef Name="IdPayment" />
           </Key>
-          <Property Name="IdPayment" Type="Int32" Nullable="false" />
+          <Property Name="IdPayment" Type="String" Nullable="false" MaxLength="100" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="Int32" />
           <Property Name="IdStaff" Type="Int32" />
@@ -591,6 +592,7 @@
           <NavigationProperty Name="NguoiGui" Relationship="Self.FK_ThanhToan_NguoiGui1" FromRole="ThanhToan" ToRole="NguoiGui" />
           <NavigationProperty Name="NV" Relationship="Self.FK_ThanhToan_NV" FromRole="ThanhToan" ToRole="NV" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="ThanhToan" ToRole="TypeVehicle" />
+          <Property Name="ChargeTime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="TypeVehicle">
           <Key>
@@ -1035,6 +1037,7 @@
           <EntitySetMapping Name="ThanhToans">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.ThanhToan">
               <MappingFragment StoreEntitySet="ThanhToan">
+                <ScalarProperty Name="ChargeTime" ColumnName="ChargeTime" />
                 <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="IdTVehicle" ColumnName="IdTVehicle" />
