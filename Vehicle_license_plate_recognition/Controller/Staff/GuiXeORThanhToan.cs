@@ -39,7 +39,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             // Get current working directory (..\bin\Debug)
             string workingDirectory = Environment.CurrentDirectory;
             string Dir = Directory.GetParent(workingDirectory).Parent.FullName;
-            string time = String.Format("{0:s}", deliveryTime);
+            string time = String.Format("{0:yyyy_MM_dd_HH_mm_ss}", deliveryTime);
             if (typeVehicle == 3)
             {
                 string filename = licensePlates;

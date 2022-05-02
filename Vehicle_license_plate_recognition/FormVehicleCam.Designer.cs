@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdStaff = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_Park = new System.Windows.Forms.ComboBox();
@@ -49,14 +50,14 @@
             this.label_vehicleclassification = new System.Windows.Forms.Label();
             this.richTextBox_licenseplates = new System.Windows.Forms.RichTextBox();
             this.label_licenseplates = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerSystem = new System.Windows.Forms.DateTimePicker();
             this.btn_Check = new System.Windows.Forms.Button();
             this.btn_parking = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.txtIdStaff = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.timerSysterm = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
@@ -89,7 +90,7 @@
             this.groupBox1.Controls.Add(this.label_vehicleclassification);
             this.groupBox1.Controls.Add(this.richTextBox_licenseplates);
             this.groupBox1.Controls.Add(this.label_licenseplates);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.dateTimePickerSystem);
             this.groupBox1.Controls.Add(this.btn_Check);
             this.groupBox1.Controls.Add(this.btn_parking);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -100,6 +101,15 @@
             this.groupBox1.Size = new System.Drawing.Size(1578, 845);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtIdStaff
+            // 
+            this.txtIdStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdStaff.Location = new System.Drawing.Point(803, 583);
+            this.txtIdStaff.Name = "txtIdStaff";
+            this.txtIdStaff.ReadOnly = true;
+            this.txtIdStaff.Size = new System.Drawing.Size(273, 38);
+            this.txtIdStaff.TabIndex = 42;
             // 
             // txtPrice
             // 
@@ -281,16 +291,16 @@
             this.label_licenseplates.TabIndex = 32;
             this.label_licenseplates.Text = "License Plates";
             // 
-            // dateTimePicker2
+            // dateTimePickerSystem
             // 
-            this.dateTimePicker2.CustomFormat = " MMMM dd, yyyy | hh: mm: ss : tt";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(1093, 293);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(427, 27);
-            this.dateTimePicker2.TabIndex = 27;
-            this.dateTimePicker2.Value = new System.DateTime(2022, 5, 2, 0, 0, 0, 0);
+            this.dateTimePickerSystem.CustomFormat = " MMMM dd, yyyy | hh: mm: ss : tt";
+            this.dateTimePickerSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateTimePickerSystem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSystem.Location = new System.Drawing.Point(1093, 293);
+            this.dateTimePickerSystem.Name = "dateTimePickerSystem";
+            this.dateTimePickerSystem.Size = new System.Drawing.Size(427, 27);
+            this.dateTimePickerSystem.TabIndex = 27;
+            this.dateTimePickerSystem.Value = new System.DateTime(2022, 5, 2, 0, 0, 0, 0);
             // 
             // btn_Check
             // 
@@ -341,20 +351,15 @@
             // 
             this.saveFileDialog1.Filter = "Jpeg image|*.jpeg|Png image|*.png|Gif image|*.gif";
             // 
-            // txtIdStaff
-            // 
-            this.txtIdStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdStaff.Location = new System.Drawing.Point(803, 583);
-            this.txtIdStaff.Name = "txtIdStaff";
-            this.txtIdStaff.ReadOnly = true;
-            this.txtIdStaff.Size = new System.Drawing.Size(273, 38);
-            this.txtIdStaff.TabIndex = 42;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // timerSysterm
+            // 
+            this.timerSysterm.Tick += new System.EventHandler(this.timerSysterm_Tick);
             // 
             // FormVehicleCam
             // 
@@ -391,7 +396,7 @@
         private System.Windows.Forms.Label label_vehicleclassification;
         private System.Windows.Forms.RichTextBox richTextBox_licenseplates;
         private System.Windows.Forms.Label label_licenseplates;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSystem;
         private System.Windows.Forms.Button btn_Check;
         private System.Windows.Forms.Button btn_parking;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -406,5 +411,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         internal System.Windows.Forms.TextBox txtIdStaff;
+        private System.Windows.Forms.Timer timerSysterm;
     }
 }

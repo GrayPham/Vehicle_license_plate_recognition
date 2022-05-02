@@ -115,6 +115,7 @@ namespace Vehicle_license_plate_recognition
             //FormBorderStyle = FormBorderStyle.None;
             //WindowState = FormWindowState.Maximized;
             //TopMost = true;
+            timerSysterm.Start();
             if (pictureBox_camera.Image == null)
             {
                 btn_parking.Enabled = true;
@@ -154,6 +155,7 @@ namespace Vehicle_license_plate_recognition
         }
         private void button_done_Click(object sender, EventArgs e)
         {
+            timerSysterm.Stop();
             this.Close();
         }
 
@@ -174,14 +176,14 @@ namespace Vehicle_license_plate_recognition
                 
 
                 //TEst
-                String retStr = "123";
+                String retStr = richTextBox_licenseplates.Text;
                 if (retStr.Count() <15)
                 {
                     if (nv.isParked(retStr) == true)
                     {
                         
                         btn_parking.Enabled = false;
-                        DateTime ReturnTime = DateTime.Now;
+                        DateTime ReturnTime = dateTimePickerSystem.Value;
                         double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
                         lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr ;
                         txtPrice.Text = Price.ToString();
@@ -214,7 +216,7 @@ namespace Vehicle_license_plate_recognition
         {
             DateTime ChargeTime = DateTime.Now;
             int TypeVehicle = loaixe();
-            int IdStaff = 322;
+            int IdStaff = Convert.ToInt32( txtIdStaff.Text);
             string licenseplates= richTextBox_licenseplates.Text;
             decimal price =Convert.ToDecimal( txtPrice.Text) ;
             
@@ -310,7 +312,7 @@ namespace Vehicle_license_plate_recognition
         {
 
             int TypeVehicle = loaixe();
-            DateTime DeliveryTime = dateTimePicker2.Value;
+            DateTime DeliveryTime = dateTimePickerSystem.Value;
             string LicensePlates = richTextBox_licenseplates.Text;
             Image image = pictureBox_recognize.Image;
             string IdPark = comboBox_Park.SelectedValue.ToString();
@@ -351,6 +353,11 @@ namespace Vehicle_license_plate_recognition
             {
                 fillCombo();
             }
+        }
+
+        private void timerSysterm_Tick(object sender, EventArgs e)
+        {
+            dateTimePickerSystem.Value = DateTime.Now;
         }
     }
 }
