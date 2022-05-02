@@ -1339,6 +1339,8 @@
     <Folder Include="Image\BienVuong\" />
     <Folder Include="Image\KhuonMat\NguoiGui\" />
     <Folder Include="Image\KhuonMat\NhanVien\" />
+    <Folder Include="NomalStaff\" />
+    <Folder Include="OfficeStaff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
