@@ -1329,6 +1329,8 @@
       <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
       <LastGenOutput>QuanLiNhaXeEntities.cs</LastGenOutput>
     </Content>
+    <Content Include="NomalStaff\StaffHere.txt" />
+    <Content Include="OfficeStaff\OfficeStaffHere.txt" />
     <None Include="Resources\logo CLC Circle.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1339,8 +1341,6 @@
     <Folder Include="Image\BienVuong\" />
     <Folder Include="Image\KhuonMat\NguoiGui\" />
     <Folder Include="Image\KhuonMat\NhanVien\" />
-    <Folder Include="NomalStaff\" />
-    <Folder Include="OfficeStaff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
