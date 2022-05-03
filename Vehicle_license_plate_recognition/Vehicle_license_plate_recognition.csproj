@@ -93,6 +93,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\AddEmploy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\AddEmploy.Designer.cs">
+      <DependentUpon>AddEmploy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\FormManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\AddEmploy.resx">
+      <DependentUpon>AddEmploy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -231,6 +240,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AI\BienSoXeDoc\data\a" />
     <None Include="AI\BienSoXeDoc\wpod-net_update1.h5" />
@@ -1332,6 +1342,8 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="Resources\hcmute.png" />
+    <None Include="Resources\131943797_222666359353624_8357918975126419137_o.jpg" />
     <None Include="Resources\logo CLC Circle.png" />
   </ItemGroup>
   <ItemGroup>
