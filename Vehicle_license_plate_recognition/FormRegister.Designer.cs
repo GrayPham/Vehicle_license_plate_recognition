@@ -180,6 +180,7 @@
             this.ClientSize = new System.Drawing.Size(758, 552);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

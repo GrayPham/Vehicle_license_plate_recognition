@@ -24,6 +24,7 @@ namespace Vehicle_license_plate_recognition
         //camera cụ thể ta chọn để chup
         private VideoCaptureDevice video;
         GuiXeORThanhToan nv = new GuiXeORThanhToan();
+        DateTime timeWork;
         public FormVehicleCam()
         {
             InitializeComponent();
@@ -67,17 +68,17 @@ namespace Vehicle_license_plate_recognition
                 pictureBox_camera.Image = null;
             }
             else
-                MessageBox.Show("Please turn on camera!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                MessageBox.Show("Camera hien tai khong bat!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                btn_parking.Enabled = false;
-                btn_charge.Enabled = false;
-                btn_Check.Enabled = false;
+                
+            }
+            btn_parking.Enabled = false;
+            btn_charge.Enabled = false;
+            btn_Check.Enabled = false;
 
-             FormStaff a = new FormStaff();
-             this.Visible = false;
-             a.ShowDialog();
-            this.Visible = true;
-            
+
+
         }
         //cam đang mở tắt nó đi tránh nó chạy ngầm 
         protected override void OnClosed(EventArgs e)
@@ -95,12 +96,12 @@ namespace Vehicle_license_plate_recognition
             {
                 //chỗ lưu ảnh đã chụp
                 video.Stop();
-                saveFileDialog1.InitialDirectory = "C:\\Users\\admin\\OneDrive\\Hình ảnh\\Capture winform";
-                saveFileDialog1.FileName = "";
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                
+                if (pictureBox_camera.Image != null)
                 {
-                    pictureBox_camera.Image.Save(saveFileDialog1.FileName);
+                    pictureBox_recognize.Image = pictureBox_camera.Image;
                 }
+                video.Start();
             }
             else
             {
@@ -115,16 +116,18 @@ namespace Vehicle_license_plate_recognition
             //FormBorderStyle = FormBorderStyle.None;
             //WindowState = FormWindowState.Maximized;
             //TopMost = true;
+            timeWork =DateTime.Now;
             timerSysterm.Start();
             if (pictureBox_camera.Image == null)
             {
-                btn_parking.Enabled = true;
-                btn_charge.Enabled = true;
+                btn_parking.Enabled = false;
+                btn_charge.Enabled = false;
                 btn_Check.Enabled = true;
             }
 
 
             fillCombo();
+            fillDVGThanhToan();
             //comboBox_Park.SelectedValue = "Id";
         }
         public void fillCombo(int index = 0)
@@ -156,12 +159,17 @@ namespace Vehicle_license_plate_recognition
         private void button_done_Click(object sender, EventArgs e)
         {
             timerSysterm.Stop();
+            if (video != null && video.IsRunning)
+            {
+                video.Stop();
+                pictureBox_camera.Image = null;
+            }
             this.Close();
         }
 
         private void btn_Check_Click(object sender, EventArgs e)
         {
-            
+            lbLoaiHinh.Text = "";
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.43.202";
             String server_path = "http://" + server_ip + ":8000/detect";
@@ -179,21 +187,34 @@ namespace Vehicle_license_plate_recognition
                 String retStr = richTextBox_licenseplates.Text;
                 if (retStr.Count() <15)
                 {
-                    if (nv.isParked(retStr) == true)
+                    if (retStr != "" )
                     {
-                        
-                        btn_parking.Enabled = false;
-                        DateTime ReturnTime = dateTimePickerSystem.Value;
-                        double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
-                        lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr ;
-                        txtPrice.Text = Price.ToString();
+                        if (nv.isParked(retStr) == true)
+                        {
 
+                            btn_parking.Enabled = false;
+                            DateTime ReturnTime = dateTimePickerSystem.Value;
+                            double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
+                            lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr;
+                            txtPrice.Text = Price.ToString();
+                            btn_charge.Enabled = true;
+
+                        }
+                        
+                        else
+                        {
+                            lbLoaiHinh.Text = "Gui Xe Bien So: " + retStr;
+                            btn_charge.Enabled = false;
+                            btn_parking.Enabled = true;
+                        }
+                    }
+                    else if(TypeVehicle == 1)
+                    {
+                        // Hoàn thiện
+                        lbLoaiHinh.Text = "Nhan dien khuon mat";
                     }
                     else
-                    {
-                        lbLoaiHinh.Text = "Gui Xe Bien So: " + retStr ;
-                        btn_charge.Enabled = false;
-                    }
+                        lbLoaiHinh.Text = "No license plate";
                 }
                 else
                 {
@@ -205,9 +226,7 @@ namespace Vehicle_license_plate_recognition
             {
                 MessageBox.Show(ex.ToString(), "Exception");
             }
-            
 
-            
         }
 
 
@@ -223,6 +242,7 @@ namespace Vehicle_license_plate_recognition
             if(nv.PostThanhToan(TypeVehicle, price,IdStaff, ChargeTime, licenseplates) == true)
             {
                 txtPrice.Text = "";
+                fillDVGThanhToan();
             }
         }
         public string sendGet(string uri)
@@ -323,7 +343,7 @@ namespace Vehicle_license_plate_recognition
             }
             else
             {
-                MessageBox.Show("Loi Post Car");
+                MessageBox.Show("Error Post Car");
             }
 
             
@@ -336,6 +356,7 @@ namespace Vehicle_license_plate_recognition
             if (radioButton_motorbike.Checked)
             {
                 fillCombo();
+                richTextBox_licenseplates.Enabled = true;
             }
         }
 
@@ -344,6 +365,7 @@ namespace Vehicle_license_plate_recognition
             if (radioButton_bicycle.Checked)
             {
                 fillCombo();
+                richTextBox_licenseplates.Enabled = false;
             }
         }
 
@@ -352,12 +374,18 @@ namespace Vehicle_license_plate_recognition
             if (radioButton_car.Checked)
             {
                 fillCombo();
+                richTextBox_licenseplates.Enabled = true;
             }
         }
 
         private void timerSysterm_Tick(object sender, EventArgs e)
         {
             dateTimePickerSystem.Value = DateTime.Now;
+        }
+        // All Bill kể từ thời điêm thực hiện công việc / NGày làm việc etc...
+        private void fillDVGThanhToan()
+        {
+            DGVThanhToan.DataSource = nv.GetAllBillVehicle(timeWork);
         }
     }
 }

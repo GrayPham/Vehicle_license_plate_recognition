@@ -58,11 +58,14 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timerSysterm = new System.Windows.Forms.Timer(this.components);
+            this.DGVThanhToan = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +78,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.DGVThanhToan);
             this.groupBox1.Controls.Add(this.txtIdStaff);
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.label1);
@@ -113,9 +118,12 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(1420, 445);
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.ForeColor = System.Drawing.Color.Red;
+            this.txtPrice.Location = new System.Drawing.Point(803, 648);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(273, 38);
             this.txtPrice.TabIndex = 41;
             // 
             // label1
@@ -130,18 +138,21 @@
             // 
             // comboBox_Park
             // 
+            this.comboBox_Park.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Park.FormattingEnabled = true;
-            this.comboBox_Park.Location = new System.Drawing.Point(1099, 473);
+            this.comboBox_Park.Location = new System.Drawing.Point(1100, 406);
             this.comboBox_Park.Name = "comboBox_Park";
-            this.comboBox_Park.Size = new System.Drawing.Size(421, 24);
+            this.comboBox_Park.Size = new System.Drawing.Size(421, 39);
             this.comboBox_Park.TabIndex = 38;
             // 
             // lbLoaiHinh
             // 
             this.lbLoaiHinh.AutoSize = true;
-            this.lbLoaiHinh.Location = new System.Drawing.Point(1225, 448);
+            this.lbLoaiHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoaiHinh.ForeColor = System.Drawing.Color.Red;
+            this.lbLoaiHinh.Location = new System.Drawing.Point(1097, 670);
             this.lbLoaiHinh.Name = "lbLoaiHinh";
-            this.lbLoaiHinh.Size = new System.Drawing.Size(45, 16);
+            this.lbLoaiHinh.Size = new System.Drawing.Size(81, 29);
             this.lbLoaiHinh.TabIndex = 37;
             this.lbLoaiHinh.Text = "Check";
             // 
@@ -149,7 +160,7 @@
             // 
             this.button_done.BackColor = System.Drawing.Color.Transparent;
             this.button_done.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_done.Location = new System.Drawing.Point(1189, 656);
+            this.button_done.Location = new System.Drawing.Point(1344, 790);
             this.button_done.Name = "button_done";
             this.button_done.Size = new System.Drawing.Size(176, 36);
             this.button_done.TabIndex = 36;
@@ -160,7 +171,7 @@
             // pictureBox_recognize
             // 
             this.pictureBox_recognize.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_recognize.Image")));
-            this.pictureBox_recognize.Location = new System.Drawing.Point(1099, 128);
+            this.pictureBox_recognize.Location = new System.Drawing.Point(1099, 83);
             this.pictureBox_recognize.Name = "pictureBox_recognize";
             this.pictureBox_recognize.Size = new System.Drawing.Size(421, 146);
             this.pictureBox_recognize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +182,7 @@
             // 
             this.btn_charge.BackColor = System.Drawing.Color.Transparent;
             this.btn_charge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_charge.Location = new System.Drawing.Point(1189, 614);
+            this.btn_charge.Location = new System.Drawing.Point(1344, 731);
             this.btn_charge.Name = "btn_charge";
             this.btn_charge.Size = new System.Drawing.Size(176, 36);
             this.btn_charge.TabIndex = 31;
@@ -183,7 +194,7 @@
             // 
             this.btn_offcam.BackColor = System.Drawing.Color.Transparent;
             this.btn_offcam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_offcam.Location = new System.Drawing.Point(575, 769);
+            this.btn_offcam.Location = new System.Drawing.Point(449, 769);
             this.btn_offcam.Name = "btn_offcam";
             this.btn_offcam.Size = new System.Drawing.Size(221, 53);
             this.btn_offcam.TabIndex = 25;
@@ -195,7 +206,7 @@
             // 
             this.btn_cap.BackColor = System.Drawing.Color.Transparent;
             this.btn_cap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_cap.Location = new System.Drawing.Point(575, 710);
+            this.btn_cap.Location = new System.Drawing.Point(449, 710);
             this.btn_cap.Name = "btn_cap";
             this.btn_cap.Size = new System.Drawing.Size(221, 53);
             this.btn_cap.TabIndex = 24;
@@ -207,7 +218,7 @@
             // 
             this.btn_cam.BackColor = System.Drawing.Color.Transparent;
             this.btn_cam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_cam.Location = new System.Drawing.Point(575, 651);
+            this.btn_cam.Location = new System.Drawing.Point(449, 651);
             this.btn_cam.Name = "btn_cam";
             this.btn_cam.Size = new System.Drawing.Size(221, 53);
             this.btn_cam.TabIndex = 23;
@@ -221,16 +232,16 @@
             this.panel2.Controls.Add(this.radioButton_bicycle);
             this.panel2.Controls.Add(this.radioButton_motorbike);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel2.Location = new System.Drawing.Point(1100, 377);
+            this.panel2.Location = new System.Drawing.Point(1099, 312);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(353, 57);
+            this.panel2.Size = new System.Drawing.Size(421, 57);
             this.panel2.TabIndex = 34;
             // 
             // radioButton_car
             // 
             this.radioButton_car.AutoSize = true;
             this.radioButton_car.Checked = true;
-            this.radioButton_car.Location = new System.Drawing.Point(248, 13);
+            this.radioButton_car.Location = new System.Drawing.Point(317, 13);
             this.radioButton_car.Name = "radioButton_car";
             this.radioButton_car.Size = new System.Drawing.Size(60, 24);
             this.radioButton_car.TabIndex = 19;
@@ -242,7 +253,7 @@
             // radioButton_bicycle
             // 
             this.radioButton_bicycle.AutoSize = true;
-            this.radioButton_bicycle.Location = new System.Drawing.Point(141, 13);
+            this.radioButton_bicycle.Location = new System.Drawing.Point(13, 13);
             this.radioButton_bicycle.Name = "radioButton_bicycle";
             this.radioButton_bicycle.Size = new System.Drawing.Size(92, 24);
             this.radioButton_bicycle.TabIndex = 18;
@@ -253,7 +264,7 @@
             // radioButton_motorbike
             // 
             this.radioButton_motorbike.AutoSize = true;
-            this.radioButton_motorbike.Location = new System.Drawing.Point(15, 13);
+            this.radioButton_motorbike.Location = new System.Drawing.Point(163, 13);
             this.radioButton_motorbike.Name = "radioButton_motorbike";
             this.radioButton_motorbike.Size = new System.Drawing.Size(112, 24);
             this.radioButton_motorbike.TabIndex = 17;
@@ -266,7 +277,7 @@
             this.label_vehicleclassification.AutoSize = true;
             this.label_vehicleclassification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label_vehicleclassification.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label_vehicleclassification.Location = new System.Drawing.Point(1096, 345);
+            this.label_vehicleclassification.Location = new System.Drawing.Point(1095, 276);
             this.label_vehicleclassification.Name = "label_vehicleclassification";
             this.label_vehicleclassification.Size = new System.Drawing.Size(192, 20);
             this.label_vehicleclassification.TabIndex = 33;
@@ -275,7 +286,7 @@
             // richTextBox_licenseplates
             // 
             this.richTextBox_licenseplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_licenseplates.Location = new System.Drawing.Point(1099, 58);
+            this.richTextBox_licenseplates.Location = new System.Drawing.Point(1100, 26);
             this.richTextBox_licenseplates.Name = "richTextBox_licenseplates";
             this.richTextBox_licenseplates.Size = new System.Drawing.Size(421, 51);
             this.richTextBox_licenseplates.TabIndex = 26;
@@ -285,7 +296,7 @@
             // 
             this.label_licenseplates.AutoSize = true;
             this.label_licenseplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_licenseplates.Location = new System.Drawing.Point(1095, 35);
+            this.label_licenseplates.Location = new System.Drawing.Point(1096, 3);
             this.label_licenseplates.Name = "label_licenseplates";
             this.label_licenseplates.Size = new System.Drawing.Size(134, 20);
             this.label_licenseplates.TabIndex = 32;
@@ -296,7 +307,7 @@
             this.dateTimePickerSystem.CustomFormat = " MMMM dd, yyyy | hh: mm: ss : tt";
             this.dateTimePickerSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dateTimePickerSystem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSystem.Location = new System.Drawing.Point(1093, 293);
+            this.dateTimePickerSystem.Location = new System.Drawing.Point(1093, 235);
             this.dateTimePickerSystem.Name = "dateTimePickerSystem";
             this.dateTimePickerSystem.Size = new System.Drawing.Size(427, 27);
             this.dateTimePickerSystem.TabIndex = 27;
@@ -304,9 +315,10 @@
             // 
             // btn_Check
             // 
-            this.btn_Check.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Check.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Check.Location = new System.Drawing.Point(1189, 529);
+            this.btn_Check.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Check.Location = new System.Drawing.Point(1144, 732);
             this.btn_Check.Name = "btn_Check";
             this.btn_Check.Size = new System.Drawing.Size(176, 35);
             this.btn_Check.TabIndex = 29;
@@ -318,7 +330,7 @@
             // 
             this.btn_parking.BackColor = System.Drawing.Color.Transparent;
             this.btn_parking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_parking.Location = new System.Drawing.Point(1189, 570);
+            this.btn_parking.Location = new System.Drawing.Point(1144, 788);
             this.btn_parking.Name = "btn_parking";
             this.btn_parking.Size = new System.Drawing.Size(176, 38);
             this.btn_parking.TabIndex = 28;
@@ -361,13 +373,34 @@
             // 
             this.timerSysterm.Tick += new System.EventHandler(this.timerSysterm_Tick);
             // 
+            // DGVThanhToan
+            // 
+            this.DGVThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVThanhToan.Location = new System.Drawing.Point(1100, 452);
+            this.DGVThanhToan.Name = "DGVThanhToan";
+            this.DGVThanhToan.RowHeadersWidth = 51;
+            this.DGVThanhToan.RowTemplate.Height = 24;
+            this.DGVThanhToan.Size = new System.Drawing.Size(420, 196);
+            this.DGVThanhToan.TabIndex = 43;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(689, 648);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 32);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Price";
+            // 
             // FormVehicleCam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1597, 869);
+            this.ClientSize = new System.Drawing.Size(1716, 970);
             this.Controls.Add(this.panel1);
             this.Name = "FormVehicleCam";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVehicleCam";
             this.Load += new System.EventHandler(this.FormVehicleCam_Load);
             this.panel1.ResumeLayout(false);
@@ -377,6 +410,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +446,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         internal System.Windows.Forms.TextBox txtIdStaff;
         private System.Windows.Forms.Timer timerSysterm;
+        private System.Windows.Forms.DataGridView DGVThanhToan;
+        private System.Windows.Forms.Label label2;
     }
 }

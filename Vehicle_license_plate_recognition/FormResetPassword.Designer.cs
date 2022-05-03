@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_cancel = new System.Windows.Forms.Button();
             this.label_status = new System.Windows.Forms.Label();
             this.button_reset = new System.Windows.Forms.Button();
             this.textBox_confirm = new System.Windows.Forms.TextBox();
@@ -36,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_newpass = new System.Windows.Forms.TextBox();
             this.label_newpass = new System.Windows.Forms.Label();
-            this.button_cancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,17 @@
             this.groupBox1.Size = new System.Drawing.Size(840, 415);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_cancel.Location = new System.Drawing.Point(297, 323);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(348, 36);
+            this.button_cancel.TabIndex = 28;
+            this.button_cancel.Text = "Cancel";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
             // label_status
             // 
@@ -124,17 +135,6 @@
             this.label_newpass.TabIndex = 16;
             this.label_newpass.Text = "New Password:";
             // 
-            // button_cancel
-            // 
-            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_cancel.Location = new System.Drawing.Point(297, 323);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(348, 36);
-            this.button_cancel.TabIndex = 28;
-            this.button_cancel.Text = "Cancel";
-            this.button_cancel.UseVisualStyleBackColor = true;
-            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
-            // 
             // FormResetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,6 +142,7 @@
             this.ClientSize = new System.Drawing.Size(907, 498);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormResetPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormResetPassword";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

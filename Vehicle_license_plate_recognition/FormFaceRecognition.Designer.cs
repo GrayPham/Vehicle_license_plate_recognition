@@ -168,6 +168,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox_camera);
             this.Name = "FormFaceRecognition";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormFaceRecognition";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_face)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).EndInit();

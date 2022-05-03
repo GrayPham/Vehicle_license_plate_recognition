@@ -156,6 +156,7 @@
             this.ClientSize = new System.Drawing.Size(918, 532);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormForgotPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormForgotPassword";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

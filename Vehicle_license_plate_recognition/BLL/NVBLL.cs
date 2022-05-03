@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Vehicle_license_plate_recognition.Model;
 
 namespace Vehicle_license_plate_recognition.BLL
@@ -91,6 +92,13 @@ namespace Vehicle_license_plate_recognition.BLL
                 return false;
             }
             
+        }
+        // All Bill kể từ thời điêm thực hiện công việc / NGày làm việc etc...
+        internal List<ThanhToan> GetAllBillVehicle(DateTime timeWork)
+        {
+            List<ThanhToan> bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).OrderByDescending(x =>x.ChargeTime).ToList() ;
+
+            return bill;
         }
     }
 }
