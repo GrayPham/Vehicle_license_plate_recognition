@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vehicle_license_plate_recognition.Model; 
-
+using Vehicle_license_plate_recognition.Model;
+//using Vehicle_license_plate_recognition.Manager;
 namespace Vehicle_license_plate_recognition
 {
     public partial class FormLogin : Form
