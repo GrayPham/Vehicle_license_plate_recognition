@@ -35,7 +35,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQLNhanSuTho = new System.Windows.Forms.Button();
             this.btnNVVP = new System.Windows.Forms.Button();
             this.panelSubNVVP = new System.Windows.Forms.Panel();
@@ -55,13 +54,19 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
+            this.panelButton = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelQlNhanSuThoSubmenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSubNVVP.SuspendLayout();
             this.panelSubTacVu.SuspendLayout();
             this.panelSubPhanCong.SuspendLayout();
+            this.panelChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -168,16 +173,6 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Image = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 55);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnQLNhanSuTho
             // 
@@ -474,11 +469,53 @@
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
+            // panelButton
+            // 
+            this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panelButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelButton.Location = new System.Drawing.Point(200, 433);
+            this.panelButton.Name = "panelButton";
+            this.panelButton.Size = new System.Drawing.Size(732, 120);
+            this.panelButton.TabIndex = 2;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Controls.Add(this.pictureBox2);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(200, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(732, 433);
+            this.panelChildForm.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::Vehicle_license_plate_recognition.Properties.Resources.hcmute;
+            this.pictureBox2.Location = new System.Drawing.Point(292, 96);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(199, 253);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.Image = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 55);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 553);
+            this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.panelButton);
             this.Controls.Add(this.panelSideMenu);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "FormManager";
@@ -487,10 +524,13 @@
             this.panelSideMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelQlNhanSuThoSubmenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSubNVVP.ResumeLayout(false);
             this.panelSubTacVu.ResumeLayout(false);
             this.panelSubPhanCong.ResumeLayout(false);
+            this.panelChildForm.ResumeLayout(false);
+            this.panelChildForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,5 +564,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnNVVP;
         private System.Windows.Forms.Button btnQLNhanSuTho;
+        private System.Windows.Forms.Panel panelButton;
+        private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

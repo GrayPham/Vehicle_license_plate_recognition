@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.Manager;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -67,6 +68,7 @@ namespace Vehicle_license_plate_recognition
             //
             // Code thực thi 
             //
+            openChildForm(new AddEmploy());
             hideSubMenu();
         }
 
@@ -161,8 +163,20 @@ namespace Vehicle_license_plate_recognition
             hideSubMenu();
         }
         #endregion 
-
-
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
     }
 }
