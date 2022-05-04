@@ -120,6 +120,7 @@ namespace Vehicle_license_plate_recognition
         }
         private void btnPhanQuyen_Click(object sender, EventArgs e)
         {
+            openChildForm(new Decentralization());
             hideSubMenu();
         }
 
