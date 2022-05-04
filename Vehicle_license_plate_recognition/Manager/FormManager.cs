@@ -118,7 +118,7 @@ namespace Vehicle_license_plate_recognition
         {
             showSubMenu(panelSubTacVu);
         }
-        private void button14_Click(object sender, EventArgs e)
+        private void btnPhanQuyen_Click(object sender, EventArgs e)
         {
             hideSubMenu();
         }
@@ -178,5 +178,6 @@ namespace Vehicle_license_plate_recognition
             childForm.Show();
         }
 
+        
     }
 }
