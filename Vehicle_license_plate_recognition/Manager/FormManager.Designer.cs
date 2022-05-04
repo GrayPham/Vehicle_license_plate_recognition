@@ -38,7 +38,7 @@
             this.panelSubTacVu = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnAddPark = new System.Windows.Forms.Button();
             this.btnPhanQuyen = new System.Windows.Forms.Button();
             this.btnQLTacVu = new System.Windows.Forms.Button();
             this.panelSubNVVP = new System.Windows.Forms.Panel();
@@ -54,19 +54,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnQLNhanSuTho = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelButton = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelSubPhanCong.SuspendLayout();
             this.panelSubTacVu.SuspendLayout();
             this.panelSubNVVP.SuspendLayout();
             this.panelQlNhanSuThoSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -85,12 +86,13 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(200, 553);
+            this.panelSideMenu.Size = new System.Drawing.Size(200, 621);
             this.panelSideMenu.TabIndex = 1;
             // 
             // panelSubPhanCong
             // 
             this.panelSubPhanCong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
+            this.panelSubPhanCong.Controls.Add(this.button5);
             this.panelSubPhanCong.Controls.Add(this.button16);
             this.panelSubPhanCong.Controls.Add(this.button17);
             this.panelSubPhanCong.Controls.Add(this.button18);
@@ -110,7 +112,7 @@
             this.button16.Location = new System.Drawing.Point(0, 123);
             this.button16.Name = "button16";
             this.button16.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button16.Size = new System.Drawing.Size(179, 43);
+            this.button16.Size = new System.Drawing.Size(179, 40);
             this.button16.TabIndex = 3;
             this.button16.Text = "button16";
             this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +188,7 @@
             this.panelSubTacVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
             this.panelSubTacVu.Controls.Add(this.button11);
             this.panelSubTacVu.Controls.Add(this.button12);
-            this.panelSubTacVu.Controls.Add(this.button13);
+            this.panelSubTacVu.Controls.Add(this.btnAddPark);
             this.panelSubTacVu.Controls.Add(this.btnPhanQuyen);
             this.panelSubTacVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubTacVu.Location = new System.Drawing.Point(0, 565);
@@ -226,21 +228,21 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
+            // btnAddPark
             // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button13.Location = new System.Drawing.Point(0, 41);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(179, 41);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "button13";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.btnAddPark.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddPark.FlatAppearance.BorderSize = 0;
+            this.btnAddPark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddPark.Location = new System.Drawing.Point(0, 41);
+            this.btnAddPark.Name = "btnAddPark";
+            this.btnAddPark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddPark.Size = new System.Drawing.Size(179, 41);
+            this.btnAddPark.TabIndex = 1;
+            this.btnAddPark.Text = "Thêm Nhà Xe";
+            this.btnAddPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPark.UseVisualStyleBackColor = true;
+            this.btnAddPark.Click += new System.EventHandler(this.btnAddPark_Click);
             // 
             // btnPhanQuyen
             // 
@@ -469,16 +471,6 @@
             this.panelLogo.Size = new System.Drawing.Size(179, 101);
             this.panelLogo.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Image = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 55);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelButton
             // 
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
@@ -495,25 +487,50 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 101);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(732, 452);
+            this.panelChildForm.Size = new System.Drawing.Size(732, 520);
             this.panelChildForm.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button5.Location = new System.Drawing.Point(0, 163);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(179, 46);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Phân Công";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::Vehicle_license_plate_recognition.Properties.Resources.hcmute;
-            this.pictureBox2.Location = new System.Drawing.Point(292, 106);
+            this.pictureBox2.Location = new System.Drawing.Point(292, 140);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(199, 253);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.Image = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 55);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 553);
+            this.ClientSize = new System.Drawing.Size(932, 621);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelButton);
             this.Controls.Add(this.panelSideMenu);
@@ -527,10 +544,10 @@
             this.panelSubNVVP.ResumeLayout(false);
             this.panelQlNhanSuThoSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,7 +571,7 @@
         private System.Windows.Forms.Panel panelSubTacVu;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnAddPark;
         private System.Windows.Forms.Button btnPhanQuyen;
         private System.Windows.Forms.Button btnQLTacVu;
         private System.Windows.Forms.Panel panelSubNVVP;
@@ -567,5 +584,6 @@
         private System.Windows.Forms.Panel panelButton;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button5;
     }
 }

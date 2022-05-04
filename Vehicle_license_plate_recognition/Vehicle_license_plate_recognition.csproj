@@ -73,6 +73,7 @@
     <Compile Include="BLL\ManagerDTO\ManagerTacVuDAO.cs" />
     <Compile Include="BLL\NVBLL.cs" />
     <Compile Include="BLL\PlaceParkingDAO.cs" />
+    <Compile Include="Controller\Manager\ManagerPark.cs" />
     <Compile Include="Controller\Manager\ManagerTacVu.cs" />
     <Compile Include="Controller\Setting.cs" />
     <Compile Include="Controller\Staff\ParkDistribution.cs" />
@@ -100,6 +101,12 @@
     </Compile>
     <Compile Include="Manager\AddEmploy.Designer.cs">
       <DependentUpon>AddEmploy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\AddPark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\AddPark.Designer.cs">
+      <DependentUpon>AddPark.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\Decentralization.cs">
       <SubType>Form</SubType>
@@ -220,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\AddEmploy.resx">
       <DependentUpon>AddEmploy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\AddPark.resx">
+      <DependentUpon>AddPark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>

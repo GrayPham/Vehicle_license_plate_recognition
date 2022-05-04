@@ -124,8 +124,9 @@ namespace Vehicle_license_plate_recognition
             hideSubMenu();
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void btnAddPark_Click(object sender, EventArgs e)
         {
+            openChildForm(new AddPark());
             hideSubMenu();
         }
 
