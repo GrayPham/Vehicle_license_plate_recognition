@@ -21,5 +21,15 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
         {
             tacvu.UpdateTypeStaff(idStaff, typeStaff);
         }
+
+        internal bool DeleteStaff(int idStaff)
+        {
+            
+            if(tacvu.DeleteRequestStaff(idStaff) == true)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
