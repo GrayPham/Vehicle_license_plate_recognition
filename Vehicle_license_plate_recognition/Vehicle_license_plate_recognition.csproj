@@ -70,8 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ManagerDTO\ManagerTacVuDAO.cs" />
     <Compile Include="BLL\NVBLL.cs" />
     <Compile Include="BLL\PlaceParkingDAO.cs" />
+    <Compile Include="Controller\Manager\ManagerTacVu.cs" />
     <Compile Include="Controller\Setting.cs" />
     <Compile Include="Controller\Staff\ParkDistribution.cs" />
     <Compile Include="FormFaceRecognition.cs">
@@ -1351,7 +1353,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\Login\" />
-    <Folder Include="Controller\Manager\" />
     <Folder Include="Image\BienVuong\" />
     <Folder Include="Image\KhuonMat\NguoiGui\" />
     <Folder Include="Image\KhuonMat\NhanVien\" />

@@ -482,10 +482,10 @@
             // panelButton
             // 
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.panelButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButton.Location = new System.Drawing.Point(200, 433);
+            this.panelButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelButton.Location = new System.Drawing.Point(200, 0);
             this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(732, 120);
+            this.panelButton.Size = new System.Drawing.Size(732, 101);
             this.panelButton.TabIndex = 2;
             // 
             // panelChildForm
@@ -493,16 +493,16 @@
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelChildForm.Controls.Add(this.pictureBox2);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(200, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(200, 101);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(732, 433);
+            this.panelChildForm.Size = new System.Drawing.Size(732, 452);
             this.panelChildForm.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::Vehicle_license_plate_recognition.Properties.Resources.hcmute;
-            this.pictureBox2.Location = new System.Drawing.Point(292, 96);
+            this.pictureBox2.Location = new System.Drawing.Point(292, 106);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(199, 253);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
