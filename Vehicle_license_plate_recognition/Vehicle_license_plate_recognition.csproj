@@ -1351,6 +1351,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\Login\" />
+    <Folder Include="Controller\Manager\" />
     <Folder Include="Image\BienVuong\" />
     <Folder Include="Image\KhuonMat\NguoiGui\" />
     <Folder Include="Image\KhuonMat\NhanVien\" />
