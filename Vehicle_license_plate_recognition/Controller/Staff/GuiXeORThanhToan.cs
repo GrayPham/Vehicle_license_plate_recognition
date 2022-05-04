@@ -33,7 +33,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             return getPark;
         }
 
-        public bool PostSentCar(DateTime deliveryTime, string licensePlates,string IdPark, int typeVehicle, Image image)
+        public string PostSentCar(DateTime deliveryTime, string licensePlates,string IdPark, int typeVehicle, Image image)
         {
             //string Dir = System.IO.Directory.GetCurrentDirectory();
             // Get current working directory (..\bin\Debug)
@@ -55,10 +55,11 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
                 {
                     // Ngoại lệ neu Bai se hết chỗ trống
                 }
-                
+                return place;
+
             }
+            return null;
             
-            return true;
         }
 
         internal double CalculateParking(string LicensePlate, int typeVehicle, int idStaff, DateTime returnTime)

@@ -336,10 +336,12 @@ namespace Vehicle_license_plate_recognition
             string LicensePlates = richTextBox_licenseplates.Text;
             Image image = pictureBox_recognize.Image;
             string IdPark = comboBox_Park.SelectedValue.ToString();
-            if (nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image) == true)
+            string place = nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image);
+            if (place != null)
             {
                 richTextBox_licenseplates.Text = "";
                 pictureBox_recognize.Image = null;
+                txtPlacePark.Text = place;
             }
             else
             {

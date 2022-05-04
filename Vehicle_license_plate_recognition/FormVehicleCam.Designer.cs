@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DGVThanhToan = new System.Windows.Forms.DataGridView();
             this.txtIdStaff = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,14 +60,14 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timerSysterm = new System.Windows.Forms.Timer(this.components);
-            this.DGVThanhToan = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtPlacePark = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +80,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtPlacePark);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.DGVThanhToan);
             this.groupBox1.Controls.Add(this.txtIdStaff);
@@ -106,6 +110,26 @@
             this.groupBox1.Size = new System.Drawing.Size(1578, 845);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(689, 648);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 32);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Price";
+            // 
+            // DGVThanhToan
+            // 
+            this.DGVThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVThanhToan.Location = new System.Drawing.Point(1100, 452);
+            this.DGVThanhToan.Name = "DGVThanhToan";
+            this.DGVThanhToan.RowHeadersWidth = 51;
+            this.DGVThanhToan.RowTemplate.Height = 24;
+            this.DGVThanhToan.Size = new System.Drawing.Size(420, 196);
+            this.DGVThanhToan.TabIndex = 43;
             // 
             // txtIdStaff
             // 
@@ -170,6 +194,7 @@
             // 
             // pictureBox_recognize
             // 
+            this.pictureBox_recognize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_recognize.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_recognize.Image")));
             this.pictureBox_recognize.Location = new System.Drawing.Point(1099, 83);
             this.pictureBox_recognize.Name = "pictureBox_recognize";
@@ -373,25 +398,25 @@
             // 
             this.timerSysterm.Tick += new System.EventHandler(this.timerSysterm_Tick);
             // 
-            // DGVThanhToan
+            // txtPlacePark
             // 
-            this.DGVThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVThanhToan.Location = new System.Drawing.Point(1100, 452);
-            this.DGVThanhToan.Name = "DGVThanhToan";
-            this.DGVThanhToan.RowHeadersWidth = 51;
-            this.DGVThanhToan.RowTemplate.Height = 24;
-            this.DGVThanhToan.Size = new System.Drawing.Size(420, 196);
-            this.DGVThanhToan.TabIndex = 43;
+            this.txtPlacePark.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlacePark.ForeColor = System.Drawing.Color.Red;
+            this.txtPlacePark.Location = new System.Drawing.Point(803, 713);
+            this.txtPlacePark.Name = "txtPlacePark";
+            this.txtPlacePark.ReadOnly = true;
+            this.txtPlacePark.Size = new System.Drawing.Size(273, 38);
+            this.txtPlacePark.TabIndex = 45;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(689, 648);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 32);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Price";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(679, 716);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 32);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Position";
             // 
             // FormVehicleCam
             // 
@@ -406,11 +431,11 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,5 +473,7 @@
         private System.Windows.Forms.Timer timerSysterm;
         private System.Windows.Forms.DataGridView DGVThanhToan;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPlacePark;
+        private System.Windows.Forms.Label label3;
     }
 }
