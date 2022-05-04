@@ -101,6 +101,12 @@
     <Compile Include="Manager\AddEmploy.Designer.cs">
       <DependentUpon>AddEmploy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Decentralization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Decentralization.Designer.cs">
+      <DependentUpon>Decentralization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\FormManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\AddEmploy.resx">
       <DependentUpon>AddEmploy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Decentralization.resx">
+      <DependentUpon>Decentralization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
