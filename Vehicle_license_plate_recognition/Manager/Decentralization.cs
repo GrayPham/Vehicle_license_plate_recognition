@@ -43,7 +43,32 @@ namespace Vehicle_license_plate_recognition.Manager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            if (getIdStaff() == true)
+            {
+                
+                    try
+                    {
+                        if(mTacVu.DeleteStaff(idStaff) == true) 
+                        {
+                            panelXuLi.Visible = false;
+                            fillDVGDecentralization();
+                            lbRequest.Text = " Delete Successfull";
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message, "Error");
+                    }
+
+               
+            }
+            else
+            {
+                lbRequest.Text = "No authorization required";
+                panelXuLi.Visible = false;
+            }
 
 
             panelXuLi.Visible = false;

@@ -22,6 +22,14 @@ namespace Vehicle_license_plate_recognition.BLL.ManagerDTO
             return request;
         }
 
+        internal bool DeleteRequestStaff(int idStaff)
+        {
+            var staff = db.NVs.Where(user => user.IdStaff == idStaff).FirstOrDefault();
+            db.NVs.Remove(staff);
+            db.SaveChanges();   
+            return true;
+        }
+
         internal void UpdateTypeStaff(int idStaff, int typeStaff)
         {
             NV nv = db.NVs.Where(user => user.IdStaff ==idStaff).FirstOrDefault();
