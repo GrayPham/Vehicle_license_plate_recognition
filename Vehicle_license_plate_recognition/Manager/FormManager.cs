@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicle_license_plate_recognition.Manager;
+using Vehicle_license_plate_recognition.Manager.Staff;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -63,28 +64,32 @@ namespace Vehicle_license_plate_recognition
             showSubMenu(panelQlNhanSuThoSubmenu);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            //
-            // Code thực thi 
-            //
-            openChildForm(new AddEmploy());
             hideSubMenu();
+            AddStaffManager addStaff =new AddStaffManager();
+            addStaff.ShowDialog();
+
+        }
+        
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            UpdateStaffManager updateStaff =new UpdateStaffManager();
+            updateStaff.ShowDialog();
+        }
+        private void btnFired_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            openChildForm(new FiredEmployeeManager());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
+            DeleteStaffManager deleteStaff =new DeleteStaffManager();
+            deleteStaff.ShowDialog();
         }
         #endregion
         #region Quan Lí NV Văn phòng
@@ -93,24 +98,30 @@ namespace Vehicle_license_plate_recognition
             showSubMenu(panelSubNVVP);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnAddOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            AddStaffManager addStaff = new AddStaffManager();
+            addStaff.ShowDialog();
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void btnUpdateOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            UpdateStaffManager updateStaff = new UpdateStaffManager();
+            updateStaff.ShowDialog();
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        
+        private void btnFiredOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openChildForm(new FiredEmployeeManager());
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        
+        private void btnDeleteOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            DeleteStaffManager deleteStaff = new DeleteStaffManager();
+            deleteStaff.ShowDialog();
         }
         #endregion
         #region Quản lí tác vụ

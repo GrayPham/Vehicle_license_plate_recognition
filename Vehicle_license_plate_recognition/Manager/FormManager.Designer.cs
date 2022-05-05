@@ -30,11 +30,12 @@
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelSubPhanCong = new System.Windows.Forms.Panel();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.btnPhanCong = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnRequestingAbsence = new System.Windows.Forms.Button();
+            this.btnAssignmentOfficer = new System.Windows.Forms.Button();
+            this.btnAssignmentStaff = new System.Windows.Forms.Button();
+            this.btnAssignment = new System.Windows.Forms.Button();
             this.panelSubTacVu = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -42,32 +43,41 @@
             this.btnPhanQuyen = new System.Windows.Forms.Button();
             this.btnQLTacVu = new System.Windows.Forms.Button();
             this.panelSubNVVP = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnDeleteOfficer = new System.Windows.Forms.Button();
+            this.btnFiredOfficer = new System.Windows.Forms.Button();
+            this.btnUpdateOfficer = new System.Windows.Forms.Button();
+            this.btnAddOfficer = new System.Windows.Forms.Button();
             this.btnNVVP = new System.Windows.Forms.Button();
             this.panelQlNhanSuThoSubmenu = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFired = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
             this.btnQLNhanSuTho = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelButton = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelButton = new System.Windows.Forms.Panel();
+            this.btnAttendance = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbIdManager = new System.Windows.Forms.Label();
+            this.lbNameManager = new System.Windows.Forms.Label();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnAddManager = new System.Windows.Forms.Button();
+            this.btnUpdateManager = new System.Windows.Forms.Button();
+            this.btnFiredManager = new System.Windows.Forms.Button();
+            this.DVGManager = new System.Windows.Forms.DataGridView();
             this.panelSideMenu.SuspendLayout();
             this.panelSubPhanCong.SuspendLayout();
             this.panelSubTacVu.SuspendLayout();
             this.panelSubNVVP.SuspendLayout();
             this.panelQlNhanSuThoSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.panelChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelButton.SuspendLayout();
+            this.panelChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGManager)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -75,7 +85,7 @@
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelSideMenu.Controls.Add(this.panelSubPhanCong);
-            this.panelSideMenu.Controls.Add(this.btnPhanCong);
+            this.panelSideMenu.Controls.Add(this.btnAssignment);
             this.panelSideMenu.Controls.Add(this.panelSubTacVu);
             this.panelSideMenu.Controls.Add(this.btnQLTacVu);
             this.panelSideMenu.Controls.Add(this.panelSubNVVP);
@@ -93,95 +103,111 @@
             // 
             this.panelSubPhanCong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
             this.panelSubPhanCong.Controls.Add(this.button5);
-            this.panelSubPhanCong.Controls.Add(this.button16);
-            this.panelSubPhanCong.Controls.Add(this.button17);
-            this.panelSubPhanCong.Controls.Add(this.button18);
-            this.panelSubPhanCong.Controls.Add(this.button19);
+            this.panelSubPhanCong.Controls.Add(this.btnPrint);
+            this.panelSubPhanCong.Controls.Add(this.btnRequestingAbsence);
+            this.panelSubPhanCong.Controls.Add(this.btnAssignmentOfficer);
+            this.panelSubPhanCong.Controls.Add(this.btnAssignmentStaff);
             this.panelSubPhanCong.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubPhanCong.Location = new System.Drawing.Point(0, 777);
             this.panelSubPhanCong.Name = "panelSubPhanCong";
             this.panelSubPhanCong.Size = new System.Drawing.Size(179, 166);
             this.panelSubPhanCong.TabIndex = 8;
             // 
-            // button16
+            // button5
             // 
-            this.button16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button16.Location = new System.Drawing.Point(0, 123);
-            this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button16.Size = new System.Drawing.Size(179, 40);
-            this.button16.TabIndex = 3;
-            this.button16.Text = "button16";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button5.Location = new System.Drawing.Point(0, 163);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(179, 46);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Phân Công";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnPrint
             // 
-            this.button17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button17.Location = new System.Drawing.Point(0, 82);
-            this.button17.Name = "button17";
-            this.button17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button17.Size = new System.Drawing.Size(179, 41);
-            this.button17.TabIndex = 2;
-            this.button17.Text = "button17";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPrint.Location = new System.Drawing.Point(0, 123);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPrint.Size = new System.Drawing.Size(179, 40);
+            this.btnPrint.TabIndex = 3;
+            this.btnPrint.Text = "Print Assignment";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.button16_Click);
             // 
-            // button18
+            // btnRequestingAbsence
             // 
-            this.button18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button18.Location = new System.Drawing.Point(0, 41);
-            this.button18.Name = "button18";
-            this.button18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button18.Size = new System.Drawing.Size(179, 41);
-            this.button18.TabIndex = 1;
-            this.button18.Text = "button18";
-            this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.btnRequestingAbsence.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRequestingAbsence.FlatAppearance.BorderSize = 0;
+            this.btnRequestingAbsence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRequestingAbsence.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRequestingAbsence.Location = new System.Drawing.Point(0, 82);
+            this.btnRequestingAbsence.Name = "btnRequestingAbsence";
+            this.btnRequestingAbsence.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnRequestingAbsence.Size = new System.Drawing.Size(179, 41);
+            this.btnRequestingAbsence.TabIndex = 2;
+            this.btnRequestingAbsence.Text = "Requesting absence";
+            this.btnRequestingAbsence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRequestingAbsence.UseVisualStyleBackColor = true;
+            this.btnRequestingAbsence.Click += new System.EventHandler(this.button17_Click);
             // 
-            // button19
+            // btnAssignmentOfficer
             // 
-            this.button19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button19.Location = new System.Drawing.Point(0, 0);
-            this.button19.Name = "button19";
-            this.button19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button19.Size = new System.Drawing.Size(179, 41);
-            this.button19.TabIndex = 0;
-            this.button19.Text = "button19";
-            this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.btnAssignmentOfficer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAssignmentOfficer.FlatAppearance.BorderSize = 0;
+            this.btnAssignmentOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignmentOfficer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAssignmentOfficer.Location = new System.Drawing.Point(0, 41);
+            this.btnAssignmentOfficer.Name = "btnAssignmentOfficer";
+            this.btnAssignmentOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAssignmentOfficer.Size = new System.Drawing.Size(179, 41);
+            this.btnAssignmentOfficer.TabIndex = 1;
+            this.btnAssignmentOfficer.Text = "Assignment Officer";
+            this.btnAssignmentOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAssignmentOfficer.UseVisualStyleBackColor = true;
+            this.btnAssignmentOfficer.Click += new System.EventHandler(this.button18_Click);
             // 
-            // btnPhanCong
+            // btnAssignmentStaff
             // 
-            this.btnPhanCong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhanCong.FlatAppearance.BorderSize = 0;
-            this.btnPhanCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanCong.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPhanCong.Location = new System.Drawing.Point(0, 731);
-            this.btnPhanCong.Name = "btnPhanCong";
-            this.btnPhanCong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPhanCong.Size = new System.Drawing.Size(179, 46);
-            this.btnPhanCong.TabIndex = 7;
-            this.btnPhanCong.Text = "Phân Công";
-            this.btnPhanCong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanCong.UseVisualStyleBackColor = true;
-            this.btnPhanCong.Click += new System.EventHandler(this.btnPhanCong_Click);
+            this.btnAssignmentStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAssignmentStaff.FlatAppearance.BorderSize = 0;
+            this.btnAssignmentStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignmentStaff.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAssignmentStaff.Location = new System.Drawing.Point(0, 0);
+            this.btnAssignmentStaff.Name = "btnAssignmentStaff";
+            this.btnAssignmentStaff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAssignmentStaff.Size = new System.Drawing.Size(179, 41);
+            this.btnAssignmentStaff.TabIndex = 0;
+            this.btnAssignmentStaff.Text = "Assignment Staff";
+            this.btnAssignmentStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAssignmentStaff.UseVisualStyleBackColor = true;
+            this.btnAssignmentStaff.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // btnAssignment
+            // 
+            this.btnAssignment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAssignment.FlatAppearance.BorderSize = 0;
+            this.btnAssignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignment.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAssignment.Location = new System.Drawing.Point(0, 731);
+            this.btnAssignment.Name = "btnAssignment";
+            this.btnAssignment.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAssignment.Size = new System.Drawing.Size(179, 46);
+            this.btnAssignment.TabIndex = 7;
+            this.btnAssignment.Text = "Assignment";
+            this.btnAssignment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAssignment.UseVisualStyleBackColor = true;
+            this.btnAssignment.Click += new System.EventHandler(this.btnPhanCong_Click);
             // 
             // panelSubTacVu
             // 
@@ -207,7 +233,7 @@
             this.button11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button11.Size = new System.Drawing.Size(179, 43);
             this.button11.TabIndex = 3;
-            this.button11.Text = "button11";
+            this.button11.Text = "Delete Park";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -223,7 +249,7 @@
             this.button12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button12.Size = new System.Drawing.Size(179, 41);
             this.button12.TabIndex = 2;
-            this.button12.Text = "button12";
+            this.button12.Text = "Edit Park";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
@@ -239,7 +265,7 @@
             this.btnAddPark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAddPark.Size = new System.Drawing.Size(179, 41);
             this.btnAddPark.TabIndex = 1;
-            this.btnAddPark.Text = "Thêm Nhà Xe";
+            this.btnAddPark.Text = "Add Park";
             this.btnAddPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddPark.UseVisualStyleBackColor = true;
             this.btnAddPark.Click += new System.EventHandler(this.btnAddPark_Click);
@@ -265,13 +291,14 @@
             this.btnQLTacVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLTacVu.FlatAppearance.BorderSize = 0;
             this.btnQLTacVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLTacVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLTacVu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnQLTacVu.Location = new System.Drawing.Point(0, 519);
             this.btnQLTacVu.Name = "btnQLTacVu";
             this.btnQLTacVu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLTacVu.Size = new System.Drawing.Size(179, 46);
             this.btnQLTacVu.TabIndex = 5;
-            this.btnQLTacVu.Text = "Tác Vụ";
+            this.btnQLTacVu.Text = "Tasks Manager";
             this.btnQLTacVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLTacVu.UseVisualStyleBackColor = true;
             this.btnQLTacVu.Click += new System.EventHandler(this.btnQLTacVu_Click);
@@ -279,92 +306,93 @@
             // panelSubNVVP
             // 
             this.panelSubNVVP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
-            this.panelSubNVVP.Controls.Add(this.button6);
-            this.panelSubNVVP.Controls.Add(this.button7);
-            this.panelSubNVVP.Controls.Add(this.button8);
-            this.panelSubNVVP.Controls.Add(this.button9);
+            this.panelSubNVVP.Controls.Add(this.btnDeleteOfficer);
+            this.panelSubNVVP.Controls.Add(this.btnFiredOfficer);
+            this.panelSubNVVP.Controls.Add(this.btnUpdateOfficer);
+            this.panelSubNVVP.Controls.Add(this.btnAddOfficer);
             this.panelSubNVVP.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubNVVP.Location = new System.Drawing.Point(0, 353);
             this.panelSubNVVP.Name = "panelSubNVVP";
             this.panelSubNVVP.Size = new System.Drawing.Size(179, 166);
             this.panelSubNVVP.TabIndex = 4;
             // 
-            // button6
+            // btnDeleteOfficer
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button6.Location = new System.Drawing.Point(0, 123);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(179, 43);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "button6";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnDeleteOfficer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteOfficer.FlatAppearance.BorderSize = 0;
+            this.btnDeleteOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteOfficer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDeleteOfficer.Location = new System.Drawing.Point(0, 123);
+            this.btnDeleteOfficer.Name = "btnDeleteOfficer";
+            this.btnDeleteOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDeleteOfficer.Size = new System.Drawing.Size(179, 43);
+            this.btnDeleteOfficer.TabIndex = 3;
+            this.btnDeleteOfficer.Text = "Delete Officer";
+            this.btnDeleteOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteOfficer.UseVisualStyleBackColor = true;
+            this.btnDeleteOfficer.Click += new System.EventHandler(this.btnDeleteOfficer_Click);
             // 
-            // button7
+            // btnFiredOfficer
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button7.Location = new System.Drawing.Point(0, 82);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(179, 41);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "button7";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnFiredOfficer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFiredOfficer.FlatAppearance.BorderSize = 0;
+            this.btnFiredOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiredOfficer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFiredOfficer.Location = new System.Drawing.Point(0, 82);
+            this.btnFiredOfficer.Name = "btnFiredOfficer";
+            this.btnFiredOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnFiredOfficer.Size = new System.Drawing.Size(179, 41);
+            this.btnFiredOfficer.TabIndex = 2;
+            this.btnFiredOfficer.Text = "Officer Resigned / Fired";
+            this.btnFiredOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiredOfficer.UseVisualStyleBackColor = true;
+            this.btnFiredOfficer.Click += new System.EventHandler(this.btnFiredOfficer_Click);
             // 
-            // button8
+            // btnUpdateOfficer
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button8.Location = new System.Drawing.Point(0, 41);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(179, 41);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "button8";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnUpdateOfficer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateOfficer.FlatAppearance.BorderSize = 0;
+            this.btnUpdateOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateOfficer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdateOfficer.Location = new System.Drawing.Point(0, 41);
+            this.btnUpdateOfficer.Name = "btnUpdateOfficer";
+            this.btnUpdateOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUpdateOfficer.Size = new System.Drawing.Size(179, 41);
+            this.btnUpdateOfficer.TabIndex = 1;
+            this.btnUpdateOfficer.Text = "Update Officer";
+            this.btnUpdateOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateOfficer.UseVisualStyleBackColor = true;
+            this.btnUpdateOfficer.Click += new System.EventHandler(this.btnUpdateOfficer_Click);
             // 
-            // button9
+            // btnAddOfficer
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(179, 41);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "button9";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnAddOfficer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddOfficer.FlatAppearance.BorderSize = 0;
+            this.btnAddOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOfficer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddOfficer.Location = new System.Drawing.Point(0, 0);
+            this.btnAddOfficer.Name = "btnAddOfficer";
+            this.btnAddOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddOfficer.Size = new System.Drawing.Size(179, 41);
+            this.btnAddOfficer.TabIndex = 0;
+            this.btnAddOfficer.Text = "Add Officer";
+            this.btnAddOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddOfficer.UseVisualStyleBackColor = true;
+            this.btnAddOfficer.Click += new System.EventHandler(this.btnAddOfficer_Click);
             // 
             // btnNVVP
             // 
             this.btnNVVP.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNVVP.FlatAppearance.BorderSize = 0;
             this.btnNVVP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNVVP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNVVP.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnNVVP.Location = new System.Drawing.Point(0, 307);
             this.btnNVVP.Name = "btnNVVP";
             this.btnNVVP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnNVVP.Size = new System.Drawing.Size(179, 46);
             this.btnNVVP.TabIndex = 3;
-            this.btnNVVP.Text = "Nhân Viên Văn Phòng";
+            this.btnNVVP.Text = "Officer";
             this.btnNVVP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNVVP.UseVisualStyleBackColor = true;
             this.btnNVVP.Click += new System.EventHandler(this.btnNVVP_Click);
@@ -372,92 +400,93 @@
             // panelQlNhanSuThoSubmenu
             // 
             this.panelQlNhanSuThoSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
-            this.panelQlNhanSuThoSubmenu.Controls.Add(this.button4);
-            this.panelQlNhanSuThoSubmenu.Controls.Add(this.button3);
-            this.panelQlNhanSuThoSubmenu.Controls.Add(this.button2);
-            this.panelQlNhanSuThoSubmenu.Controls.Add(this.button1);
+            this.panelQlNhanSuThoSubmenu.Controls.Add(this.btnDelete);
+            this.panelQlNhanSuThoSubmenu.Controls.Add(this.btnFired);
+            this.panelQlNhanSuThoSubmenu.Controls.Add(this.btnUpdate);
+            this.panelQlNhanSuThoSubmenu.Controls.Add(this.btnAddStaff);
             this.panelQlNhanSuThoSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQlNhanSuThoSubmenu.Location = new System.Drawing.Point(0, 147);
             this.panelQlNhanSuThoSubmenu.Name = "panelQlNhanSuThoSubmenu";
             this.panelQlNhanSuThoSubmenu.Size = new System.Drawing.Size(179, 160);
             this.panelQlNhanSuThoSubmenu.TabIndex = 2;
             // 
-            // button4
+            // btnDelete
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(0, 123);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(179, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDelete.Location = new System.Drawing.Point(0, 123);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDelete.Size = new System.Drawing.Size(179, 37);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete Staff";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button3
+            // btnFired
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Location = new System.Drawing.Point(0, 82);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(179, 41);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnFired.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFired.FlatAppearance.BorderSize = 0;
+            this.btnFired.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFired.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFired.Location = new System.Drawing.Point(0, 82);
+            this.btnFired.Name = "btnFired";
+            this.btnFired.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnFired.Size = new System.Drawing.Size(179, 41);
+            this.btnFired.TabIndex = 2;
+            this.btnFired.Text = "Employee Resigned / Fired";
+            this.btnFired.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFired.UseVisualStyleBackColor = true;
+            this.btnFired.Click += new System.EventHandler(this.btnFired_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(0, 41);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(179, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdate.Location = new System.Drawing.Point(0, 41);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUpdate.Size = new System.Drawing.Size(179, 41);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Update Staff";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button1
+            // btnAddStaff
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(179, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddStaff.FlatAppearance.BorderSize = 0;
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddStaff.Location = new System.Drawing.Point(0, 0);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddStaff.Size = new System.Drawing.Size(179, 41);
+            this.btnAddStaff.TabIndex = 0;
+            this.btnAddStaff.Text = "Add Staff";
+            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddStaff.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // btnQLNhanSuTho
             // 
             this.btnQLNhanSuTho.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLNhanSuTho.FlatAppearance.BorderSize = 0;
             this.btnQLNhanSuTho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLNhanSuTho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNhanSuTho.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnQLNhanSuTho.Location = new System.Drawing.Point(0, 101);
             this.btnQLNhanSuTho.Name = "btnQLNhanSuTho";
             this.btnQLNhanSuTho.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLNhanSuTho.Size = new System.Drawing.Size(179, 46);
             this.btnQLNhanSuTho.TabIndex = 1;
-            this.btnQLNhanSuTho.Text = "Nhan Vien Tho";
+            this.btnQLNhanSuTho.Text = "Staff";
             this.btnQLNhanSuTho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLNhanSuTho.UseVisualStyleBackColor = true;
             this.btnQLNhanSuTho.Click += new System.EventHandler(this.btnQLNhanSuTho_Click);
@@ -471,60 +500,152 @@
             this.panelLogo.Size = new System.Drawing.Size(179, 101);
             this.panelLogo.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.Image = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 55);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelButton
             // 
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panelButton.Controls.Add(this.btnAttendance);
+            this.panelButton.Controls.Add(this.label2);
+            this.panelButton.Controls.Add(this.label1);
+            this.panelButton.Controls.Add(this.lbIdManager);
+            this.panelButton.Controls.Add(this.lbNameManager);
             this.panelButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelButton.Location = new System.Drawing.Point(200, 0);
             this.panelButton.Name = "panelButton";
             this.panelButton.Size = new System.Drawing.Size(732, 101);
             this.panelButton.TabIndex = 2;
             // 
+            // btnAttendance
+            // 
+            this.btnAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttendance.Location = new System.Drawing.Point(556, 16);
+            this.btnAttendance.Name = "btnAttendance";
+            this.btnAttendance.Size = new System.Drawing.Size(164, 64);
+            this.btnAttendance.TabIndex = 4;
+            this.btnAttendance.Text = "Attendance";
+            this.btnAttendance.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(187, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Id Manager";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(187, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Name Manager";
+            // 
+            // lbIdManager
+            // 
+            this.lbIdManager.AutoSize = true;
+            this.lbIdManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbIdManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdManager.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lbIdManager.Location = new System.Drawing.Point(17, 56);
+            this.lbIdManager.Name = "lbIdManager";
+            this.lbIdManager.Size = new System.Drawing.Size(150, 22);
+            this.lbIdManager.TabIndex = 1;
+            this.lbIdManager.Text = "Name Manager:";
+            // 
+            // lbNameManager
+            // 
+            this.lbNameManager.AutoSize = true;
+            this.lbNameManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbNameManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameManager.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lbNameManager.Location = new System.Drawing.Point(17, 15);
+            this.lbNameManager.Name = "lbNameManager";
+            this.lbNameManager.Size = new System.Drawing.Size(150, 22);
+            this.lbNameManager.TabIndex = 0;
+            this.lbNameManager.Text = "Name Manager:";
+            // 
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Controls.Add(this.pictureBox2);
+            this.panelChildForm.Controls.Add(this.btnReset);
+            this.panelChildForm.Controls.Add(this.btnAddManager);
+            this.panelChildForm.Controls.Add(this.btnUpdateManager);
+            this.panelChildForm.Controls.Add(this.btnFiredManager);
+            this.panelChildForm.Controls.Add(this.DVGManager);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 101);
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(732, 520);
             this.panelChildForm.TabIndex = 3;
             // 
-            // button5
+            // btnReset
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button5.Location = new System.Drawing.Point(0, 163);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(179, 46);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Phân Công";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(21, 399);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(161, 50);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // btnAddManager
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::Vehicle_license_plate_recognition.Properties.Resources.hcmute;
-            this.pictureBox2.Location = new System.Drawing.Point(292, 140);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(199, 253);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.btnAddManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddManager.Location = new System.Drawing.Point(577, 401);
+            this.btnAddManager.Name = "btnAddManager";
+            this.btnAddManager.Size = new System.Drawing.Size(143, 48);
+            this.btnAddManager.TabIndex = 7;
+            this.btnAddManager.Text = "Add Manager";
+            this.btnAddManager.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // btnUpdateManager
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Image = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 55);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnUpdateManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateManager.Location = new System.Drawing.Point(398, 400);
+            this.btnUpdateManager.Name = "btnUpdateManager";
+            this.btnUpdateManager.Size = new System.Drawing.Size(150, 51);
+            this.btnUpdateManager.TabIndex = 6;
+            this.btnUpdateManager.Text = "Edit";
+            this.btnUpdateManager.UseVisualStyleBackColor = true;
+            // 
+            // btnFiredManager
+            // 
+            this.btnFiredManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiredManager.Location = new System.Drawing.Point(220, 400);
+            this.btnFiredManager.Name = "btnFiredManager";
+            this.btnFiredManager.Size = new System.Drawing.Size(154, 51);
+            this.btnFiredManager.TabIndex = 5;
+            this.btnFiredManager.Text = "Fired";
+            this.btnFiredManager.UseVisualStyleBackColor = true;
+            // 
+            // DVGManager
+            // 
+            this.DVGManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DVGManager.Location = new System.Drawing.Point(0, 0);
+            this.DVGManager.Name = "DVGManager";
+            this.DVGManager.RowHeadersWidth = 51;
+            this.DVGManager.RowTemplate.Height = 24;
+            this.DVGManager.Size = new System.Drawing.Size(732, 365);
+            this.DVGManager.TabIndex = 0;
             // 
             // FormManager
             // 
@@ -544,10 +665,11 @@
             this.panelSubNVVP.ResumeLayout(false);
             this.panelQlNhanSuThoSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            this.panelChildForm.ResumeLayout(false);
-            this.panelChildForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelButton.ResumeLayout(false);
+            this.panelButton.PerformLayout();
+            this.panelChildForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DVGManager)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,18 +678,18 @@
 
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelQlNhanSuThoSubmenu;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFired;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAddStaff;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelSubPhanCong;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button btnPhanCong;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnRequestingAbsence;
+        private System.Windows.Forms.Button btnAssignmentOfficer;
+        private System.Windows.Forms.Button btnAssignmentStaff;
+        private System.Windows.Forms.Button btnAssignment;
         private System.Windows.Forms.Panel panelSubTacVu;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
@@ -575,15 +697,24 @@
         private System.Windows.Forms.Button btnPhanQuyen;
         private System.Windows.Forms.Button btnQLTacVu;
         private System.Windows.Forms.Panel panelSubNVVP;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnDeleteOfficer;
+        private System.Windows.Forms.Button btnFiredOfficer;
+        private System.Windows.Forms.Button btnUpdateOfficer;
+        private System.Windows.Forms.Button btnAddOfficer;
         private System.Windows.Forms.Button btnNVVP;
         private System.Windows.Forms.Button btnQLNhanSuTho;
         private System.Windows.Forms.Panel panelButton;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label lbIdManager;
+        private System.Windows.Forms.Label lbNameManager;
+        private System.Windows.Forms.DataGridView DVGManager;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAttendance;
+        private System.Windows.Forms.Button btnAddManager;
+        private System.Windows.Forms.Button btnUpdateManager;
+        private System.Windows.Forms.Button btnFiredManager;
+        private System.Windows.Forms.Button btnReset;
     }
 }
