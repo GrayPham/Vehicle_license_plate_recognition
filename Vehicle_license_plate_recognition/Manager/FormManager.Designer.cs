@@ -37,8 +37,8 @@
             this.btnAssignmentStaff = new System.Windows.Forms.Button();
             this.btnAssignment = new System.Windows.Forms.Button();
             this.panelSubTacVu = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnDeletePark = new System.Windows.Forms.Button();
+            this.btnEditPark = new System.Windows.Forms.Button();
             this.btnAddPark = new System.Windows.Forms.Button();
             this.btnPhanQuyen = new System.Windows.Forms.Button();
             this.btnQLTacVu = new System.Windows.Forms.Button();
@@ -142,7 +142,7 @@
             this.btnPrint.Text = "Print Assignment";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.button16_Click);
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnRequestingAbsence
             // 
@@ -158,7 +158,7 @@
             this.btnRequestingAbsence.Text = "Requesting absence";
             this.btnRequestingAbsence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRequestingAbsence.UseVisualStyleBackColor = true;
-            this.btnRequestingAbsence.Click += new System.EventHandler(this.button17_Click);
+            this.btnRequestingAbsence.Click += new System.EventHandler(this.btnRequestingAbsence_Click);
             // 
             // btnAssignmentOfficer
             // 
@@ -174,7 +174,7 @@
             this.btnAssignmentOfficer.Text = "Assignment Officer";
             this.btnAssignmentOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAssignmentOfficer.UseVisualStyleBackColor = true;
-            this.btnAssignmentOfficer.Click += new System.EventHandler(this.button18_Click);
+            this.btnAssignmentOfficer.Click += new System.EventHandler(this.btnAssignmentOfficer_Click);
             // 
             // btnAssignmentStaff
             // 
@@ -190,7 +190,7 @@
             this.btnAssignmentStaff.Text = "Assignment Staff";
             this.btnAssignmentStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAssignmentStaff.UseVisualStyleBackColor = true;
-            this.btnAssignmentStaff.Click += new System.EventHandler(this.button19_Click);
+            this.btnAssignmentStaff.Click += new System.EventHandler(this.btnAssignmentStaff_Click);
             // 
             // btnAssignment
             // 
@@ -212,8 +212,8 @@
             // panelSubTacVu
             // 
             this.panelSubTacVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
-            this.panelSubTacVu.Controls.Add(this.button11);
-            this.panelSubTacVu.Controls.Add(this.button12);
+            this.panelSubTacVu.Controls.Add(this.btnDeletePark);
+            this.panelSubTacVu.Controls.Add(this.btnEditPark);
             this.panelSubTacVu.Controls.Add(this.btnAddPark);
             this.panelSubTacVu.Controls.Add(this.btnPhanQuyen);
             this.panelSubTacVu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -222,37 +222,37 @@
             this.panelSubTacVu.Size = new System.Drawing.Size(179, 166);
             this.panelSubTacVu.TabIndex = 6;
             // 
-            // button11
+            // btnDeletePark
             // 
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button11.Location = new System.Drawing.Point(0, 123);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(179, 43);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Delete Park";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.btnDeletePark.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeletePark.FlatAppearance.BorderSize = 0;
+            this.btnDeletePark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletePark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDeletePark.Location = new System.Drawing.Point(0, 123);
+            this.btnDeletePark.Name = "btnDeletePark";
+            this.btnDeletePark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDeletePark.Size = new System.Drawing.Size(179, 43);
+            this.btnDeletePark.TabIndex = 3;
+            this.btnDeletePark.Text = "Delete Park";
+            this.btnDeletePark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletePark.UseVisualStyleBackColor = true;
+            this.btnDeletePark.Click += new System.EventHandler(this.btnDeletePark_Click);
             // 
-            // button12
+            // btnEditPark
             // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button12.Location = new System.Drawing.Point(0, 82);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(179, 41);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "Edit Park";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.btnEditPark.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditPark.FlatAppearance.BorderSize = 0;
+            this.btnEditPark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEditPark.Location = new System.Drawing.Point(0, 82);
+            this.btnEditPark.Name = "btnEditPark";
+            this.btnEditPark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEditPark.Size = new System.Drawing.Size(179, 41);
+            this.btnEditPark.TabIndex = 2;
+            this.btnEditPark.Text = "Edit Park";
+            this.btnEditPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditPark.UseVisualStyleBackColor = true;
+            this.btnEditPark.Click += new System.EventHandler(this.btnEditPark_Click);
             // 
             // btnAddPark
             // 
@@ -533,6 +533,7 @@
             this.btnAttendance.TabIndex = 4;
             this.btnAttendance.Text = "Attendance";
             this.btnAttendance.UseVisualStyleBackColor = true;
+            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
             // label2
             // 
@@ -605,6 +606,7 @@
             this.btnReset.TabIndex = 8;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnAddManager
             // 
@@ -615,6 +617,7 @@
             this.btnAddManager.TabIndex = 7;
             this.btnAddManager.Text = "Add Manager";
             this.btnAddManager.UseVisualStyleBackColor = true;
+            this.btnAddManager.Click += new System.EventHandler(this.btnAddManager_Click);
             // 
             // btnUpdateManager
             // 
@@ -625,6 +628,7 @@
             this.btnUpdateManager.TabIndex = 6;
             this.btnUpdateManager.Text = "Edit";
             this.btnUpdateManager.UseVisualStyleBackColor = true;
+            this.btnUpdateManager.Click += new System.EventHandler(this.btnUpdateManager_Click);
             // 
             // btnFiredManager
             // 
@@ -635,6 +639,7 @@
             this.btnFiredManager.TabIndex = 5;
             this.btnFiredManager.Text = "Fired";
             this.btnFiredManager.UseVisualStyleBackColor = true;
+            this.btnFiredManager.Click += new System.EventHandler(this.btnFiredManager_Click);
             // 
             // DVGManager
             // 
@@ -646,6 +651,7 @@
             this.DVGManager.RowTemplate.Height = 24;
             this.DVGManager.Size = new System.Drawing.Size(732, 365);
             this.DVGManager.TabIndex = 0;
+            this.DVGManager.DoubleClick += new System.EventHandler(this.DVGManager_DoubleClick);
             // 
             // FormManager
             // 
@@ -691,8 +697,8 @@
         private System.Windows.Forms.Button btnAssignmentStaff;
         private System.Windows.Forms.Button btnAssignment;
         private System.Windows.Forms.Panel panelSubTacVu;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnDeletePark;
+        private System.Windows.Forms.Button btnEditPark;
         private System.Windows.Forms.Button btnAddPark;
         private System.Windows.Forms.Button btnPhanQuyen;
         private System.Windows.Forms.Button btnQLTacVu;
