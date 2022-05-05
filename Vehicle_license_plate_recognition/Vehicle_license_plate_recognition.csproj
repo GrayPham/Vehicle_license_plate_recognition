@@ -70,9 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ManagerDTO\ManagerTacVuDAO.cs" />
-    <Compile Include="BLL\NVBLL.cs" />
-    <Compile Include="BLL\PlaceParkingDAO.cs" />
+    <Compile Include="DAL\ManagerDTO\ManagerTacVuDAO.cs" />
+    <Compile Include="DAL\NVBLL.cs" />
+    <Compile Include="DAL\PlaceParkingDAO.cs" />
     <Compile Include="Controller\Manager\ManagerPark.cs" />
     <Compile Include="Controller\Manager\ManagerTacVu.cs" />
     <Compile Include="Controller\Setting.cs" />
