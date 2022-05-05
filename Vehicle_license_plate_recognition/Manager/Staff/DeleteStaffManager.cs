@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vehicle_license_plate_recognition.Manager
+namespace Vehicle_license_plate_recognition.Manager.Staff
 {
-    public partial class AddEmploy : Form
+    public partial class DeleteStaffManager : Form
     {
-        public AddEmploy()
+        public DeleteStaffManager()
         {
             InitializeComponent();
         }

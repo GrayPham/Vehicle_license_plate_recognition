@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicle_license_plate_recognition.Manager;
+using Vehicle_license_plate_recognition.Manager.Staff;
+using Vehicle_license_plate_recognition.Manager.TasksManager;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -17,6 +19,20 @@ namespace Vehicle_license_plate_recognition
         {
             InitializeComponent();
             customizeDesing();
+        }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
         private void customizeDesing()
         {
@@ -63,28 +79,32 @@ namespace Vehicle_license_plate_recognition
             showSubMenu(panelQlNhanSuThoSubmenu);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            //
-            // Code thực thi 
-            //
-            openChildForm(new AddEmploy());
             hideSubMenu();
+            AddStaffManager addStaff =new AddStaffManager();
+            addStaff.ShowDialog();
+
+        }
+        
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            UpdateStaffManager updateStaff =new UpdateStaffManager();
+            updateStaff.ShowDialog();
+        }
+        private void btnFired_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            openChildForm(new FiredEmployeeManager());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
+            DeleteStaffManager deleteStaff =new DeleteStaffManager();
+            deleteStaff.ShowDialog();
         }
         #endregion
         #region Quan Lí NV Văn phòng
@@ -93,24 +113,30 @@ namespace Vehicle_license_plate_recognition
             showSubMenu(panelSubNVVP);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnAddOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            AddStaffManager addStaff = new AddStaffManager();
+            addStaff.ShowDialog();
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void btnUpdateOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            UpdateStaffManager updateStaff = new UpdateStaffManager();
+            updateStaff.ShowDialog();
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        
+        private void btnFiredOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openChildForm(new FiredEmployeeManager());
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        
+        private void btnDeleteOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            DeleteStaffManager deleteStaff = new DeleteStaffManager();
+            deleteStaff.ShowDialog();
         }
         #endregion
         #region Quản lí tác vụ
@@ -130,13 +156,15 @@ namespace Vehicle_license_plate_recognition
             hideSubMenu();
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void btnEditPark_Click(object sender, EventArgs e)
         {
+            openChildForm(new EditPark());
             hideSubMenu();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void btnDeletePark_Click(object sender, EventArgs e)
         {
+            openChildForm(new DeletePark());
             hideSubMenu();
         }
         #endregion
@@ -145,17 +173,17 @@ namespace Vehicle_license_plate_recognition
         {
             showSubMenu(panelSubPhanCong);
         }
-        private void button19_Click(object sender, EventArgs e)
+        private void btnAssignmentStaff_Click(object sender, EventArgs e)
         {
             hideSubMenu();
         }
 
-        private void button18_Click(object sender, EventArgs e)
+        private void btnAssignmentOfficer_Click(object sender, EventArgs e)
         {
             hideSubMenu();
         }
 
-        private void button17_Click(object sender, EventArgs e)
+        private void btnRequestingAbsence_Click(object sender, EventArgs e)
         {
             hideSubMenu();
         }
@@ -164,22 +192,44 @@ namespace Vehicle_license_plate_recognition
         {
             hideSubMenu();
         }
-        #endregion 
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
-            panelChildForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            hideSubMenu();
         }
 
-        
+
+
+        #endregion
+        #region Sự kiện Click
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFiredManager_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateManager_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddManager_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAttendance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DVGManager_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
