@@ -89,9 +89,17 @@ namespace Vehicle_license_plate_recognition.BLL
             
         }
         // All Bill kể từ thời điêm thực hiện công việc / NGày làm việc etc...
-        internal List<ThanhToan> GetAllBillVehicle(DateTime timeWork)
+        internal Object GetAllBillVehicle(DateTime timeWork)
         {
-            List<ThanhToan> bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).OrderByDescending(x =>x.ChargeTime).ToList() ;
+            var bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).Select(s=> new
+            {
+                LicensePlates = s.LicensePlates,
+                Staff = s.IdStaff,
+                Price = s.Price,
+                ChargeTime = s.ChargeTime,
+                
+
+            }).OrderByDescending(x =>x.ChargeTime).ToList() ;
 
             return bill;
         }

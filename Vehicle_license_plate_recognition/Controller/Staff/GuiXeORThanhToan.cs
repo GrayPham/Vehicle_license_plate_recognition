@@ -140,9 +140,9 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             }
         }
         // All Bill kể từ thời điêm thực hiện công việc / NGày làm việc etc...
-        internal List<ThanhToan> GetAllBillVehicle(DateTime timeWork)
+        internal Object GetAllBillVehicle(DateTime timeWork)
         {
-            List<ThanhToan> bill = nvbll.GetAllBillVehicle(timeWork);
+            var bill = nvbll.GetAllBillVehicle(timeWork);
             return bill;
 
         }
