@@ -42,8 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numberMaxCapacityBicycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberMotorCapacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberMaxCapacityCar)).BeginInit();
@@ -62,6 +62,7 @@
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Clear";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -74,6 +75,7 @@
             this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "Confirm";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // numberMaxCapacityBicycle
             // 
@@ -170,6 +172,7 @@
             this.comboBoxNamePark.Name = "comboBoxNamePark";
             this.comboBoxNamePark.Size = new System.Drawing.Size(205, 33);
             this.comboBoxNamePark.TabIndex = 18;
+            this.comboBoxNamePark.SelectedIndexChanged += new System.EventHandler(this.comboBoxNamePark_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -199,15 +202,6 @@
             this.panel3.Size = new System.Drawing.Size(491, 337);
             this.panel3.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(714, 72);
-            this.panel1.TabIndex = 20;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -217,6 +211,15 @@
             this.label1.Size = new System.Drawing.Size(420, 38);
             this.label1.TabIndex = 7;
             this.label1.Text = "Edit Garage to the system";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(714, 72);
+            this.panel1.TabIndex = 20;
             // 
             // EditPark
             // 
@@ -264,7 +267,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

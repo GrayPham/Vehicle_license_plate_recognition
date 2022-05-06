@@ -586,11 +586,11 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Controls.Add(this.DVGManager);
             this.panelChildForm.Controls.Add(this.btnReset);
             this.panelChildForm.Controls.Add(this.btnAddManager);
             this.panelChildForm.Controls.Add(this.btnUpdateManager);
             this.panelChildForm.Controls.Add(this.btnFiredManager);
-            this.panelChildForm.Controls.Add(this.DVGManager);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 101);
             this.panelChildForm.Name = "panelChildForm";
@@ -644,14 +644,12 @@
             // DVGManager
             // 
             this.DVGManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGManager.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DVGManager.Location = new System.Drawing.Point(0, 0);
+            this.DVGManager.Location = new System.Drawing.Point(174, 75);
             this.DVGManager.Name = "DVGManager";
             this.DVGManager.RowHeadersWidth = 51;
             this.DVGManager.RowTemplate.Height = 24;
-            this.DVGManager.Size = new System.Drawing.Size(732, 365);
-            this.DVGManager.TabIndex = 0;
-            this.DVGManager.DoubleClick += new System.EventHandler(this.DVGManager_DoubleClick);
+            this.DVGManager.Size = new System.Drawing.Size(240, 150);
+            this.DVGManager.TabIndex = 9;
             // 
             // FormManager
             // 
@@ -714,7 +712,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lbIdManager;
         private System.Windows.Forms.Label lbNameManager;
-        private System.Windows.Forms.DataGridView DVGManager;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAttendance;
@@ -722,5 +719,6 @@
         private System.Windows.Forms.Button btnUpdateManager;
         private System.Windows.Forms.Button btnFiredManager;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DataGridView DVGManager;
     }
 }
