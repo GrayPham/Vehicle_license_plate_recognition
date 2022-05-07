@@ -171,20 +171,20 @@ namespace Vehicle_license_plate_recognition
         {
             lbLoaiHinh.Text = "";
             // Goi len server va tra ve ket qua
-            String server_ip = "172.20.10.2";
+            String server_ip = "192.168.43.202";
             String server_path = "http://" + server_ip + ":8000/detect";
             int IdStaff = Convert.ToInt32( txtIdStaff.Text);
             int TypeVehicle = loaixe();
             try
             {
                 //Convert image to B64
-                //String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
-                //String retStr = sendPOST(server_path, B64);
-                //richTextBox_licenseplates.Text = retStr;
+                String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
+                String retStr = sendPOST(server_path, B64);
+                richTextBox_licenseplates.Text = retStr;
 
 
                 //TEst
-                String retStr = richTextBox_licenseplates.Text;
+                //String retStr = richTextBox_licenseplates.Text;
                 if (retStr.Count() <15)
                 {
                     if (retStr != "" )
