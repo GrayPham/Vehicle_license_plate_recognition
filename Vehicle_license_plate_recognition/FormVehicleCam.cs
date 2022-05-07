@@ -177,14 +177,14 @@ namespace Vehicle_license_plate_recognition
             int TypeVehicle = loaixe();
             try
             {
-                // Convert image to B64
-                //String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
-                //String retStr = sendPOST(server_path, B64);
-                //richTextBox_licenseplates.Text = retStr;
-                
+                //Convert image to B64
+                String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
+                String retStr = sendPOST(server_path, B64);
+                richTextBox_licenseplates.Text = retStr;
+
 
                 //TEst
-                String retStr = richTextBox_licenseplates.Text;
+                //String retStr = richTextBox_licenseplates.Text;
                 if (retStr.Count() <15)
                 {
                     if (retStr != "" )
@@ -336,10 +336,12 @@ namespace Vehicle_license_plate_recognition
             string LicensePlates = richTextBox_licenseplates.Text;
             Image image = pictureBox_recognize.Image;
             string IdPark = comboBox_Park.SelectedValue.ToString();
-            if (nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image) == true)
+            string place = nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image);
+            if (place != null)
             {
                 richTextBox_licenseplates.Text = "";
                 pictureBox_recognize.Image = null;
+                txtPlacePark.Text = place;
             }
             else
             {

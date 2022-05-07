@@ -70,8 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\NVBLL.cs" />
-    <Compile Include="BLL\PlaceParkingDAO.cs" />
+    <Compile Include="DAL\ManagerDTO\ManagerTacVuDAO.cs" />
+    <Compile Include="DAL\NVBLL.cs" />
+    <Compile Include="DAL\PlaceParkingDAO.cs" />
+    <Compile Include="Controller\Manager\ManagerPark.cs" />
+    <Compile Include="Controller\Manager\ManagerTacVu.cs" />
     <Compile Include="Controller\Setting.cs" />
     <Compile Include="Controller\Staff\ParkDistribution.cs" />
     <Compile Include="FormFaceRecognition.cs">
@@ -93,11 +96,17 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\AddEmploy.cs">
+    <Compile Include="Manager\TasksManager\AddPark.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Manager\AddEmploy.Designer.cs">
-      <DependentUpon>AddEmploy.cs</DependentUpon>
+    <Compile Include="Manager\TasksManager\AddPark.Designer.cs">
+      <DependentUpon>AddPark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TasksManager\Decentralization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\TasksManager\Decentralization.Designer.cs">
+      <DependentUpon>Decentralization.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\FormManager.cs">
       <SubType>Form</SubType>
@@ -134,6 +143,48 @@
     </Compile>
     <Compile Include="FormVehicleCam.Designer.cs">
       <DependentUpon>FormVehicleCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Staff\AddStaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Staff\AddStaffManager.Designer.cs">
+      <DependentUpon>AddStaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Staff\DeleteStaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Staff\DeleteStaffManager.Designer.cs">
+      <DependentUpon>DeleteStaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Staff\FiredEmployeeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Staff\FiredEmployeeManager.Designer.cs">
+      <DependentUpon>FiredEmployeeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Staff\StaffManagerInheritance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Staff\StaffManagerInheritance.Designer.cs">
+      <DependentUpon>StaffManagerInheritance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Staff\UpdateStaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Staff\UpdateStaffManager.Designer.cs">
+      <DependentUpon>UpdateStaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TasksManager\DeletePark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\TasksManager\DeletePark.Designer.cs">
+      <DependentUpon>DeletePark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TasksManager\EditPark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\TasksManager\EditPark.Designer.cs">
+      <DependentUpon>EditPark.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Assignment.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
@@ -210,8 +261,11 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager\AddEmploy.resx">
-      <DependentUpon>AddEmploy.cs</DependentUpon>
+    <EmbeddedResource Include="Manager\TasksManager\AddPark.resx">
+      <DependentUpon>AddPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\TasksManager\Decentralization.resx">
+      <DependentUpon>Decentralization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
@@ -231,6 +285,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVehicleCam.resx">
       <DependentUpon>FormVehicleCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Staff\AddStaffManager.resx">
+      <DependentUpon>AddStaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Staff\DeleteStaffManager.resx">
+      <DependentUpon>DeleteStaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Staff\FiredEmployeeManager.resx">
+      <DependentUpon>FiredEmployeeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Staff\StaffManagerInheritance.resx">
+      <DependentUpon>StaffManagerInheritance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Staff\UpdateStaffManager.resx">
+      <DependentUpon>UpdateStaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\TasksManager\DeletePark.resx">
+      <DependentUpon>DeletePark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\TasksManager\EditPark.resx">
+      <DependentUpon>EditPark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

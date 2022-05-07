@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
+
 using Vehicle_license_plate_recognition.Model;
 
 namespace Vehicle_license_plate_recognition.BLL
@@ -13,12 +13,7 @@ namespace Vehicle_license_plate_recognition.BLL
     public class NVBLL: QuanLiNhaXe
     {
         
-        public void AddGuiXe(NguoiGui nguoiGui)
-        {
-            db.NguoiGuis.Add(nguoiGui);
-            db.SaveChanges();
-            
-        }
+        
 
         public List<NguoiGui> getAllLiPlate(string bienso)
         {
@@ -94,9 +89,17 @@ namespace Vehicle_license_plate_recognition.BLL
             
         }
         // All Bill kể từ thời điêm thực hiện công việc / NGày làm việc etc...
-        internal List<ThanhToan> GetAllBillVehicle(DateTime timeWork)
+        internal Object GetAllBillVehicle(DateTime timeWork)
         {
-            List<ThanhToan> bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).OrderByDescending(x =>x.ChargeTime).ToList() ;
+            var bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).Select(s=> new
+            {
+                LicensePlates = s.LicensePlates,
+                Staff = s.IdStaff,
+                Price = s.Price,
+                ChargeTime = s.ChargeTime,
+                
+
+            }).OrderByDescending(x =>x.ChargeTime).ToList() ;
 
             return bill;
         }

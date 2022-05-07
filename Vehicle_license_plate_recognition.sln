@@ -5,6 +5,11 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle_license_plate_recognition", "Vehicle_license_plate_recognition\Vehicle_license_plate_recognition.csproj", "{7CB1C3B6-FE6A-4A1F-A2F0-916519E1F770}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6F0A0F5-933A-47B8-815A-35FDF0CE1129}"
+	ProjectSection(SolutionItems) = preProject
+		Specific description.docx = Specific description.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
