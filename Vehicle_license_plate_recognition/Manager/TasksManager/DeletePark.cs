@@ -16,5 +16,20 @@ namespace Vehicle_license_plate_recognition.Manager.TasksManager
         {
             InitializeComponent();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxNamePark_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

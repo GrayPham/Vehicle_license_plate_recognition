@@ -69,6 +69,7 @@
             this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "Confirm";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
@@ -81,6 +82,7 @@
             this.btnClose.TabIndex = 23;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label5
             // 
@@ -100,6 +102,7 @@
             this.comboBoxNamePark.Name = "comboBoxNamePark";
             this.comboBoxNamePark.Size = new System.Drawing.Size(291, 33);
             this.comboBoxNamePark.TabIndex = 24;
+            this.comboBoxNamePark.SelectedIndexChanged += new System.EventHandler(this.comboBoxNamePark_SelectedIndexChanged);
             // 
             // pictureBoxPark
             // 

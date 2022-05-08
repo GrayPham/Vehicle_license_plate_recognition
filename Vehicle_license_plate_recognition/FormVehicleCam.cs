@@ -171,8 +171,8 @@ namespace Vehicle_license_plate_recognition
         {
             lbLoaiHinh.Text = "";
             // Goi len server va tra ve ket qua
-            String server_ip = "192.168.43.202";
-            String server_path = "http://" + server_ip + ":8000/detect";
+            String server_ip = "192.168.1.3";
+            String server_path = "http://" + server_ip + ":8000/detect2line";
             int IdStaff = Convert.ToInt32( txtIdStaff.Text);
             int TypeVehicle = loaixe();
             try
