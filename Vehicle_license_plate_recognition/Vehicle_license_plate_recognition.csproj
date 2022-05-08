@@ -102,6 +102,12 @@
     <Compile Include="Manager\TasksManager\AddPark.Designer.cs">
       <DependentUpon>AddPark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\TasksManager\ClosePark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\TasksManager\ClosePark.Designer.cs">
+      <DependentUpon>ClosePark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\TasksManager\Decentralization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,12 @@
     <Compile Include="Manager\TasksManager\EditPark.Designer.cs">
       <DependentUpon>EditPark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\TasksManager\OpenPark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\TasksManager\OpenPark.Designer.cs">
+      <DependentUpon>OpenPark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Assignment.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
@@ -264,6 +276,9 @@
     <EmbeddedResource Include="Manager\TasksManager\AddPark.resx">
       <DependentUpon>AddPark.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\TasksManager\ClosePark.resx">
+      <DependentUpon>ClosePark.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\TasksManager\Decentralization.resx">
       <DependentUpon>Decentralization.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\TasksManager\EditPark.resx">
       <DependentUpon>EditPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\TasksManager\OpenPark.resx">
+      <DependentUpon>OpenPark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1417,6 +1435,7 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="Resources\park1.png" />
     <None Include="Resources\hcmute.png" />
     <None Include="Resources\131943797_222666359353624_8357918975126419137_o.jpg" />
     <None Include="Resources\logo CLC Circle.png" />

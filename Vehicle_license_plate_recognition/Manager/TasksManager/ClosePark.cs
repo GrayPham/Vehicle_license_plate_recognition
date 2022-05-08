@@ -11,25 +11,24 @@ using Vehicle_license_plate_recognition.Controller.Manager;
 
 namespace Vehicle_license_plate_recognition.Manager.TasksManager
 {
-    public partial class DeletePark : Form
+    public partial class ClosePark : Form
     {
         ManagerPark mParking = new ManagerPark();
-        public DeletePark()
+        public ClosePark()
         {
             InitializeComponent();
-            
-            
+            fillcombo();
         }
         private void fillcombo()
         {
             comboBoxNamePark.SelectedItem = null;
             comboBoxNamePark.DisplayMember = "Name";
             comboBoxNamePark.ValueMember = "Name";
-            comboBoxNamePark.DataSource = mParking.getAllNotUsePark();
+            comboBoxNamePark.DataSource = mParking.getAllUsePark();
             if (comboBoxNamePark.SelectedItem != null)
             {
                 string idPark = comboBoxNamePark.SelectedValue.ToString();
-                
+
 
             }
             else
@@ -37,35 +36,20 @@ namespace Vehicle_license_plate_recognition.Manager.TasksManager
                 // Thong bao
             }
         }
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            // Loi khi nut Delete Xoa comboBox rỗng
-            if (comboBoxNamePark.SelectedIndex != -1)
+            string idPark = comboBoxNamePark.SelectedValue.ToString();
+            if (idPark != null)
             {
-                string idPark = comboBoxNamePark.SelectedValue.ToString();
-                mParking.DeletePark(idPark);
+                mParking.ClosePark(idPark);
+                lbMess.Text = lbMess.Text + " Successfull";
                 fillcombo();
             }
-            else
-            {
-                btnDelete.Enabled = false;
-            }
         }
-
-        
 
         private void btnDone_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void DeletePark_Load(object sender, EventArgs e)
-        {
-            fillcombo();
-            if (comboBoxNamePark.SelectedIndex != -1)
-            {
-                btnDelete.Enabled = false;
-            }
         }
     }
 }

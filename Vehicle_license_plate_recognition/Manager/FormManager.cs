@@ -167,6 +167,16 @@ namespace Vehicle_license_plate_recognition
             openChildForm(new DeletePark());
             hideSubMenu();
         }
+        private void btnClosePark_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ClosePark());
+            hideSubMenu();
+        }
+        private void btnOpenPark_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OpenPark());
+            hideSubMenu();
+        }
         #endregion
         #region Phân Công Công Việc
         private void btnPhanCong_Click(object sender, EventArgs e)
@@ -230,6 +240,9 @@ namespace Vehicle_license_plate_recognition
         {
 
         }
+
         #endregion
+
+        
     }
 }

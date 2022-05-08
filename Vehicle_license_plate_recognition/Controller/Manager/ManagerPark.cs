@@ -38,17 +38,41 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
 
         }
 
+        internal void DeletePark(string idPark)
+        {
+            mParkDAO.DeletePark(idPark);
+        }
+
+        internal void OpenPark(string idPark)
+        {
+            mParkDAO.OpenParkDTO(idPark);
+        }
+
+        internal object getAllNotUsePark()
+        {
+            var allPark = mParkDAO.getAllNotUsePark();
+
+            return allPark;
+        }
+
+        internal object getAllUsePark()
+        {
+            var allPark = mParkDAO.getAllUsePark();
+
+            return allPark;
+        }
+
         internal List<Capacity> getCapOfPark(string idPark)
         {
             return mParkDAO.getCapOfPark(idPark);
         }
 
-        internal object getAllPark()
+        internal void ClosePark(string idPark)
         {
-            var allPark = mParkDAO.GetAllPark();
-            
-            return allPark;
+            mParkDAO.CloseParkDTO(idPark);
         }
+
+        
 
         internal void UpdatePark(string oldNamePark,string namePark, int maxMotor, int maxBicycle, int maxCar)
         {
