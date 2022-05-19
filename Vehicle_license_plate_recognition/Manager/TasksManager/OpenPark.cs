@@ -11,14 +11,12 @@ using Vehicle_license_plate_recognition.Controller.Manager;
 
 namespace Vehicle_license_plate_recognition.Manager.TasksManager
 {
-    public partial class DeletePark : Form
+    public partial class OpenPark : Form
     {
         ManagerPark mParking = new ManagerPark();
-        public DeletePark()
+        public OpenPark()
         {
             InitializeComponent();
-            
-            
         }
         private void fillcombo()
         {
@@ -29,7 +27,7 @@ namespace Vehicle_license_plate_recognition.Manager.TasksManager
             if (comboBoxNamePark.SelectedItem != null)
             {
                 string idPark = comboBoxNamePark.SelectedValue.ToString();
-                
+
 
             }
             else
@@ -37,34 +35,28 @@ namespace Vehicle_license_plate_recognition.Manager.TasksManager
                 // Thong bao
             }
         }
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
-            // Loi khi nut Delete Xoa comboBox rỗng
+            
             if (comboBoxNamePark.SelectedIndex != -1)
             {
                 string idPark = comboBoxNamePark.SelectedValue.ToString();
-                mParking.DeletePark(idPark);
+                mParking.OpenPark(idPark);
+                lbMess.Text = lbMess.Text + " Successfull";
                 fillcombo();
             }
-            else
-            {
-                btnDelete.Enabled = false;
-            }
         }
-
-        
 
         private void btnDone_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void DeletePark_Load(object sender, EventArgs e)
+        private void OpenPark_Load(object sender, EventArgs e)
         {
-            fillcombo();
             if (comboBoxNamePark.SelectedIndex != -1)
             {
-                btnDelete.Enabled = false;
+                btnOpen.Enabled = false;
             }
         }
     }

@@ -61,6 +61,39 @@ namespace Vehicle_license_plate_recognition.BLL
             }
             
         }
+
+        internal void DeletePark(string idPark)
+        {
+            var placeParkList = db.PlaceParks.Where(p => p.IdPark == idPark).ToList<PlacePark>();
+            foreach (var place in placeParkList)
+            {
+                db.PlaceParks.Remove(place);
+            }
+            List<Capacity> listCap = db.Capacities.Where(cap => cap.IdPark == idPark)
+                .ToList<Capacity>();
+            foreach (var capacity in listCap)
+            {
+                db.Capacities.Remove(capacity);
+            }
+            var park = db.Parkings.Where(p => p.Name == idPark).FirstOrDefault();
+            db.Parkings.Remove(park);
+            db.SaveChanges();
+        }
+
+        internal void OpenParkDTO(string idPark)
+        {
+            var parkDTO = (from p in db.Parkings
+                           where p.Name == idPark
+                           select p).FirstOrDefault();
+            parkDTO.isDelete = true;
+            parkDTO.DeleteDate = null;
+            db.SaveChanges();
+        }
+
+
+
+
+
         // Ham tra ve ma tran 2 2 
         internal List<Capacity> getCapOfPark(string idPark)
         {
@@ -102,12 +135,7 @@ namespace Vehicle_license_plate_recognition.BLL
             db.SaveChanges();
         }
 
-        private void UpdatePlace(int type, string item, string namePark, string oldNamePark)
-        {
-            PlacePark place = db.PlaceParks.Where(pla => pla.IdPark == oldNamePark && pla.IdVehicleType ==type).FirstOrDefault();
-            place.IdPark = namePark;
-            place.Id = item;
-        }
+
 
         private void UpdateCapacity(int type, int maxCar, string oldNamePark, string namePark)
         {
@@ -120,7 +148,7 @@ namespace Vehicle_license_plate_recognition.BLL
         internal object GetAllPark()
         {
             var park = (from place in db.Parkings
-                                         where place.isDelete == false
+                                         
                                          select new
                                          {
                                              Name = place.Name,
@@ -151,6 +179,40 @@ namespace Vehicle_license_plate_recognition.BLL
             placePark.IdVehicleType = typeVehicle;
             placePark.Status = true;
             db.PlaceParks.Add(placePark);
+            db.SaveChanges();
+        }
+
+
+
+        internal object getAllUsePark()
+        {
+            var park = (from place in db.Parkings
+                        where place.isDelete == false
+                        select new
+                        {
+                            Name = place.Name,
+                        }).ToList();
+
+            return park;
+        }
+        internal object getAllNotUsePark()
+        {
+            var park = (from place in db.Parkings
+                        where place.isDelete == true
+                        select new
+                        {
+                            Name = place.Name,
+                        }).ToList();
+
+            return park;
+        }
+
+        internal void CloseParkDTO(string idPark)
+        {
+            var parkDTO = (from p in db.Parkings
+                           where p.Name == idPark select p).FirstOrDefault();
+            parkDTO.isDelete = true;
+            parkDTO.DeleteDate = DateTime.Now;
             db.SaveChanges();
         }
     }

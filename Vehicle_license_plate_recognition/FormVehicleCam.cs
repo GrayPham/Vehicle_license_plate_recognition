@@ -169,64 +169,136 @@ namespace Vehicle_license_plate_recognition
 
         private void btn_Check_Click(object sender, EventArgs e)
         {
-            lbLoaiHinh.Text = "";
-            // Goi len server va tra ve ket qua
-            String server_ip = "192.168.43.202";
-            String server_path = "http://" + server_ip + ":8000/detect";
-            int IdStaff = Convert.ToInt32( txtIdStaff.Text);
             int TypeVehicle = loaixe();
-            try
+
+            lbLoaiHinh.Text = "";
+            String server_path;
+            // Goi len server va tra ve ket qua
+            String server_ip = "192.168.1.3";
+            if (TypeVehicle == 3)
             {
-                //Convert image to B64
-                String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
-                String retStr = sendPOST(server_path, B64);
-                richTextBox_licenseplates.Text = retStr;
+                
+                server_path = "http://" + server_ip + ":8000/detect";
+                int IdStaff = Convert.ToInt32(txtIdStaff.Text);
 
-
-                //TEst
-                //String retStr = richTextBox_licenseplates.Text;
-                if (retStr.Count() <15)
+                try
                 {
-                    if (retStr != "" )
+                    //Convert image to B64
+                    String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
+                    String retStr = sendPOST(server_path, B64);
+                    richTextBox_licenseplates.Text = retStr;
+
+
+                    //TEst
+                    //String retStr = richTextBox_licenseplates.Text;
+                    if (retStr.Count() < 15)
                     {
-                        if (nv.isParked(retStr) == true)
+                        if (retStr != "")
                         {
+                            if (nv.isParked(retStr) == true)
+                            {
 
-                            btn_parking.Enabled = false;
-                            DateTime ReturnTime = dateTimePickerSystem.Value;
-                            double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
-                            lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr;
-                            txtPrice.Text = Price.ToString();
-                            btn_charge.Enabled = true;
+                                btn_parking.Enabled = false;
+                                DateTime ReturnTime = dateTimePickerSystem.Value;
+                                double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
+                                lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr;
+                                txtPrice.Text = Price.ToString();
+                                btn_charge.Enabled = true;
 
+                            }
+
+                            else
+                            {
+                                lbLoaiHinh.Text = "Gui Xe Bien So: " + retStr;
+                                btn_charge.Enabled = false;
+                                btn_parking.Enabled = true;
+                            }
                         }
-                        
+                        else if (TypeVehicle == 1)
+                        {
+                            // Hoàn thiện
+                            lbLoaiHinh.Text = "Nhan dien khuon mat";
+                        }
                         else
-                        {
-                            lbLoaiHinh.Text = "Gui Xe Bien So: " + retStr;
-                            btn_charge.Enabled = false;
-                            btn_parking.Enabled = true;
-                        }
-                    }
-                    else if(TypeVehicle == 1)
-                    {
-                        // Hoàn thiện
-                        lbLoaiHinh.Text = "Nhan dien khuon mat";
+                            lbLoaiHinh.Text = "No license plate";
                     }
                     else
-                        lbLoaiHinh.Text = "No license plate";
+                    {
+                        lbLoaiHinh.Text = "Anh Khong nhan dien duoc";
+                    }
+
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    lbLoaiHinh.Text = "Anh Khong nhan dien duoc";
-                }    
+                    MessageBox.Show(ex.ToString(), "Exception");
+                }
 
             }
-            catch (Exception ex)
+            else if (TypeVehicle == 2)
             {
-                MessageBox.Show(ex.ToString(), "Exception");
-            }
+                lbLoaiHinh.Text = "";
+                // Goi len server va tra ve ket qua
 
+                server_path = "http://" + server_ip + ":8000/detect2line";
+                int IdStaff = Convert.ToInt32(txtIdStaff.Text);
+
+                try
+                {
+                    //Convert image to B64
+                    String B64 = ConvertImageToBase64String(pictureBox_recognize.Image);
+                    String retStr = sendPOST(server_path, B64);
+                    richTextBox_licenseplates.Text = retStr;
+
+
+                    //TEst
+                    //String retStr = richTextBox_licenseplates.Text;
+                    if (retStr.Count() < 15)
+                    {
+                        if (retStr != "")
+                        {
+                            if (nv.isParked(retStr) == true)
+                            {
+
+                                btn_parking.Enabled = false;
+                                DateTime ReturnTime = dateTimePickerSystem.Value;
+                                double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
+                                lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr;
+                                txtPrice.Text = Price.ToString();
+                                btn_charge.Enabled = true;
+
+                            }
+
+                            else
+                            {
+                                lbLoaiHinh.Text = "Gui Xe Bien So: " + retStr;
+                                btn_charge.Enabled = false;
+                                btn_parking.Enabled = true;
+                            }
+                        }
+                        else if (TypeVehicle == 1)
+                        {
+                            // Hoàn thiện
+                            lbLoaiHinh.Text = "Nhan dien khuon mat";
+                        }
+                        else
+                            lbLoaiHinh.Text = "No license plate";
+                    }
+                    else
+                    {
+                        lbLoaiHinh.Text = "Anh Khong nhan dien duoc";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Exception");
+                }
+
+            }
+            else if( TypeVehicle == 1)
+            {
+                lbLoaiHinh.Text = "Nhan Dien Khuon Mat";
+            }
         }
 
 

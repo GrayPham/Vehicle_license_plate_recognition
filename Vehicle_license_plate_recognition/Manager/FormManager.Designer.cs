@@ -39,7 +39,6 @@
             this.panelSubTacVu = new System.Windows.Forms.Panel();
             this.btnDeletePark = new System.Windows.Forms.Button();
             this.btnEditPark = new System.Windows.Forms.Button();
-            this.btnAddPark = new System.Windows.Forms.Button();
             this.btnPhanQuyen = new System.Windows.Forms.Button();
             this.btnQLTacVu = new System.Windows.Forms.Button();
             this.panelSubNVVP = new System.Windows.Forms.Panel();
@@ -63,11 +62,14 @@
             this.lbIdManager = new System.Windows.Forms.Label();
             this.lbNameManager = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.DVGManager = new System.Windows.Forms.DataGridView();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnAddManager = new System.Windows.Forms.Button();
             this.btnUpdateManager = new System.Windows.Forms.Button();
             this.btnFiredManager = new System.Windows.Forms.Button();
-            this.DVGManager = new System.Windows.Forms.DataGridView();
+            this.btnAddPark = new System.Windows.Forms.Button();
+            this.btnClosePark = new System.Windows.Forms.Button();
+            this.btnOpenPark = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelSubPhanCong.SuspendLayout();
             this.panelSubTacVu.SuspendLayout();
@@ -108,7 +110,7 @@
             this.panelSubPhanCong.Controls.Add(this.btnAssignmentOfficer);
             this.panelSubPhanCong.Controls.Add(this.btnAssignmentStaff);
             this.panelSubPhanCong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubPhanCong.Location = new System.Drawing.Point(0, 777);
+            this.panelSubPhanCong.Location = new System.Drawing.Point(0, 875);
             this.panelSubPhanCong.Name = "panelSubPhanCong";
             this.panelSubPhanCong.Size = new System.Drawing.Size(179, 166);
             this.panelSubPhanCong.TabIndex = 8;
@@ -199,7 +201,7 @@
             this.btnAssignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignment.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAssignment.Location = new System.Drawing.Point(0, 731);
+            this.btnAssignment.Location = new System.Drawing.Point(0, 829);
             this.btnAssignment.Name = "btnAssignment";
             this.btnAssignment.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAssignment.Size = new System.Drawing.Size(179, 46);
@@ -212,6 +214,8 @@
             // panelSubTacVu
             // 
             this.panelSubTacVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
+            this.panelSubTacVu.Controls.Add(this.btnOpenPark);
+            this.panelSubTacVu.Controls.Add(this.btnClosePark);
             this.panelSubTacVu.Controls.Add(this.btnDeletePark);
             this.panelSubTacVu.Controls.Add(this.btnEditPark);
             this.panelSubTacVu.Controls.Add(this.btnAddPark);
@@ -219,7 +223,7 @@
             this.panelSubTacVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubTacVu.Location = new System.Drawing.Point(0, 565);
             this.panelSubTacVu.Name = "panelSubTacVu";
-            this.panelSubTacVu.Size = new System.Drawing.Size(179, 166);
+            this.panelSubTacVu.Size = new System.Drawing.Size(179, 264);
             this.panelSubTacVu.TabIndex = 6;
             // 
             // btnDeletePark
@@ -231,7 +235,7 @@
             this.btnDeletePark.Location = new System.Drawing.Point(0, 123);
             this.btnDeletePark.Name = "btnDeletePark";
             this.btnDeletePark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDeletePark.Size = new System.Drawing.Size(179, 43);
+            this.btnDeletePark.Size = new System.Drawing.Size(179, 40);
             this.btnDeletePark.TabIndex = 3;
             this.btnDeletePark.Text = "Delete Park";
             this.btnDeletePark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -253,22 +257,6 @@
             this.btnEditPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditPark.UseVisualStyleBackColor = true;
             this.btnEditPark.Click += new System.EventHandler(this.btnEditPark_Click);
-            // 
-            // btnAddPark
-            // 
-            this.btnAddPark.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddPark.FlatAppearance.BorderSize = 0;
-            this.btnAddPark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPark.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddPark.Location = new System.Drawing.Point(0, 41);
-            this.btnAddPark.Name = "btnAddPark";
-            this.btnAddPark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAddPark.Size = new System.Drawing.Size(179, 41);
-            this.btnAddPark.TabIndex = 1;
-            this.btnAddPark.Text = "Add Park";
-            this.btnAddPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddPark.UseVisualStyleBackColor = true;
-            this.btnAddPark.Click += new System.EventHandler(this.btnAddPark_Click);
             // 
             // btnPhanQuyen
             // 
@@ -597,6 +585,16 @@
             this.panelChildForm.Size = new System.Drawing.Size(732, 520);
             this.panelChildForm.TabIndex = 3;
             // 
+            // DVGManager
+            // 
+            this.DVGManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGManager.Location = new System.Drawing.Point(174, 75);
+            this.DVGManager.Name = "DVGManager";
+            this.DVGManager.RowHeadersWidth = 51;
+            this.DVGManager.RowTemplate.Height = 24;
+            this.DVGManager.Size = new System.Drawing.Size(240, 150);
+            this.DVGManager.TabIndex = 9;
+            // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -641,15 +639,53 @@
             this.btnFiredManager.UseVisualStyleBackColor = true;
             this.btnFiredManager.Click += new System.EventHandler(this.btnFiredManager_Click);
             // 
-            // DVGManager
+            // btnAddPark
             // 
-            this.DVGManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGManager.Location = new System.Drawing.Point(174, 75);
-            this.DVGManager.Name = "DVGManager";
-            this.DVGManager.RowHeadersWidth = 51;
-            this.DVGManager.RowTemplate.Height = 24;
-            this.DVGManager.Size = new System.Drawing.Size(240, 150);
-            this.DVGManager.TabIndex = 9;
+            this.btnAddPark.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddPark.FlatAppearance.BorderSize = 0;
+            this.btnAddPark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddPark.Location = new System.Drawing.Point(0, 41);
+            this.btnAddPark.Name = "btnAddPark";
+            this.btnAddPark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddPark.Size = new System.Drawing.Size(179, 41);
+            this.btnAddPark.TabIndex = 1;
+            this.btnAddPark.Text = "Add Park";
+            this.btnAddPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPark.UseVisualStyleBackColor = true;
+            this.btnAddPark.Click += new System.EventHandler(this.btnAddPark_Click);
+            // 
+            // btnClosePark
+            // 
+            this.btnClosePark.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClosePark.FlatAppearance.BorderSize = 0;
+            this.btnClosePark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClosePark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClosePark.Location = new System.Drawing.Point(0, 163);
+            this.btnClosePark.Name = "btnClosePark";
+            this.btnClosePark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClosePark.Size = new System.Drawing.Size(179, 51);
+            this.btnClosePark.TabIndex = 4;
+            this.btnClosePark.Text = "Close Park";
+            this.btnClosePark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClosePark.UseVisualStyleBackColor = true;
+            this.btnClosePark.Click += new System.EventHandler(this.btnClosePark_Click);
+            // 
+            // btnOpenPark
+            // 
+            this.btnOpenPark.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpenPark.FlatAppearance.BorderSize = 0;
+            this.btnOpenPark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenPark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnOpenPark.Location = new System.Drawing.Point(0, 214);
+            this.btnOpenPark.Name = "btnOpenPark";
+            this.btnOpenPark.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnOpenPark.Size = new System.Drawing.Size(179, 43);
+            this.btnOpenPark.TabIndex = 5;
+            this.btnOpenPark.Text = "Open Park";
+            this.btnOpenPark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenPark.UseVisualStyleBackColor = true;
+            this.btnOpenPark.Click += new System.EventHandler(this.btnOpenPark_Click);
             // 
             // FormManager
             // 
@@ -697,7 +733,6 @@
         private System.Windows.Forms.Panel panelSubTacVu;
         private System.Windows.Forms.Button btnDeletePark;
         private System.Windows.Forms.Button btnEditPark;
-        private System.Windows.Forms.Button btnAddPark;
         private System.Windows.Forms.Button btnPhanQuyen;
         private System.Windows.Forms.Button btnQLTacVu;
         private System.Windows.Forms.Panel panelSubNVVP;
@@ -720,5 +755,8 @@
         private System.Windows.Forms.Button btnFiredManager;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridView DVGManager;
+        private System.Windows.Forms.Button btnClosePark;
+        private System.Windows.Forms.Button btnAddPark;
+        private System.Windows.Forms.Button btnOpenPark;
     }
 }

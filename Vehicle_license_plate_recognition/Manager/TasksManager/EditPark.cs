@@ -25,7 +25,7 @@ namespace Vehicle_license_plate_recognition.Manager.TasksManager
             comboBoxNamePark.SelectedItem = null;
             comboBoxNamePark.DisplayMember = "Name";
             comboBoxNamePark.ValueMember = "Name";
-            comboBoxNamePark.DataSource = mParking.getAllPark();
+            comboBoxNamePark.DataSource = mParking.getAllNotUsePark();
             if (comboBoxNamePark.SelectedItem != null)
             {
                 string idPark = comboBoxNamePark.SelectedValue.ToString();
@@ -84,7 +84,7 @@ namespace Vehicle_license_plate_recognition.Manager.TasksManager
                 mParking.UpdatePark(oldNamePark, namePark, maxMotor, maxBicycle, maxCar);
                 comboBoxNamePark.DisplayMember = "Name";
                 comboBoxNamePark.ValueMember = "Name";
-                comboBoxNamePark.DataSource = mParking.getAllPark();
+                comboBoxNamePark.DataSource = mParking.getAllNotUsePark();
             }
             catch (Exception)
             {

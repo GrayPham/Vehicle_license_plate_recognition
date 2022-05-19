@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVehicleCam));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPlacePark = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DGVThanhToan = new System.Windows.Forms.DataGridView();
             this.txtIdStaff = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timerSysterm = new System.Windows.Forms.Timer(this.components);
-            this.txtPlacePark = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVThanhToan)).BeginInit();
@@ -110,6 +110,26 @@
             this.groupBox1.Size = new System.Drawing.Size(1578, 845);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(679, 716);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 32);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Position";
+            // 
+            // txtPlacePark
+            // 
+            this.txtPlacePark.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlacePark.ForeColor = System.Drawing.Color.Red;
+            this.txtPlacePark.Location = new System.Drawing.Point(803, 713);
+            this.txtPlacePark.Name = "txtPlacePark";
+            this.txtPlacePark.ReadOnly = true;
+            this.txtPlacePark.Size = new System.Drawing.Size(273, 38);
+            this.txtPlacePark.TabIndex = 45;
             // 
             // label2
             // 
@@ -397,26 +417,6 @@
             // timerSysterm
             // 
             this.timerSysterm.Tick += new System.EventHandler(this.timerSysterm_Tick);
-            // 
-            // txtPlacePark
-            // 
-            this.txtPlacePark.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlacePark.ForeColor = System.Drawing.Color.Red;
-            this.txtPlacePark.Location = new System.Drawing.Point(803, 713);
-            this.txtPlacePark.Name = "txtPlacePark";
-            this.txtPlacePark.ReadOnly = true;
-            this.txtPlacePark.Size = new System.Drawing.Size(273, 38);
-            this.txtPlacePark.TabIndex = 45;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(679, 716);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 32);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Position";
             // 
             // FormVehicleCam
             // 
