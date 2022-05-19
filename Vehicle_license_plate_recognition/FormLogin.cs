@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.Controller.Login;
 using Vehicle_license_plate_recognition.Model;
+using Vehicle_license_plate_recognition.OfficeStaff;
 //using Vehicle_license_plate_recognition.Manager;
 namespace Vehicle_license_plate_recognition
 {
@@ -69,16 +71,18 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
+                BaseData.Name = "Hung";
                 if (q.isOfficeStaff == true && q != null)
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
-                    FormMenu menuForm = new FormMenu();
+                    OfficeStaffMainForm menuForm = new OfficeStaffMainForm();
                     this.Visible = false; //ẩn thôi chứ khum tắt
                     menuForm.ShowDialog();
                     this.Visible = true; //mở lại
                 }
                 if (q.isStaff == true && q != null)
                 {
+                    
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
                     FormStaff staffForm = new FormStaff();
                     staffForm.txtIDStaff.Text = q.IdStaff.ToString();
