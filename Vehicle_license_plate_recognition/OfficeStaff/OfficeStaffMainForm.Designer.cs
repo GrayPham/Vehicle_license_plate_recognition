@@ -1,0 +1,280 @@
+﻿namespace Vehicle_license_plate_recognition.OfficeStaff
+{
+    partial class OfficeStaffMainForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.button_timekeeping = new System.Windows.Forms.Button();
+            this.button_break = new System.Windows.Forms.Button();
+            this.dataGridView_phancongtho = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.contractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractStillInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expiredContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byYearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byMouthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalRevenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtIDStaff = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnShift = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // button_timekeeping
+            // 
+            this.button_timekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_timekeeping.Location = new System.Drawing.Point(1082, 683);
+            this.button_timekeeping.Name = "button_timekeeping";
+            this.button_timekeeping.Size = new System.Drawing.Size(237, 44);
+            this.button_timekeeping.TabIndex = 47;
+            this.button_timekeeping.Text = "Timekeeping";
+            this.button_timekeeping.UseVisualStyleBackColor = true;
+            // 
+            // button_break
+            // 
+            this.button_break.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_break.Location = new System.Drawing.Point(435, 683);
+            this.button_break.Name = "button_break";
+            this.button_break.Size = new System.Drawing.Size(390, 44);
+            this.button_break.TabIndex = 46;
+            this.button_break.Text = "Take a break";
+            this.button_break.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_phancongtho
+            // 
+            this.dataGridView_phancongtho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_phancongtho.Location = new System.Drawing.Point(0, 116);
+            this.dataGridView_phancongtho.Name = "dataGridView_phancongtho";
+            this.dataGridView_phancongtho.RowHeadersWidth = 51;
+            this.dataGridView_phancongtho.RowTemplate.Height = 24;
+            this.dataGridView_phancongtho.Size = new System.Drawing.Size(1319, 544);
+            this.dataGridView_phancongtho.TabIndex = 45;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contractToolStripMenuItem,
+            this.statusToolStripMenuItem,
+            this.turnoverToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1335, 39);
+            this.menuStrip1.TabIndex = 50;
+            this.menuStrip1.Text = "menuStripOffice";
+            // 
+            // contractToolStripMenuItem
+            // 
+            this.contractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addContractToolStripMenuItem,
+            this.editContractToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contractToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contractToolStripMenuItem.Name = "contractToolStripMenuItem";
+            this.contractToolStripMenuItem.Size = new System.Drawing.Size(142, 35);
+            this.contractToolStripMenuItem.Text = "CONTRACT";
+            this.contractToolStripMenuItem.Click += new System.EventHandler(this.contractToolStripMenuItem_Click);
+            // 
+            // addContractToolStripMenuItem
+            // 
+            this.addContractToolStripMenuItem.Name = "addContractToolStripMenuItem";
+            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.addContractToolStripMenuItem.Text = "Add contract";
+            // 
+            // editContractToolStripMenuItem
+            // 
+            this.editContractToolStripMenuItem.Name = "editContractToolStripMenuItem";
+            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.editContractToolStripMenuItem.Text = "Edit contract";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // statusToolStripMenuItem
+            // 
+            this.statusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contractStillInUseToolStripMenuItem,
+            this.expiredContractToolStripMenuItem,
+            this.inWeekToolStripMenuItem});
+            this.statusToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(103, 35);
+            this.statusToolStripMenuItem.Text = "STATUS";
+            // 
+            // contractStillInUseToolStripMenuItem
+            // 
+            this.contractStillInUseToolStripMenuItem.Name = "contractStillInUseToolStripMenuItem";
+            this.contractStillInUseToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
+            this.contractStillInUseToolStripMenuItem.Text = "Contract still in use";
+            // 
+            // expiredContractToolStripMenuItem
+            // 
+            this.expiredContractToolStripMenuItem.Name = "expiredContractToolStripMenuItem";
+            this.expiredContractToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
+            this.expiredContractToolStripMenuItem.Text = "Expired contract";
+            // 
+            // inWeekToolStripMenuItem
+            // 
+            this.inWeekToolStripMenuItem.Name = "inWeekToolStripMenuItem";
+            this.inWeekToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
+            this.inWeekToolStripMenuItem.Text = "In Week";
+            // 
+            // turnoverToolStripMenuItem
+            // 
+            this.turnoverToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.byYearToolStripMenuItem,
+            this.byMouthToolStripMenuItem,
+            this.byWeekToolStripMenuItem,
+            this.totalRevenueToolStripMenuItem});
+            this.turnoverToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.turnoverToolStripMenuItem.Name = "turnoverToolStripMenuItem";
+            this.turnoverToolStripMenuItem.Size = new System.Drawing.Size(143, 35);
+            this.turnoverToolStripMenuItem.Text = "TURNOVER";
+            // 
+            // byYearToolStripMenuItem
+            // 
+            this.byYearToolStripMenuItem.Name = "byYearToolStripMenuItem";
+            this.byYearToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
+            this.byYearToolStripMenuItem.Text = "By Year";
+            // 
+            // byMouthToolStripMenuItem
+            // 
+            this.byMouthToolStripMenuItem.Name = "byMouthToolStripMenuItem";
+            this.byMouthToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
+            this.byMouthToolStripMenuItem.Text = "By Mouth";
+            // 
+            // byWeekToolStripMenuItem
+            // 
+            this.byWeekToolStripMenuItem.Name = "byWeekToolStripMenuItem";
+            this.byWeekToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
+            this.byWeekToolStripMenuItem.Text = "By Week";
+            // 
+            // totalRevenueToolStripMenuItem
+            // 
+            this.totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
+            this.totalRevenueToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
+            this.totalRevenueToolStripMenuItem.Text = "Total revenue";
+            // 
+            // txtIDStaff
+            // 
+            this.txtIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDStaff.Location = new System.Drawing.Point(136, 62);
+            this.txtIDStaff.Name = "txtIDStaff";
+            this.txtIDStaff.ReadOnly = true;
+            this.txtIDStaff.Size = new System.Drawing.Size(198, 38);
+            this.txtIDStaff.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 32);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "ID Staff";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogout.Location = new System.Drawing.Point(1082, 56);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(237, 44);
+            this.btnLogout.TabIndex = 53;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
+            // btnShift
+            // 
+            this.btnShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnShift.Location = new System.Drawing.Point(12, 683);
+            this.btnShift.Name = "btnShift";
+            this.btnShift.Size = new System.Drawing.Size(237, 44);
+            this.btnShift.TabIndex = 54;
+            this.btnShift.Text = "Shift";
+            this.btnShift.UseVisualStyleBackColor = true;
+            // 
+            // OfficeStaffMainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1335, 739);
+            this.Controls.Add(this.btnShift);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.txtIDStaff);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button_timekeeping);
+            this.Controls.Add(this.button_break);
+            this.Controls.Add(this.dataGridView_phancongtho);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "OfficeStaffMainForm";
+            this.Text = "OfficeStaffMainForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Button button_timekeeping;
+        private System.Windows.Forms.Button button_break;
+        private System.Windows.Forms.DataGridView dataGridView_phancongtho;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem contractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addContractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editContractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contractStillInUseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expiredContractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inWeekToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turnoverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem byYearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem byMouthToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem byWeekToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem totalRevenueToolStripMenuItem;
+        internal System.Windows.Forms.TextBox txtIDStaff;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnShift;
+    }
+}

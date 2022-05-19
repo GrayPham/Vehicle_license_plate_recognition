@@ -70,6 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Login\BaseData.cs" />
+    <Compile Include="Controller\Manager\ManagerStaff.cs" />
+    <Compile Include="DAL\ManagerDTO\ManagerStaffDTO.cs" />
     <Compile Include="DAL\ManagerDTO\ManagerTacVuDAO.cs" />
     <Compile Include="DAL\NVBLL.cs" />
     <Compile Include="DAL\PlaceParkingDAO.cs" />
@@ -262,6 +265,24 @@
     <Compile Include="Model\TypeVehicle.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="OfficeStaff\AddContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\AddContract.Designer.cs">
+      <DependentUpon>AddContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeStaff\FormWordContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\FormWordContent.Designer.cs">
+      <DependentUpon>FormWordContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeStaff\OfficeStaffMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\OfficeStaffMainForm.Designer.cs">
+      <DependentUpon>OfficeStaffMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormFaceRecognition.resx">
@@ -325,16 +346,20 @@
     <EmbeddedResource Include="Manager\TasksManager\OpenPark.resx">
       <DependentUpon>OpenPark.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\AddContract.resx">
+      <DependentUpon>AddContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\FormWordContent.resx">
+      <DependentUpon>FormWordContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\OfficeStaffMainForm.resx">
+      <DependentUpon>OfficeStaffMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="AI\BienSoXe\data\a" />
     <None Include="AI\BienSoXe\wpod-net_update1.h5" />
     <None Include="AI\BienSoXe\wpod-net_update1.json" />
@@ -352,6 +377,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -1435,6 +1465,13 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="OfficeStaff\Image\indam.jpg" />
+    <None Include="OfficeStaff\Image\gachchan.jpg" />
+    <None Include="OfficeStaff\Image\innghien.jpg" />
+    <None Include="OfficeStaff\Image\Indam.png" />
+    <None Include="OfficeStaff\Image\cangiua.gif" />
+    <None Include="OfficeStaff\Image\cantrai.gif" />
+    <None Include="OfficeStaff\Image\canphai.gif" />
     <None Include="Resources\park1.png" />
     <None Include="Resources\hcmute.png" />
     <None Include="Resources\131943797_222666359353624_8357918975126419137_o.jpg" />
@@ -1444,7 +1481,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\Login\" />
     <Folder Include="Image\BienVuong\" />
     <Folder Include="Image\KhuonMat\NguoiGui\" />
     <Folder Include="Image\KhuonMat\NhanVien\" />

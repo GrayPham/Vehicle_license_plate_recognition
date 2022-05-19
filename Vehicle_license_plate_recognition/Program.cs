@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.OfficeStaff;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -16,7 +17,7 @@ namespace Vehicle_license_plate_recognition
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new FormWordContent());
         }
     }
 }

@@ -117,21 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="park1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\park1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="131943797_222666359353624_8357918975126419137_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\131943797_222666359353624_8357918975126419137_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="logo CLC Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo CLC Circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="hcmute" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hcmute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
- 
 </root>
