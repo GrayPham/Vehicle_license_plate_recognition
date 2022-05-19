@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.Controller.Login;
 
 namespace Vehicle_license_plate_recognition.OfficeStaff
 {
@@ -20,6 +21,11 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
         private void contractToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OfficeStaffMainForm_Load(object sender, EventArgs e)
+        {
+            txtIDStaff.Text = BaseData.Name;
         }
     }
 }

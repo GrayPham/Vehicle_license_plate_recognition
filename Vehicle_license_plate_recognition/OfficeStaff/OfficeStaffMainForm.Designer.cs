@@ -49,6 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnShift = new System.Windows.Forms.Button();
+            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +103,9 @@
             this.contractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addContractToolStripMenuItem,
             this.editContractToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.deleteToolStripMenuItem,
+            this.managerToolStripMenuItem,
+            this.printToolStripMenuItem});
             this.contractToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contractToolStripMenuItem.Name = "contractToolStripMenuItem";
             this.contractToolStripMenuItem.Size = new System.Drawing.Size(142, 35);
@@ -153,7 +157,7 @@
             // 
             this.inWeekToolStripMenuItem.Name = "inWeekToolStripMenuItem";
             this.inWeekToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
-            this.inWeekToolStripMenuItem.Text = "In Week";
+            this.inWeekToolStripMenuItem.Text = "Search";
             // 
             // turnoverToolStripMenuItem
             // 
@@ -230,6 +234,18 @@
             this.btnShift.Text = "Shift";
             this.btnShift.UseVisualStyleBackColor = true;
             // 
+            // managerToolStripMenuItem
+            // 
+            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
+            this.managerToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.managerToolStripMenuItem.Text = "Manager";
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.printToolStripMenuItem.Text = "Print";
+            // 
             // OfficeStaffMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,6 +262,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OfficeStaffMainForm";
             this.Text = "OfficeStaffMainForm";
+            this.Load += new System.EventHandler(this.OfficeStaffMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -276,5 +293,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnShift;
+        private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
     }
 }

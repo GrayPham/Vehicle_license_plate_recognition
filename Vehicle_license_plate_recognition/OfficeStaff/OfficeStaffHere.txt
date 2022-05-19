@@ -1,1 +1,2 @@
 ﻿1. Hoan thien UI
+2. Note: Thêm lương nhân viên và Thanh toán hợp đồng
