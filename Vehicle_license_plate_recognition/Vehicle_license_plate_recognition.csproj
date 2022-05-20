@@ -73,9 +73,11 @@
   <ItemGroup>
     <Compile Include="Controller\Login\BaseData.cs" />
     <Compile Include="Controller\Manager\ManagerStaff.cs" />
+    <Compile Include="Controller\OfficeStaff\CustomerBLL.cs" />
     <Compile Include="DAL\ManagerDTO\ManagerStaffDTO.cs" />
     <Compile Include="DAL\ManagerDTO\ManagerTacVuDAO.cs" />
     <Compile Include="DAL\NVBLL.cs" />
+    <Compile Include="DAL\OfficeStaff\CustomerDTO.cs" />
     <Compile Include="DAL\PlaceParkingDAO.cs" />
     <Compile Include="Controller\Manager\ManagerPark.cs" />
     <Compile Include="Controller\Manager\ManagerTacVu.cs" />
@@ -272,6 +274,12 @@
     <Compile Include="OfficeStaff\AddContract.Designer.cs">
       <DependentUpon>AddContract.cs</DependentUpon>
     </Compile>
+    <Compile Include="OfficeStaff\Customer\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\Customer\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="OfficeStaff\DeleteContract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\AddContract.resx">
       <DependentUpon>AddContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\Customer\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\DeleteContract.resx">
       <DependentUpon>DeleteContract.cs</DependentUpon>

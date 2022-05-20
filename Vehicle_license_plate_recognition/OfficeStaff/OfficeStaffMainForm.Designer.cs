@@ -36,6 +36,8 @@
             this.addContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contractStillInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expiredContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +51,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnShift = new System.Windows.Forms.Button();
-            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cUSTOMERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eDITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEMOVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +96,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contractToolStripMenuItem,
             this.statusToolStripMenuItem,
-            this.turnoverToolStripMenuItem});
+            this.turnoverToolStripMenuItem,
+            this.cUSTOMERToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1335, 39);
@@ -129,6 +135,18 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
             this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // managerToolStripMenuItem
+            // 
+            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
+            this.managerToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.managerToolStripMenuItem.Text = "Manager";
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
+            this.printToolStripMenuItem.Text = "Print";
             // 
             // statusToolStripMenuItem
             // 
@@ -234,17 +252,41 @@
             this.btnShift.Text = "Shift";
             this.btnShift.UseVisualStyleBackColor = true;
             // 
-            // managerToolStripMenuItem
+            // cUSTOMERToolStripMenuItem
             // 
-            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
-            this.managerToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
-            this.managerToolStripMenuItem.Text = "Manager";
+            this.cUSTOMERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDToolStripMenuItem,
+            this.eDITToolStripMenuItem,
+            this.rEMOVEToolStripMenuItem,
+            this.mANAGEToolStripMenuItem});
+            this.cUSTOMERToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cUSTOMERToolStripMenuItem.Name = "cUSTOMERToolStripMenuItem";
+            this.cUSTOMERToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
+            this.cUSTOMERToolStripMenuItem.Text = "CUSTOMER";
             // 
-            // printToolStripMenuItem
+            // aDDToolStripMenuItem
             // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
-            this.printToolStripMenuItem.Text = "Print";
+            this.aDDToolStripMenuItem.Name = "aDDToolStripMenuItem";
+            this.aDDToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.aDDToolStripMenuItem.Text = "ADD";
+            // 
+            // eDITToolStripMenuItem
+            // 
+            this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
+            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.eDITToolStripMenuItem.Text = "EDIT";
+            // 
+            // rEMOVEToolStripMenuItem
+            // 
+            this.rEMOVEToolStripMenuItem.Name = "rEMOVEToolStripMenuItem";
+            this.rEMOVEToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.rEMOVEToolStripMenuItem.Text = "REMOVE";
+            // 
+            // mANAGEToolStripMenuItem
+            // 
+            this.mANAGEToolStripMenuItem.Name = "mANAGEToolStripMenuItem";
+            this.mANAGEToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.mANAGEToolStripMenuItem.Text = "MANAGE";
             // 
             // OfficeStaffMainForm
             // 
@@ -295,5 +337,10 @@
         private System.Windows.Forms.Button btnShift;
         private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cUSTOMERToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eDITToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEMOVEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGEToolStripMenuItem;
     }
 }
