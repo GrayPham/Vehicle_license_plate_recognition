@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.DVGListCustomer = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButtonRental = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.lbDetail = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbContent = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.lbDetail = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.radioButtonRental = new System.Windows.Forms.RadioButton();
             this.CompanyRental = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DVGListCustomer = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbNameStaff = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbNameStaff = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGListCustomer)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGListCustomer)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,70 +71,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(559, 605);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.DVGListCustomer);
-            this.panel2.Location = new System.Drawing.Point(565, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(614, 618);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lbNameStaff);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtIDStaff);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1179, 100);
-            this.panel3.TabIndex = 2;
-            // 
-            // DVGListCustomer
-            // 
-            this.DVGListCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGListCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DVGListCustomer.Location = new System.Drawing.Point(0, 0);
-            this.DVGListCustomer.Name = "DVGListCustomer";
-            this.DVGListCustomer.RowHeadersWidth = 51;
-            this.DVGListCustomer.RowTemplate.Height = 24;
-            this.DVGListCustomer.Size = new System.Drawing.Size(614, 618);
-            this.DVGListCustomer.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.radioButtonRental);
-            this.panel4.Controls.Add(this.CompanyRental);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(559, 68);
-            this.panel4.TabIndex = 10;
-            // 
-            // radioButtonRental
-            // 
-            this.radioButtonRental.AutoSize = true;
-            this.radioButtonRental.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonRental.Location = new System.Drawing.Point(242, 23);
-            this.radioButtonRental.Name = "radioButtonRental";
-            this.radioButtonRental.Size = new System.Drawing.Size(88, 29);
-            this.radioButtonRental.TabIndex = 2;
-            this.radioButtonRental.TabStop = true;
-            this.radioButtonRental.Text = "Rental";
-            this.radioButtonRental.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(191, 32);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Type Contract";
             // 
             // panel5
             // 
@@ -157,6 +93,87 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(559, 534);
             this.panel5.TabIndex = 11;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(21, 469);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 45);
+            this.btnClose.TabIndex = 29;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(390, 469);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 45);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Add Customer";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(227, 469);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(94, 45);
+            this.btnConfirm.TabIndex = 27;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            // 
+            // lbDetail
+            // 
+            this.lbDetail.AutoSize = true;
+            this.lbDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbDetail.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbDetail.Location = new System.Drawing.Point(437, 245);
+            this.lbDetail.Name = "lbDetail";
+            this.lbDetail.Size = new System.Drawing.Size(92, 18);
+            this.lbDetail.TabIndex = 26;
+            this.lbDetail.Text = "Detail Content";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(244, 146);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(283, 96);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.Text = "";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(244, 80);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(286, 34);
+            this.textBox5.TabIndex = 21;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(241, 291);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(286, 34);
+            this.textBox4.TabIndex = 20;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(241, 338);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(286, 34);
+            this.textBox3.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(244, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(286, 34);
+            this.textBox1.TabIndex = 17;
             // 
             // label5
             // 
@@ -208,86 +225,38 @@
             this.lbId.TabIndex = 9;
             this.lbId.Text = "ID Customer";
             // 
-            // textBox1
+            // panel4
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(244, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 34);
-            this.textBox1.TabIndex = 17;
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.radioButtonRental);
+            this.panel4.Controls.Add(this.CompanyRental);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(559, 68);
+            this.panel4.TabIndex = 10;
             // 
-            // textBox3
+            // label11
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(241, 338);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 34);
-            this.textBox3.TabIndex = 19;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(191, 32);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Type Contract";
             // 
-            // textBox4
+            // radioButtonRental
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(241, 291);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(286, 34);
-            this.textBox4.TabIndex = 20;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(244, 80);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(286, 34);
-            this.textBox5.TabIndex = 21;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(244, 146);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(283, 96);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
-            // 
-            // lbDetail
-            // 
-            this.lbDetail.AutoSize = true;
-            this.lbDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbDetail.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbDetail.Location = new System.Drawing.Point(437, 245);
-            this.lbDetail.Name = "lbDetail";
-            this.lbDetail.Size = new System.Drawing.Size(92, 18);
-            this.lbDetail.TabIndex = 26;
-            this.lbDetail.Text = "Detail Content";
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(227, 469);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(94, 45);
-            this.btnConfirm.TabIndex = 27;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(390, 469);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 45);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Add customer";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(21, 469);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 45);
-            this.btnClose.TabIndex = 29;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.radioButtonRental.AutoSize = true;
+            this.radioButtonRental.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonRental.Location = new System.Drawing.Point(242, 23);
+            this.radioButtonRental.Name = "radioButtonRental";
+            this.radioButtonRental.Size = new System.Drawing.Size(88, 29);
+            this.radioButtonRental.TabIndex = 2;
+            this.radioButtonRental.TabStop = true;
+            this.radioButtonRental.Text = "Rental";
+            this.radioButtonRental.UseVisualStyleBackColor = true;
             // 
             // CompanyRental
             // 
@@ -300,6 +269,57 @@
             this.CompanyRental.TabStop = true;
             this.CompanyRental.Text = "Company car rental";
             this.CompanyRental.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.DVGListCustomer);
+            this.panel2.Location = new System.Drawing.Point(565, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(614, 618);
+            this.panel2.TabIndex = 1;
+            // 
+            // DVGListCustomer
+            // 
+            this.DVGListCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGListCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DVGListCustomer.Location = new System.Drawing.Point(0, 0);
+            this.DVGListCustomer.Name = "DVGListCustomer";
+            this.DVGListCustomer.RowHeadersWidth = 51;
+            this.DVGListCustomer.RowTemplate.Height = 24;
+            this.DVGListCustomer.Size = new System.Drawing.Size(614, 618);
+            this.DVGListCustomer.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lbNameStaff);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtIDStaff);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1179, 100);
+            this.panel3.TabIndex = 2;
+            // 
+            // lbNameStaff
+            // 
+            this.lbNameStaff.AutoSize = true;
+            this.lbNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameStaff.Location = new System.Drawing.Point(185, 56);
+            this.lbNameStaff.Name = "lbNameStaff";
+            this.lbNameStaff.Size = new System.Drawing.Size(211, 32);
+            this.lbNameStaff.TabIndex = 56;
+            this.lbNameStaff.Text = "InputNameStaff";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 32);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Name Staff";
             // 
             // txtIDStaff
             // 
@@ -320,26 +340,6 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "ID Staff";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 32);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Name Staff";
-            // 
-            // lbNameStaff
-            // 
-            this.lbNameStaff.AutoSize = true;
-            this.lbNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameStaff.Location = new System.Drawing.Point(185, 56);
-            this.lbNameStaff.Name = "lbNameStaff";
-            this.lbNameStaff.Size = new System.Drawing.Size(211, 32);
-            this.lbNameStaff.TabIndex = 56;
-            this.lbNameStaff.Text = "InputNameStaff";
-            // 
             // AddContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,14 +351,14 @@
             this.Name = "AddContract";
             this.Text = "AddContract";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGListCustomer)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DVGListCustomer)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

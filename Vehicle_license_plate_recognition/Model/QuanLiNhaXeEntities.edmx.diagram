@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0e547821ec1d4866b34d482e4bb6b2f3" Name="Diagram1">
+      <Diagram DiagramId="c6e4561d761a43028dfc10b13ee7bd46" Name="Diagram1">
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Assignment" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Capacity" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Contract" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />

@@ -24,6 +24,8 @@ namespace Vehicle_license_plate_recognition.Model
         public string Phone { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
         public string Email { get; set; }
+        public Nullable<int> TypeID { get; set; }
+        public string Gender { get; set; }
     
         public virtual ICollection<Contract> Contracts { get; set; }
     }

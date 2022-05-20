@@ -43,10 +43,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TypeID" Type="int" />
           <Property Name="FullName" Type="nvarchar" MaxLength="100" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="BirthDate" Type="datetime" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -491,8 +493,10 @@
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BirthDate" Type="DateTime" Precision="3" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_Customers" FromRole="Customers" ToRole="Contract" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -965,6 +969,8 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Customer">
               <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />

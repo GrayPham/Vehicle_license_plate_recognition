@@ -89,7 +89,7 @@ namespace Vehicle_license_plate_recognition
 
         private void button_verifycode_Click(object sender, EventArgs e)
         {
-            if (textBox_zipcode.Text == "ePlease enter code")
+            if (textBox_zipcode.Text == "Please enter code")
             {
                 MessageBox.Show("Please provide your zip code!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
