@@ -280,6 +280,24 @@
     <Compile Include="OfficeStaff\Customer\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="OfficeStaff\Customer\DeleteCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\Customer\DeleteCustomer.Designer.cs">
+      <DependentUpon>DeleteCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeStaff\Customer\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\Customer\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeStaff\Customer\ManageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeStaff\Customer\ManageCustomer.Designer.cs">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="OfficeStaff\DeleteContract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +409,12 @@
     <EmbeddedResource Include="OfficeStaff\Customer\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\Customer\DeleteCustomer.resx">
+      <DependentUpon>DeleteCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\Customer\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\DeleteContract.resx">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,6 +454,8 @@
       <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Vehicle_license_plate_recognition.DAL.OfficeStaff.CustomerDTO.datasource" />
+    <None Include="Properties\DataSources\Vehicle_license_plate_recognition.Model.Customer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

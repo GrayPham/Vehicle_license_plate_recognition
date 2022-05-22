@@ -23,6 +23,36 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             db.SaveChanges ();
 
         }
-        
+
+
+        internal void UpdateCustomer( int idCus, int typeCus, string fname, DateTime birthdate, string email, string gender, string phone)
+        {
+            var update = db.Customers.Where(user => user.Id == idCus).FirstOrDefault();
+
+                update.TypeID = typeCus;
+                update.FullName = fname;
+                update.Phone = phone;
+                update.BirthDate = birthdate;
+                update.Gender = gender;
+                update.Email = email;
+                db.SaveChanges();
+         
+        }
+
+        internal object getAllCustomer()
+        {
+            var combo = db.Customers.Select(u => new
+            {
+                Id = u.Id, Type = u.TypeID, Name = u.FullName
+            }).ToList();
+            return combo;
+
+        }
+
+        internal Customer diplayCustomer(int id)
+        {
+            Customer cus = db.Customers.Where(u => u.Id == id).First();
+            return cus;
+        }
     }
 }

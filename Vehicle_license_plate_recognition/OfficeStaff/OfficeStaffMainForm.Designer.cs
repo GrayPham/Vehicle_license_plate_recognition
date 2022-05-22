@@ -47,15 +47,15 @@
             this.byMouthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalRevenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtIDStaff = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnShift = new System.Windows.Forms.Button();
             this.cUSTOMERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eDITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEMOVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtIDStaff = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnShift = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -213,6 +213,44 @@
             this.totalRevenueToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
             this.totalRevenueToolStripMenuItem.Text = "Total revenue";
             // 
+            // cUSTOMERToolStripMenuItem
+            // 
+            this.cUSTOMERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDToolStripMenuItem,
+            this.eDITToolStripMenuItem,
+            this.rEMOVEToolStripMenuItem,
+            this.mANAGEToolStripMenuItem});
+            this.cUSTOMERToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cUSTOMERToolStripMenuItem.Name = "cUSTOMERToolStripMenuItem";
+            this.cUSTOMERToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
+            this.cUSTOMERToolStripMenuItem.Text = "CUSTOMER";
+            // 
+            // aDDToolStripMenuItem
+            // 
+            this.aDDToolStripMenuItem.Name = "aDDToolStripMenuItem";
+            this.aDDToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
+            this.aDDToolStripMenuItem.Text = "Add Customer";
+            this.aDDToolStripMenuItem.Click += new System.EventHandler(this.aDDToolStripMenuItem_Click);
+            // 
+            // eDITToolStripMenuItem
+            // 
+            this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
+            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
+            this.eDITToolStripMenuItem.Text = "Edit Customer";
+            this.eDITToolStripMenuItem.Click += new System.EventHandler(this.eDITToolStripMenuItem_Click);
+            // 
+            // rEMOVEToolStripMenuItem
+            // 
+            this.rEMOVEToolStripMenuItem.Name = "rEMOVEToolStripMenuItem";
+            this.rEMOVEToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
+            this.rEMOVEToolStripMenuItem.Text = "Remove Customer";
+            // 
+            // mANAGEToolStripMenuItem
+            // 
+            this.mANAGEToolStripMenuItem.Name = "mANAGEToolStripMenuItem";
+            this.mANAGEToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
+            this.mANAGEToolStripMenuItem.Text = "Manager Customer";
+            // 
             // txtIDStaff
             // 
             this.txtIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,42 +289,6 @@
             this.btnShift.TabIndex = 54;
             this.btnShift.Text = "Shift";
             this.btnShift.UseVisualStyleBackColor = true;
-            // 
-            // cUSTOMERToolStripMenuItem
-            // 
-            this.cUSTOMERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aDDToolStripMenuItem,
-            this.eDITToolStripMenuItem,
-            this.rEMOVEToolStripMenuItem,
-            this.mANAGEToolStripMenuItem});
-            this.cUSTOMERToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.cUSTOMERToolStripMenuItem.Name = "cUSTOMERToolStripMenuItem";
-            this.cUSTOMERToolStripMenuItem.Size = new System.Drawing.Size(145, 35);
-            this.cUSTOMERToolStripMenuItem.Text = "CUSTOMER";
-            // 
-            // aDDToolStripMenuItem
-            // 
-            this.aDDToolStripMenuItem.Name = "aDDToolStripMenuItem";
-            this.aDDToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
-            this.aDDToolStripMenuItem.Text = "ADD";
-            // 
-            // eDITToolStripMenuItem
-            // 
-            this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
-            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
-            this.eDITToolStripMenuItem.Text = "EDIT";
-            // 
-            // rEMOVEToolStripMenuItem
-            // 
-            this.rEMOVEToolStripMenuItem.Name = "rEMOVEToolStripMenuItem";
-            this.rEMOVEToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
-            this.rEMOVEToolStripMenuItem.Text = "REMOVE";
-            // 
-            // mANAGEToolStripMenuItem
-            // 
-            this.mANAGEToolStripMenuItem.Name = "mANAGEToolStripMenuItem";
-            this.mANAGEToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
-            this.mANAGEToolStripMenuItem.Text = "MANAGE";
             // 
             // OfficeStaffMainForm
             // 
