@@ -244,6 +244,7 @@
             this.rEMOVEToolStripMenuItem.Name = "rEMOVEToolStripMenuItem";
             this.rEMOVEToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
             this.rEMOVEToolStripMenuItem.Text = "Remove Customer";
+            this.rEMOVEToolStripMenuItem.Click += new System.EventHandler(this.rEMOVEToolStripMenuItem_Click);
             // 
             // mANAGEToolStripMenuItem
             // 
@@ -305,6 +306,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OfficeStaffMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficeStaffMainForm";
             this.Load += new System.EventHandler(this.OfficeStaffMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).EndInit();

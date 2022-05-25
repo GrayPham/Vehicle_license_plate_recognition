@@ -9,6 +9,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
 {
     public class CustomerDTO : QuanLiNhaXe
     {
+        // Thêm khách hàng
         internal void AddCustomer(int idCus, int typeCus, string fname, DateTime birthdate, string email, string gender, string phone)
         {
             Customer customer = new Customer();
@@ -24,7 +25,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
 
         }
 
-
+        // Chỉnh sửa thông tin khách hàng
         internal void UpdateCustomer( int idCus, int typeCus, string fname, DateTime birthdate, string email, string gender, string phone)
         {
             var update = db.Customers.Where(user => user.Id == idCus).FirstOrDefault();
@@ -38,21 +39,35 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
                 db.SaveChanges();
          
         }
-
+        // Danh sách tất cả các khách hàng có trong database 
         internal object getAllCustomer()
         {
             var combo = db.Customers.Select(u => new
             {
-                Id = u.Id, Type = u.TypeID, Name = u.FullName
+                Id = u.Id, Type = u.TypeID, Name = u.FullName, Phone = u.Phone, BirthDate = u.BirthDate, Email = u.Email,
             }).ToList();
             return combo;
 
         }
-
+        // Hiển thị khách theo mã id
         internal Customer diplayCustomer(int id)
         {
             Customer cus = db.Customers.Where(u => u.Id == id).First();
             return cus;
+        }
+
+        //Xóa khách hàng theo mã id
+        internal void DeleteCus(int id)
+        {
+            
+            var remove = db.Customers.Where(u => u.Id == id).First();
+            remove.TypeID = null;
+            remove.FullName = null;
+            remove.Phone = null;
+            remove.BirthDate = null;
+            remove.Gender = null;
+            remove.Email = null;
+            db.SaveChanges();
         }
     }
 }

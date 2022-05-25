@@ -45,30 +45,26 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
                 nUDTypeCus.Value = 1;
                 panel3.Enabled = false;
                 tbEmail.Enabled = false;
-
+                this.Close();
             }
 
         }
         private void button_edit_Click(object sender, EventArgs e)
         {
 
-                string id = textBox_id.Text;
-                string type = nUDTypeCus.Value.ToString();
-                string fname = textBox_fullname.Text;
-                DateTime birthdate = dTPBirthDate.Value;
-                string email = tbEmail.Text.ToString();
-                string gender = "Male";
-                string phone = textBox_phone.Text.ToString();
+            string id = textBox_id.Text;
+            string type = nUDTypeCus.Value.ToString();
+            string fname = textBox_fullname.Text;
+            DateTime birthdate = dTPBirthDate.Value;
+            string email = tbEmail.Text.ToString();
+            string gender = "Male";
+            string phone = textBox_phone.Text.ToString();
             if (RadioButtonFemale.Checked)
             {
                 gender = "Female";
             }
-            else 
-            {
-                cBLL.UpdateCustomerBLL(id, type, fname, birthdate, email, gender, phone);
-                fillCombo();
-                //MessageBox.Show("");
-            }
+            cBLL.UpdateCustomerBLL(id, type, fname, birthdate, email, gender, phone);
+            //fillCombo();
             
         }
 
@@ -77,7 +73,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
             fillCombo();
            
         }
-
+        // Sự kiện thay đổi combobox
         private void comboBox_select_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -89,7 +85,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
                 textBox_fullname.Text = cus.FullName.ToString();
                 textBox_phone.Text = cus.Phone.ToString();
                 dTPBirthDate.Value = (DateTime)cus.BirthDate;
-               string gender = (string)cus.Gender;
+                string gender = (string)cus.Gender;
                 if (gender == "Female")
                 {
                     RadioButtonMale.Checked = false;
@@ -104,7 +100,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 MessageBox.Show("Don't enough the number of customers to update!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
