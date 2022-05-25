@@ -16,5 +16,10 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
         {
             InitializeComponent();
         }
+
+        private void txtIDStaff_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

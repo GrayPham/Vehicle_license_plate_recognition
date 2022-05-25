@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
       <Private>True</Private>
@@ -414,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\Customer\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeStaff\Customer\ManageCustomer.resx">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\DeleteContract.resx">
       <DependentUpon>DeleteContract.cs</DependentUpon>
@@ -1548,6 +1552,7 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="Resources\icons8-refresh.gif" />
     <None Include="OfficeStaff\Image\indam.jpg" />
     <None Include="OfficeStaff\Image\gachchan.jpg" />
     <None Include="OfficeStaff\Image\innghien.jpg" />
