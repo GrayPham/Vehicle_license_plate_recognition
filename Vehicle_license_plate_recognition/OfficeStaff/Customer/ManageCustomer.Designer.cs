@@ -442,6 +442,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbNameStaff);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageCustomer";

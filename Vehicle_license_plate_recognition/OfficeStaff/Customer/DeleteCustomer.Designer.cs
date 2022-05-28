@@ -139,6 +139,7 @@
             this.ClientSize = new System.Drawing.Size(945, 596);
             this.Controls.Add(this.dataGridView_show);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteCustomer";
