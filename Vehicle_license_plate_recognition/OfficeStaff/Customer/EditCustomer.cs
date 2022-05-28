@@ -28,15 +28,17 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
         // Hàm hiển thị combobox
         public void fillCombo(int index=0)
         {
-
-            comboBox_select.DisplayMember = "Id";
-            comboBox_select.ValueMember = "Id";
-            comboBox_select.DataSource = cBLL.getAllCustomer();
-            if (comboBox_select.Items.Count > 0)
+            try
             {
-                comboBox_select.SelectedIndex = index;
+                comboBox_select.DisplayMember = "Id";
+                comboBox_select.ValueMember = "Id";
+                comboBox_select.DataSource = cBLL.getAllCustomer();
+                if (comboBox_select.Items.Count > -1)
+                {
+                    comboBox_select.SelectedIndex = index;
+                }
             }
-            else
+            catch (Exception)
             {
                 MessageBox.Show("Don't enough the number of customers to update!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox_fullname.Enabled = false;
