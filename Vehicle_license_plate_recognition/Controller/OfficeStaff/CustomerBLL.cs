@@ -29,7 +29,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
             // fullname toan ki tu
             else if(IsCharacter(fname) == false)
             {
-                MessageBox.Show("Full name must be characters!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Full name must be characters and has white space!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             // Phone Toàn số
             else if (IsNumber(phone) == false)
@@ -76,28 +76,28 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
             
         }
 
-
         // Ô nhập vào không được là kí tự, kí hiệu và khoảng trắng 
         public bool IsNumber(string pValue)
         {
-            foreach (Char c in pValue)
+            Regex isValidInput = new Regex(@"^[0-9]+$");
+            if (!isValidInput.IsMatch(pValue))
             {
-                if (!Char.IsDigit(c) && !(Char.IsSymbol(c)))
-                    return false;
+                return false;
+
             }
             return true;
         }
-        // Ô nhập vào không được là số, kí hiệu và khoảng trắng 
+        // Ô nhập vào không được là số, kí hiệu
         public bool IsCharacter(string pValue)
         {
-            foreach (Char a in pValue)
+            Regex isValidInput = new Regex(@"^[a-zA-Z\s]+$");
+            if (!isValidInput.IsMatch(pValue))
             {
-                if (!Char.IsLetter(a) && !(Char.IsWhiteSpace(a))&&!(Char.IsSymbol(a)))
-                    return false;
+                return false;
+
             }
             return true;
         }
-
         // Kiểm tra số nhập vào ko vượt quá 10 số
         public bool IsValidPhone(string phone)
         {
@@ -113,7 +113,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
         // Kiểm tra mail đúng chuẩn example123@gmail.com
         public bool IsValidEmail(string email)
         {
-            Regex isValidInput = new Regex(@"^[a-zA-Z]*[0-9]*@gmail.com$");
+            Regex isValidInput = new Regex(@"^[a-zA-Z]*[0-9]*@gmail*\.com$");
             if (!isValidInput.IsMatch(email))
             {
                 return false;
@@ -217,8 +217,19 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
         // Xóa khách theo mã id
         internal void DeleteCus(int id)
         {
-            //int idCus = Convert.ToInt32(id);
             customerDTO.DeleteCus(id);
         }
+
+        //
+        internal object diplayCustomerID(int search)
+        {
+            var cus = customerDTO.diplayCustomerID(search);
+            if (cus != null)
+            {
+                return cus;
+            }
+            return null;
+        }
+
     }
 }

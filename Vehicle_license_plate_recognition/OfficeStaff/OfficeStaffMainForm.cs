@@ -52,5 +52,13 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             deleteCustomer.ShowDialog();
             this.Visible = true;
         }
+
+        private void mANAGEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageCustomer mg = new ManageCustomer();
+            this.Visible = false;
+            mg.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

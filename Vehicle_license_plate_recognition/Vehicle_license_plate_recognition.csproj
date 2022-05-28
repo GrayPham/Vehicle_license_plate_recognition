@@ -1552,6 +1552,11 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="Resources\3094700.png" />
+    <None Include="Resources\3580266.png" />
+    <None Include="Resources\icons8-refresh2.gif" />
+    <None Include="Resources\tải xuống %281%29.png" />
+    <None Include="Resources\icons8-refresh1.gif" />
     <None Include="Resources\icons8-refresh.gif" />
     <None Include="OfficeStaff\Image\indam.jpg" />
     <None Include="OfficeStaff\Image\gachchan.jpg" />

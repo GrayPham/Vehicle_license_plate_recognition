@@ -73,6 +73,26 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3094700 {
+            get {
+                object obj = ResourceManager.GetObject("3094700", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3580266 {
+            get {
+                object obj = ResourceManager.GetObject("3580266", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cangiua {
             get {
                 object obj = ResourceManager.GetObject("cangiua", resourceCulture);
@@ -133,6 +153,26 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap indam {
             get {
                 object obj = ResourceManager.GetObject("indam", resourceCulture);
@@ -166,6 +206,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         internal static System.Drawing.Bitmap park1 {
             get {
                 object obj = ResourceManager.GetObject("park1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tải_xuống__1_ {
+            get {
+                object obj = ResourceManager.GetObject("tải xuống (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

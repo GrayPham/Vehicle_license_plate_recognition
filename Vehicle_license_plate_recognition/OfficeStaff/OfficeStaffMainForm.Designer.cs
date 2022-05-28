@@ -251,6 +251,7 @@
             this.mANAGEToolStripMenuItem.Name = "mANAGEToolStripMenuItem";
             this.mANAGEToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
             this.mANAGEToolStripMenuItem.Text = "Manager Customer";
+            this.mANAGEToolStripMenuItem.Click += new System.EventHandler(this.mANAGEToolStripMenuItem_Click);
             // 
             // txtIDStaff
             // 
