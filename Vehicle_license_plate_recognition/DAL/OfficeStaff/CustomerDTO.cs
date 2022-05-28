@@ -43,10 +43,15 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
         {
             var combo = db.Customers.Select(u => new
             {
-                Id = u.Id, Type = u.TypeID, Name = u.FullName, Phone = u.Phone, BirthDate = u.BirthDate, Gender = u.Gender, Email = u.Email,
+                Id = u.Id,
+                Type = u.TypeID,
+                Name = u.FullName,
+                Phone = u.Phone,
+                BirthDate = u.BirthDate,
+                Gender = u.Gender,
+                Email = u.Email,
             }).ToList();
             return combo;
-
         }
         // Hiển thị khách theo mã id
         internal Customer diplayCustomer(int id)
@@ -62,5 +67,21 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             db.Customers.Remove(remove);
             db.SaveChanges();
         }
+
+        internal object diplayCustomerID(int id)
+        {
+            var combo = db.Customers.Where(u=> u.Id == id).Select(u => new
+            {
+                Id = u.Id,
+                Type = u.TypeID,
+                Name = u.FullName,
+                Phone = u.Phone,
+                BirthDate = u.BirthDate,
+                Gender = u.Gender,
+                Email = u.Email,
+            }).ToList();
+            return combo;
+        }
+
     }
 }

@@ -219,5 +219,17 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
         {
             customerDTO.DeleteCus(id);
         }
+
+        //
+        internal object diplayCustomerID(int search)
+        {
+            var cus = customerDTO.diplayCustomerID(search);
+            if (cus != null)
+            {
+                return cus;
+            }
+            return null;
+        }
+
     }
 }

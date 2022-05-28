@@ -106,7 +106,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
                 else
                 {
                     int search = Convert.ToInt32(textBox_search.Text);
-                    dataGridView_show.DataSource = cBLL.diplayCustomer(search);
+                    dataGridView_show.DataSource = cBLL.diplayCustomerID(search);
                 }
             }
             catch (Exception)
