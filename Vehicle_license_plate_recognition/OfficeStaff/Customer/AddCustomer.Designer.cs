@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nUDTypeCus = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.button_add = new System.Windows.Forms.Button();
+            this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.RadioButtonFemale = new System.Windows.Forms.RadioButton();
             this.RadioButtonMale = new System.Windows.Forms.RadioButton();
+            this.lbNameStaff = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBox_fullname = new System.Windows.Forms.TextBox();
             this.dTPBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBox_id = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.textBox_phone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_fullname = new System.Windows.Forms.TextBox();
-            this.lbId = new System.Windows.Forms.Label();
-            this.lbNameStaff = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtIDStaff = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTypeCus)).BeginInit();
             this.panel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +67,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(655, 792);
             this.panel1.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.nUDTypeCus);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button_add);
+            this.groupBox1.Controls.Add(this.txtIDStaff);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.lbNameStaff);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lbId);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.textBox_fullname);
+            this.groupBox1.Controls.Add(this.dTPBirthDate);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox_id);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.tbEmail);
+            this.groupBox1.Controls.Add(this.textBox_phone);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(655, 792);
+            this.groupBox1.TabIndex = 109;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add Customer";
             // 
             // nUDTypeCus
             // 
@@ -92,6 +123,16 @@
             0,
             0});
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(155, 32);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "Name Staff";
+            // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +144,16 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 32);
+            this.label1.TabIndex = 73;
+            this.label1.Text = "ID Staff";
+            // 
             // button_add
             // 
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +164,15 @@
             this.button_add.Text = "ADD NEW";
             this.button_add.UseVisualStyleBackColor = true;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
+            // txtIDStaff
+            // 
+            this.txtIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDStaff.Location = new System.Drawing.Point(148, 36);
+            this.txtIDStaff.Name = "txtIDStaff";
+            this.txtIDStaff.ReadOnly = true;
+            this.txtIDStaff.Size = new System.Drawing.Size(198, 38);
+            this.txtIDStaff.TabIndex = 74;
             // 
             // panel3
             // 
@@ -150,16 +210,36 @@
             this.RadioButtonMale.Text = "Male";
             this.RadioButtonMale.UseVisualStyleBackColor = true;
             // 
+            // lbNameStaff
+            // 
+            this.lbNameStaff.AutoSize = true;
+            this.lbNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameStaff.Location = new System.Drawing.Point(185, 87);
+            this.lbNameStaff.Name = "lbNameStaff";
+            this.lbNameStaff.Size = new System.Drawing.Size(211, 32);
+            this.lbNameStaff.TabIndex = 88;
+            this.lbNameStaff.Text = "InputNameStaff";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(83, 490);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Location = new System.Drawing.Point(84, 506);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 31);
+            this.label8.Size = new System.Drawing.Size(94, 29);
             this.label8.TabIndex = 104;
             this.label8.Text = "Gender";
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.Location = new System.Drawing.Point(84, 284);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(124, 29);
+            this.lbId.TabIndex = 90;
+            this.lbId.Text = "Full Name";
             // 
             // label7
             // 
@@ -170,6 +250,14 @@
             this.label7.Size = new System.Drawing.Size(91, 29);
             this.label7.TabIndex = 102;
             this.label7.Text = "TypeID";
+            // 
+            // textBox_fullname
+            // 
+            this.textBox_fullname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox_fullname.Location = new System.Drawing.Point(277, 279);
+            this.textBox_fullname.Name = "textBox_fullname";
+            this.textBox_fullname.Size = new System.Drawing.Size(253, 38);
+            this.textBox_fullname.TabIndex = 3;
             // 
             // dTPBirthDate
             // 
@@ -182,6 +270,16 @@
             this.dTPBirthDate.TabIndex = 5;
             this.dTPBirthDate.Value = new System.DateTime(2022, 5, 20, 0, 0, 0, 0);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(84, 421);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 29);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "BirthDate";
+            // 
             // textBox_id
             // 
             this.textBox_id.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -189,6 +287,16 @@
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(253, 38);
             this.textBox_id.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(84, 592);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 29);
+            this.label3.TabIndex = 93;
+            this.label3.Text = "Email Address";
             // 
             // label5
             // 
@@ -199,6 +307,14 @@
             this.label5.Size = new System.Drawing.Size(146, 29);
             this.label5.TabIndex = 97;
             this.label5.Text = "ID Customer";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbEmail.Location = new System.Drawing.Point(277, 592);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(253, 38);
+            this.tbEmail.TabIndex = 7;
             // 
             // textBox_phone
             // 
@@ -218,122 +334,6 @@
             this.label4.TabIndex = 95;
             this.label4.Text = "Phone Number";
             // 
-            // tbEmail
-            // 
-            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbEmail.Location = new System.Drawing.Point(277, 592);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(253, 38);
-            this.tbEmail.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(84, 592);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 29);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Email Address";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 421);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 29);
-            this.label2.TabIndex = 92;
-            this.label2.Text = "BirthDate";
-            // 
-            // textBox_fullname
-            // 
-            this.textBox_fullname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_fullname.Location = new System.Drawing.Point(277, 279);
-            this.textBox_fullname.Name = "textBox_fullname";
-            this.textBox_fullname.Size = new System.Drawing.Size(253, 38);
-            this.textBox_fullname.TabIndex = 3;
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(84, 284);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(124, 29);
-            this.lbId.TabIndex = 90;
-            this.lbId.Text = "Full Name";
-            // 
-            // lbNameStaff
-            // 
-            this.lbNameStaff.AutoSize = true;
-            this.lbNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameStaff.Location = new System.Drawing.Point(185, 87);
-            this.lbNameStaff.Name = "lbNameStaff";
-            this.lbNameStaff.Size = new System.Drawing.Size(211, 32);
-            this.lbNameStaff.TabIndex = 88;
-            this.lbNameStaff.Text = "InputNameStaff";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 87);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 32);
-            this.label6.TabIndex = 87;
-            this.label6.Text = "Name Staff";
-            // 
-            // txtIDStaff
-            // 
-            this.txtIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDStaff.Location = new System.Drawing.Point(148, 36);
-            this.txtIDStaff.Name = "txtIDStaff";
-            this.txtIDStaff.ReadOnly = true;
-            this.txtIDStaff.Size = new System.Drawing.Size(198, 38);
-            this.txtIDStaff.TabIndex = 74;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 32);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "ID Staff";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.nUDTypeCus);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnClose);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button_add);
-            this.groupBox1.Controls.Add(this.txtIDStaff);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.lbNameStaff);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.lbId);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox_fullname);
-            this.groupBox1.Controls.Add(this.dTPBirthDate);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox_id);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.tbEmail);
-            this.groupBox1.Controls.Add(this.textBox_phone);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 792);
-            this.groupBox1.TabIndex = 109;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add Customer";
-            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,11 +345,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCustomer";
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTypeCus)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

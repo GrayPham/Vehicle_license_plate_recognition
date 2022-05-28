@@ -39,6 +39,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
             textBox_id.Text = "";
             nUDTypeCus.Value = 1;
             tbEmail.Text = "";
+            textBox_search.Text = "";
         }
         // Hiển thị trên textbox khi click datadridview
         private void dataGridView_show_Click(object sender, EventArgs e)
