@@ -30,6 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_select = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button_edit = new System.Windows.Forms.Button();
             this.nUDTypeCus = new System.Windows.Forms.NumericUpDown();
@@ -53,7 +54,6 @@
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbNameStaff = new System.Windows.Forms.Label();
-            this.comboBox_select = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTypeCus)).BeginInit();
@@ -105,6 +105,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(659, 662);
             this.panel1.TabIndex = 133;
+            // 
+            // comboBox_select
+            // 
+            this.comboBox_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox_select.FormattingEnabled = true;
+            this.comboBox_select.Location = new System.Drawing.Point(283, 22);
+            this.comboBox_select.Name = "comboBox_select";
+            this.comboBox_select.Size = new System.Drawing.Size(265, 37);
+            this.comboBox_select.TabIndex = 171;
+            this.comboBox_select.SelectedIndexChanged += new System.EventHandler(this.comboBox_select_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -219,11 +230,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(70, 377);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 31);
+            this.label8.Size = new System.Drawing.Size(94, 29);
             this.label8.TabIndex = 168;
             this.label8.Text = "Gender";
             // 
@@ -373,17 +384,6 @@
             this.lbNameStaff.Size = new System.Drawing.Size(211, 32);
             this.lbNameStaff.TabIndex = 132;
             this.lbNameStaff.Text = "InputNameStaff";
-            // 
-            // comboBox_select
-            // 
-            this.comboBox_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox_select.FormattingEnabled = true;
-            this.comboBox_select.Location = new System.Drawing.Point(283, 22);
-            this.comboBox_select.Name = "comboBox_select";
-            this.comboBox_select.Size = new System.Drawing.Size(265, 37);
-            this.comboBox_select.TabIndex = 171;
-            this.comboBox_select.SelectedIndexChanged += new System.EventHandler(this.comboBox_select_SelectedIndexChanged);
             // 
             // EditCustomer
             // 

@@ -7,3 +7,8 @@ Vehicle_license_plate_recognition
 <p align="center" style="margin-top: 10px;">
 <img src="https://user-images.githubusercontent.com/86551359/166205132-f3983e54-b054-4812-89e4-c4b0332f73a0.png" alt="Image Demo" width="650"  />
 </p>
+2. Quản lí 
+
+<p align="center" style="margin-top: 10px;">
+<img src="https://user-images.githubusercontent.com/86551359/170834948-ac150995-3f7f-4aae-b8bc-2d9cdb7b422e.png" alt="Image Manager Form" width="650"  />
+</p>
