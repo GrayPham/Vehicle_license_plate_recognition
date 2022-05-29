@@ -19,7 +19,7 @@ namespace Vehicle_license_plate_recognition.BLL
             return place != null ? place.Id : null;
         }
 
-        internal void returePlaceVehicle(string licenseplates)
+        internal void returePlaceVehicle(string licenseplates, DateTime returnTime, string idpayment)
         {
             PlacePark place = (from placeP in db.PlaceParks
                                join nguoiGui in db.NguoiGuis
@@ -27,9 +27,11 @@ namespace Vehicle_license_plate_recognition.BLL
                                where nguoiGui.LicensePlates == licenseplates
                                select placeP).FirstOrDefault();
             place.Status = true;
-            NguoiGui user = db.NguoiGuis.Where(u => u.LicensePlates == licenseplates).FirstOrDefault();
-            user.IdPark = null;
-            user.PlacePark = null;
+            db.SaveChanges();
+            NguoiGui user = db.NguoiGuis.Where(u => u.LicensePlates == licenseplates && u.ReturnTime == null).FirstOrDefault();
+
+            user.IdPayment = idpayment;
+            user.ReturnTime= returnTime;
             db.SaveChanges();
         }
         // Cần chỉnh sửa lại

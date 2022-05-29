@@ -14,14 +14,18 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class ThanhToan
     {
+        public ThanhToan()
+        {
+            this.NguoiGuis = new HashSet<NguoiGui>();
+        }
+    
         public string IdPayment { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> IdTVehicle { get; set; }
         public Nullable<int> IdStaff { get; set; }
         public Nullable<System.DateTime> ChargeTime { get; set; }
-        public string LicensePlates { get; set; }
     
-        public virtual NguoiGui NguoiGui { get; set; }
+        public virtual ICollection<NguoiGui> NguoiGuis { get; set; }
         public virtual NV NV { get; set; }
         public virtual TypeVehicle TypeVehicle { get; set; }
     }

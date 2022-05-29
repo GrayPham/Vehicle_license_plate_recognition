@@ -18,7 +18,7 @@ namespace Vehicle_license_plate_recognition
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormVehicleCam());
+            Application.Run(new FormFaceRecognition());
         }
     }
 }

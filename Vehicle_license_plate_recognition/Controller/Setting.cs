@@ -22,7 +22,44 @@ namespace Vehicle_license_plate_recognition.Controller
             }
         }
 
-        
+        public string ConvertImageToBase64String(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                return Convert.ToBase64String(ms.ToArray());
+            }
+        }
+
+
+        // Ham goi HTTP POST len server de detect
+
+
+        internal string sendPOST(string url, string B64)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Timeout = 5000;
+            var postData = "image=" + EscapeData(B64);
+
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+            return responseString;
+        }
+
 
         // Ham convert B64 de gui len server
         private String EscapeData(String B64)
@@ -51,38 +88,6 @@ namespace Vehicle_license_plate_recognition.Controller
             }
             return builder.ToString();
 
-        }
-
-        // Ham goi HTTP POST len server de detect
-        
-
-        internal string sendPOST(string url, string B64)
-        {
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            request.Timeout = 5000;
-            var postData = "image=" + EscapeData(B64);
-
-            var data = Encoding.ASCII.GetBytes(postData);
-
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
-
-            using (var stream = request.GetRequestStream())
-            {
-                stream.Write(data, 0, data.Length);
-            }
-
-            var response = (HttpWebResponse)request.GetResponse();
-
-            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-
-            return responseString;
-        }
-
-        internal string ConvertImageToBase64String(Image image)
-        {
-            throw new NotImplementedException();
         }
     }
     
