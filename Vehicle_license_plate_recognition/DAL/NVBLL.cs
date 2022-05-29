@@ -15,9 +15,9 @@ namespace Vehicle_license_plate_recognition.BLL
         
         
 
-        public List<NguoiGui> getAllLiPlate(string bienso)
+        public List<NguoiGui> getAllLiPlate(string bienso, DateTime time)
         {
-            List<NguoiGui> liPlates = (from LicensePlates in db.NguoiGuis where LicensePlates.LicensePlates == bienso select LicensePlates).ToList();
+            List<NguoiGui> liPlates = (from LicensePlates in db.NguoiGuis where LicensePlates.LicensePlates == bienso  && LicensePlates.ReturnTime == null select LicensePlates).ToList();
             return liPlates;
         }
 
@@ -47,15 +47,16 @@ namespace Vehicle_license_plate_recognition.BLL
 
 
         }
-        public void PostReturnVehicle(string licensePlates, DateTime returnTime)
+        public void PostReturnVehicle(string licensePlates, DateTime returnTime, string idpayment)
         {
-            NguoiGui user = db.NguoiGuis.Where(x => x.LicensePlates == licensePlates).FirstOrDefault();
+            NguoiGui user = db.NguoiGuis.Where(x => x.LicensePlates == licensePlates && x.ReturnTime == null).FirstOrDefault();
             user.ReturnTime = returnTime;
+            user.IdPayment = idpayment;
             db.SaveChanges();
         }
         internal DateTime GetDeleveryTime(string licensePlate)
         {
-            List<NguoiGui> first = db.NguoiGuis.Where(user => user.LicensePlates == licensePlate).ToList<NguoiGui>();
+            List<NguoiGui> first = db.NguoiGuis.Where(user => user.LicensePlates == licensePlate && user.ReturnTime== null).ToList<NguoiGui>();
             DateTime deleveryTime = (DateTime)first[0].DeliveryTime;
             return deleveryTime;
         }
@@ -76,7 +77,7 @@ namespace Vehicle_license_plate_recognition.BLL
                 tt.IdTVehicle = typeVehicle;
                 tt.IdStaff = idStaff;
                 tt.ChargeTime = chargeTime;
-                tt.LicensePlates = licenseplates;
+
                 db.ThanhToans.Add(tt);
                 db.SaveChanges();
                 return true;
@@ -93,7 +94,7 @@ namespace Vehicle_license_plate_recognition.BLL
         {
             var bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).Select(s=> new
             {
-                LicensePlates = s.LicensePlates,
+
                 Staff = s.IdStaff,
                 Price = s.Price,
                 ChargeTime = s.ChargeTime,

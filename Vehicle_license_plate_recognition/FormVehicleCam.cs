@@ -116,6 +116,7 @@ namespace Vehicle_license_plate_recognition
             //FormBorderStyle = FormBorderStyle.None;
             //WindowState = FormWindowState.Maximized;
             //TopMost = true;
+            txtIdStaff.Text = GlobalData.idStaff.ToString() ;
             timeWork =DateTime.Now;
             timerSysterm.Start();
             if (pictureBox_camera.Image == null)
@@ -174,7 +175,7 @@ namespace Vehicle_license_plate_recognition
             lbLoaiHinh.Text = "";
             String server_path;
             // Goi len server va tra ve ket qua
-            String server_ip = "192.168.1.3";
+            String server_ip = "192.168.1.166";
             if (TypeVehicle == 3)
             {
                 
@@ -195,7 +196,9 @@ namespace Vehicle_license_plate_recognition
                     {
                         if (retStr != "")
                         {
-                            if (nv.isParked(retStr) == true)
+                            DateTime time = dateTimePickerSystem.Value;
+                            if (nv.isParked(retStr, time) == true)
+
                             {
 
                                 btn_parking.Enabled = false;
@@ -257,7 +260,8 @@ namespace Vehicle_license_plate_recognition
                     {
                         if (retStr != "")
                         {
-                            if (nv.isParked(retStr) == true)
+                            DateTime time = dateTimePickerSystem.Value;
+                            if (nv.isParked(retStr, time) == true)
                             {
 
                                 btn_parking.Enabled = false;

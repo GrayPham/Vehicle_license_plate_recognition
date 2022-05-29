@@ -35,12 +35,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label_staffphoto = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox_face = new System.Windows.Forms.PictureBox();
+            this.pictureBox_recognize = new System.Windows.Forms.PictureBox();
             this.pictureBox_camera = new System.Windows.Forms.PictureBox();
             this.btn_cam = new System.Windows.Forms.Button();
             this.button_attendance = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_face)).BeginInit();
+            this.richTextBox_licenseplates = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,15 +98,15 @@
             this.dateTimePicker2.TabIndex = 37;
             this.dateTimePicker2.Value = new System.DateTime(2022, 4, 3, 0, 0, 0, 0);
             // 
-            // pictureBox_face
+            // pictureBox_recognize
             // 
-            this.pictureBox_face.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_face.Image")));
-            this.pictureBox_face.Location = new System.Drawing.Point(1122, 51);
-            this.pictureBox_face.Name = "pictureBox_face";
-            this.pictureBox_face.Size = new System.Drawing.Size(421, 216);
-            this.pictureBox_face.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox_face.TabIndex = 39;
-            this.pictureBox_face.TabStop = false;
+            this.pictureBox_recognize.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_recognize.Image")));
+            this.pictureBox_recognize.Location = new System.Drawing.Point(1122, 51);
+            this.pictureBox_recognize.Name = "pictureBox_recognize";
+            this.pictureBox_recognize.Size = new System.Drawing.Size(421, 216);
+            this.pictureBox_recognize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_recognize.TabIndex = 39;
+            this.pictureBox_recognize.TabStop = false;
             // 
             // pictureBox_camera
             // 
@@ -117,6 +118,7 @@
             this.pictureBox_camera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox_camera.TabIndex = 23;
             this.pictureBox_camera.TabStop = false;
+            this.pictureBox_camera.Click += new System.EventHandler(this.pictureBox_camera_Click);
             // 
             // btn_cam
             // 
@@ -139,6 +141,7 @@
             this.button_attendance.TabIndex = 40;
             this.button_attendance.Text = "Attendance";
             this.button_attendance.UseVisualStyleBackColor = false;
+            this.button_attendance.Click += new System.EventHandler(this.button_attendance_Click);
             // 
             // button_cancel
             // 
@@ -152,14 +155,23 @@
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
+            // richTextBox_licenseplates
+            // 
+            this.richTextBox_licenseplates.Location = new System.Drawing.Point(1122, 388);
+            this.richTextBox_licenseplates.Name = "richTextBox_licenseplates";
+            this.richTextBox_licenseplates.Size = new System.Drawing.Size(421, 96);
+            this.richTextBox_licenseplates.TabIndex = 42;
+            this.richTextBox_licenseplates.Text = "";
+            // 
             // FormFaceRecognition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 783);
+            this.Controls.Add(this.richTextBox_licenseplates);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_attendance);
-            this.Controls.Add(this.pictureBox_face);
+            this.Controls.Add(this.pictureBox_recognize);
             this.Controls.Add(this.label_staffphoto);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.btn_offcam);
@@ -170,7 +182,7 @@
             this.Name = "FormFaceRecognition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormFaceRecognition";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_face)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,11 +196,12 @@
         private System.Windows.Forms.Button btn_offcam;
         private System.Windows.Forms.Button btn_cap;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox_face;
+        private System.Windows.Forms.PictureBox pictureBox_recognize;
         private System.Windows.Forms.Label label_staffphoto;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btn_cam;
         private System.Windows.Forms.Button button_attendance;
         private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.RichTextBox richTextBox_licenseplates;
     }
 }

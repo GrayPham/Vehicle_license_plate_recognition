@@ -71,7 +71,7 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
-                BaseData.Name = "Hung";
+                GlobalData.NameUser = "Hung";
                 if (q.isOfficeStaff == true && q != null)
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG

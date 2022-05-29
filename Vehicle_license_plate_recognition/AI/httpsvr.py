@@ -9,7 +9,7 @@ from werkzeug.wrappers import response
 
 # Khai bao cong cua server
 import BienSoXe.read_plate
-import KhuonMat
+from KhuonMat import face_recognition, update_faces
 
 
 my_port = '8000'
@@ -50,13 +50,7 @@ def detect():
     image_b64 = request.form.get('image')
     image = np.fromstring(base64.b64decode(image_b64), dtype=np.uint8)
     image = cv2.imdecode(image, cv2.IMREAD_ANYCOLOR)
-
-
-
-
-
     retString = BienSoXe.read_plate.detection_SVM(image)
-
 
     return retString;
 @app.route('/detect2line', methods=['POST'])
@@ -67,22 +61,28 @@ def detect2line():
     image_b64 = request.form.get('image')
     image = np.fromstring(base64.b64decode(image_b64), dtype=np.uint8)
     image = cv2.imdecode(image, cv2.IMREAD_ANYCOLOR)
-
-
-
-
-
     retString = BienSoXe.read_plate.detection2line_SVM(image)
 
 
     return retString;
-@app.route('/captureImage', methods=['POST'])
-@cross_origin()
-def captureImage():
-    nameId = request.form.get('idstring')
-    KhuonMat.face_capture
-    responseString = KhuonMat.update_faces.loadImage()
+#@app.route('/captureImage', methods=['POST'])
+#@cross_origin()
+#def captureImage():
+    #nameId = request.form.get('idstring')
+    #KhuonMat.face_capture
+    #responseString = KhuonMat.update_faces.loadImage()
+    #return responseString
 
+@app.route('/recognition', methods=['POST'])
+@cross_origin()
+def recognition():
+
+    # Lay du lieu image B64 gui len va chuyen thanh image
+    image_b64 = request.form.get('image')
+    image = np.fromstring(base64.b64decode(image_b64), dtype=np.uint8)
+    image = cv2.imdecode(image, cv2.IMREAD_ANYCOLOR)
+    retStringName = face_recognition.recognitionNV(image)
+    return retStringName;
 
 # Thuc thi server
 if __name__ == '__main__':

@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalData.cs" />
     <Compile Include="Controller\Login\BaseData.cs" />
     <Compile Include="Controller\Manager\ManagerStaff.cs" />
     <Compile Include="Controller\OfficeStaff\CustomerBLL.cs" />
@@ -450,14 +451,14 @@
     <None Include="AI\BienSoXe\wpod-net_update1.json" />
     <None Include="AI\BienSoXe\__pycache__\lib_detection.cpython-39.pyc" />
     <None Include="AI\BienSoXe\__pycache__\read_plate.cpython-39.pyc" />
-    <EntityDeploy Include="Model\QuanLiNhaXeEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLiNhaXeEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="AI\KhuonMat\data\.keepfolder" />
     <None Include="AI\KhuonMat\data\faceslist.pth" />
     <None Include="AI\KhuonMat\data\test_images\.keepfolder" />
     <None Include="AI\KhuonMat\data\usernames.npy" />
+    <EntityDeploy Include="Model\QuanLiNhaXeEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLiNhaXeEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Model\QuanLiNhaXeEntities.edmx.diagram">
       <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
     </None>

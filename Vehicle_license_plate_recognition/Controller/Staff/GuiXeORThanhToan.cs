@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Vehicle_license_plate_recognition.BLL;
 using Vehicle_license_plate_recognition.Model;
 
@@ -17,9 +18,9 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
     {
         NVBLL nvbll = new NVBLL();
         ParkDistribution parkDistribution = new ParkDistribution();
-        public bool isParked(string bienso)
+        public bool isParked(string bienso, DateTime time)
         {
-            List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso);
+            List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso, time);
             if(sentCar.Count > 0)
             {
                 return true;
@@ -67,7 +68,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             double price = nvbll.GetPriceofVehicle(typeVehicle);
             DateTime DeliveryTime = nvbll.GetDeleveryTime(LicensePlate);
             double priceAVehicle = PriceAVehicle(DeliveryTime, returnTime, price);
-            nvbll.PostReturnVehicle(LicensePlate, returnTime);
+            
             return priceAVehicle;
         }
         private double PriceAVehicle(DateTime DeliveryTime, DateTime ReturnTime, double UnitPrice)
@@ -124,12 +125,14 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             {
                 try
                 {
-                    parkDistribution.returePlaceVehicle(licenseplates);
+                    DateTime returnTime = DateTime.Now;
+                    //nvbll.PostReturnVehicle(licenseplates, returnTime, idPayment); // Dang loi
+                    parkDistribution.returePlaceVehicle(licenseplates, returnTime, idPayment);
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message);
                     return false;
                 }
             }

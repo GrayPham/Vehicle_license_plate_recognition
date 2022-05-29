@@ -26,7 +26,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
 
         private void OfficeStaffMainForm_Load(object sender, EventArgs e)
         {
-            txtIDStaff.Text = BaseData.Name;
+            txtIDStaff.Text = GlobalData.NameUser;
         }
 
         private void aDDToolStripMenuItem_Click(object sender, EventArgs e)
