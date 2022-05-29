@@ -1532,7 +1532,7 @@
     <Content Include="AI\BienSoXe\data\9\52636_6.jpg" />
     <Content Include="AI\BienSoXe\data\9\9.jpg" />
     <Content Include="AI\BienSoXe\getcharset.py" />
-    <Content Include="AI\BienSoXe\httpsvr.py" />
+    <Content Include="AI\httpsvr.py" />
     <Content Include="AI\BienSoXe\lib_detection.py" />
     <Content Include="AI\BienSoXe\read_plate.py" />
     <Content Include="AI\BienSoXe\setup.txt" />

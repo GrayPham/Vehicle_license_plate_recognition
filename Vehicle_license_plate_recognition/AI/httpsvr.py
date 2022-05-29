@@ -5,8 +5,12 @@ import numpy as np
 import cv2
 import base64
 
+from werkzeug.wrappers import response
+
 # Khai bao cong cua server
-import read_plate
+import BienSoXe.read_plate
+import KhuonMat
+
 
 my_port = '8000'
 scale = 0.00392
@@ -51,7 +55,7 @@ def detect():
 
 
 
-    retString = read_plate.detection_SVM(image)
+    retString = BienSoXe.read_plate.detection_SVM(image)
 
 
     return retString;
@@ -68,10 +72,16 @@ def detect2line():
 
 
 
-    retString = read_plate.detection2line_SVM(image)
+    retString = BienSoXe.read_plate.detection2line_SVM(image)
 
 
     return retString;
+@app.route('/captureImage', methods=['POST'])
+@cross_origin()
+def captureImage():
+    nameId = request.form.get('idstring')
+    KhuonMat.face_capture
+    responseString = KhuonMat.update_faces.loadImage()
 
 
 # Thuc thi server

@@ -1,7 +1,7 @@
 
 import cv2
 import numpy as np
-from lib_detection import load_model, detect_lp, im2single
+from BienSoXe.lib_detection import load_model, detect_lp, im2single
 
 
 
@@ -35,14 +35,14 @@ def fine_tune(lp):
 Dmax = 608
 Dmin = 288
 # Load model LP detection
-wpod_net_path = "wpod-net_update1.json"
+wpod_net_path = "BienSoXe/wpod-net_update1.json"
 wpod_net = load_model(wpod_net_path)
 
 # Cau hinh tham so cho model SVM
 digit_w = 30 # Kich thuoc ki tu
 digit_h = 60 # Kich thuoc ki tu
 
-model_svm = cv2.ml.SVM_load('svm.xml')
+model_svm = cv2.ml.SVM_load('BienSoXe/svm.xml')
 def detection_SVM(Ivehicle):
 
 
