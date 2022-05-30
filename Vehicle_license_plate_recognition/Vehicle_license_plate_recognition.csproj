@@ -104,6 +104,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Assignment\NomalStaffAssig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Assignment\NomalStaffAssig.Designer.cs">
+      <DependentUpon>NomalStaffAssig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\TasksManager\AddPark.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Assignment\NomalStaffAssig.resx">
+      <DependentUpon>NomalStaffAssig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\TasksManager\AddPark.resx">
       <DependentUpon>AddPark.cs</DependentUpon>
