@@ -133,6 +133,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_exit_icon_2860_thumb {
+            get {
+                object obj = ResourceManager.GetObject("free-exit-icon-2860-thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gachchan {
             get {
                 object obj = ResourceManager.GetObject("gachchan", resourceCulture);

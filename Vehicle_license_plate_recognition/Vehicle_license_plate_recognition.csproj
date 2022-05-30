@@ -1744,6 +1744,7 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="Resources\free-exit-icon-2860-thumb.png" />
     <None Include="Resources\lock-icon.png" />
     <None Include="Resources\Male_User_Icon_clip_art_medium.png" />
     <None Include="Resources\123-1236779_name-transparent-blue-square-png.png" />
