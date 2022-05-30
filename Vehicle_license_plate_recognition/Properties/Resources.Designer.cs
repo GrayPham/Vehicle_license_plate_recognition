@@ -63,6 +63,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _123_1236779_name_transparent_blue_square_png {
+            get {
+                object obj = ResourceManager.GetObject("123-1236779_name-transparent-blue-square-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _131943797_222666359353624_8357918975126419137_o {
             get {
                 object obj = ResourceManager.GetObject("131943797_222666359353624_8357918975126419137_o", resourceCulture);
@@ -193,9 +203,29 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock_icon {
+            get {
+                object obj = ResourceManager.GetObject("lock-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_CLC_Circle {
             get {
                 object obj = ResourceManager.GetObject("logo CLC Circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male_User_Icon_clip_art_medium {
+            get {
+                object obj = ResourceManager.GetObject("Male_User_Icon_clip_art_medium", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

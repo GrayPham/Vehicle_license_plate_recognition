@@ -26,8 +26,12 @@ namespace Vehicle_license_plate_recognition
             this.label_forgot.MouseEnter += new System.EventHandler(this.label_forgot_MouseEnter);
             this.label_forgot.MouseLeave += new System.EventHandler(this.label_forgot_MouseLeave);
 
+            this.label_register.MouseEnter += new System.EventHandler(this.label_register_MouseEnter);
+            this.label_register.MouseLeave += new System.EventHandler(this.label_register_MouseLeave);
+
         }
 
+        // Sự kiện hiển thị chữ trong textbox username
         private void textBox_username_Enter(object sender, EventArgs e)
         {
             if (textBox_username.Text == "Enter your Username")
@@ -36,7 +40,6 @@ namespace Vehicle_license_plate_recognition
                 textBox_username.ForeColor = Color.Black;
             }
         }
-
         private void textBox_username_Leave(object sender, EventArgs e)
         {
             if (textBox_username.Text == "")
@@ -46,18 +49,28 @@ namespace Vehicle_license_plate_recognition
             }
         }
 
+        // Sự kiện đổi màu label forgot
         private void label_forgot_MouseEnter(object sender, EventArgs e)
         {
             label_forgot.ForeColor = Color.Blue;
         }
-
         private void label_forgot_MouseLeave(object sender, EventArgs e)
         {
             label_forgot.ForeColor = Color.Black;
         }
 
-            //TẠO DATABASE
-            QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
+        // Sự kiện đổi màu label register
+        private void label_register_MouseEnter(object sender, EventArgs e)
+        {
+            label_forgot.ForeColor = Color.Blue;
+        }
+        private void label_register_MouseLeave(object sender, EventArgs e)
+        {
+            label_forgot.ForeColor = Color.Black;
+        }
+
+        //TẠO DATABASE
+        QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
         private void button_Login_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_username.Text) || string.IsNullOrEmpty(textBox_pass.Text))
@@ -109,12 +122,13 @@ namespace Vehicle_license_plate_recognition
             }
         }
 
+        // Đóng form
         private void button_cancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
+        // Mở form forgot
         private void label_forgot_Click(object sender, EventArgs e)
         {
             //label_forgot.ForeColor = Color.AliceBlue;
@@ -125,6 +139,7 @@ namespace Vehicle_license_plate_recognition
 
         }
 
+        // Mở form register
         private void label_register_Click(object sender, EventArgs e)
         {
             FormRegister a = new FormRegister();
