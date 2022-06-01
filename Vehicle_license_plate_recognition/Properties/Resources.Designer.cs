@@ -63,6 +63,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1024px_OOjs_UI_icon_upload_svg {
+            get {
+                object obj = ResourceManager.GetObject("1024px-OOjs_UI_icon_upload.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _123_1236779_name_transparent_blue_square_png {
             get {
                 object obj = ResourceManager.GetObject("123-1236779_name-transparent-blue-square-png", resourceCulture);
@@ -96,6 +106,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         internal static System.Drawing.Bitmap _3580266 {
             get {
                 object obj = ResourceManager.GetObject("3580266", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _428_4281543_save_your_work_in_the_clusters_fa_cloud {
+            get {
+                object obj = ResourceManager.GetObject("428-4281543_save-your-work-in-the-clusters-fa-cloud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

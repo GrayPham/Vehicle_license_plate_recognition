@@ -218,9 +218,6 @@
     <Compile Include="Model\Customer.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Login.cs">
-      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\NguoiGui.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
@@ -248,6 +245,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLiNhaXeEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RequestingAbsence.cs">
+      <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Schedule.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
@@ -1744,6 +1744,8 @@
     </Content>
     <Content Include="NomalStaff\StaffHere.txt" />
     <Content Include="OfficeStaff\OfficeStaffHere.txt" />
+    <None Include="Resources\428-4281543_save-your-work-in-the-clusters-fa-cloud.png" />
+    <None Include="Resources\1024px-OOjs_UI_icon_upload.svg.png" />
     <None Include="Resources\free-exit-icon-2860-thumb.png" />
     <None Include="Resources\lock-icon.png" />
     <None Include="Resources\Male_User_Icon_clip_art_medium.png" />

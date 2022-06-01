@@ -169,11 +169,11 @@
             // 
             this.label_tieudeLOGINFORM.AutoSize = true;
             this.label_tieudeLOGINFORM.BackColor = System.Drawing.Color.Transparent;
-            this.label_tieudeLOGINFORM.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tieudeLOGINFORM.ForeColor = System.Drawing.Color.Navy;
-            this.label_tieudeLOGINFORM.Location = new System.Drawing.Point(196, 36);
+            this.label_tieudeLOGINFORM.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_tieudeLOGINFORM.ForeColor = System.Drawing.Color.White;
+            this.label_tieudeLOGINFORM.Location = new System.Drawing.Point(162, 21);
             this.label_tieudeLOGINFORM.Name = "label_tieudeLOGINFORM";
-            this.label_tieudeLOGINFORM.Size = new System.Drawing.Size(243, 52);
+            this.label_tieudeLOGINFORM.Size = new System.Drawing.Size(332, 67);
             this.label_tieudeLOGINFORM.TabIndex = 30;
             this.label_tieudeLOGINFORM.Text = "Login Form";
             // 

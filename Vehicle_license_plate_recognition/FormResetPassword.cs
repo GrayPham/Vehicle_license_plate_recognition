@@ -31,7 +31,6 @@ namespace Vehicle_license_plate_recognition
             }    
             if (textBox_newpass.Text == textBox_confirm.Text)
             {
-
                 var pass = (from user in test.NVs where user.Email == emailForgot select user).ToList();
                 pass[0].Password = textBox_newpass.Text;
                 test.SaveChanges();

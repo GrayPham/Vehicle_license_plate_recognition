@@ -12,13 +12,14 @@ namespace Vehicle_license_plate_recognition.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Login
+    public partial class RequestingAbsence
     {
-        public int Id { get; set; }
-        public string Account { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public Nullable<int> IdStaff { get; set; }
+        public int id { get; set; }
+        public int idStaff { get; set; }
+        public Nullable<bool> accept { get; set; }
+        public string Reason { get; set; }
+        public Nullable<System.DateTime> DateAccept { get; set; }
+        public Nullable<int> idManager { get; set; }
     
         public virtual NV NV { get; set; }
     }

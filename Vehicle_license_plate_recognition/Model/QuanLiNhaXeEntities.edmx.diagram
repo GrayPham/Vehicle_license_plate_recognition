@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c17d906b1785459eb4a029e8a4a1dbdf" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.Assignment" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="261bf2ac73de4fbab289ef677b11be86" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.Assignment" Width="1.5" PointX="1.5" PointY="24" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Capacity" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Contract" Width="1.5" PointX="4" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.Customer" Width="1.5" PointX="1.75" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.Login" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.Customer" Width="1.5" PointX="1.75" PointY="31.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.NguoiGui" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.NV" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Parking" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.PlacePark" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.Schedule" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.ScheduleEmploy" Width="1.5" PointX="1.5" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.sysdiagram" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.RequestingAbsence" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.Schedule" Width="1.5" PointX="1.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.ScheduleEmploy" Width="1.5" PointX="1.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.ThanhToan" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.TypeVehicle" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Schedule_Assignment" ManuallyRouted="false" />
@@ -24,15 +24,16 @@
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Capacity_TypeVehicle" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Contract_Customers" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Contract_NV" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLiNhaXeModel.FK_Login_NV" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NguoiGui_Parking" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NguoiGui_PlacePark" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NguoiGui_ThanhToan" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NguoiGui_TypeVehicle" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_NV_ScheduleEmploy" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiNhaXeModel.FK_RequestingAbsence_NV" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_ThanhToan_NV" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_PlacePark_Parking" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_PlacePark_TypeVehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLiNhaXeModel.FK_ScheduleEmploy_Schedule" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_ThanhToan_TypeVehicle" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

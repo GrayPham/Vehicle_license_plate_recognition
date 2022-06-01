@@ -32,11 +32,11 @@ namespace Vehicle_license_plate_recognition.Model
         public DbSet<Capacity> Capacities { get; set; }
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Login> Logins { get; set; }
         public DbSet<NguoiGui> NguoiGuis { get; set; }
         public DbSet<NV> NVs { get; set; }
         public DbSet<Parking> Parkings { get; set; }
         public DbSet<PlacePark> PlaceParks { get; set; }
+        public DbSet<RequestingAbsence> RequestingAbsences { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<ScheduleEmploy> ScheduleEmploys { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }

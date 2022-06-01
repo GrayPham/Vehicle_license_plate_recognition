@@ -10,7 +10,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="TimeShift" Type="time" Precision="7" />
+          <Property Name="TimeStart" Type="datetime" />
+          <Property Name="TimeEnd" Type="datetime" />
         </EntityType>
         <EntityType Name="Capacity">
           <Key>
@@ -49,16 +50,6 @@
           <Property Name="BirthDate" Type="datetime" />
           <Property Name="Gender" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="Login">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Account" Type="varchar" MaxLength="20" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="IdStaff" Type="int" />
         </EntityType>
         <EntityType Name="NguoiGui">
           <Key>
@@ -112,6 +103,17 @@
           <Property Name="IdPark" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="bit" />
         </EntityType>
+        <EntityType Name="RequestingAbsence">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idStaff" Type="int" Nullable="false" />
+          <Property Name="accept" Type="bit" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateAccept" Type="datetime" />
+          <Property Name="idManager" Type="int" />
+        </EntityType>
         <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="Id" />
@@ -119,7 +121,6 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="MaxEmployees" Type="int" />
           <Property Name="NumberOfShift" Type="int" />
-          <Property Name="Workday" Type="int" />
           <Property Name="IdAssignment" Type="int" />
           <Property Name="OneShiftTime" Type="int" />
         </EntityType>
@@ -128,6 +129,10 @@
             <PropertyRef Name="IdSchedule" />
           </Key>
           <Property Name="IdSchedule" Type="int" Nullable="false" />
+          <Property Name="Shift" Type="int" />
+          <Property Name="WorkingDay" Type="datetime" />
+          <Property Name="Attendance" Type="bit" />
+          <Property Name="IdTotalSche" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -202,18 +207,6 @@
             </Principal>
             <Dependent Role="Contract">
               <PropertyRef Name="IdOfficeStaff" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Login_NV">
-          <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
-          <End Role="Login" Type="Self.Login" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NV">
-              <PropertyRef Name="IdStaff" />
-            </Principal>
-            <Dependent Role="Login">
-              <PropertyRef Name="IdStaff" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -301,6 +294,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RequestingAbsence_NV">
+          <End Role="NV" Type="Self.NV" Multiplicity="1" />
+          <End Role="RequestingAbsence" Type="Self.RequestingAbsence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
+            </Principal>
+            <Dependent Role="RequestingAbsence">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Schedule_Assignment">
           <End Role="Assignment" Type="Self.Assignment" Multiplicity="0..1" />
           <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
@@ -310,6 +315,18 @@
             </Principal>
             <Dependent Role="Schedule">
               <PropertyRef Name="IdAssignment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScheduleEmploy_Schedule">
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+          <End Role="ScheduleEmploy" Type="Self.ScheduleEmploy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleEmploy">
+              <PropertyRef Name="IdTotalSche" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -373,11 +390,11 @@
           <EntitySet Name="Capacity" EntityType="Self.Capacity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NguoiGui" EntityType="Self.NguoiGui" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parking" EntityType="Self.Parking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlacePark" EntityType="Self.PlacePark" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestingAbsence" EntityType="Self.RequestingAbsence" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ScheduleEmploy" EntityType="Self.ScheduleEmploy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -398,10 +415,6 @@
           <AssociationSet Name="FK_Contract_NV" Association="Self.FK_Contract_NV">
             <End Role="NV" EntitySet="NV" />
             <End Role="Contract" EntitySet="Contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Login_NV" Association="Self.FK_Login_NV">
-            <End Role="NV" EntitySet="NV" />
-            <End Role="Login" EntitySet="Login" />
           </AssociationSet>
           <AssociationSet Name="FK_NguoiGui_Parking" Association="Self.FK_NguoiGui_Parking">
             <End Role="Parking" EntitySet="Parking" />
@@ -431,9 +444,17 @@
             <End Role="TypeVehicle" EntitySet="TypeVehicle" />
             <End Role="PlacePark" EntitySet="PlacePark" />
           </AssociationSet>
+          <AssociationSet Name="FK_RequestingAbsence_NV" Association="Self.FK_RequestingAbsence_NV">
+            <End Role="NV" EntitySet="NV" />
+            <End Role="RequestingAbsence" EntitySet="RequestingAbsence" />
+          </AssociationSet>
           <AssociationSet Name="FK_Schedule_Assignment" Association="Self.FK_Schedule_Assignment">
             <End Role="Assignment" EntitySet="Assignment" />
             <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScheduleEmploy_Schedule" Association="Self.FK_ScheduleEmploy_Schedule">
+            <End Role="Schedule" EntitySet="Schedule" />
+            <End Role="ScheduleEmploy" EntitySet="ScheduleEmploy" />
           </AssociationSet>
           <AssociationSet Name="FK_ThanhToan_NV" Association="Self.FK_ThanhToan_NV">
             <End Role="NV" EntitySet="NV" />
@@ -454,7 +475,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="TimeShift" Type="Time" Precision="7" />
+          <Property Name="TimeStart" Type="DateTime" Precision="3" />
+          <Property Name="TimeEnd" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Schedules" Relationship="Self.FK_Schedule_Assignment" FromRole="Assignment" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="Capacity">
@@ -500,17 +522,6 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_Customers" FromRole="Customers" ToRole="Contract" />
         </EntityType>
-        <EntityType Name="Login">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdStaff" Type="Int32" />
-          <NavigationProperty Name="NV" Relationship="Self.FK_Login_NV" FromRole="Login" ToRole="NV" />
-        </EntityType>
         <EntityType Name="NguoiGui">
           <Key>
             <PropertyRef Name="DeliveryTime" />
@@ -550,8 +561,8 @@
           <Property Name="isStaff" Type="Boolean" />
           <Property Name="ImagePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Contracts" Relationship="Self.FK_Contract_NV" FromRole="NV" ToRole="Contract" />
-          <NavigationProperty Name="Logins" Relationship="Self.FK_Login_NV" FromRole="NV" ToRole="Login" />
           <NavigationProperty Name="ScheduleEmploy" Relationship="Self.FK_NV_ScheduleEmploy" FromRole="NV" ToRole="ScheduleEmploy" />
+          <NavigationProperty Name="RequestingAbsences" Relationship="Self.FK_RequestingAbsence_NV" FromRole="NV" ToRole="RequestingAbsence" />
           <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_NV" FromRole="NV" ToRole="ThanhToan" />
         </EntityType>
         <EntityType Name="Parking">
@@ -577,6 +588,18 @@
           <NavigationProperty Name="Parking" Relationship="Self.FK_PlacePark_Parking" FromRole="PlacePark" ToRole="Parking" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_PlacePark_TypeVehicle" FromRole="PlacePark" ToRole="TypeVehicle" />
         </EntityType>
+        <EntityType Name="RequestingAbsence">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idStaff" Type="Int32" Nullable="false" />
+          <Property Name="accept" Type="Boolean" />
+          <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateAccept" Type="DateTime" Precision="3" />
+          <Property Name="idManager" Type="Int32" />
+          <NavigationProperty Name="NV" Relationship="Self.FK_RequestingAbsence_NV" FromRole="RequestingAbsence" ToRole="NV" />
+        </EntityType>
         <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="Id" />
@@ -584,17 +607,22 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="MaxEmployees" Type="Int32" />
           <Property Name="NumberOfShift" Type="Int32" />
-          <Property Name="Workday" Type="Int32" />
           <Property Name="IdAssignment" Type="Int32" />
           <Property Name="OneShiftTime" Type="Int32" />
           <NavigationProperty Name="Assignment" Relationship="Self.FK_Schedule_Assignment" FromRole="Schedule" ToRole="Assignment" />
+          <NavigationProperty Name="ScheduleEmploys" Relationship="Self.FK_ScheduleEmploy_Schedule" FromRole="Schedule" ToRole="ScheduleEmploy" />
         </EntityType>
         <EntityType Name="ScheduleEmploy">
           <Key>
             <PropertyRef Name="IdSchedule" />
           </Key>
           <Property Name="IdSchedule" Type="Int32" Nullable="false" />
+          <Property Name="Shift" Type="Int32" />
+          <Property Name="WorkingDay" Type="DateTime" Precision="3" />
+          <Property Name="Attendance" Type="Boolean" />
+          <Property Name="IdTotalSche" Type="Int32" />
           <NavigationProperty Name="NVs" Relationship="Self.FK_NV_ScheduleEmploy" FromRole="ScheduleEmploy" ToRole="NV" />
+          <NavigationProperty Name="Schedule" Relationship="Self.FK_ScheduleEmploy_Schedule" FromRole="ScheduleEmploy" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -691,18 +719,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Login_NV">
-          <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
-          <End Role="Login" Type="Self.Login" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NV">
-              <PropertyRef Name="IdStaff" />
-            </Principal>
-            <Dependent Role="Login">
-              <PropertyRef Name="IdStaff" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NguoiGui_Parking">
           <End Role="Parking" Type="Self.Parking" Multiplicity="0..1" />
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
@@ -763,6 +779,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RequestingAbsence_NV">
+          <End Role="NV" Type="Self.NV" Multiplicity="1" />
+          <End Role="RequestingAbsence" Type="Self.RequestingAbsence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="IdStaff" />
+            </Principal>
+            <Dependent Role="RequestingAbsence">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ThanhToan_NV">
           <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
@@ -799,6 +827,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ScheduleEmploy_Schedule">
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+          <End Role="ScheduleEmploy" Type="Self.ScheduleEmploy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleEmploy">
+              <PropertyRef Name="IdTotalSche" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ThanhToan_TypeVehicle">
           <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
           <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
@@ -816,11 +856,11 @@
           <EntitySet Name="Capacities" EntityType="Self.Capacity" />
           <EntitySet Name="Contracts" EntityType="Self.Contract" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="NguoiGuis" EntityType="Self.NguoiGui" />
           <EntitySet Name="NVs" EntityType="Self.NV" />
           <EntitySet Name="Parkings" EntityType="Self.Parking" />
           <EntitySet Name="PlaceParks" EntityType="Self.PlacePark" />
+          <EntitySet Name="RequestingAbsences" EntityType="Self.RequestingAbsence" />
           <EntitySet Name="Schedules" EntityType="Self.Schedule" />
           <EntitySet Name="ScheduleEmploys" EntityType="Self.ScheduleEmploy" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
@@ -846,10 +886,6 @@
             <End Role="NV" EntitySet="NVs" />
             <End Role="Contract" EntitySet="Contracts" />
           </AssociationSet>
-          <AssociationSet Name="FK_Login_NV" Association="Self.FK_Login_NV">
-            <End Role="NV" EntitySet="NVs" />
-            <End Role="Login" EntitySet="Logins" />
-          </AssociationSet>
           <AssociationSet Name="FK_NguoiGui_Parking" Association="Self.FK_NguoiGui_Parking">
             <End Role="Parking" EntitySet="Parkings" />
             <End Role="NguoiGui" EntitySet="NguoiGuis" />
@@ -870,6 +906,10 @@
             <End Role="ScheduleEmploy" EntitySet="ScheduleEmploys" />
             <End Role="NV" EntitySet="NVs" />
           </AssociationSet>
+          <AssociationSet Name="FK_RequestingAbsence_NV" Association="Self.FK_RequestingAbsence_NV">
+            <End Role="NV" EntitySet="NVs" />
+            <End Role="RequestingAbsence" EntitySet="RequestingAbsences" />
+          </AssociationSet>
           <AssociationSet Name="FK_ThanhToan_NV" Association="Self.FK_ThanhToan_NV">
             <End Role="NV" EntitySet="NVs" />
             <End Role="ThanhToan" EntitySet="ThanhToans" />
@@ -881,6 +921,10 @@
           <AssociationSet Name="FK_PlacePark_TypeVehicle" Association="Self.FK_PlacePark_TypeVehicle">
             <End Role="TypeVehicle" EntitySet="TypeVehicles" />
             <End Role="PlacePark" EntitySet="PlaceParks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScheduleEmploy_Schedule" Association="Self.FK_ScheduleEmploy_Schedule">
+            <End Role="Schedule" EntitySet="Schedules" />
+            <End Role="ScheduleEmploy" EntitySet="ScheduleEmploys" />
           </AssociationSet>
           <AssociationSet Name="FK_ThanhToan_TypeVehicle" Association="Self.FK_ThanhToan_TypeVehicle">
             <End Role="TypeVehicle" EntitySet="TypeVehicles" />
@@ -938,7 +982,8 @@
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Assignment">
               <MappingFragment StoreEntitySet="Assignment">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TimeShift" ColumnName="TimeShift" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -979,17 +1024,6 @@
                 <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Logins">
-            <EntityTypeMapping TypeName="QuanLiNhaXeModel.Login">
-              <MappingFragment StoreEntitySet="Login">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1048,13 +1082,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="RequestingAbsences">
+            <EntityTypeMapping TypeName="QuanLiNhaXeModel.RequestingAbsence">
+              <MappingFragment StoreEntitySet="RequestingAbsence">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+                <ScalarProperty Name="accept" ColumnName="accept" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="DateAccept" ColumnName="DateAccept" />
+                <ScalarProperty Name="idManager" ColumnName="idManager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Schedules">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Schedule">
               <MappingFragment StoreEntitySet="Schedule">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MaxEmployees" ColumnName="MaxEmployees" />
                 <ScalarProperty Name="NumberOfShift" ColumnName="NumberOfShift" />
-                <ScalarProperty Name="Workday" ColumnName="Workday" />
                 <ScalarProperty Name="IdAssignment" ColumnName="IdAssignment" />
                 <ScalarProperty Name="OneShiftTime" ColumnName="OneShiftTime" />
               </MappingFragment>
@@ -1064,6 +1109,10 @@
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.ScheduleEmploy">
               <MappingFragment StoreEntitySet="ScheduleEmploy">
                 <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="WorkingDay" ColumnName="WorkingDay" />
+                <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+                <ScalarProperty Name="IdTotalSche" ColumnName="IdTotalSche" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
