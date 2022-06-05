@@ -17,7 +17,7 @@ namespace Vehicle_license_plate_recognition.Model
         public NV()
         {
             this.Contracts = new HashSet<Contract>();
-            this.Logins = new HashSet<Login>();
+            this.RequestingAbsences = new HashSet<RequestingAbsence>();
             this.ThanhToans = new HashSet<ThanhToan>();
         }
     
@@ -39,8 +39,8 @@ namespace Vehicle_license_plate_recognition.Model
         public string ImagePath { get; set; }
     
         public virtual ICollection<Contract> Contracts { get; set; }
-        public virtual ICollection<Login> Logins { get; set; }
         public virtual ScheduleEmploy ScheduleEmploy { get; set; }
+        public virtual ICollection<RequestingAbsence> RequestingAbsences { get; set; }
         public virtual ICollection<ThanhToan> ThanhToans { get; set; }
     }
 }

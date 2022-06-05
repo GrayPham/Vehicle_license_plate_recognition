@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,13 +48,7 @@ namespace Vehicle_license_plate_recognition.BLL
 
 
         }
-        public void PostReturnVehicle(string licensePlates, DateTime returnTime, string idpayment)
-        {
-            NguoiGui user = db.NguoiGuis.Where(x => x.LicensePlates == licensePlates && x.ReturnTime == null).FirstOrDefault();
-            user.ReturnTime = returnTime;
-            user.IdPayment = idpayment;
-            db.SaveChanges();
-        }
+        
         internal DateTime GetDeleveryTime(string licensePlate)
         {
             List<NguoiGui> first = db.NguoiGuis.Where(user => user.LicensePlates == licensePlate && user.ReturnTime== null).ToList<NguoiGui>();
@@ -71,20 +66,28 @@ namespace Vehicle_license_plate_recognition.BLL
         {
             try
             {
+
                 ThanhToan tt = new ThanhToan();
                 tt.IdPayment = idPayment;
                 tt.Price = price;
                 tt.IdTVehicle = typeVehicle;
                 tt.IdStaff = idStaff;
-                tt.ChargeTime = chargeTime;
 
                 db.ThanhToans.Add(tt);
+
+
+
+
+
                 db.SaveChanges();
+
+
+                
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                
                 return false;
             }
             
@@ -92,17 +95,53 @@ namespace Vehicle_license_plate_recognition.BLL
         // All Bill kể từ thời điêm thực hiện công việc / NGày làm việc etc...
         internal Object GetAllBillVehicle(DateTime timeWork)
         {
-            var bill = db.ThanhToans.Where(tt => tt.ChargeTime > timeWork).Select(s=> new
-            {
 
-                Staff = s.IdStaff,
-                Price = s.Price,
-                ChargeTime = s.ChargeTime,
-                
+            var bill = (from tt in db.ThanhToans
+                       join ng in db.NguoiGuis on tt.IdPayment equals ng.IdPayment
+                       where (ng.ReturnTime > timeWork)
+                       orderby ng.ReturnTime descending
+                       select new
+                       {
+                           tt.IdStaff, ng.ReturnTime, tt.Price
+                       }).ToList();
 
-            }).OrderByDescending(x =>x.ChargeTime).ToList() ;
+
+            
 
             return bill;
+        }
+
+        internal void PostReturnVel(string licenseplates )
+        {
+            
+
+            var place = (from placeP in db.PlaceParks
+                         join nguoiGui in db.NguoiGuis
+                         on placeP.Id equals nguoiGui.PlaceID
+                         where nguoiGui.LicensePlates == licenseplates && nguoiGui.ReturnTime == null
+                         select placeP).First();
+            place.Status = true;
+
+
+
+            db.SaveChanges();
+        }
+
+        internal void returnTime(string licenseplates, DateTime chargeTime , string idPayment)
+        {
+            var ngGui = db.NguoiGuis.Where(x => x.LicensePlates == licenseplates && x.ReturnTime == null).FirstOrDefault();
+            db.Entry(ngGui).State = EntityState.Modified;
+            ngGui.ReturnTime = chargeTime;
+            ngGui.IdPayment  = idPayment;
+            
+            db.SaveChanges();
+            
+           
+
+
+
+
+
         }
     }
 }

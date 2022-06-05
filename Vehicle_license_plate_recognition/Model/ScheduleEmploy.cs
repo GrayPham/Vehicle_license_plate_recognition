@@ -20,7 +20,12 @@ namespace Vehicle_license_plate_recognition.Model
         }
     
         public int IdSchedule { get; set; }
+        public Nullable<int> Shift { get; set; }
+        public Nullable<System.DateTime> WorkingDay { get; set; }
+        public Nullable<bool> Attendance { get; set; }
+        public Nullable<int> IdTotalSche { get; set; }
     
         public virtual ICollection<NV> NVs { get; set; }
+        public virtual Schedule Schedule { get; set; }
     }
 }

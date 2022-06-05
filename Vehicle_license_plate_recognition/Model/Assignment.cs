@@ -20,7 +20,8 @@ namespace Vehicle_license_plate_recognition.Model
         }
     
         public int Id { get; set; }
-        public Nullable<System.TimeSpan> TimeShift { get; set; }
+        public Nullable<System.DateTime> TimeStart { get; set; }
+        public Nullable<System.DateTime> TimeEnd { get; set; }
     
         public virtual ICollection<Schedule> Schedules { get; set; }
     }

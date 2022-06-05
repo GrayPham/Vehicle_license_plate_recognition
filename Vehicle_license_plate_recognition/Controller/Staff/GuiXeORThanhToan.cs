@@ -121,20 +121,14 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
         {
             string time = String.Format("{0:s}", chargeTime); // "2008-03-09T16:05:07"               SortableDateTime
             string idPayment = licenseplates + '_'+ typeVehicle + '_' + time ;
-            if(nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates) == true)
+            
+            if (nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates) == true)
             {
-                try
-                {
-                    DateTime returnTime = DateTime.Now;
-                    //nvbll.PostReturnVehicle(licenseplates, returnTime, idPayment); // Dang loi
-                    parkDistribution.returePlaceVehicle(licenseplates, returnTime, idPayment);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return false;
-                }
+
+                
+                nvbll.PostReturnVel(licenseplates);
+                nvbll.returnTime(licenseplates, chargeTime, idPayment);
+                return true;
             }
             else
             {
@@ -148,6 +142,12 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             var bill = nvbll.GetAllBillVehicle(timeWork);
             return bill;
 
+        }
+
+        internal void test(string licensePlates)
+        {
+            DateTime dateTime = DateTime.Now;
+            nvbll.returnTime(licensePlates, dateTime, "51A69172_3_2022-06-05T10:05:58");
         }
     }
 }

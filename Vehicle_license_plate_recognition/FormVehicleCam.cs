@@ -12,6 +12,7 @@ using System.Windows.Forms;
 //Add thư viện để kết nối với camera
 using AForge.Video;
 using AForge.Video.DirectShow;
+using Vehicle_license_plate_recognition.Controller;
 using Vehicle_license_plate_recognition.Controller.Staff;
 
 namespace Vehicle_license_plate_recognition
@@ -167,7 +168,7 @@ namespace Vehicle_license_plate_recognition
             }
             this.Close();
         }
-
+        Setting setting = new Setting();
         private void btn_Check_Click(object sender, EventArgs e)
         {
             int TypeVehicle = loaixe();
@@ -301,7 +302,33 @@ namespace Vehicle_license_plate_recognition
             }
             else if( TypeVehicle == 1)
             {
+
                 lbLoaiHinh.Text = "Nhan Dien Khuon Mat";
+                //server_path = "http://" + server_ip + ":8000/recognition";
+                int test = 1;
+                
+                try
+                {
+                    if (test == 1)
+                    {
+                        string idstring = "ng1";
+                        server_path = "http://" + server_ip + ":8000/captureImage?idstring=" + idstring;
+                        String retStr = setting.Get(server_path);
+                        //String retStr = setting.sendPOST(server_path, idstring);
+                    }
+                    else
+                    {
+                        server_path = "http://" + server_ip + ":8000/recognition";
+                        //Convert image to B64
+                        String B64 = setting.ConvertImageToBase64String(pictureBox_recognize.Image);
+                        String retStr = setting.sendPOST(server_path, B64);
+                        richTextBox_licenseplates.Text = retStr;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -464,6 +491,12 @@ namespace Vehicle_license_plate_recognition
         private void fillDVGThanhToan()
         {
             DGVThanhToan.DataSource = nv.GetAllBillVehicle(timeWork);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string LicensePlates = richTextBox_licenseplates.Text;
+            nv.test(LicensePlates);
         }
     }
 }
