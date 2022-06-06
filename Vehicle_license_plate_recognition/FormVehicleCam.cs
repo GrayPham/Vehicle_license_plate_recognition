@@ -26,6 +26,7 @@ namespace Vehicle_license_plate_recognition
         private VideoCaptureDevice video;
         GuiXeORThanhToan nv = new GuiXeORThanhToan();
         DateTime timeWork;
+        String server_ip = "192.168.1.166";
         public FormVehicleCam()
         {
             InitializeComponent();
@@ -122,7 +123,7 @@ namespace Vehicle_license_plate_recognition
             timerSysterm.Start();
             if (pictureBox_camera.Image == null)
             {
-                btn_parking.Enabled = false;
+                btn_parking.Enabled = true;
                 btn_charge.Enabled = false;
                 btn_Check.Enabled = true;
             }
@@ -171,8 +172,9 @@ namespace Vehicle_license_plate_recognition
         Setting setting = new Setting();
         private void btn_Check_Click(object sender, EventArgs e)
         {
+            richTextBox_licenseplates.Text = ""; // Test can xoa
             int TypeVehicle = loaixe();
-
+            int IdStaff = Convert.ToInt32(txtIdStaff.Text); // Global DATA
             lbLoaiHinh.Text = "";
             String server_path;
             // Goi len server va tra ve ket qua
@@ -181,7 +183,7 @@ namespace Vehicle_license_plate_recognition
             {
                 
                 server_path = "http://" + server_ip + ":8000/detect";
-                int IdStaff = Convert.ToInt32(txtIdStaff.Text);
+                
 
                 try
                 {
@@ -198,7 +200,7 @@ namespace Vehicle_license_plate_recognition
                         if (retStr != "")
                         {
                             DateTime time = dateTimePickerSystem.Value;
-                            if (nv.isParked(retStr, time) == true)
+                            if (nv.isParked(retStr) == true)
 
                             {
 
@@ -245,7 +247,7 @@ namespace Vehicle_license_plate_recognition
                 // Goi len server va tra ve ket qua
 
                 server_path = "http://" + server_ip + ":8000/detect2line";
-                int IdStaff = Convert.ToInt32(txtIdStaff.Text);
+                
 
                 try
                 {
@@ -262,7 +264,7 @@ namespace Vehicle_license_plate_recognition
                         if (retStr != "")
                         {
                             DateTime time = dateTimePickerSystem.Value;
-                            if (nv.isParked(retStr, time) == true)
+                            if (nv.isParked(retStr) == true)
                             {
 
                                 btn_parking.Enabled = false;
@@ -280,11 +282,6 @@ namespace Vehicle_license_plate_recognition
                                 btn_charge.Enabled = false;
                                 btn_parking.Enabled = true;
                             }
-                        }
-                        else if (TypeVehicle == 1)
-                        {
-                            // Hoàn thiện
-                            lbLoaiHinh.Text = "Nhan dien khuon mat";
                         }
                         else
                             lbLoaiHinh.Text = "No license plate";
@@ -305,30 +302,52 @@ namespace Vehicle_license_plate_recognition
 
                 lbLoaiHinh.Text = "Nhan Dien Khuon Mat";
                 //server_path = "http://" + server_ip + ":8000/recognition";
-                int test = 1;
                 
+
+                
+
+                server_path = "http://" + server_ip + ":8000/recognition";
+
                 try
                 {
-                    if (test == 1)
+                    //Convert image to B64
+                    String B64 = setting.ConvertImageToBase64String(pictureBox_recognize.Image);
+                    String retStr = setting.sendPOST(server_path, B64);
+                    richTextBox_licenseplates.Text = retStr;
+                    if (nv.isParked(retStr))// THanh toan
                     {
-                        string idstring = "ng1";
-                        server_path = "http://" + server_ip + ":8000/captureImage?idstring=" + idstring;
-                        String retStr = setting.Get(server_path);
+                        // Kiem tra check trung ???
+                        btn_parking.Enabled = false;
+                        DateTime ReturnTime = dateTimePickerSystem.Value;
+                        double Price = nv.CalculateParking(richTextBox_licenseplates.Text, TypeVehicle, IdStaff, ReturnTime);
+                        lbLoaiHinh.Text = "Tinh Tien Xe: " + retStr;
+                        txtPrice.Text = Price.ToString();
+                        btn_charge.Enabled = true;
+
                         //String retStr = setting.sendPOST(server_path, idstring);
+
+
+
+
+
                     }
-                    else
+                    else 
                     {
-                        server_path = "http://" + server_ip + ":8000/recognition";
+                        lbLoaiHinh.Text = "Send bicycle to customers: " + retStr;
+                        btn_charge.Enabled = false;
+                        btn_parking.Enabled = true;
+                        //server_path = "http://" + server_ip + ":8000/recognition";
                         //Convert image to B64
-                        String B64 = setting.ConvertImageToBase64String(pictureBox_recognize.Image);
-                        String retStr = setting.sendPOST(server_path, B64);
-                        richTextBox_licenseplates.Text = retStr;
+
+                        //richTextBox_licenseplates.Text = retStr;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message);
+                    richTextBox_licenseplates.Text = "";
+                    MessageBox.Show("Unrecognizable, please take a photo");
                 }
+                
             }
         }
 
@@ -437,19 +456,56 @@ namespace Vehicle_license_plate_recognition
             int TypeVehicle = loaixe();
             DateTime DeliveryTime = dateTimePickerSystem.Value;
             string LicensePlates = richTextBox_licenseplates.Text;
-            Image image = pictureBox_recognize.Image;
-            string IdPark = comboBox_Park.SelectedValue.ToString();
-            string place = nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image);
-            if (place != null)
+           
+
+            if(TypeVehicle == 1)
             {
-                richTextBox_licenseplates.Text = "";
-                pictureBox_recognize.Image = null;
-                txtPlacePark.Text = place;
+                if (richTextBox_licenseplates.Text != "" && richTextBox_licenseplates.Text != "Unknown")
+                {
+                    string idstring = richTextBox_licenseplates.Text;
+                    string server_path = "http://" + server_ip + ":8000/captureImage?idstring=" + idstring;
+                    String retStrGet = setting.Get(server_path);
+
+                    lbLoaiHinh.Text = retStrGet;
+
+                    Image image = pictureBox_recognize.Image;
+                    string IdPark = comboBox_Park.SelectedValue.ToString();
+                    string place = nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image);
+                    if (place != null)
+                    {
+
+                        richTextBox_licenseplates.Text = "";
+                        pictureBox_recognize.Image = null;
+                        txtPlacePark.Text = place;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Post Car");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Enter sender information ", "Parking");
+                }
             }
             else
             {
-                MessageBox.Show("Error Post Car");
+                Image image = pictureBox_recognize.Image;
+                string IdPark = comboBox_Park.SelectedValue.ToString();
+                string place = nv.PostSentCar(DeliveryTime, LicensePlates, IdPark, TypeVehicle, image);
+                if (place != null)
+                {
+
+                    richTextBox_licenseplates.Text = "";
+                    pictureBox_recognize.Image = null;
+                    txtPlacePark.Text = place;
+                }
+                else
+                {
+                    MessageBox.Show("Error Post Car");
+                }
             }
+            
 
             
             
@@ -470,7 +526,7 @@ namespace Vehicle_license_plate_recognition
             if (radioButton_bicycle.Checked)
             {
                 fillCombo();
-                richTextBox_licenseplates.Enabled = false;
+                richTextBox_licenseplates.Enabled = true;
             }
         }
 

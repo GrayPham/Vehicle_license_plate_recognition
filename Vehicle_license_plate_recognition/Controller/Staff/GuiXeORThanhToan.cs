@@ -18,9 +18,9 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
     {
         NVBLL nvbll = new NVBLL();
         ParkDistribution parkDistribution = new ParkDistribution();
-        public bool isParked(string bienso, DateTime time)
+        public bool isParked(string bienso)
         {
-            List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso, time);
+            List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso);
             if(sentCar.Count > 0)
             {
                 return true;
@@ -58,6 +58,24 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
                 }
                 return place;
 
+            }
+            else if(typeVehicle == 1)
+            {
+                string filename = licensePlates;
+                Bitmap imageB = new Bitmap(image);
+                string nameSave = filename + "_" + time;
+                string path = Dir + "\\Image\\BienDai\\" + nameSave;
+                imageB.Save(path + ("." + ImageFormat.Png.ToString()));
+                string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
+                if (place != null)
+                {
+                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, nameSave, place);
+                }
+                else
+                {
+                    // Ngoại lệ neu Bai se hết chỗ trống
+                }
+                return place;
             }
             return null;
             
@@ -124,8 +142,6 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             
             if (nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates) == true)
             {
-
-                
                 nvbll.PostReturnVel(licenseplates);
                 nvbll.returnTime(licenseplates, chargeTime, idPayment);
                 return true;

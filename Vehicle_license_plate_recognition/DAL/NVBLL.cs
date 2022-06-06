@@ -16,7 +16,7 @@ namespace Vehicle_license_plate_recognition.BLL
         
         
 
-        public List<NguoiGui> getAllLiPlate(string bienso, DateTime time)
+        public List<NguoiGui> getAllLiPlate(string bienso)
         {
             List<NguoiGui> liPlates = (from LicensePlates in db.NguoiGuis where LicensePlates.LicensePlates == bienso  && LicensePlates.ReturnTime == null select LicensePlates).ToList();
             return liPlates;
