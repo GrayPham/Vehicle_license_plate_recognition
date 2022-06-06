@@ -162,8 +162,8 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                 {
                     int idCus = Convert.ToInt32(id);
                     int typeCus = Convert.ToInt32(type);
-                    var checkChange = CustomerDTO.db.Customers.Where(test => test.Id == idCus && test.TypeID == typeCus && test.FullName == fname 
-                                                                     && test.BirthDate == birthdate && test.Email == email && test.Gender==gender && test.Phone == phone);
+                    var checkChange = CustomerDTO.db.Customers.Where(test => test.Id == idCus || test.TypeID == typeCus || test.FullName == fname 
+                                                                     || test.BirthDate == birthdate || test.Email == email || test.Gender==gender || test.Phone == phone);
                     int born_year = birthdate.Year;
                     int this_year = DateTime.Now.Year;
                     // Check tuổi

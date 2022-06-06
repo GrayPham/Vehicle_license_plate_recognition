@@ -63,6 +63,26 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1024px_OOjs_UI_icon_upload_svg {
+            get {
+                object obj = ResourceManager.GetObject("1024px-OOjs_UI_icon_upload.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _123_1236779_name_transparent_blue_square_png {
+            get {
+                object obj = ResourceManager.GetObject("123-1236779_name-transparent-blue-square-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _131943797_222666359353624_8357918975126419137_o {
             get {
                 object obj = ResourceManager.GetObject("131943797_222666359353624_8357918975126419137_o", resourceCulture);
@@ -93,6 +113,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _428_4281543_save_your_work_in_the_clusters_fa_cloud {
+            get {
+                object obj = ResourceManager.GetObject("428-4281543_save-your-work-in-the-clusters-fa-cloud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cangiua {
             get {
                 object obj = ResourceManager.GetObject("cangiua", resourceCulture);
@@ -116,6 +146,16 @@ namespace Vehicle_license_plate_recognition.Properties {
         internal static System.Drawing.Bitmap cantrai {
             get {
                 object obj = ResourceManager.GetObject("cantrai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_exit_icon_2860_thumb {
+            get {
+                object obj = ResourceManager.GetObject("free-exit-icon-2860-thumb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +233,29 @@ namespace Vehicle_license_plate_recognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock_icon {
+            get {
+                object obj = ResourceManager.GetObject("lock-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_CLC_Circle {
             get {
                 object obj = ResourceManager.GetObject("logo CLC Circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male_User_Icon_clip_art_medium {
+            get {
+                object obj = ResourceManager.GetObject("Male_User_Icon_clip_art_medium", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

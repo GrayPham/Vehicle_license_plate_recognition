@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="123-1236779_name-transparent-blue-square-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\123-1236779_name-transparent-blue-square-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gachchan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\OfficeStaff\Image\gachchan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="131943797_222666359353624_8357918975126419137_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\131943797_222666359353624_8357918975126419137_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1024px-OOjs_UI_icon_upload.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1024px-OOjs_UI_icon_upload.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3580266" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3580266.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="canphai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\OfficeStaff\Image\canphai.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-refresh.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +142,11 @@
   <data name="cangiua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\OfficeStaff\Image\cangiua.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="canphai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\OfficeStaff\Image\canphai.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Male_User_Icon_clip_art_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Male_User_Icon_clip_art_medium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cantrai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\OfficeStaff\Image\cantrai.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,22 +157,31 @@
   <data name="hcmute" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hcmute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-refresh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-refresh2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-refresh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-refresh1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="131943797_222666359353624_8357918975126419137_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\131943797_222666359353624_8357918975126419137_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo CLC Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo CLC Circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-refresh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-refresh2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="park1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\park1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-refresh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-refresh1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tải xuống (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tải xuống (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="3094700" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3094700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-exit-icon-2860-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-exit-icon-2860-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3580266" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3580266.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="428-4281543_save-your-work-in-the-clusters-fa-cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\428-4281543_save-your-work-in-the-clusters-fa-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
