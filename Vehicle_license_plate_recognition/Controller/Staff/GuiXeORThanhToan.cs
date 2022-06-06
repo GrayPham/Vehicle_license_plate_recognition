@@ -43,14 +43,16 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             string time = String.Format("{0:yyyy_MM_dd_HH_mm_ss}", deliveryTime);
             if (typeVehicle == 3)
             {
+                // Chỉ lưu tên file thay vì cả file ảnh
                 string filename = licensePlates;
+                string nameSave = filename + "_" + time;
                 Bitmap imageB = new Bitmap(image);
-                string path = Dir + "\\Image\\BienDai\\" + filename + "_" + time;
+                string path = Dir + "\\Image\\BienDai\\" + nameSave;
                 imageB.Save(path +("." + ImageFormat.Png.ToString()));
                 string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
                 if(place != null)
                 {
-                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, path, place);
+                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, nameSave, place);
                 }
                 else
                 {
@@ -64,7 +66,7 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
                 string filename = licensePlates;
                 Bitmap imageB = new Bitmap(image);
                 string nameSave = filename + "_" + time;
-                string path = Dir + "\\Image\\BienDai\\" + nameSave;
+                string path = Dir + "\\Image\\KhuonMat\\NguoiGui\\" + nameSave;
                 imageB.Save(path + ("." + ImageFormat.Png.ToString()));
                 string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
                 if (place != null)

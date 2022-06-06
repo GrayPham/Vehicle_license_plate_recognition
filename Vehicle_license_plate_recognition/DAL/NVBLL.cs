@@ -66,6 +66,7 @@ namespace Vehicle_license_plate_recognition.BLL
         {
             try
             {
+                // Xóa ảnh khuôn mặt
 
                 ThanhToan tt = new ThanhToan();
                 tt.IdPayment = idPayment;
