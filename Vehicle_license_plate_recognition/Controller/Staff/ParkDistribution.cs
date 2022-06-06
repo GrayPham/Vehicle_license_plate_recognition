@@ -16,10 +16,6 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             return idPlacePark;
         }
 
-        internal void returePlaceVehicle(string licenseplates, DateTime returnTime, string idpayment)
-        {
-            
-            pParkDAO.returePlaceVehicle(licenseplates, returnTime, idpayment);
-        }
+        
     }
 }

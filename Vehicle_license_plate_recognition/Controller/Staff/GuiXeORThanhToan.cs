@@ -18,9 +18,9 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
     {
         NVBLL nvbll = new NVBLL();
         ParkDistribution parkDistribution = new ParkDistribution();
-        public bool isParked(string bienso, DateTime time)
+        public bool isParked(string bienso)
         {
-            List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso, time);
+            List<NguoiGui> sentCar = nvbll.getAllLiPlate(bienso);
             if(sentCar.Count > 0)
             {
                 return true;
@@ -43,14 +43,16 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             string time = String.Format("{0:yyyy_MM_dd_HH_mm_ss}", deliveryTime);
             if (typeVehicle == 3)
             {
+                // Chỉ lưu tên file thay vì cả file ảnh
                 string filename = licensePlates;
+                string nameSave = filename + "_" + time;
                 Bitmap imageB = new Bitmap(image);
-                string path = Dir + "\\Image\\BienDai\\" + filename + "_" + time;
+                string path = Dir + "\\Image\\BienDai\\" + nameSave;
                 imageB.Save(path +("." + ImageFormat.Png.ToString()));
                 string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
                 if(place != null)
                 {
-                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, path, place);
+                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, nameSave, place);
                 }
                 else
                 {
@@ -58,6 +60,24 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
                 }
                 return place;
 
+            }
+            else if(typeVehicle == 1)
+            {
+                string filename = licensePlates;
+                Bitmap imageB = new Bitmap(image);
+                string nameSave = filename + "_" + time;
+                string path = Dir + "\\Image\\KhuonMat\\NguoiGui\\" + nameSave;
+                imageB.Save(path + ("." + ImageFormat.Png.ToString()));
+                string place = parkDistribution.distributionVehicle(typeVehicle, IdPark);
+                if (place != null)
+                {
+                    nvbll.PostSentCar(deliveryTime, licensePlates, IdPark, typeVehicle, nameSave, place);
+                }
+                else
+                {
+                    // Ngoại lệ neu Bai se hết chỗ trống
+                }
+                return place;
             }
             return null;
             
@@ -121,20 +141,12 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
         {
             string time = String.Format("{0:s}", chargeTime); // "2008-03-09T16:05:07"               SortableDateTime
             string idPayment = licenseplates + '_'+ typeVehicle + '_' + time ;
-            if(nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates) == true)
+            
+            if (nvbll.PostPayment(idPayment, Price, typeVehicle, idStaff, chargeTime, licenseplates) == true)
             {
-                try
-                {
-                    DateTime returnTime = DateTime.Now;
-                    //nvbll.PostReturnVehicle(licenseplates, returnTime, idPayment); // Dang loi
-                    parkDistribution.returePlaceVehicle(licenseplates, returnTime, idPayment);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return false;
-                }
+                nvbll.PostReturnVel(licenseplates);
+                nvbll.returnTime(licenseplates, chargeTime, idPayment);
+                return true;
             }
             else
             {
@@ -148,6 +160,12 @@ namespace Vehicle_license_plate_recognition.Controller.Staff
             var bill = nvbll.GetAllBillVehicle(timeWork);
             return bill;
 
+        }
+
+        internal void test(string licensePlates)
+        {
+            DateTime dateTime = DateTime.Now;
+            nvbll.returnTime(licensePlates, dateTime, "51A69172_3_2022-06-05T10:05:58");
         }
     }
 }

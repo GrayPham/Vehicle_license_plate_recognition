@@ -81,7 +81,7 @@ def recognitionNV(image):
     ).to(device)
     model.eval()
 
-    mtcnn = MTCNN(thresholds=[0.7, 0.7, 0.8], keep_all=True, device=device)
+    mtcnn = MTCNN(thresholds=[0.75, 0.88, 0.9], keep_all=True, device=device)
 
     embeddings, names = load_faceslist(device)
 
@@ -98,12 +98,18 @@ def recognitionNV(image):
                 score = torch.Tensor.cpu(score[0]).detach().numpy() * power
                 frame = cv2.putText(frame, names[idx] + '_{:.2f}'.format(score), (bbox[0], bbox[1]),
                                     cv2.FONT_HERSHEY_DUPLEX, 2, (0, 255, 0), 2, cv2.LINE_8)
+                return names[idx]
             else:
                 frame = cv2.rectangle(frame, (bbox[0], bbox[1]), (bbox[2], bbox[3]), (0, 0, 255), 6)
                 frame = cv2.putText(frame, 'Unknown', (bbox[0], bbox[1]), cv2.FONT_HERSHEY_DUPLEX, 2, (0, 255, 0),
                                     2, cv2.LINE_8)
+                return 'Unknown'
+
+
+
+
     #print(names[idx] + " " + str(score))
-    return names[idx]
+   
         #print(names[idx] + " " + str(score))
 
         #new_frame_time = time.time()

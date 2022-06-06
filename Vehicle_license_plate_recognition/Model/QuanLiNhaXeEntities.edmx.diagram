@@ -4,12 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="261bf2ac73de4fbab289ef677b11be86" Name="Diagram1">
+
+      <Diagram DiagramId="e5073e1198704f3ca2938f62e3710f7f" Name="Diagram1">
+
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Assignment" Width="1.5" PointX="1.5" PointY="24" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Capacity" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Contract" Width="1.5" PointX="4" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Customer" Width="1.5" PointX="1.75" PointY="31.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.NguoiGui" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.NguoiGui" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+
         <EntityTypeShape EntityType="QuanLiNhaXeModel.NV" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Parking" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.PlacePark" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
@@ -17,7 +21,9 @@
         <EntityTypeShape EntityType="QuanLiNhaXeModel.Schedule" Width="1.5" PointX="1.5" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.ScheduleEmploy" Width="1.5" PointX="1.5" PointY="16.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLiNhaXeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLiNhaXeModel.ThanhToan" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+
+        <EntityTypeShape EntityType="QuanLiNhaXeModel.ThanhToan" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+
         <EntityTypeShape EntityType="QuanLiNhaXeModel.TypeVehicle" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Schedule_Assignment" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLiNhaXeModel.FK_Capacity_Parking1" ManuallyRouted="false" />

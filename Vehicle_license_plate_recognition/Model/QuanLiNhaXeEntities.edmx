@@ -53,16 +53,16 @@
         </EntityType>
         <EntityType Name="NguoiGui">
           <Key>
-            <PropertyRef Name="DeliveryTime" />
-            <PropertyRef Name="LicensePlates" />
+            <PropertyRef Name="IdNguoiGui" />
           </Key>
+          <Property Name="IdNguoiGui" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DeliveryTime" Type="datetime" Nullable="false" />
           <Property Name="ReturnTime" Type="datetime" />
           <Property Name="LicensePlates" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="PlaceID" Type="nvarchar" MaxLength="50" />
           <Property Name="IdVehicleType" Type="int" />
-          <Property Name="IdPark" Type="nvarchar" MaxLength="50" />
           <Property Name="IdPayment" Type="nchar" MaxLength="100" />
+          <Property Name="IdPark" Type="nvarchar" MaxLength="50" />
           <Property Name="ImagePath" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="NV">
@@ -152,7 +152,6 @@
           <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="int" />
           <Property Name="IdStaff" Type="int" />
-          <Property Name="ChargeTime" Type="datetime" />
         </EntityType>
         <EntityType Name="TypeVehicle">
           <Key>
@@ -223,7 +222,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiGui_PlacePark">
-          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="0..1" />
+          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PlacePark">
@@ -235,7 +236,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiGui_ThanhToan">
-          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ThanhToan">
@@ -247,7 +250,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiGui_TypeVehicle">
-          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeVehicle">
@@ -524,16 +529,16 @@
         </EntityType>
         <EntityType Name="NguoiGui">
           <Key>
-            <PropertyRef Name="DeliveryTime" />
-            <PropertyRef Name="LicensePlates" />
+            <PropertyRef Name="IdNguoiGui" />
           </Key>
+          <Property Name="IdNguoiGui" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DeliveryTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ReturnTime" Type="DateTime" Precision="3" />
           <Property Name="LicensePlates" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PlaceID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdVehicleType" Type="Int32" />
-          <Property Name="IdPark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdPayment" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="IdPark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Parking" Relationship="Self.FK_NguoiGui_Parking" FromRole="NguoiGui" ToRole="Parking" />
           <NavigationProperty Name="PlacePark" Relationship="Self.FK_NguoiGui_PlacePark" FromRole="NguoiGui" ToRole="PlacePark" />
@@ -642,7 +647,6 @@
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdTVehicle" Type="Int32" />
           <Property Name="IdStaff" Type="Int32" />
-          <Property Name="ChargeTime" Type="DateTime" Precision="3" />
           <NavigationProperty Name="NguoiGuis" Relationship="Self.FK_NguoiGui_ThanhToan" FromRole="ThanhToan" ToRole="NguoiGui" />
           <NavigationProperty Name="NV" Relationship="Self.FK_ThanhToan_NV" FromRole="ThanhToan" ToRole="NV" />
           <NavigationProperty Name="TypeVehicle" Relationship="Self.FK_ThanhToan_TypeVehicle" FromRole="ThanhToan" ToRole="TypeVehicle" />
@@ -732,7 +736,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiGui_PlacePark">
-          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="0..1" />
+          <End Role="PlacePark" Type="Self.PlacePark" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PlacePark">
@@ -744,7 +750,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiGui_ThanhToan">
-          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ThanhToan">
@@ -756,7 +764,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NguoiGui_TypeVehicle">
-          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1" />
+          <End Role="TypeVehicle" Type="Self.TypeVehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="NguoiGui" Type="Self.NguoiGui" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeVehicle">
@@ -1030,13 +1040,14 @@
           <EntitySetMapping Name="NguoiGuis">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.NguoiGui">
               <MappingFragment StoreEntitySet="NguoiGui">
+                <ScalarProperty Name="IdNguoiGui" ColumnName="IdNguoiGui" />
                 <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
                 <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
                 <ScalarProperty Name="LicensePlates" ColumnName="LicensePlates" />
                 <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
                 <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
-                <ScalarProperty Name="IdPark" ColumnName="IdPark" />
                 <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+                <ScalarProperty Name="IdPark" ColumnName="IdPark" />
                 <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1134,7 +1145,6 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="IdTVehicle" ColumnName="IdTVehicle" />
                 <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
-                <ScalarProperty Name="ChargeTime" ColumnName="ChargeTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,13 +14,14 @@ namespace Vehicle_license_plate_recognition.Model
     
     public partial class NguoiGui
     {
+        public int IdNguoiGui { get; set; }
         public System.DateTime DeliveryTime { get; set; }
         public Nullable<System.DateTime> ReturnTime { get; set; }
         public string LicensePlates { get; set; }
         public string PlaceID { get; set; }
         public Nullable<int> IdVehicleType { get; set; }
-        public string IdPark { get; set; }
         public string IdPayment { get; set; }
+        public string IdPark { get; set; }
         public string ImagePath { get; set; }
     
         public virtual Parking Parking { get; set; }

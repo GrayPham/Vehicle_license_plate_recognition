@@ -41,6 +41,7 @@
             this.button_attendance = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.richTextBox_licenseplates = new System.Windows.Forms.RichTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).BeginInit();
             this.SuspendLayout();
@@ -163,11 +164,23 @@
             this.richTextBox_licenseplates.TabIndex = 42;
             this.richTextBox_licenseplates.Text = "";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = " MMMM dd, yyyy | hh: mm: ss : tt";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(667, 501);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(421, 27);
+            this.dateTimePicker1.TabIndex = 43;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 4, 3, 0, 0, 0, 0);
+            // 
             // FormFaceRecognition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 783);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.richTextBox_licenseplates);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_attendance);
@@ -203,5 +216,6 @@
         private System.Windows.Forms.Button button_attendance;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.RichTextBox richTextBox_licenseplates;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -25,10 +25,11 @@ model = InceptionResnetV1(
 
 model.eval()
 
-embeddings = []
-names = []
+
 
 def loadImage():
+    embeddings = []
+    names = []
     for usr in os.listdir(IMG_PATH):
         embeds = []
         for file in glob.glob(os.path.join(IMG_PATH, usr)+'/*.jpg'):
@@ -55,6 +56,8 @@ def loadImage():
     else:
         torch.save(embeddings, DATA_PATH+"/faceslist.pth")
     np.save(DATA_PATH+"/usernames", names)
-    return 'Update Completed! There are {0} people in FaceLists'.format(names.shape[0])
+    stringReturn = "Update Completed!"
+    #return 'Update Completed! There are {0} people in FaceLists'.format(names.shape[0])
+    return stringReturn
    
 #print('Update Completed! There are {0} people in FaceLists'.format(names.shape[0]))
