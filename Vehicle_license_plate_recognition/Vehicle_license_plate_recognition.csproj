@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentForm\GetFaceIDStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentForm\GetFaceIDStaff.Designer.cs">
+      <DependentUpon>GetFaceIDStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalData.cs" />
     <Compile Include="Controller\Login\BaseData.cs" />
     <Compile Include="Controller\Manager\ManagerStaff.cs" />
@@ -291,6 +297,7 @@
     <Compile Include="Model\TypeVehicle.cs">
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="NomalObject\staffShow.cs" />
     <Compile Include="OfficeStaff\AddContract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +372,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ComponentForm\GetFaceIDStaff.resx">
+      <DependentUpon>GetFaceIDStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFaceRecognition.resx">
       <DependentUpon>FormFaceRecognition.cs</DependentUpon>
     </EmbeddedResource>
@@ -1798,7 +1808,9 @@
   <ItemGroup>
     <Folder Include="Image\BienVuong\" />
     <Folder Include="Image\KhuonMat\NguoiGui\" />
-    <Folder Include="Image\KhuonMat\NhanVien\" />
+    <Folder Include="Image\KhuonMat\NhanVien\Manager\" />
+    <Folder Include="Image\KhuonMat\NhanVien\NomalStaff\" />
+    <Folder Include="Image\KhuonMat\NhanVien\OfficeStaff\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

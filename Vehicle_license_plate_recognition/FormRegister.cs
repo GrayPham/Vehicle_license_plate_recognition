@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.ComponentForm;
 using Vehicle_license_plate_recognition.Model;
 
 namespace Vehicle_license_plate_recognition
@@ -99,7 +100,16 @@ namespace Vehicle_license_plate_recognition
                     test.NVs.Add(q);
                     test.SaveChanges();
                     MessageBox.Show("Wellcome " + textBox_account.Text + " to our service! ^.^", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }else
+
+                    // Face recognition 
+                    GetFaceIDStaff getFace = new GetFaceIDStaff();
+                    getFace.lbIDStaff.Text = idStaff.ToString();
+                    this.Hide();
+                    getFace.ShowDialog();
+                    this.Visible = true;
+
+                }
+                else
                 {
                     MessageBox.Show("The information you entered already exists. Please check your ID Staff/ Account/ Email/ Phone Number/ Image) again!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }    

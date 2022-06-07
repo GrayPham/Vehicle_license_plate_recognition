@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelXuLi = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
             this.radioBtnCaretaker = new System.Windows.Forms.RadioButton();
-            this.btnAddStaff = new System.Windows.Forms.Button();
             this.radioBtnOfficer = new System.Windows.Forms.RadioButton();
             this.radioBtnManager = new System.Windows.Forms.RadioButton();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,10 +66,45 @@
             this.panelXuLi.Controls.Add(this.radioBtnCaretaker);
             this.panelXuLi.Controls.Add(this.radioBtnOfficer);
             this.panelXuLi.Controls.Add(this.radioBtnManager);
-            this.panelXuLi.Location = new System.Drawing.Point(634, 114);
+            this.panelXuLi.Location = new System.Drawing.Point(596, 114);
             this.panelXuLi.Name = "panelXuLi";
-            this.panelXuLi.Size = new System.Drawing.Size(308, 51);
+            this.panelXuLi.Size = new System.Drawing.Size(346, 51);
             this.panelXuLi.TabIndex = 3;
+            // 
+            // radioBtnCaretaker
+            // 
+            this.radioBtnCaretaker.AutoSize = true;
+            this.radioBtnCaretaker.Checked = true;
+            this.radioBtnCaretaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnCaretaker.Location = new System.Drawing.Point(5, 14);
+            this.radioBtnCaretaker.Name = "radioBtnCaretaker";
+            this.radioBtnCaretaker.Size = new System.Drawing.Size(96, 20);
+            this.radioBtnCaretaker.TabIndex = 2;
+            this.radioBtnCaretaker.TabStop = true;
+            this.radioBtnCaretaker.Text = "Caretaker";
+            this.radioBtnCaretaker.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnOfficer
+            // 
+            this.radioBtnOfficer.AutoSize = true;
+            this.radioBtnOfficer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnOfficer.Location = new System.Drawing.Point(134, 14);
+            this.radioBtnOfficer.Name = "radioBtnOfficer";
+            this.radioBtnOfficer.Size = new System.Drawing.Size(73, 20);
+            this.radioBtnOfficer.TabIndex = 1;
+            this.radioBtnOfficer.Text = "Officer";
+            this.radioBtnOfficer.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnManager
+            // 
+            this.radioBtnManager.AutoSize = true;
+            this.radioBtnManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnManager.Location = new System.Drawing.Point(231, 14);
+            this.radioBtnManager.Name = "radioBtnManager";
+            this.radioBtnManager.Size = new System.Drawing.Size(89, 20);
+            this.radioBtnManager.TabIndex = 0;
+            this.radioBtnManager.Text = "Manager";
+            this.radioBtnManager.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
@@ -84,19 +119,6 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // radioBtnCaretaker
-            // 
-            this.radioBtnCaretaker.AutoSize = true;
-            this.radioBtnCaretaker.Checked = true;
-            this.radioBtnCaretaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnCaretaker.Location = new System.Drawing.Point(22, 14);
-            this.radioBtnCaretaker.Name = "radioBtnCaretaker";
-            this.radioBtnCaretaker.Size = new System.Drawing.Size(96, 20);
-            this.radioBtnCaretaker.TabIndex = 2;
-            this.radioBtnCaretaker.TabStop = true;
-            this.radioBtnCaretaker.Text = "Caretaker";
-            this.radioBtnCaretaker.UseVisualStyleBackColor = true;
-            // 
             // btnAddStaff
             // 
             this.btnAddStaff.BackColor = System.Drawing.Color.RoyalBlue;
@@ -110,28 +132,6 @@
             this.btnAddStaff.UseVisualStyleBackColor = false;
             this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
-            // radioBtnOfficer
-            // 
-            this.radioBtnOfficer.AutoSize = true;
-            this.radioBtnOfficer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnOfficer.Location = new System.Drawing.Point(124, 14);
-            this.radioBtnOfficer.Name = "radioBtnOfficer";
-            this.radioBtnOfficer.Size = new System.Drawing.Size(73, 20);
-            this.radioBtnOfficer.TabIndex = 1;
-            this.radioBtnOfficer.Text = "Officer";
-            this.radioBtnOfficer.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnManager
-            // 
-            this.radioBtnManager.AutoSize = true;
-            this.radioBtnManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnManager.Location = new System.Drawing.Point(206, 14);
-            this.radioBtnManager.Name = "radioBtnManager";
-            this.radioBtnManager.Size = new System.Drawing.Size(89, 20);
-            this.radioBtnManager.TabIndex = 0;
-            this.radioBtnManager.Text = "Manager";
-            this.radioBtnManager.UseVisualStyleBackColor = true;
-            // 
             // AddStaffManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -139,6 +139,7 @@
             this.ClientSize = new System.Drawing.Size(990, 712);
             this.Name = "AddStaffManager";
             this.Text = "AddStaffManager";
+            this.Load += new System.EventHandler(this.AddStaffManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
