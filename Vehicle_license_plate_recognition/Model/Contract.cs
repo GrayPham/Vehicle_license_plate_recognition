@@ -24,6 +24,7 @@ namespace Vehicle_license_plate_recognition.Model
         public Nullable<System.DateTime> ExpiryDate { get; set; }
         public Nullable<bool> isDelete { get; set; }
         public Nullable<System.DateTime> DeleteDate { get; set; }
+        public Nullable<decimal> TotalValue { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual NV NV { get; set; }

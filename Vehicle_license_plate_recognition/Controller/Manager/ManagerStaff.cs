@@ -37,6 +37,39 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
             return true;
         }
 
+        internal bool DeleteStaff(int idStaff)
+        {
+            if (mStaffDTO.DeleteStaffDTO(idStaff))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        internal object getAllStaffByType(int typeStaff)
+        {
+            
+            if (typeStaff == 3)
+            {
+                var listNV = mStaffDTO.GetAllManager();
+                return listNV;
+            }
+            else if (typeStaff == 2)
+            {
+                var listNV = mStaffDTO.GetAllOfficeStaff();
+                return listNV;
+            }
+            else
+            {
+                 var listNV = mStaffDTO.GetAllNomalStaff();
+                return listNV;
+            }
+
+        }
+
         internal bool checkAccount(string acc, int idStaff =0)
         {
             List<NV> staffList = mStaffDTO.checkAccount(acc, idStaff);
@@ -45,6 +78,37 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
                 return false;
             }
             return true;
+        }
+
+        internal bool FireStaff(int idStaff)
+        {
+            if (mStaffDTO.FireStaff(idStaff))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        internal object getAllStaffFireByType(int typeStaff)
+        {
+            if (typeStaff == 3)
+            {
+                var listNV = mStaffDTO.GetAllManagerFire();
+                return listNV;
+            }
+            else if (typeStaff == 2)
+            {
+                var listNV = mStaffDTO.GetAllOfficeStaffFire();
+                return listNV;
+            }
+            else
+            {
+                var listNV = mStaffDTO.GetAllNomalStaffFire();
+                return listNV;
+            }
         }
 
         internal object getAllStaff()
@@ -85,13 +149,15 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
             
         }
 
-        internal bool UpdateStaff(int idStaff, string account, string pass, string fname, string email, string phone, DateTime adddate, int type, MemoryStream pic)
+        internal bool UpdateStaff(int idStaff,int idStaffOld, int typeold, string account, string pass, string fname, string email, string phone, DateTime adddate, int type, MemoryStream pic)
         {
+            
             if (mStaffDTO.UpdateStaff(idStaff, account, pass, fname, email, phone, adddate, type))
             {
+
                 string workingDirectory = Environment.CurrentDirectory;
                 string Dir = Directory.GetParent(workingDirectory).Parent.FullName;
-
+                deleteImage(idStaffOld, typeold, Dir);
                 Bitmap imageB = new Bitmap(pic);
                 string path;
 
@@ -116,6 +182,26 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
             {
                 return false;
             }
+        }
+        private void deleteImage(int typeStaff, int nameFile, string Dir)
+        {
+
+
+            
+            string path;
+            if (typeStaff == 1)
+            {
+                path = Dir + "\\Image\\KhuonMat\\NhanVien\\NomalStaff\\" + nameFile + ".Png";
+            }
+            else if (typeStaff == 2)
+            {
+                path = Dir + "\\Image\\KhuonMat\\NhanVien\\OfficeStaff\\" + nameFile + ".Png";
+            }
+            else
+            {
+                path = Dir + "\\Image\\KhuonMat\\NhanVien\\Manager\\" + nameFile+ ".Png";
+            }
+            File.Delete(path);
         }
     }
 }

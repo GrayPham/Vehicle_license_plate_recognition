@@ -16,6 +16,8 @@ namespace Vehicle_license_plate_recognition.Manager.Staff
 {
     public partial class UpdateStaffManager : StaffManagerInheritance
     {
+        private int idstaffOld;
+        private int typeOld;
         public UpdateStaffManager()
         {
             InitializeComponent();
@@ -75,6 +77,7 @@ namespace Vehicle_license_plate_recognition.Manager.Staff
         private void DVGStaff_DoubleClick(object sender, EventArgs e)
         {
             txtID.Text =DVGStaff.CurrentRow.Cells["Id"].Value.ToString();
+            idstaffOld = Convert.ToInt32(txtID.Text);
             txtAccount.Text = DVGStaff.CurrentRow.Cells["Account"].Value.ToString();
             txtPassword.Text = DVGStaff.CurrentRow.Cells["Password"].Value.ToString();
             txtFullName.Text = DVGStaff.CurrentRow.Cells["Name"].Value.ToString();
@@ -87,9 +90,9 @@ namespace Vehicle_license_plate_recognition.Manager.Staff
             {
                 if (DVGStaff.CurrentRow.Cells["Picture"].Value != null)
                 {
-
+                    typeOld = 3;
                     pathImageName = DVGStaff.CurrentRow.Cells["Picture"].Value.ToString();
-                    string path = Dir + "\\Image\\KhuonMat\\NhanVien\\Manager\\"  + pathImageName;
+                    string path = Dir + "\\Image\\KhuonMat\\NhanVien\\Manager\\"  + pathImageName + ".Png";
                     PictureBoxImage.Image = Image.FromFile(path);
                 }
                 else
@@ -103,6 +106,7 @@ namespace Vehicle_license_plate_recognition.Manager.Staff
             {
                 if (DVGStaff.CurrentRow.Cells["Picture"].Value != null)
                 {
+                    typeOld = 1;
                     pathImageName = DVGStaff.CurrentRow.Cells["Picture"].Value.ToString();
                     string path = Dir + "\\Image\\KhuonMat\\NhanVien\\NomalStaff\\" + pathImageName + ".Png";
                     PictureBoxImage.Image = Image.FromFile(path);
@@ -119,8 +123,9 @@ namespace Vehicle_license_plate_recognition.Manager.Staff
             {
                 if (DVGStaff.CurrentRow.Cells["Picture"].Value != null)
                 {
+                    typeOld = 2;
                     pathImageName = DVGStaff.CurrentRow.Cells["Picture"].Value.ToString();
-                    string path = Dir + "\\Image\\KhuonMat\\NhanVien\\OfficeStaff\\" + pathImageName;
+                    string path = Dir + "\\Image\\KhuonMat\\NhanVien\\OfficeStaff\\" + pathImageName + ".Png";
                     PictureBoxImage.Image = Image.FromFile(path);
                 }
                 else
@@ -163,7 +168,7 @@ namespace Vehicle_license_plate_recognition.Manager.Staff
 
                                     DateTime adddate = TimePickerDateAdd.Value;
                                     int type = checkTypeStaff();
-                                    if (mStaff.UpdateStaff(idStaff, account, pass, fname, email, phone, adddate, type, pic))
+                                    if (mStaff.UpdateStaff(idStaff,idstaffOld,typeOld, account, pass, fname, email, phone, adddate, type, pic))
                                     {
                                         MessageBox.Show("Successfully added employees", "Add Staff", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
