@@ -30,11 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox_total = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_idcontract = new System.Windows.Forms.TextBox();
+            this.label_3 = new System.Windows.Forms.Label();
             this.comboBox_select = new System.Windows.Forms.ComboBox();
             this.dateTimePicker_expiry = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_creation = new System.Windows.Forms.DateTimePicker();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
             this.lbDetail = new System.Windows.Forms.Label();
             this.richTextBox_content = new System.Windows.Forms.RichTextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
@@ -47,6 +49,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.radioButtonRental = new System.Windows.Forms.RadioButton();
             this.ratio_CompanyRental = new System.Windows.Forms.RadioButton();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DVGListCustomer = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,10 +58,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_idcontract = new System.Windows.Forms.TextBox();
-            this.label_3 = new System.Windows.Forms.Label();
-            this.textBox_total = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -98,6 +98,42 @@
             this.panel5.Size = new System.Drawing.Size(559, 729);
             this.panel5.TabIndex = 11;
             // 
+            // textBox_total
+            // 
+            this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_total.Location = new System.Drawing.Point(240, 469);
+            this.textBox_total.Name = "textBox_total";
+            this.textBox_total.Size = new System.Drawing.Size(285, 34);
+            this.textBox_total.TabIndex = 175;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 474);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 29);
+            this.label3.TabIndex = 176;
+            this.label3.Text = "Unit";
+            // 
+            // textBox_idcontract
+            // 
+            this.textBox_idcontract.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_idcontract.Location = new System.Drawing.Point(242, 20);
+            this.textBox_idcontract.Name = "textBox_idcontract";
+            this.textBox_idcontract.Size = new System.Drawing.Size(286, 34);
+            this.textBox_idcontract.TabIndex = 173;
+            // 
+            // label_3
+            // 
+            this.label_3.AutoSize = true;
+            this.label_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_3.Location = new System.Drawing.Point(23, 26);
+            this.label_3.Name = "label_3";
+            this.label_3.Size = new System.Drawing.Size(131, 29);
+            this.label_3.TabIndex = 174;
+            this.label_3.Text = "ID Contract";
+            // 
             // comboBox_select
             // 
             this.comboBox_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -129,28 +165,6 @@
             this.dateTimePicker_creation.Size = new System.Drawing.Size(285, 34);
             this.dateTimePicker_creation.TabIndex = 4;
             this.dateTimePicker_creation.Value = new System.DateTime(2022, 6, 7, 0, 0, 0, 0);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(94, 739);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(158, 45);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "CLOSE";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // button_add
-            // 
-            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.Location = new System.Drawing.Point(278, 739);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(165, 45);
-            this.button_add.TabIndex = 7;
-            this.button_add.Text = "ADD NEW";
-            this.button_add.UseVisualStyleBackColor = true;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // lbDetail
             // 
@@ -276,23 +290,44 @@
             this.ratio_CompanyRental.UseVisualStyleBackColor = true;
             this.ratio_CompanyRental.CheckedChanged += new System.EventHandler(this.ratio_CompanyRental_CheckedChanged);
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(94, 739);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(158, 45);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "CLOSE";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // button_add
+            // 
+            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add.Location = new System.Drawing.Point(278, 739);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(165, 45);
+            this.button_add.TabIndex = 7;
+            this.button_add.Text = "ADD NEW";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.DVGListCustomer);
             this.panel2.Location = new System.Drawing.Point(565, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(614, 810);
+            this.panel2.Size = new System.Drawing.Size(614, 646);
             this.panel2.TabIndex = 1;
             // 
             // DVGListCustomer
             // 
             this.DVGListCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGListCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVGListCustomer.Location = new System.Drawing.Point(0, 0);
             this.DVGListCustomer.Name = "DVGListCustomer";
             this.DVGListCustomer.RowHeadersWidth = 51;
             this.DVGListCustomer.RowTemplate.Height = 24;
-            this.DVGListCustomer.Size = new System.Drawing.Size(614, 810);
+            this.DVGListCustomer.Size = new System.Drawing.Size(614, 644);
             this.DVGListCustomer.TabIndex = 0;
             // 
             // panel3
@@ -346,47 +381,11 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "ID Staff";
             // 
-            // textBox_idcontract
-            // 
-            this.textBox_idcontract.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_idcontract.Location = new System.Drawing.Point(242, 20);
-            this.textBox_idcontract.Name = "textBox_idcontract";
-            this.textBox_idcontract.Size = new System.Drawing.Size(286, 34);
-            this.textBox_idcontract.TabIndex = 173;
-            // 
-            // label_3
-            // 
-            this.label_3.AutoSize = true;
-            this.label_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_3.Location = new System.Drawing.Point(23, 26);
-            this.label_3.Name = "label_3";
-            this.label_3.Size = new System.Drawing.Size(131, 29);
-            this.label_3.TabIndex = 174;
-            this.label_3.Text = "ID Contract";
-            // 
-            // textBox_total
-            // 
-            this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_total.Location = new System.Drawing.Point(240, 469);
-            this.textBox_total.Name = "textBox_total";
-            this.textBox_total.Size = new System.Drawing.Size(285, 34);
-            this.textBox_total.TabIndex = 175;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 474);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 29);
-            this.label3.TabIndex = 176;
-            this.label3.Text = "Unit";
-            // 
             // AddContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 851);
+            this.ClientSize = new System.Drawing.Size(1191, 814);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

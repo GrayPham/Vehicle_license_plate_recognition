@@ -13,7 +13,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
     internal class ContractBLL
     {
         ContractDTO conDTO = new ContractDTO();
-        internal void AddContractBLL(int id, string name, string content, DateTime create, DateTime expiry, int type, decimal total)
+        internal void AddContractBLL(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type, decimal total)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                     // Check trùng
                     else if (checkRepeat.Count() == 0)
                     {
-                        ContractDTO.AddContract(id, name, content, create, expiry, type, total);
+                        ContractDTO.AddContract(id, name, content, staff, idrenter, create, expiry, type, total);
                         MessageBox.Show("Inserted successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

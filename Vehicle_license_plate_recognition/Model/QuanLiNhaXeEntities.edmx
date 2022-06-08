@@ -28,7 +28,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="NameContract" Type="nvarchar" MaxLength="100" />
           <Property Name="Information" Type="nvarchar(max)" />
           <Property Name="IdOfficeStaff" Type="int" />

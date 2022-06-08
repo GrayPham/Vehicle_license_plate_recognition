@@ -10,12 +10,14 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
     internal class ContractDTO : QuanLiNhaXe
     {
         // Tạo hợp đồng
-        internal static void AddContract(int id,string name, string content, DateTime create, DateTime expiry, int type, decimal total)
+        internal static void AddContract(int id ,string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type, decimal total)
         {
             Contract contract = new Contract();
             contract.Id = id;
             contract.NameContract = name;
             contract.Information = content;
+            contract.IdOfficeStaff = staff;
+            contract.IdRenter = idrenter;
             contract.CreationTime = create;
             contract.ExpiryDate = expiry;
             contract.TypeConTract = type;
@@ -37,15 +39,16 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
                 Type = u.TypeConTract,
                 CreationDate = u.CreationTime,
                 ExpiryDate = u.ExpiryDate,
+                TotalValue = u.TotalValue,
 
             }).ToList();
             return combo;
         }
 
         // Kiểm tra id Customer đã tồn tại chưa
-        internal object checkID(int id)
+        internal object checkID(int idren)
         {
-            var test = db.Customers.Where(u => u.TypeID == id).Select(u => new
+            var test = db.Customers.Where(u => u.TypeID == idren).Select(u => new
             {
                 Id = u.Id,
             }).ToList();

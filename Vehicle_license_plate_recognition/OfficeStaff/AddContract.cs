@@ -27,27 +27,37 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            // Kiem tra ID la so 
-            if (IsNumber(textBox_idcontract.Text) == false)
+            try
             {
-                MessageBox.Show("ID must be numbers!","Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }    
-            
-            int id = Convert.ToInt32(textBox_idcontract.Text);
-            
-            string name = textBox_name.Text;
-            string content = richTextBox_content.Text;
-            DateTime create = dateTimePicker_creation.Value;
-            DateTime expiry = dateTimePicker_expiry.Value;
-            int type = Convert.ToInt32(radioButtonRental.Checked);
-            decimal total = Convert.ToDecimal(textBox_total.Text);
+                // Kiem tra ID la so 
+                if (IsNumber(textBox_idcontract.Text) == false)
+                {
+                    MessageBox.Show("ID must be numbers!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
 
-            if (ratio_CompanyRental.Checked)
-            {
-                type = 2;
+                int id = Convert.ToInt32(textBox_idcontract.Text);
+                int idrenter = Convert.ToInt32(comboBox_select.SelectedValue.ToString());
+
+                string name = textBox_name.Text;
+                string content = richTextBox_content.Text;
+                int staff = Convert.ToInt32(txtIDStaff.Text);
+                DateTime create = dateTimePicker_creation.Value;
+                DateTime expiry = dateTimePicker_expiry.Value;
+                int type = Convert.ToInt32(radioButtonRental.Checked);
+                decimal unit = Convert.ToDecimal(textBox_total.Text);
+                System.TimeSpan d = expiry.Subtract(create);
+                decimal total = (decimal)d.TotalDays * unit;
+                if (ratio_CompanyRental.Checked)
+                {
+                    type = 2;
+                }
+                cBLL.AddContractBLL(id, name, content, staff, idrenter, create, expiry, type, total);
+                DVGListCustomer.DataSource = cBLL.getAllContract();
             }
-            cBLL.AddContractBLL(id,name, content, create, expiry, type, total);
-            DVGListCustomer.DataSource = cBLL.getAllContract();
+            catch (Exception)
+            {
+                MessageBox.Show("Please check your information again!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool IsNumber(string text)
