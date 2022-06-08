@@ -83,11 +83,11 @@
             // dataGridView_phancongtho
             // 
             this.dataGridView_phancongtho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_phancongtho.Location = new System.Drawing.Point(0, 116);
+            this.dataGridView_phancongtho.Location = new System.Drawing.Point(12, 116);
             this.dataGridView_phancongtho.Name = "dataGridView_phancongtho";
             this.dataGridView_phancongtho.RowHeadersWidth = 51;
             this.dataGridView_phancongtho.RowTemplate.Height = 24;
-            this.dataGridView_phancongtho.Size = new System.Drawing.Size(1319, 544);
+            this.dataGridView_phancongtho.Size = new System.Drawing.Size(1307, 544);
             this.dataGridView_phancongtho.TabIndex = 45;
             // 
             // menuStrip1
@@ -123,6 +123,7 @@
             this.addContractToolStripMenuItem.Name = "addContractToolStripMenuItem";
             this.addContractToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
             this.addContractToolStripMenuItem.Text = "Add contract";
+            this.addContractToolStripMenuItem.Click += new System.EventHandler(this.addContractToolStripMenuItem_Click);
             // 
             // editContractToolStripMenuItem
             // 
@@ -199,7 +200,7 @@
             // 
             this.byMouthToolStripMenuItem.Name = "byMouthToolStripMenuItem";
             this.byMouthToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
-            this.byMouthToolStripMenuItem.Text = "By Mouth";
+            this.byMouthToolStripMenuItem.Text = "By Month";
             // 
             // byWeekToolStripMenuItem
             // 

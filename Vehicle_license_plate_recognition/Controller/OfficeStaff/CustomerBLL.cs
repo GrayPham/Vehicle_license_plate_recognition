@@ -58,7 +58,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                 // Check tuổi
                 if (((this_year - born_year) < 15) || ((this_year - born_year) > 100))
                 {
-                    MessageBox.Show("The Customer Age Must Be Between 15 and 100 year", "Invalid Birth Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The Customer Age Must Be Between 15 and 100 years", "Invalid Birth Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }       
                 // Check trùng
                 else if (checkRepeat.Count() == 0)
@@ -220,7 +220,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
             customerDTO.DeleteCus(id);
         }
 
-        //
+        // Tìm kiếm Customer theo id
         internal object diplayCustomerID(int search)
         {
             var cus = customerDTO.diplayCustomerID(search);

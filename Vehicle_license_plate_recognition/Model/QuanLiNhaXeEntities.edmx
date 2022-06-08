@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLiNhaXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Assignment">
           <Key>
             <PropertyRef Name="Id" />
@@ -28,12 +28,13 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameContract" Type="nvarchar" MaxLength="100" />
           <Property Name="Information" Type="nvarchar(max)" />
           <Property Name="IdOfficeStaff" Type="int" />
           <Property Name="IdRenter" Type="int" />
           <Property Name="TypeConTract" Type="int" />
+          <Property Name="TotalValue" Type="decimal" Precision="18" Scale="0" />
           <Property Name="CreationTime" Type="datetime" />
           <Property Name="ExpiryDate" Type="datetime" />
           <Property Name="isDelete" Type="bit" />
@@ -470,8 +471,7 @@
             <End Role="ThanhToan" EntitySet="ThanhToan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLiNhaXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -513,6 +513,7 @@
           <Property Name="DeleteDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Contract_Customers" FromRole="Contract" ToRole="Customers" />
           <NavigationProperty Name="NV" Relationship="Self.FK_Contract_NV" FromRole="Contract" ToRole="NV" />
+          <Property Name="TotalValue" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -1011,6 +1012,7 @@
           <EntitySetMapping Name="Contracts">
             <EntityTypeMapping TypeName="QuanLiNhaXeModel.Contract">
               <MappingFragment StoreEntitySet="Contract">
+                <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NameContract" ColumnName="NameContract" />
                 <ScalarProperty Name="Information" ColumnName="Information" />

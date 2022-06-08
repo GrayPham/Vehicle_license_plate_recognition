@@ -25,7 +25,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
 
         }
 
-        // Hàm hiển thị combobox
+        // Hàm hiển thị id customer trong combobox
         public void fillCombo(int index=0)
         {
             try
