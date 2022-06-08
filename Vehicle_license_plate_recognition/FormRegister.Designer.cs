@@ -32,16 +32,6 @@
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox_fullname = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_pass = new System.Windows.Forms.TextBox();
-            this.lbId = new System.Windows.Forms.Label();
-            this.textBox_account = new System.Windows.Forms.TextBox();
-            this.textBox_id = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label_status = new System.Windows.Forms.Label();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.pictureBox_image = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
@@ -49,10 +39,20 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.textBox_phone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_fullname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_pass = new System.Windows.Forms.TextBox();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
+            this.lbId = new System.Windows.Forms.Label();
+            this.textBox_account = new System.Windows.Forms.TextBox();
+            this.textBox_id = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label_status = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_registration
@@ -118,100 +118,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(97, 377);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 29);
-            this.label6.TabIndex = 121;
-            this.label6.Text = "Full Name";
-            // 
-            // textBox_fullname
-            // 
-            this.textBox_fullname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_fullname.Location = new System.Drawing.Point(290, 377);
-            this.textBox_fullname.Name = "textBox_fullname";
-            this.textBox_fullname.Size = new System.Drawing.Size(311, 38);
-            this.textBox_fullname.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 305);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 29);
-            this.label2.TabIndex = 119;
-            this.label2.Text = "Password";
-            // 
-            // textBox_pass
-            // 
-            this.textBox_pass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_pass.Location = new System.Drawing.Point(290, 305);
-            this.textBox_pass.Name = "textBox_pass";
-            this.textBox_pass.Size = new System.Drawing.Size(311, 38);
-            this.textBox_pass.TabIndex = 3;
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(97, 239);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(98, 29);
-            this.lbId.TabIndex = 112;
-            this.lbId.Text = "Account";
-            // 
-            // textBox_account
-            // 
-            this.textBox_account.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_account.Location = new System.Drawing.Point(290, 234);
-            this.textBox_account.Name = "textBox_account";
-            this.textBox_account.Size = new System.Drawing.Size(311, 38);
-            this.textBox_account.TabIndex = 2;
-            // 
-            // textBox_id
-            // 
-            this.textBox_id.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_id.Location = new System.Drawing.Point(290, 167);
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(311, 38);
-            this.textBox_id.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(97, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 29);
-            this.label5.TabIndex = 116;
-            this.label5.Text = "ID Staff";
-            // 
-            // label_status
-            // 
-            this.label_status.AutoSize = true;
-            this.label_status.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_status.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_status.Location = new System.Drawing.Point(457, 47);
-            this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(437, 33);
-            this.label_status.TabIndex = 32;
-            this.label_status.Text = "It\'s free and only takes a minute";
-            // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
-            this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(622, 83);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(101, 63);
-            this.pictureBox_logo.TabIndex = 117;
-            this.pictureBox_logo.TabStop = false;
-            // 
             // pictureBox_image
             // 
             this.pictureBox_image.BackColor = System.Drawing.Color.Transparent;
@@ -222,6 +128,7 @@
             this.pictureBox_image.Size = new System.Drawing.Size(100, 55);
             this.pictureBox_image.TabIndex = 131;
             this.pictureBox_image.TabStop = false;
+            this.pictureBox_image.Click += new System.EventHandler(this.pictureBox_image_Click_1);
             // 
             // label7
             // 
@@ -278,6 +185,100 @@
             this.label4.TabIndex = 128;
             this.label4.Text = "Phone Number";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(97, 377);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 29);
+            this.label6.TabIndex = 121;
+            this.label6.Text = "Full Name";
+            // 
+            // textBox_fullname
+            // 
+            this.textBox_fullname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox_fullname.Location = new System.Drawing.Point(290, 377);
+            this.textBox_fullname.Name = "textBox_fullname";
+            this.textBox_fullname.Size = new System.Drawing.Size(311, 38);
+            this.textBox_fullname.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(97, 305);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 29);
+            this.label2.TabIndex = 119;
+            this.label2.Text = "Password";
+            // 
+            // textBox_pass
+            // 
+            this.textBox_pass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox_pass.Location = new System.Drawing.Point(290, 305);
+            this.textBox_pass.Name = "textBox_pass";
+            this.textBox_pass.Size = new System.Drawing.Size(311, 38);
+            this.textBox_pass.TabIndex = 3;
+            // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
+            this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_logo.Location = new System.Drawing.Point(622, 83);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(101, 63);
+            this.pictureBox_logo.TabIndex = 117;
+            this.pictureBox_logo.TabStop = false;
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.Location = new System.Drawing.Point(97, 239);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(98, 29);
+            this.lbId.TabIndex = 112;
+            this.lbId.Text = "Account";
+            // 
+            // textBox_account
+            // 
+            this.textBox_account.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox_account.Location = new System.Drawing.Point(290, 234);
+            this.textBox_account.Name = "textBox_account";
+            this.textBox_account.Size = new System.Drawing.Size(311, 38);
+            this.textBox_account.TabIndex = 2;
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox_id.Location = new System.Drawing.Point(290, 167);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(311, 38);
+            this.textBox_id.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(97, 172);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 29);
+            this.label5.TabIndex = 116;
+            this.label5.Text = "ID Staff";
+            // 
+            // label_status
+            // 
+            this.label_status.AutoSize = true;
+            this.label_status.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_status.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_status.Location = new System.Drawing.Point(457, 47);
+            this.label_status.Name = "label_status";
+            this.label_status.Size = new System.Drawing.Size(437, 33);
+            this.label_status.TabIndex = 32;
+            this.label_status.Text = "It\'s free and only takes a minute";
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -292,9 +293,9 @@
             this.TransparencyKey = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.ResumeLayout(false);
 
         }

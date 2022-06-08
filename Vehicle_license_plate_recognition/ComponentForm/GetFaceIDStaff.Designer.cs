@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbIDStaff = new System.Windows.Forms.Label();
-            this.btnStaff = new System.Windows.Forms.Button();
             this.lbInfor = new System.Windows.Forms.Label();
+            this.btnStaff = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,11 +59,22 @@
             // 
             this.lbIDStaff.AutoSize = true;
             this.lbIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDStaff.Location = new System.Drawing.Point(236, 127);
+            this.lbIDStaff.Location = new System.Drawing.Point(236, 129);
             this.lbIDStaff.Name = "lbIDStaff";
             this.lbIDStaff.Size = new System.Drawing.Size(41, 32);
             this.lbIDStaff.TabIndex = 2;
             this.lbIDStaff.Text = "ID";
+            // 
+            // lbInfor
+            // 
+            this.lbInfor.AutoSize = true;
+            this.lbInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfor.ForeColor = System.Drawing.Color.Red;
+            this.lbInfor.Location = new System.Drawing.Point(92, 189);
+            this.lbInfor.Name = "lbInfor";
+            this.lbInfor.Size = new System.Drawing.Size(178, 29);
+            this.lbInfor.TabIndex = 4;
+            this.lbInfor.Text = "Push the button";
             // 
             // btnStaff
             // 
@@ -77,17 +88,6 @@
             this.btnStaff.Text = "Start";
             this.btnStaff.UseVisualStyleBackColor = false;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
-            // 
-            // lbInfor
-            // 
-            this.lbInfor.AutoSize = true;
-            this.lbInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfor.ForeColor = System.Drawing.Color.Red;
-            this.lbInfor.Location = new System.Drawing.Point(92, 189);
-            this.lbInfor.Name = "lbInfor";
-            this.lbInfor.Size = new System.Drawing.Size(178, 29);
-            this.lbInfor.TabIndex = 4;
-            this.lbInfor.Text = "Push the button";
             // 
             // GetFaceIDStaff
             // 
@@ -110,8 +110,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Label lbInfor;
         internal System.Windows.Forms.Label lbIDStaff;
+        private System.Windows.Forms.Button btnStaff;
     }
 }

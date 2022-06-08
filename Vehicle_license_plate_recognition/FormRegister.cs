@@ -101,8 +101,18 @@ namespace Vehicle_license_plate_recognition
                     test.SaveChanges();
                     MessageBox.Show("Wellcome " + textBox_account.Text + " to our service! ^.^", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Face recognition 
-                    GetFaceIDStaff getFace = new GetFaceIDStaff();
+                    // Luu anh avata NV
+                    MemoryStream pic = new MemoryStream();
+                    pictureBoxImage.Image.Save(pic, pictureBoxImage.Image.RawFormat);
+                    string workingDirectory = Environment.CurrentDirectory;
+                    string Dir = Directory.GetParent(workingDirectory).Parent.FullName;
+
+                    Bitmap imageB = new Bitmap(pic);
+                    string path;
+                    path = Dir + "\\Image\\KhuonMat\\NhanVien\\Temp\\" + idStaff;
+
+                        // Face recognition 
+                        GetFaceIDStaff getFace = new GetFaceIDStaff();
                     getFace.lbIDStaff.Text = idStaff.ToString();
                     this.Hide();
                     getFace.ShowDialog();
@@ -186,6 +196,16 @@ namespace Vehicle_license_plate_recognition
         }
 
         private void pictureBox_image_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if ((opf.ShowDialog() == DialogResult.OK))
+            {
+                pictureBoxImage.Image = Image.FromFile(opf.FileName);
+            }
+        }
+
+        private void pictureBox_image_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
             opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
