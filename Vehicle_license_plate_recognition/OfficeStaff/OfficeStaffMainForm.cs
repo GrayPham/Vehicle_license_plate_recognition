@@ -62,20 +62,5 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             mg.ShowDialog();
             this.Visible = true;
         }
-
-        private void totalRevenueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TotalDetail totalDetail = new TotalDetail();
-            this.Visible = false;
-            totalDetail.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void inWeekToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SearchContract search = new SearchContract();
-            search.ShowDialog();
-
-        }
     }
 }

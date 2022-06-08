@@ -24,11 +24,15 @@ namespace Vehicle_license_plate_recognition
             tbEmail.Text = "example(123)@gmail.com";
             this.tbEmail.Leave += new System.EventHandler(this.tbEmail_Leave);
             this.tbEmail.Enter += new System.EventHandler(this.tbEmail_Enter);
+
+            this.pictureBox_image.MouseEnter += new System.EventHandler(this.pictureBox_image_MouseEnter);
+            this.pictureBox_image.MouseLeave += new System.EventHandler(this.pictureBox_image_MouseLeave);
+
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btn_registration_Click(object sender, EventArgs e)
@@ -205,6 +209,18 @@ namespace Vehicle_license_plate_recognition
             }
         }
 
+        // Sự kiện đổi màu pictureBox
+        private void pictureBox_image_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox_image.BackColor = Color.AliceBlue;
+        }
+
+        private void pictureBox_image_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox_image.BackColor = Color.Transparent;
+
+
+
         private void pictureBox_image_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -213,6 +229,7 @@ namespace Vehicle_license_plate_recognition
             {
                 pictureBoxImage.Image = Image.FromFile(opf.FileName);
             }
+
         }
     }
 }

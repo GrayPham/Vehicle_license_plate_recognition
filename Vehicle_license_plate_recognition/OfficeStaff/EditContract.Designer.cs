@@ -32,7 +32,6 @@
             this.DVGListContract = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEditCustract = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.lbDetail = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -54,8 +53,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnCCustomer = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DVGListContract)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,32 +89,23 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(21, 469);
+            this.btnClose.Location = new System.Drawing.Point(104, 436);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 45);
+            this.btnClose.Size = new System.Drawing.Size(156, 45);
             this.btnClose.TabIndex = 29;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEditCustract
             // 
             this.btnEditCustract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustract.Location = new System.Drawing.Point(390, 469);
+            this.btnEditCustract.Location = new System.Drawing.Point(275, 436);
             this.btnEditCustract.Name = "btnEditCustract";
             this.btnEditCustract.Size = new System.Drawing.Size(156, 45);
             this.btnEditCustract.TabIndex = 28;
-            this.btnEditCustract.Text = "Edit Contract";
+            this.btnEditCustract.Text = "EDIT";
             this.btnEditCustract.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(227, 469);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(94, 45);
-            this.btnConfirm.TabIndex = 27;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
             // 
             // lbDetail
             // 
@@ -153,7 +143,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1207, 84);
+            this.panel3.Size = new System.Drawing.Size(1188, 84);
             this.panel3.TabIndex = 5;
             // 
             // lbNameStaff
@@ -315,7 +305,6 @@
             this.panel5.Controls.Add(this.btnCCustomer);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Controls.Add(this.btnEditCustract);
-            this.panel5.Controls.Add(this.btnConfirm);
             this.panel5.Controls.Add(this.lbDetail);
             this.panel5.Controls.Add(this.richTextBox1);
             this.panel5.Controls.Add(this.textBox5);
@@ -333,15 +322,6 @@
             this.panel5.Size = new System.Drawing.Size(559, 534);
             this.panel5.TabIndex = 11;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(0, 90);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(559, 605);
-            this.panel1.TabIndex = 3;
-            // 
             // btnCCustomer
             // 
             this.btnCCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,11 +332,20 @@
             this.btnCCustomer.Text = "Chose";
             this.btnCCustomer.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Location = new System.Drawing.Point(0, 90);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(559, 605);
+            this.panel1.TabIndex = 3;
+            // 
             // EditContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1207, 699);
+            this.ClientSize = new System.Drawing.Size(1188, 720);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -381,7 +370,6 @@
         private System.Windows.Forms.DataGridView DVGListContract;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnEditCustract;
-        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lbDetail;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox5;

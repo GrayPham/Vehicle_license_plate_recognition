@@ -57,8 +57,8 @@
             // 
             // btn_registration
             // 
-            this.btn_registration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_registration.Location = new System.Drawing.Point(463, 647);
+            this.btn_registration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_registration.Location = new System.Drawing.Point(481, 650);
             this.btn_registration.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registration.Name = "btn_registration";
             this.btn_registration.Size = new System.Drawing.Size(175, 78);
@@ -69,8 +69,8 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Cancel.Location = new System.Drawing.Point(656, 647);
+            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Cancel.Location = new System.Drawing.Point(674, 650);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(175, 78);
@@ -123,18 +123,26 @@
             this.pictureBox_image.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_image.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources._428_4281543_save_your_work_in_the_clusters_fa_cloud;
             this.pictureBox_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_image.Location = new System.Drawing.Point(991, 549);
+
+            this.pictureBox_image.Location = new System.Drawing.Point(1004, 575);
+
             this.pictureBox_image.Name = "pictureBox_image";
             this.pictureBox_image.Size = new System.Drawing.Size(100, 55);
             this.pictureBox_image.TabIndex = 131;
             this.pictureBox_image.TabStop = false;
-            this.pictureBox_image.Click += new System.EventHandler(this.pictureBox_image_Click_1);
+
+            this.pictureBox_image.Click += new System.EventHandler(this.pictureBox_image_Click);
+            this.pictureBox_image.MouseEnter += new System.EventHandler(this.pictureBox_image_MouseEnter);
+            this.pictureBox_image.MouseLeave += new System.EventHandler(this.pictureBox_image_MouseLeave);
+
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(698, 319);
+
+            this.label7.Location = new System.Drawing.Point(700, 345);
+
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 29);
             this.label7.TabIndex = 130;
@@ -143,7 +151,9 @@
             // pictureBoxImage
             // 
             this.pictureBoxImage.BackColor = System.Drawing.Color.White;
-            this.pictureBoxImage.Location = new System.Drawing.Point(891, 319);
+
+            this.pictureBoxImage.Location = new System.Drawing.Point(893, 345);
+
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(311, 224);
             this.pictureBoxImage.TabIndex = 129;
@@ -153,7 +163,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(698, 242);
+
+            this.label3.Location = new System.Drawing.Point(700, 268);
+
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 29);
             this.label3.TabIndex = 127;
@@ -162,7 +174,9 @@
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbEmail.Location = new System.Drawing.Point(891, 237);
+
+            this.tbEmail.Location = new System.Drawing.Point(893, 263);
+
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(311, 38);
             this.tbEmail.TabIndex = 6;
@@ -170,7 +184,9 @@
             // textBox_phone
             // 
             this.textBox_phone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_phone.Location = new System.Drawing.Point(891, 163);
+
+            this.textBox_phone.Location = new System.Drawing.Point(893, 189);
+
             this.textBox_phone.Name = "textBox_phone";
             this.textBox_phone.Size = new System.Drawing.Size(311, 38);
             this.textBox_phone.TabIndex = 5;
@@ -179,7 +195,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(698, 163);
+
+            this.label4.Location = new System.Drawing.Point(700, 189);
+
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 29);
             this.label4.TabIndex = 128;
@@ -189,7 +207,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(97, 377);
+            this.label6.Location = new System.Drawing.Point(99, 403);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 29);
             this.label6.TabIndex = 121;
@@ -198,7 +216,7 @@
             // textBox_fullname
             // 
             this.textBox_fullname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_fullname.Location = new System.Drawing.Point(290, 377);
+            this.textBox_fullname.Location = new System.Drawing.Point(292, 403);
             this.textBox_fullname.Name = "textBox_fullname";
             this.textBox_fullname.Size = new System.Drawing.Size(311, 38);
             this.textBox_fullname.TabIndex = 4;
@@ -207,7 +225,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 305);
+            this.label2.Location = new System.Drawing.Point(99, 331);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 29);
             this.label2.TabIndex = 119;
@@ -216,7 +234,7 @@
             // textBox_pass
             // 
             this.textBox_pass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_pass.Location = new System.Drawing.Point(290, 305);
+            this.textBox_pass.Location = new System.Drawing.Point(292, 331);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(311, 38);
             this.textBox_pass.TabIndex = 3;
@@ -226,9 +244,11 @@
             this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(622, 83);
+
+            this.pictureBox_logo.Location = new System.Drawing.Point(620, 93);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(101, 63);
+            this.pictureBox_logo.Size = new System.Drawing.Size(103, 81);
+
             this.pictureBox_logo.TabIndex = 117;
             this.pictureBox_logo.TabStop = false;
             // 
@@ -236,7 +256,7 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(97, 239);
+            this.lbId.Location = new System.Drawing.Point(99, 265);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(98, 29);
             this.lbId.TabIndex = 112;
@@ -245,7 +265,7 @@
             // textBox_account
             // 
             this.textBox_account.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_account.Location = new System.Drawing.Point(290, 234);
+            this.textBox_account.Location = new System.Drawing.Point(292, 260);
             this.textBox_account.Name = "textBox_account";
             this.textBox_account.Size = new System.Drawing.Size(311, 38);
             this.textBox_account.TabIndex = 2;
@@ -253,7 +273,7 @@
             // textBox_id
             // 
             this.textBox_id.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox_id.Location = new System.Drawing.Point(290, 167);
+            this.textBox_id.Location = new System.Drawing.Point(292, 193);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(311, 38);
             this.textBox_id.TabIndex = 1;
@@ -262,7 +282,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(97, 172);
+            this.label5.Location = new System.Drawing.Point(99, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 29);
             this.label5.TabIndex = 116;

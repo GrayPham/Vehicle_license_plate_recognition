@@ -44,9 +44,7 @@ namespace Vehicle_license_plate_recognition
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormLogin a = new FormLogin();
-            a.ShowDialog();
+            this.Close();
         }
     }
 }

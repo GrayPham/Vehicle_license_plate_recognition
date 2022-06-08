@@ -80,9 +80,9 @@
             this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(279, 91);
+            this.pictureBox_logo.Location = new System.Drawing.Point(265, 91);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(85, 63);
+            this.pictureBox_logo.Size = new System.Drawing.Size(117, 76);
             this.pictureBox_logo.TabIndex = 36;
             this.pictureBox_logo.TabStop = false;
             // 
@@ -108,6 +108,8 @@
             this.label_register.TabIndex = 35;
             this.label_register.Text = ">> Don\'t you have a account?";
             this.label_register.Click += new System.EventHandler(this.label_register_Click);
+            this.label_register.MouseEnter += new System.EventHandler(this.label_register_MouseEnter);
+            this.label_register.MouseLeave += new System.EventHandler(this.label_register_MouseLeave);
             // 
             // label_username
             // 
@@ -168,9 +170,9 @@
             // label_tieudeLOGINFORM
             // 
             this.label_tieudeLOGINFORM.AutoSize = true;
-            this.label_tieudeLOGINFORM.BackColor = System.Drawing.Color.Transparent;
+            this.label_tieudeLOGINFORM.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label_tieudeLOGINFORM.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_tieudeLOGINFORM.ForeColor = System.Drawing.Color.White;
+            this.label_tieudeLOGINFORM.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label_tieudeLOGINFORM.Location = new System.Drawing.Point(162, 21);
             this.label_tieudeLOGINFORM.Name = "label_tieudeLOGINFORM";
             this.label_tieudeLOGINFORM.Size = new System.Drawing.Size(332, 67);

@@ -16,5 +16,10 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
