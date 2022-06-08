@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicle_license_plate_recognition.Controller;
+using Vehicle_license_plate_recognition.Controller.Manager;
 
 namespace Vehicle_license_plate_recognition.ComponentForm
 {
@@ -20,7 +21,15 @@ namespace Vehicle_license_plate_recognition.ComponentForm
         Setting setting = new Setting();
         private void btnStaff_Click(object sender, EventArgs e)
         {
+            String server_ip = "192.168.1.166";
+            string idstring = lbIDStaff.Text;
+            string server_path = "http://" + server_ip + ":8000/captureImageNV?idstring=" + idstring;
+            String retStrGet = setting.Get(server_path);
 
+            lbInfor.Text = retStrGet;
+            ManagerStaff managerStaff = new ManagerStaff();
+            managerStaff.ActiveStaff(lbIDStaff.Text);
+            this.Close();
         }
     }
 }

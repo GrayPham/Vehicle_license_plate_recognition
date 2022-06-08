@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.ComponentForm;
 using Vehicle_license_plate_recognition.Manager.Assignment;
 using Vehicle_license_plate_recognition.OfficeStaff;
 using Vehicle_license_plate_recognition.OfficeStaff.Customer;
@@ -20,7 +21,9 @@ namespace Vehicle_license_plate_recognition
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
             Application.Run(new OfficeStaffMainForm());
+
 
         }
     }

@@ -1813,6 +1813,7 @@
     <Folder Include="Image\KhuonMat\NhanVien\Manager\" />
     <Folder Include="Image\KhuonMat\NhanVien\NomalStaff\" />
     <Folder Include="Image\KhuonMat\NhanVien\OfficeStaff\" />
+    <Folder Include="Image\KhuonMat\NhanVien\Temp\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

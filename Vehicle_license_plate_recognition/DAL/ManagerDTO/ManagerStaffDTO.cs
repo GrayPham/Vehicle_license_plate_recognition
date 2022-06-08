@@ -74,6 +74,163 @@ namespace Vehicle_license_plate_recognition.DAL.ManagerDTO
             
         }
 
+        internal void ActiveStaff(string idStaff)
+        {
+            int StaffId = Convert.ToInt32(idStaff);
+            var staff = db.NVs.Where(u => u.IdStaff == StaffId).FirstOrDefault();
+            if (staff != null)
+            {
+                staff.LayOff = false;
+            }
+        }
+
+        internal bool DeleteStaffDTO(int idStaff)
+        {
+            try
+            {
+                NV user = db.NVs.Find(idStaff);
+                if (user == null) return false;
+                else
+                {
+                    // Cải tiến chỉ được xóa nhân viên sau 1 năm nghỉ việc
+
+                    db.NVs.Remove(user);
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false ;
+            }
+        }
+
+        internal object GetAllOfficeStaffFire()
+        {
+            DateTime dt = DateTime.Now;
+            var list = db.NVs.Where(u => u.isOfficeStaff == true && u.LayOff == true ).Select(u => new
+            {
+                ID = u.IdStaff,
+                Name = u.HoVaTenNV,
+                Account = u.Account,
+                Password = u.Password,
+                Phone = u.Phone,
+                Email = u.Email,
+                Absences = u.Absences,
+                Position = u.isManage == true ? "Manager" : u.isStaff == true ? "Staff" : "OfficeStaff",
+                Picture = u.ImagePath
+            }).ToList();
+
+            return list;
+        }
+
+        internal object GetAllNomalStaffFire()
+        {
+            var list = db.NVs.Where(u => u.isStaff == true && u.LayOff == true).Select(u => new {
+                ID = u.IdStaff,
+                Name = u.HoVaTenNV,
+                Account = u.Account,
+                Password = u.Password,
+                Phone = u.Phone,
+                Email = u.Email,
+                Absences = u.Absences,
+                Position = u.isManage == true ? "Manager" : u.isStaff == true ? "Staff" : "OfficeStaff",
+                Picture = u.ImagePath
+            }).ToList();
+
+            return list;
+        }
+
+        internal object GetAllManagerFire()
+        {
+            var list = db.NVs.Where(u => u.isManage == true && u.LayOff == true).Select(u => new {
+                ID = u.IdStaff,
+                Name = u.HoVaTenNV,
+                Account = u.Account,
+                Password = u.Password,
+                Phone = u.Phone,
+                Email = u.Email,
+                Absences = u.Absences,
+                Position = u.isManage == true ? "Manager" : u.isStaff == true ? "Staff" : "OfficeStaff",
+                Picture = u.ImagePath
+            }).ToList();
+
+            return list;
+        }
+
+        internal bool FireStaff(int idStaff)
+        {
+            try
+            {
+                NV user = db.NVs.Where(x => x.IdStaff == idStaff).FirstOrDefault();
+                if (user != null)
+                {
+                    user.LayOff = true;
+                    user.LayOffDate = DateTime.Now;
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        internal object GetAllNomalStaff()
+        {
+            var list = db.NVs.Where(u => u.isStaff == true && u.LayOff == false).Select(u => new {
+                ID = u.IdStaff,
+                Name = u.HoVaTenNV,
+                Account = u.Account,
+                Password = u.Password,
+                Phone = u.Phone,
+                Email = u.Email,
+                Absences = u.Absences,
+                Position = u.isManage == true ? "Manager" : u.isStaff == true ? "Staff" : "OfficeStaff",
+                Picture = u.ImagePath
+            }).ToList();
+
+            return list;
+        }
+
+        internal object GetAllOfficeStaff()
+        {
+            var list = db.NVs.Where(u => u.isOfficeStaff == true && u.LayOff == false).Select(u => new {
+                ID = u.IdStaff,
+                Name = u.HoVaTenNV,
+                Account = u.Account,
+                Password = u.Password,
+                Phone = u.Phone,
+                Email = u.Email,
+                Absences = u.Absences,
+                Position = u.isManage == true ? "Manager" : u.isStaff == true ? "Staff" : "OfficeStaff",
+                Picture = u.ImagePath
+            }).ToList();
+
+            return list;
+        }
+
+        internal object GetAllManager()
+        {
+            var list = db.NVs.Where(u => u.isManage == true && u.LayOff == false).Select(u => new {
+                ID = u.IdStaff,
+                Name = u.HoVaTenNV,
+                Account = u.Account,
+                Password = u.Password,
+                Phone = u.Phone,
+                Email = u.Email,
+                Absences = u.Absences,
+                Position = u.isManage == true ? "Manager" : u.isStaff == true ? "Staff" : "OfficeStaff",
+                Picture = u.ImagePath
+            }).ToList();
+
+            return list;
+        }
+
         internal object getAllStaff()
         {
             var list = db.NVs.Where(u => u.LayOff == false).Select(u => new {

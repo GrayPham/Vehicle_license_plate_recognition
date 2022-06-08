@@ -123,20 +123,26 @@
             this.pictureBox_image.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_image.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources._428_4281543_save_your_work_in_the_clusters_fa_cloud;
             this.pictureBox_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+
             this.pictureBox_image.Location = new System.Drawing.Point(1004, 575);
+
             this.pictureBox_image.Name = "pictureBox_image";
             this.pictureBox_image.Size = new System.Drawing.Size(100, 55);
             this.pictureBox_image.TabIndex = 131;
             this.pictureBox_image.TabStop = false;
+
             this.pictureBox_image.Click += new System.EventHandler(this.pictureBox_image_Click);
             this.pictureBox_image.MouseEnter += new System.EventHandler(this.pictureBox_image_MouseEnter);
             this.pictureBox_image.MouseLeave += new System.EventHandler(this.pictureBox_image_MouseLeave);
+
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label7.Location = new System.Drawing.Point(700, 345);
+
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 29);
             this.label7.TabIndex = 130;
@@ -145,7 +151,9 @@
             // pictureBoxImage
             // 
             this.pictureBoxImage.BackColor = System.Drawing.Color.White;
+
             this.pictureBoxImage.Location = new System.Drawing.Point(893, 345);
+
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(311, 224);
             this.pictureBoxImage.TabIndex = 129;
@@ -155,7 +163,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label3.Location = new System.Drawing.Point(700, 268);
+
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 29);
             this.label3.TabIndex = 127;
@@ -164,7 +174,9 @@
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+
             this.tbEmail.Location = new System.Drawing.Point(893, 263);
+
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(311, 38);
             this.tbEmail.TabIndex = 6;
@@ -172,7 +184,9 @@
             // textBox_phone
             // 
             this.textBox_phone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+
             this.textBox_phone.Location = new System.Drawing.Point(893, 189);
+
             this.textBox_phone.Name = "textBox_phone";
             this.textBox_phone.Size = new System.Drawing.Size(311, 38);
             this.textBox_phone.TabIndex = 5;
@@ -181,7 +195,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label4.Location = new System.Drawing.Point(700, 189);
+
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 29);
             this.label4.TabIndex = 128;
@@ -228,9 +244,11 @@
             this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_logo.BackgroundImage = global::Vehicle_license_plate_recognition.Properties.Resources.logo_CLC_Circle;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+
             this.pictureBox_logo.Location = new System.Drawing.Point(620, 93);
             this.pictureBox_logo.Name = "pictureBox_logo";
             this.pictureBox_logo.Size = new System.Drawing.Size(103, 81);
+
             this.pictureBox_logo.TabIndex = 117;
             this.pictureBox_logo.TabStop = false;
             // 
