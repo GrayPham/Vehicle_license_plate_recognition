@@ -37,6 +37,11 @@ namespace Vehicle_license_plate_recognition.Controller.Manager
             return true;
         }
 
+        internal void ActiveStaff(string idStaff)
+        {
+            mStaffDTO.ActiveStaff(idStaff);
+        }
+
         internal bool DeleteStaff(int idStaff)
         {
             if (mStaffDTO.DeleteStaffDTO(idStaff))

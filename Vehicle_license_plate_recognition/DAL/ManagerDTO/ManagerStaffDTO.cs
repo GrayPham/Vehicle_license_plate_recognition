@@ -74,6 +74,16 @@ namespace Vehicle_license_plate_recognition.DAL.ManagerDTO
             
         }
 
+        internal void ActiveStaff(string idStaff)
+        {
+            int StaffId = Convert.ToInt32(idStaff);
+            var staff = db.NVs.Where(u => u.IdStaff == StaffId).FirstOrDefault();
+            if (staff != null)
+            {
+                staff.LayOff = false;
+            }
+        }
+
         internal bool DeleteStaffDTO(int idStaff)
         {
             try

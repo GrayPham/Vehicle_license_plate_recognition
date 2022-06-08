@@ -112,7 +112,7 @@ namespace Vehicle_license_plate_recognition
                     path = Dir + "\\Image\\KhuonMat\\NhanVien\\Temp\\" + idStaff;
 
                         // Face recognition 
-                        GetFaceIDStaff getFace = new GetFaceIDStaff();
+                    GetFaceIDStaff getFace = new GetFaceIDStaff();
                     getFace.lbIDStaff.Text = idStaff.ToString();
                     this.Hide();
                     getFace.ShowDialog();

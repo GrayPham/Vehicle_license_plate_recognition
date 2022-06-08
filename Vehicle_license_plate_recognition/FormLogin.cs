@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.ComponentForm;
 using Vehicle_license_plate_recognition.Controller.Login;
 using Vehicle_license_plate_recognition.Model;
 using Vehicle_license_plate_recognition.OfficeStaff;
@@ -84,7 +85,21 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
-                GlobalData.NameUser = "Hung";
+                GlobalData.NameUser = q.HoVaTenNV;
+                GlobalData.SetIDStaff(q.IdStaff);
+                if (q.LayOff == null)
+                {
+                    
+                        MessageBox.Show("You need to activate your account", "Login");
+                        GetFaceIDStaff getFace = new GetFaceIDStaff();
+                        getFace.lbIDStaff.Text = q.IdStaff.ToString();
+                        this.Hide();
+                        getFace.ShowDialog();
+                        this.Visible = true;
+                    
+                    
+                    
+                }
                 if (q.isOfficeStaff == true && q != null)
                 {
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
@@ -95,7 +110,7 @@ namespace Vehicle_license_plate_recognition
                 }
                 if (q.isStaff == true && q != null)
                 {
-                    
+
                     //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
                     FormStaff staffForm = new FormStaff();
                     staffForm.txtIDStaff.Text = q.IdStaff.ToString();
@@ -111,6 +126,8 @@ namespace Vehicle_license_plate_recognition
                     managerForm.ShowDialog();
                     this.Visible = true; //mở lại
                 }
+
+
 
             }
             //NOTE: "Please check your username and password again!"

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicle_license_plate_recognition.Controller;
+using Vehicle_license_plate_recognition.Controller.Manager;
 
 namespace Vehicle_license_plate_recognition.ComponentForm
 {
@@ -26,6 +27,8 @@ namespace Vehicle_license_plate_recognition.ComponentForm
             String retStrGet = setting.Get(server_path);
 
             lbInfor.Text = retStrGet;
+            ManagerStaff managerStaff = new ManagerStaff();
+            managerStaff.ActiveStaff(lbIDStaff.Text);
             this.Close();
         }
     }
