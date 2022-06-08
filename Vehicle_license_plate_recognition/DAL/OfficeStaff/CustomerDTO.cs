@@ -22,7 +22,6 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             customer.Gender = gender;
             db.Customers.Add(customer);
             db.SaveChanges ();
-
         }
 
         // Chỉnh sửa thông tin khách hàng

@@ -63,11 +63,11 @@ namespace Vehicle_license_plate_recognition
         // Sự kiện đổi màu label register
         private void label_register_MouseEnter(object sender, EventArgs e)
         {
-            label_forgot.ForeColor = Color.Blue;
+            label_register.ForeColor = Color.Blue;
         }
         private void label_register_MouseLeave(object sender, EventArgs e)
         {
-            label_forgot.ForeColor = Color.Black;
+            label_register.ForeColor = Color.Black;
         }
 
         //TẠO DATABASE
@@ -145,7 +145,7 @@ namespace Vehicle_license_plate_recognition
         // Đóng form
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         // Mở form forgot
