@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicle_license_plate_recognition.Controller.Login;
 using Vehicle_license_plate_recognition.OfficeStaff.Customer;
+using Vehicle_license_plate_recognition.OfficeStaff.Status;
+using Vehicle_license_plate_recognition.OfficeStaff.Turnover;
 
 namespace Vehicle_license_plate_recognition.OfficeStaff
 {
@@ -59,6 +61,21 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             this.Visible = false;
             mg.ShowDialog();
             this.Visible = true;
+        }
+
+        private void totalRevenueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TotalDetail totalDetail = new TotalDetail();
+            this.Visible = false;
+            totalDetail.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void inWeekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchContract search = new SearchContract();
+            search.ShowDialog();
+
         }
     }
 }

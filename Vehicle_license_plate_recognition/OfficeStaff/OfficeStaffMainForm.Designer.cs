@@ -39,13 +39,8 @@
             this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contractStillInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expiredContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byYearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byMouthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalRevenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cUSTOMERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,67 +146,34 @@
             // statusToolStripMenuItem
             // 
             this.statusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contractStillInUseToolStripMenuItem,
-            this.expiredContractToolStripMenuItem,
             this.inWeekToolStripMenuItem});
             this.statusToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
             this.statusToolStripMenuItem.Size = new System.Drawing.Size(103, 35);
             this.statusToolStripMenuItem.Text = "STATUS";
             // 
-            // contractStillInUseToolStripMenuItem
-            // 
-            this.contractStillInUseToolStripMenuItem.Name = "contractStillInUseToolStripMenuItem";
-            this.contractStillInUseToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
-            this.contractStillInUseToolStripMenuItem.Text = "Contract still in use";
-            // 
-            // expiredContractToolStripMenuItem
-            // 
-            this.expiredContractToolStripMenuItem.Name = "expiredContractToolStripMenuItem";
-            this.expiredContractToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
-            this.expiredContractToolStripMenuItem.Text = "Expired contract";
-            // 
             // inWeekToolStripMenuItem
             // 
             this.inWeekToolStripMenuItem.Name = "inWeekToolStripMenuItem";
-            this.inWeekToolStripMenuItem.Size = new System.Drawing.Size(297, 36);
+            this.inWeekToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
             this.inWeekToolStripMenuItem.Text = "Search";
+            this.inWeekToolStripMenuItem.Click += new System.EventHandler(this.inWeekToolStripMenuItem_Click);
             // 
             // turnoverToolStripMenuItem
             // 
             this.turnoverToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.byYearToolStripMenuItem,
-            this.byMouthToolStripMenuItem,
-            this.byWeekToolStripMenuItem,
             this.totalRevenueToolStripMenuItem});
             this.turnoverToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.turnoverToolStripMenuItem.Name = "turnoverToolStripMenuItem";
             this.turnoverToolStripMenuItem.Size = new System.Drawing.Size(143, 35);
             this.turnoverToolStripMenuItem.Text = "TURNOVER";
             // 
-            // byYearToolStripMenuItem
-            // 
-            this.byYearToolStripMenuItem.Name = "byYearToolStripMenuItem";
-            this.byYearToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
-            this.byYearToolStripMenuItem.Text = "By Year";
-            // 
-            // byMouthToolStripMenuItem
-            // 
-            this.byMouthToolStripMenuItem.Name = "byMouthToolStripMenuItem";
-            this.byMouthToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
-            this.byMouthToolStripMenuItem.Text = "By Mouth";
-            // 
-            // byWeekToolStripMenuItem
-            // 
-            this.byWeekToolStripMenuItem.Name = "byWeekToolStripMenuItem";
-            this.byWeekToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
-            this.byWeekToolStripMenuItem.Text = "By Week";
-            // 
             // totalRevenueToolStripMenuItem
             // 
             this.totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
             this.totalRevenueToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
             this.totalRevenueToolStripMenuItem.Text = "Total revenue";
+            this.totalRevenueToolStripMenuItem.Click += new System.EventHandler(this.totalRevenueToolStripMenuItem_Click);
             // 
             // cUSTOMERToolStripMenuItem
             // 
@@ -328,13 +290,8 @@
         private System.Windows.Forms.ToolStripMenuItem editContractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contractStillInUseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem expiredContractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inWeekToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnoverToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem byYearToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem byMouthToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem byWeekToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem totalRevenueToolStripMenuItem;
         internal System.Windows.Forms.TextBox txtIDStaff;
         private System.Windows.Forms.Label label1;

@@ -92,16 +92,12 @@ namespace Vehicle_license_plate_recognition
                 GlobalData.SetTypeStaff(type);
                 if (q.LayOff == null)
                 {
-                    
-                        MessageBox.Show("You need to activate your account", "Login");
-                        GetFaceIDStaff getFace = new GetFaceIDStaff();
-                        getFace.lbIDStaff.Text = q.IdStaff.ToString();
-                        this.Hide();
-                        getFace.ShowDialog();
-                        this.Visible = true;
-                    
-                    
-                    
+                    MessageBox.Show("You need to activate your account", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GetFaceIDStaff getFace = new GetFaceIDStaff();
+                    getFace.lbIDStaff.Text = q.IdStaff.ToString();
+                    this.Hide();
+                    getFace.ShowDialog();
+                    this.Visible = true;
                 }
                 if (q.isOfficeStaff == true && q != null)
                 {

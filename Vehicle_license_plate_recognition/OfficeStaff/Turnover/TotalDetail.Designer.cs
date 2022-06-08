@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -43,32 +43,30 @@
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelWeek = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panelYear = new System.Windows.Forms.Panel();
             this.panelMouth = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.DVGTurnOrver = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.rBtnYear = new System.Windows.Forms.RadioButton();
-            this.rBtnMouth = new System.Windows.Forms.RadioButton();
-            this.rBtnWeek = new System.Windows.Forms.RadioButton();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelYear = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelWeek = new System.Windows.Forms.Panel();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DVGTurnOrver = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.rBtnMouth = new System.Windows.Forms.RadioButton();
+            this.rBtnYear = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelWeek.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panelYear.SuspendLayout();
             this.panelMouth.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOrver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.panelYear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panelWeek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOrver)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -132,15 +130,6 @@
             this.panel1.Size = new System.Drawing.Size(568, 604);
             this.panel1.TabIndex = 7;
             // 
-            // panelWeek
-            // 
-            this.panelWeek.Controls.Add(this.chart3);
-            this.panelWeek.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelWeek.Location = new System.Drawing.Point(0, 316);
-            this.panelWeek.Name = "panelWeek";
-            this.panelWeek.Size = new System.Drawing.Size(568, 288);
-            this.panelWeek.TabIndex = 0;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panelMouth);
@@ -151,6 +140,33 @@
             this.panel4.Size = new System.Drawing.Size(568, 316);
             this.panel4.TabIndex = 1;
             // 
+            // panelMouth
+            // 
+            this.panelMouth.Controls.Add(this.chart2);
+            this.panelMouth.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMouth.Location = new System.Drawing.Point(273, 0);
+            this.panelMouth.Name = "panelMouth";
+            this.panelMouth.Size = new System.Drawing.Size(292, 316);
+            this.panelMouth.TabIndex = 1;
+            // 
+            // chart2
+            // 
+            this.chart2.BorderlineColor = System.Drawing.Color.Red;
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(0, 0);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Price";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(292, 316);
+            this.chart2.TabIndex = 0;
+            this.chart2.Text = "chart2";
+            // 
             // panelYear
             // 
             this.panelYear.Controls.Add(this.chart1);
@@ -160,14 +176,49 @@
             this.panelYear.Size = new System.Drawing.Size(273, 316);
             this.panelYear.TabIndex = 0;
             // 
-            // panelMouth
+            // chart1
             // 
-            this.panelMouth.Controls.Add(this.chart2);
-            this.panelMouth.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMouth.Location = new System.Drawing.Point(273, 0);
-            this.panelMouth.Name = "panelMouth";
-            this.panelMouth.Size = new System.Drawing.Size(292, 316);
-            this.panelMouth.TabIndex = 1;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Price";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(273, 316);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // panelWeek
+            // 
+            this.panelWeek.Controls.Add(this.chart3);
+            this.panelWeek.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelWeek.Location = new System.Drawing.Point(0, 316);
+            this.panelWeek.Name = "panelWeek";
+            this.panelWeek.Size = new System.Drawing.Size(568, 288);
+            this.panelWeek.TabIndex = 0;
+            // 
+            // chart3
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea3);
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.chart3.Legends.Add(legend3);
+            this.chart3.Location = new System.Drawing.Point(0, 0);
+            this.chart3.Name = "chart3";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Price";
+            this.chart3.Series.Add(series3);
+            this.chart3.Size = new System.Drawing.Size(568, 288);
+            this.chart3.TabIndex = 0;
+            this.chart3.Text = "chart3";
             // 
             // panel2
             // 
@@ -179,20 +230,13 @@
             this.panel2.Size = new System.Drawing.Size(848, 604);
             this.panel2.TabIndex = 8;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.rBtnWeek);
-            this.panel5.Controls.Add(this.rBtnMouth);
-            this.panel5.Controls.Add(this.rBtnYear);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(848, 50);
-            this.panel5.TabIndex = 0;
-            // 
             // DVGTurnOrver
             // 
+            this.DVGTurnOrver.AllowUserToAddRows = false;
+            this.DVGTurnOrver.AllowUserToDeleteRows = false;
+            this.DVGTurnOrver.AllowUserToResizeColumns = false;
+            this.DVGTurnOrver.AllowUserToResizeRows = false;
+            this.DVGTurnOrver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DVGTurnOrver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DVGTurnOrver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVGTurnOrver.Location = new System.Drawing.Point(0, 50);
@@ -201,100 +245,43 @@
             this.DVGTurnOrver.RowTemplate.Height = 24;
             this.DVGTurnOrver.Size = new System.Drawing.Size(848, 554);
             this.DVGTurnOrver.TabIndex = 1;
+            this.DVGTurnOrver.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DVGTurnOrver_CellContentClick);
             // 
-            // button1
+            // panel5
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(725, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel5.Controls.Add(this.rBtnMouth);
+            this.panel5.Controls.Add(this.rBtnYear);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(848, 50);
+            this.panel5.TabIndex = 0;
+            // 
+            // rBtnMouth
+            // 
+            this.rBtnMouth.AutoSize = true;
+            this.rBtnMouth.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rBtnMouth.Location = new System.Drawing.Point(689, 0);
+            this.rBtnMouth.Name = "rBtnMouth";
+            this.rBtnMouth.Size = new System.Drawing.Size(83, 50);
+            this.rBtnMouth.TabIndex = 2;
+            this.rBtnMouth.Text = "By Mouth";
+            this.rBtnMouth.UseVisualStyleBackColor = true;
+            this.rBtnMouth.CheckedChanged += new System.EventHandler(this.rBtnMouth_CheckedChanged);
             // 
             // rBtnYear
             // 
             this.rBtnYear.AutoSize = true;
+            this.rBtnYear.Checked = true;
             this.rBtnYear.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rBtnYear.Location = new System.Drawing.Point(649, 0);
+            this.rBtnYear.Location = new System.Drawing.Point(772, 0);
             this.rBtnYear.Name = "rBtnYear";
             this.rBtnYear.Size = new System.Drawing.Size(76, 50);
             this.rBtnYear.TabIndex = 1;
             this.rBtnYear.TabStop = true;
             this.rBtnYear.Text = "By Year";
             this.rBtnYear.UseVisualStyleBackColor = true;
-            // 
-            // rBtnMouth
-            // 
-            this.rBtnMouth.AutoSize = true;
-            this.rBtnMouth.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rBtnMouth.Location = new System.Drawing.Point(566, 0);
-            this.rBtnMouth.Name = "rBtnMouth";
-            this.rBtnMouth.Size = new System.Drawing.Size(83, 50);
-            this.rBtnMouth.TabIndex = 2;
-            this.rBtnMouth.TabStop = true;
-            this.rBtnMouth.Text = "By Mouth";
-            this.rBtnMouth.UseVisualStyleBackColor = true;
-            // 
-            // rBtnWeek
-            // 
-            this.rBtnWeek.AutoSize = true;
-            this.rBtnWeek.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rBtnWeek.Location = new System.Drawing.Point(487, 0);
-            this.rBtnWeek.Name = "rBtnWeek";
-            this.rBtnWeek.Size = new System.Drawing.Size(79, 50);
-            this.rBtnWeek.TabIndex = 3;
-            this.rBtnWeek.TabStop = true;
-            this.rBtnWeek.Text = "By week";
-            this.rBtnWeek.UseVisualStyleBackColor = true;
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(12, 36);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(191, 190);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
-            // chart2
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(35, 24);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(224, 257);
-            this.chart2.TabIndex = 0;
-            this.chart2.Text = "chart2";
-            // 
-            // chart3
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart3.Legends.Add(legend3);
-            this.chart3.Location = new System.Drawing.Point(107, 32);
-            this.chart3.Name = "chart3";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(349, 230);
-            this.chart3.TabIndex = 0;
-            this.chart3.Text = "chart3";
+            this.rBtnYear.CheckedChanged += new System.EventHandler(this.rBtnYear_CheckedChanged);
             // 
             // TotalDetail
             // 
@@ -306,20 +293,21 @@
             this.Controls.Add(this.panel3);
             this.Name = "TotalDetail";
             this.Text = "TotalDetail";
+            this.Load += new System.EventHandler(this.TotalDetail_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panelWeek.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panelYear.ResumeLayout(false);
             this.panelMouth.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.panelYear.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panelWeek.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOrver)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOrver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,10 +327,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView DVGTurnOrver;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RadioButton rBtnWeek;
         private System.Windows.Forms.RadioButton rBtnMouth;
         private System.Windows.Forms.RadioButton rBtnYear;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;

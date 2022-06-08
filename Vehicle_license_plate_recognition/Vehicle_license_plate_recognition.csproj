@@ -85,6 +85,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Document.NET, Version=2.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.2.2.0\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=2.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.2.2.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComponentForm\GetFaceIDStaff.cs">
@@ -93,6 +99,11 @@
     <Compile Include="ComponentForm\GetFaceIDStaff.Designer.cs">
       <DependentUpon>GetFaceIDStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\OfficeStaff\SearchContractC.cs" />
+    <Compile Include="Controller\OfficeStaff\turnover.cs" />
+    <Compile Include="Controller\PrintWord.cs" />
+    <Compile Include="DAL\OfficeStaff\SearchContractCDAO.cs" />
+    <Compile Include="DAL\OfficeStaff\TurnoverDAL.cs" />
     <Compile Include="GlobalData.cs" />
     <Compile Include="Controller\Login\BaseData.cs" />
     <Compile Include="Controller\Manager\ManagerStaff.cs" />
