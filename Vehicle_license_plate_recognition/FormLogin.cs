@@ -87,6 +87,9 @@ namespace Vehicle_license_plate_recognition
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
                 GlobalData.NameUser = q.HoVaTenNV;
                 GlobalData.SetIDStaff(q.IdStaff);
+                GlobalData.setImagePath(q.ImagePath);
+                int type = q.isManage == true ? 3 : q.isOfficeStaff == true ? 2 : 1;
+                GlobalData.SetTypeStaff(type);
                 if (q.LayOff == null)
                 {
                     
