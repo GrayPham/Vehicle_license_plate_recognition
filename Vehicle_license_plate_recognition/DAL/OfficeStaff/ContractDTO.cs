@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vehicle_license_plate_recognition.Model;
-
 namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
 {
-    internal class ContractDTO : QuanLiNhaXe
+    internal class ContractDTO: QuanLiNhaXe
     {
-        // Tạo hợp đồng
-        internal static void AddContract(int id ,string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type, decimal total)
+        internal static void AddContract(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type, decimal total)
         {
             Contract contract = new Contract();
             contract.Id = id;
@@ -54,5 +52,5 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             }).ToList();
             return test;
         }
-    }  
+    }
 }

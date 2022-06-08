@@ -14,7 +14,7 @@ namespace Vehicle_license_plate_recognition.Controller
     internal class PrintWord
     {
         public bool ExportWord(int idcontact,string NameStaff, string NameCustomer,string PhoneCustomer, string email, 
-            string totalValue, DateTime createTime , DateTime ExpiryDate)
+            string totalValue, DateTime createTime , DateTime ExpiryDate, int type)
         {
             try
             {

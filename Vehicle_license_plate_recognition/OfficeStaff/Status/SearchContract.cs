@@ -36,7 +36,8 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Status
             string nameStaff = staff.HoVaTenNV;
             string phone = customer.Phone;
             string email = customer.Email;
-            if (printWord.ExportWord(idContact,nameStaff,nameCus,phone,email,price,createTime,experTime))
+            int type = Convert.ToInt32(DVGContract.CurrentRow.Cells["TYPE"].Value.ToString());
+            if (printWord.ExportWord(idContact,nameStaff,nameCus,phone,email,price,createTime,experTime, type))
             {
                 MessageBox.Show("File export successful", "Export Word");
             }

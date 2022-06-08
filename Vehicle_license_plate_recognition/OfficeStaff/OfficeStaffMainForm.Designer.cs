@@ -39,7 +39,7 @@
             this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inWeekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchlStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalRevenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cUSTOMERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,18 +146,18 @@
             // statusToolStripMenuItem
             // 
             this.statusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inWeekToolStripMenuItem});
+            this.searchlStripMenuItem});
             this.statusToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
             this.statusToolStripMenuItem.Size = new System.Drawing.Size(103, 35);
             this.statusToolStripMenuItem.Text = "STATUS";
             // 
-            // inWeekToolStripMenuItem
+            // searchlStripMenuItem
             // 
-            this.inWeekToolStripMenuItem.Name = "inWeekToolStripMenuItem";
-            this.inWeekToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
-            this.inWeekToolStripMenuItem.Text = "Search";
-            this.inWeekToolStripMenuItem.Click += new System.EventHandler(this.inWeekToolStripMenuItem_Click);
+            this.searchlStripMenuItem.Name = "searchlStripMenuItem";
+            this.searchlStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.searchlStripMenuItem.Text = "Search";
+            this.searchlStripMenuItem.Click += new System.EventHandler(this.searchlStripMenuItem_Click);
             // 
             // turnoverToolStripMenuItem
             // 
@@ -290,7 +290,7 @@
         private System.Windows.Forms.ToolStripMenuItem editContractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inWeekToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchlStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnoverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem totalRevenueToolStripMenuItem;
         internal System.Windows.Forms.TextBox txtIDStaff;

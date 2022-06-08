@@ -99,9 +99,11 @@
     <Compile Include="ComponentForm\GetFaceIDStaff.Designer.cs">
       <DependentUpon>GetFaceIDStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\OfficeStaff\ContractBLL.cs" />
     <Compile Include="Controller\OfficeStaff\SearchContractC.cs" />
     <Compile Include="Controller\OfficeStaff\turnover.cs" />
     <Compile Include="Controller\PrintWord.cs" />
+    <Compile Include="DAL\OfficeStaff\ContractDTO.cs" />
     <Compile Include="DAL\OfficeStaff\SearchContractCDAO.cs" />
     <Compile Include="DAL\OfficeStaff\TurnoverDAL.cs" />
     <Compile Include="GlobalData.cs" />

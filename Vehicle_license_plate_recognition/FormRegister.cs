@@ -78,7 +78,7 @@ namespace Vehicle_license_plate_recognition
             }
             QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
 
-            // NOTE: ĐỢI THẰNG HÙNG SỬA
+
             //MemoryStream pic = new MemoryStream();
             //pictureBoxImage.Image.Save(pic,pictureBoxImage.Image.RawFormat);
             try
@@ -115,7 +115,7 @@ namespace Vehicle_license_plate_recognition
                     string path;
                     path = Dir + "\\Image\\KhuonMat\\NhanVien\\Temp\\" + idStaff;
 
-                        // Face recognition 
+                    // Face recognition 
                     GetFaceIDStaff getFace = new GetFaceIDStaff();
                     getFace.lbIDStaff.Text = idStaff.ToString();
                     this.Hide();
@@ -126,7 +126,7 @@ namespace Vehicle_license_plate_recognition
                 else
                 {
                     MessageBox.Show("The information you entered already exists. Please check your ID Staff/ Account/ Email/ Phone Number/ Image) again!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }    
+                }
             }
             catch (Exception)
             {
@@ -219,17 +219,8 @@ namespace Vehicle_license_plate_recognition
         {
             pictureBox_image.BackColor = Color.Transparent;
 
+        } 
 
-
-        private void pictureBox_image_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if ((opf.ShowDialog() == DialogResult.OK))
-            {
-                pictureBoxImage.Image = Image.FromFile(opf.FileName);
-            }
-
-        }
+        
     }
 }
