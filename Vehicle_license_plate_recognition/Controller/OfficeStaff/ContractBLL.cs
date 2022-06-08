@@ -89,6 +89,6 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                 return combox;
             }
             return null;
-        }     
+        }
     }
 }

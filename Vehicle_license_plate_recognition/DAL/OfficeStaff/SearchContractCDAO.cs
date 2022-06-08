@@ -19,6 +19,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
                 CUSTOMER = u.IdRenter,
                 CONTENT = u.Information,
                 PRICE = u.TotalValue,
+                TYPE = u.TypeConTract,
                 CREATIME = u.CreationTime,
                 EXPIRYDATE = u.ExpiryDate,
             }).ToList();
@@ -35,6 +36,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
                 IdOfficeStaff = u.IdOfficeStaff,
                 CONTENT = u.Information,
                 PRICE = u.TotalValue,
+                TYPE = u.TypeConTract,
                 CREATIME = u.CreationTime,
                 EXPIRYDATE = u.ExpiryDate,
             }).ToList();
@@ -63,6 +65,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
                 CUSTOMER = u.IdRenter,
                 IdOfficeStaff = u.IdOfficeStaff,
                 CONTENT = u.Information,
+                TYPE = u.TypeConTract,
                 PRICE = u.TotalValue,
                 CREATIME = u.CreationTime,
                 EXPIRYDATE = u.ExpiryDate,
