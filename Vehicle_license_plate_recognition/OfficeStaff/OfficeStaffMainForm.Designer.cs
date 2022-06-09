@@ -36,8 +36,6 @@
             this.addContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contractStillInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expiredContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,9 +107,7 @@
             this.contractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addContractToolStripMenuItem,
             this.editContractToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.managerToolStripMenuItem,
-            this.printToolStripMenuItem});
+            this.deleteToolStripMenuItem});
             this.contractToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contractToolStripMenuItem.Name = "contractToolStripMenuItem";
             this.contractToolStripMenuItem.Size = new System.Drawing.Size(142, 35);
@@ -137,18 +133,6 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
             this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // managerToolStripMenuItem
-            // 
-            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
-            this.managerToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
-            this.managerToolStripMenuItem.Text = "Manager";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
-            this.printToolStripMenuItem.Text = "Print";
             // 
             // statusToolStripMenuItem
             // 
@@ -342,8 +326,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnShift;
-        private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cUSTOMERToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aDDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eDITToolStripMenuItem;
