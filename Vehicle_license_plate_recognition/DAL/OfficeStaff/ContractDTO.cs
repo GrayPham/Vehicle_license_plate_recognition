@@ -53,7 +53,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             return test;
         }
         // Update thông tin hợp đồng theo mã id
-        internal static void EditContract(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type)
+        internal static void EditContract(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type, decimal total)
         {
             var contract = db.Contracts.Where(user => user.Id == id).FirstOrDefault();
             contract.NameContract = name;
@@ -63,6 +63,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             contract.CreationTime = create;
             contract.ExpiryDate = expiry;
             contract.TypeConTract = type;
+            contract.TotalValue = total;
             db.SaveChanges();
         }
 

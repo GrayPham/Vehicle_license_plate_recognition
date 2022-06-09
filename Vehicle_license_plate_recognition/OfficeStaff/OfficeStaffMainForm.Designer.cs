@@ -55,12 +55,12 @@
             // 
             // btnShift
             // 
-            this.btnShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnShift.Location = new System.Drawing.Point(12, 689);
             this.btnShift.Name = "btnShift";
             this.btnShift.Size = new System.Drawing.Size(237, 44);
             this.btnShift.TabIndex = 62;
-            this.btnShift.Text = "Shift";
+            this.btnShift.Text = "SHIFT";
             this.btnShift.UseVisualStyleBackColor = true;
             // 
             // txtIDStaff
@@ -126,12 +126,12 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLogout.Location = new System.Drawing.Point(1082, 62);
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogout.Location = new System.Drawing.Point(1152, 62);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(237, 44);
+            this.btnLogout.Size = new System.Drawing.Size(167, 44);
             this.btnLogout.TabIndex = 61;
-            this.btnLogout.Text = "Log out";
+            this.btnLogout.Text = "LOG OUT";
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // turnoverToolStripMenuItem
@@ -191,26 +191,27 @@
             // 
             // button_timekeeping
             // 
-            this.button_timekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_timekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button_timekeeping.Location = new System.Drawing.Point(1082, 689);
             this.button_timekeeping.Name = "button_timekeeping";
             this.button_timekeeping.Size = new System.Drawing.Size(237, 44);
             this.button_timekeeping.TabIndex = 57;
-            this.button_timekeeping.Text = "Timekeeping";
+            this.button_timekeeping.Text = "TIMEKEEPING";
             this.button_timekeeping.UseVisualStyleBackColor = true;
             // 
             // button_break
             // 
-            this.button_break.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_break.Location = new System.Drawing.Point(435, 689);
+            this.button_break.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_break.Location = new System.Drawing.Point(476, 689);
             this.button_break.Name = "button_break";
             this.button_break.Size = new System.Drawing.Size(390, 44);
             this.button_break.TabIndex = 56;
-            this.button_break.Text = "Take a break";
+            this.button_break.Text = "TAKE A BREAK";
             this.button_break.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contractToolStripMenuItem,

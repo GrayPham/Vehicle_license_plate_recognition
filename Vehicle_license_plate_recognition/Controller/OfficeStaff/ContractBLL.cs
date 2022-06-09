@@ -108,7 +108,7 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
             }
             return null;
         }
-        internal void EditContractBLL(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type)
+        internal void EditContractBLL(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type, decimal total)
         {
             try
             {
@@ -125,8 +125,9 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                 }
                 else if (true)
                 {
-                    //var checkRepeat = ContractDTO.db.Contracts.Where(test => test.NameContract == name || test.Information == content || test.IdOfficeStaff == staff ||
-                    //                                                 test.CreationTime == create || test.ExpiryDate == expiry || test.TypeConTract == type);
+                    // Kiểm tra sự thay đổi
+                    var checkRepeat = ContractDTO.db.Contracts.Where(test => test.NameContract == name || test.Information == content ||
+                                                                     test.CreationTime == create || test.ExpiryDate == expiry || test.TypeConTract == type);
 
                     // Check năm create phải expiry
                     if (create > expiry)
@@ -134,16 +135,16 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                         MessageBox.Show("The contract creation time must be less than the contract expiration time!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     // Check giống
-                    else
+                    else if (checkRepeat.Count() == 0)
                     {
                         getAllContract();
-                        ContractDTO.EditContract(id, name, content, staff, idrenter, create, expiry, type);
+                        ContractDTO.EditContract(id, name, content, staff, idrenter, create, expiry, type, total);
                         MessageBox.Show("Updated successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    //else
-                    //{
-                    //    MessageBox.Show("Nothing change!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //}
+                    else
+                    {
+                        MessageBox.Show("Nothing change!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
                 }
             }

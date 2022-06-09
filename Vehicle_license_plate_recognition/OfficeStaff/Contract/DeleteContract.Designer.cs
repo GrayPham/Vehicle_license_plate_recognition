@@ -47,6 +47,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panalContract.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.lbNameStaff);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtIDStaff);
@@ -125,6 +127,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnClose);
+            this.panel4.Controls.Add(this.btnDelete);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 513);
             this.panel4.Name = "panel4";
@@ -134,22 +138,22 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(363, 551);
+            this.btnDelete.Location = new System.Drawing.Point(236, 19);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 50);
             this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(9, 551);
+            this.btnClose.Location = new System.Drawing.Point(84, 19);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 50);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -207,8 +211,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panalContract);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(3, 100);
@@ -231,6 +233,7 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panalContract.ResumeLayout(false);
             this.panalContract.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -33,21 +33,21 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
                 }
 
                 int id = Convert.ToInt32(textBox_idcontract.Text);
-                int idrenter = Convert.ToInt32(comboBox_select.SelectedValue.ToString());
                 string name = textBox_name.Text;
                 string content = richTextBox_content.Text;
                 int staff = Convert.ToInt32(txtIDStaff.Text);
+                int idrenter = Convert.ToInt32(comboBox_select.SelectedValue.ToString());
                 DateTime create = dateTimePicker_creation.Value;
                 DateTime expiry = dateTimePicker_expiry.Value;
                 int type = Convert.ToInt32(radioButtonRental.Checked);
-                //decimal unit = Convert.ToDecimal(textBox_total.Text);
-                //System.TimeSpan d = expiry.Subtract(create);
-                //decimal total = (decimal)d.TotalDays * unit;
+                decimal unit = Convert.ToDecimal(textBox_total.Text);
+                System.TimeSpan d = expiry.Subtract(create);
+                decimal total = (decimal)d.TotalDays * unit;
                 if (CompanyRental.Checked)
                 {
                     type = 2;
                 }
-                cBLL.EditContractBLL(id, name, content, staff, idrenter, create, expiry, type);
+                cBLL.EditContractBLL(id, name, content, staff, idrenter, create, expiry, type, total);
                 DVGListContract.DataSource = cBLL.getAllContract();
             }
             catch (Exception)
@@ -137,8 +137,21 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
 
                 dateTimePicker_creation.Value = (DateTime)DVGListContract.CurrentRow.Cells[6].Value;
                 dateTimePicker_expiry.Value = (DateTime)DVGListContract.CurrentRow.Cells[7].Value;
-
-
+                
+                string total = DVGListContract.CurrentRow.Cells[8].Value.ToString();
+                decimal to = Convert.ToDecimal(total);
+                DateTime create = dateTimePicker_creation.Value;
+                DateTime expiry = dateTimePicker_expiry.Value;
+                if (create != expiry)
+                {
+                    System.TimeSpan d = expiry.Subtract(create);
+                    decimal unit = to / (decimal)(d.TotalDays);
+                    textBox_total.Text = unit.ToString();
+                }
+                else
+                {
+                    textBox_total.Text =to.ToString();
+                }
             }
             catch (Exception)
             {
@@ -146,15 +159,6 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
