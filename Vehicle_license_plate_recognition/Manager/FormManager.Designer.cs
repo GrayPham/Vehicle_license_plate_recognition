@@ -60,8 +60,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelButton = new System.Windows.Forms.Panel();
             this.btnAttendance = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbIDStaff = new System.Windows.Forms.Label();
+            this.lbNameStaff = new System.Windows.Forms.Label();
             this.lbIdManager = new System.Windows.Forms.Label();
             this.lbNameManager = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -548,8 +548,8 @@
             // 
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.panelButton.Controls.Add(this.btnAttendance);
-            this.panelButton.Controls.Add(this.label2);
-            this.panelButton.Controls.Add(this.label1);
+            this.panelButton.Controls.Add(this.lbIDStaff);
+            this.panelButton.Controls.Add(this.lbNameStaff);
             this.panelButton.Controls.Add(this.lbIdManager);
             this.panelButton.Controls.Add(this.lbNameManager);
             this.panelButton.Dock = System.Windows.Forms.DockStyle.Top;
@@ -569,29 +569,29 @@
             this.btnAttendance.UseVisualStyleBackColor = true;
             this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
-            // label2
+            // lbIDStaff
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(187, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Id Manager";
+            this.lbIDStaff.AutoSize = true;
+            this.lbIDStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.lbIDStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIDStaff.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbIDStaff.Location = new System.Drawing.Point(187, 56);
+            this.lbIDStaff.Name = "lbIDStaff";
+            this.lbIDStaff.Size = new System.Drawing.Size(109, 22);
+            this.lbIDStaff.TabIndex = 3;
+            this.lbIDStaff.Text = "Id Manager";
             // 
-            // label1
+            // lbNameStaff
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(187, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Name Manager";
+            this.lbNameStaff.AutoSize = true;
+            this.lbNameStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.lbNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameStaff.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbNameStaff.Location = new System.Drawing.Point(187, 15);
+            this.lbNameStaff.Name = "lbNameStaff";
+            this.lbNameStaff.Size = new System.Drawing.Size(144, 22);
+            this.lbNameStaff.TabIndex = 2;
+            this.lbNameStaff.Text = "Name Manager";
             // 
             // lbIdManager
             // 
@@ -686,6 +686,7 @@
             this.Name = "FormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManager";
+            this.Load += new System.EventHandler(this.FormManager_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelSubPhanCong.ResumeLayout(false);
             this.panelSubTacVu.ResumeLayout(false);
@@ -733,8 +734,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lbIdManager;
         private System.Windows.Forms.Label lbNameManager;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNameStaff;
+        private System.Windows.Forms.Label lbIDStaff;
         private System.Windows.Forms.Button btnAttendance;
         private System.Windows.Forms.Button btnAddManager;
         private System.Windows.Forms.Button btnUpdateManager;

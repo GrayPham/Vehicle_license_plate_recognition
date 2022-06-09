@@ -74,11 +74,13 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
 
         private void AddContract_Load(object sender, EventArgs e)
         {
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+            lbNameStaff.Text = GlobalData.NameUser.ToString();
             if (radioButtonRental.Checked)
             {
                 fillCombo();
             }
-            txtIDStaff.Text = "320";
+
 
             DVGListCustomer.DataSource = cBLL.getAllContract();
             DVGListCustomer.ScrollBars = ScrollBars.Both;

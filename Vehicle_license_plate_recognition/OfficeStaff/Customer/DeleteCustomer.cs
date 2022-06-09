@@ -23,6 +23,8 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
         {
             dataGridView_show.DataSource = cBLL.getAllCustomer();
             dataGridView_show.ScrollBars = ScrollBars.Both;
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+            lbNameStaff.Text = GlobalData.NameUser.ToString();
         }
 
         private void button_close_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicle_license_plate_recognition.BLL;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -22,8 +23,17 @@ namespace Vehicle_license_plate_recognition
             //FormBorderStyle = FormBorderStyle.None;
             //WindowState = FormWindowState.Maximized;
             //TopMost = true;
-        }
 
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+            fillDVG();
+
+        }
+        NVBLL nvBLL = new NVBLL();
+        private void fillDVG()
+        {
+            int idStaff = Convert.ToInt32( txtIDStaff.Text);
+            dataGridView_phancongtho.DataSource = nvBLL.GetAllBillVehicleOfNV(idStaff);
+        }
         private void button_working_Click(object sender, EventArgs e)
         {
             FormVehicleCam formVehicleCam = new FormVehicleCam();

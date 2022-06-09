@@ -242,8 +242,13 @@ namespace Vehicle_license_plate_recognition
 
         }
 
+
         #endregion
 
-        
+        private void FormManager_Load(object sender, EventArgs e)
+        {
+            lbNameStaff.Text = GlobalData.NameUser;
+            lbIDStaff.Text = GlobalData.idStaff.ToString();
+        }
     }
 }

@@ -22,6 +22,8 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
 
         private void DeleteContract_Load(object sender, EventArgs e)
         {
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+            lbNameStaff.Text = GlobalData.NameUser.ToString();
             fillDVGDelete();
         }
         private void fillDVGDelete()

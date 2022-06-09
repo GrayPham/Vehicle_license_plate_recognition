@@ -32,20 +32,15 @@
             this.DVGListContract = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEditCustract = new System.Windows.Forms.Button();
-            this.lbDetail = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.richTextBox_content = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbNameStaff = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbContent = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,8 +48,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCCustomer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_name = new System.Windows.Forms.TextBox();
+            this.textBox_idcontract = new System.Windows.Forms.TextBox();
+            this.comboBox_select = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker_expiry = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_creation = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DVGListContract)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,7 +71,6 @@
             this.CompanyRental.Name = "CompanyRental";
             this.CompanyRental.Size = new System.Drawing.Size(203, 29);
             this.CompanyRental.TabIndex = 1;
-            this.CompanyRental.TabStop = true;
             this.CompanyRental.Text = "Company car rental";
             this.CompanyRental.UseVisualStyleBackColor = true;
             // 
@@ -89,7 +88,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(104, 436);
+            this.btnClose.Location = new System.Drawing.Point(88, 482);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(156, 45);
             this.btnClose.TabIndex = 29;
@@ -100,39 +99,20 @@
             // btnEditCustract
             // 
             this.btnEditCustract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustract.Location = new System.Drawing.Point(275, 436);
+            this.btnEditCustract.Location = new System.Drawing.Point(284, 482);
             this.btnEditCustract.Name = "btnEditCustract";
             this.btnEditCustract.Size = new System.Drawing.Size(156, 45);
             this.btnEditCustract.TabIndex = 28;
             this.btnEditCustract.Text = "EDIT";
             this.btnEditCustract.UseVisualStyleBackColor = true;
             // 
-            // lbDetail
+            // richTextBox_content
             // 
-            this.lbDetail.AutoSize = true;
-            this.lbDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbDetail.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbDetail.Location = new System.Drawing.Point(437, 245);
-            this.lbDetail.Name = "lbDetail";
-            this.lbDetail.Size = new System.Drawing.Size(92, 18);
-            this.lbDetail.TabIndex = 26;
-            this.lbDetail.Text = "Detail Content";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(244, 146);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(302, 96);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(244, 80);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(302, 34);
-            this.textBox5.TabIndex = 21;
+            this.richTextBox_content.Location = new System.Drawing.Point(242, 198);
+            this.richTextBox_content.Name = "richTextBox_content";
+            this.richTextBox_content.Size = new System.Drawing.Size(290, 96);
+            this.richTextBox_content.TabIndex = 25;
+            this.richTextBox_content.Text = "";
             // 
             // panel3
             // 
@@ -185,27 +165,11 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "ID Staff";
             // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(241, 291);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(305, 34);
-            this.textBox4.TabIndex = 20;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(241, 338);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(305, 34);
-            this.textBox3.TabIndex = 19;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 344);
+            this.label5.Location = new System.Drawing.Point(28, 368);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 29);
             this.label5.TabIndex = 13;
@@ -215,7 +179,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 291);
+            this.label6.Location = new System.Drawing.Point(25, 315);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 29);
             this.label6.TabIndex = 12;
@@ -229,19 +193,11 @@
             this.panel2.Size = new System.Drawing.Size(614, 618);
             this.panel2.TabIndex = 4;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(244, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 34);
-            this.textBox1.TabIndex = 17;
-            // 
             // lbContent
             // 
             this.lbContent.AutoSize = true;
             this.lbContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbContent.Location = new System.Drawing.Point(25, 159);
+            this.lbContent.Location = new System.Drawing.Point(25, 198);
             this.lbContent.Name = "lbContent";
             this.lbContent.Size = new System.Drawing.Size(96, 29);
             this.lbContent.TabIndex = 11;
@@ -271,6 +227,7 @@
             // radioButtonRental
             // 
             this.radioButtonRental.AutoSize = true;
+            this.radioButtonRental.Checked = true;
             this.radioButtonRental.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonRental.Location = new System.Drawing.Point(242, 23);
             this.radioButtonRental.Name = "radioButtonRental";
@@ -284,7 +241,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 86);
+            this.label4.Location = new System.Drawing.Point(25, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 29);
             this.label4.TabIndex = 10;
@@ -302,15 +259,15 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnCCustomer);
+            this.panel5.Controls.Add(this.textBox_idcontract);
+            this.panel5.Controls.Add(this.comboBox_select);
+            this.panel5.Controls.Add(this.dateTimePicker_expiry);
+            this.panel5.Controls.Add(this.dateTimePicker_creation);
+            this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Controls.Add(this.btnEditCustract);
-            this.panel5.Controls.Add(this.lbDetail);
-            this.panel5.Controls.Add(this.richTextBox1);
-            this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.richTextBox_content);
+            this.panel5.Controls.Add(this.textBox_name);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.lbContent);
@@ -322,16 +279,6 @@
             this.panel5.Size = new System.Drawing.Size(559, 534);
             this.panel5.TabIndex = 11;
             // 
-            // btnCCustomer
-            // 
-            this.btnCCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCCustomer.Location = new System.Drawing.Point(452, 34);
-            this.btnCCustomer.Name = "btnCCustomer";
-            this.btnCCustomer.Size = new System.Drawing.Size(94, 34);
-            this.btnCCustomer.TabIndex = 30;
-            this.btnCCustomer.Text = "Chose";
-            this.btnCCustomer.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel5);
@@ -340,6 +287,64 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(559, 605);
             this.panel1.TabIndex = 3;
+            // 
+            // textBox_name
+            // 
+            this.textBox_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_name.Location = new System.Drawing.Point(242, 141);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(290, 34);
+            this.textBox_name.TabIndex = 21;
+            // 
+            // textBox_idcontract
+            // 
+            this.textBox_idcontract.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_idcontract.Location = new System.Drawing.Point(246, 28);
+            this.textBox_idcontract.Name = "textBox_idcontract";
+            this.textBox_idcontract.Size = new System.Drawing.Size(286, 34);
+            this.textBox_idcontract.TabIndex = 179;
+            // 
+            // comboBox_select
+            // 
+            this.comboBox_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox_select.FormattingEnabled = true;
+            this.comboBox_select.Location = new System.Drawing.Point(246, 86);
+            this.comboBox_select.Name = "comboBox_select";
+            this.comboBox_select.Size = new System.Drawing.Size(283, 37);
+            this.comboBox_select.TabIndex = 178;
+            // 
+            // dateTimePicker_expiry
+            // 
+            this.dateTimePicker_expiry.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker_expiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateTimePicker_expiry.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_expiry.Location = new System.Drawing.Point(247, 368);
+            this.dateTimePicker_expiry.Name = "dateTimePicker_expiry";
+            this.dateTimePicker_expiry.Size = new System.Drawing.Size(285, 34);
+            this.dateTimePicker_expiry.TabIndex = 176;
+            this.dateTimePicker_expiry.Value = new System.DateTime(2022, 6, 7, 0, 0, 0, 0);
+            // 
+            // dateTimePicker_creation
+            // 
+            this.dateTimePicker_creation.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker_creation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateTimePicker_creation.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_creation.Location = new System.Drawing.Point(244, 310);
+            this.dateTimePicker_creation.Name = "dateTimePicker_creation";
+            this.dateTimePicker_creation.Size = new System.Drawing.Size(285, 34);
+            this.dateTimePicker_creation.TabIndex = 175;
+            this.dateTimePicker_creation.Value = new System.DateTime(2022, 6, 7, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 29);
+            this.label3.TabIndex = 177;
+            this.label3.Text = "ID Renter";
             // 
             // EditContract
             // 
@@ -370,20 +375,15 @@
         private System.Windows.Forms.DataGridView DVGListContract;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnEditCustract;
-        private System.Windows.Forms.Label lbDetail;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.RichTextBox richTextBox_content;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbNameStaff;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.TextBox txtIDStaff;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbContent;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel4;
@@ -392,6 +392,11 @@
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnCCustomer;
+        private System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.TextBox textBox_idcontract;
+        internal System.Windows.Forms.ComboBox comboBox_select;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_expiry;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_creation;
+        private System.Windows.Forms.Label label3;
     }
 }

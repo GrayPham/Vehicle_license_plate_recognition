@@ -34,6 +34,12 @@ namespace Vehicle_license_plate_recognition.BLL
             return parkActive;
         }
 
+        internal object GetAllBillVehicleOfNV(int idStaff)
+        {
+            var nguoigui = db.ThanhToans.Where(u=>u.IdStaff == idStaff).ToList();
+            return nguoigui;
+        }
+
         public void PostSentCar(DateTime deliveryTime, string licensePlates, string idPark, int typeVehicle, string path, string place)
         {
             NguoiGui nguoiGui = new NguoiGui();

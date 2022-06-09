@@ -21,6 +21,8 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
 
         private void ManageCustomer_Load(object sender, EventArgs e)
         {
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+            lbNameStaff.Text = GlobalData.NameUser.ToString();
             dataGridView_show.DataSource = cBLL.getAllCustomer();
             // Đổi màu nút reload
             this.pictureBox_reload.MouseEnter += new System.EventHandler(this.pictureBox_reload_MouseEnter);

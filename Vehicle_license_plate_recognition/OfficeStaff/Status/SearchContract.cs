@@ -63,6 +63,8 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Status
 
         private void SearchContract_Load(object sender, EventArgs e)
         {
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+            lbNameStaff.Text = GlobalData.NameUser.ToString();
             fillDVG();
         }
 

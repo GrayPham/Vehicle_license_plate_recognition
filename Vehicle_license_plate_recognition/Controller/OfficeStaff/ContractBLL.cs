@@ -108,5 +108,61 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
             }
             return null;
         }
+        internal void EditContractBLL(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type)
+        {
+            try
+            {
+                // Thông tin phải được điền đầy đủ
+                if (String.IsNullOrEmpty(name) == true || String.IsNullOrEmpty(content) == true)
+                {
+                    MessageBox.Show("Please fill in the gap!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                // Name toan ki tu
+                else if (IsCharacter(name) == false)
+                {
+                    MessageBox.Show("Full name must be characters and has white space!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (true)
+                {
+                    //var checkRepeat = ContractDTO.db.Contracts.Where(test => test.NameContract == name || test.Information == content || test.IdOfficeStaff == staff ||
+                    //                                                 test.CreationTime == create || test.ExpiryDate == expiry || test.TypeConTract == type);
+
+                    // Check năm create phải expiry
+                    if (create > expiry)
+                    {
+                        MessageBox.Show("The contract creation time must be less than the contract expiration time!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    // Check giống
+                    else
+                    {
+                        getAllContract();
+                        ContractDTO.EditContract(id, name, content, staff, idrenter, create, expiry, type);
+                        MessageBox.Show("Updated successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    //else
+                    //{
+                    //    MessageBox.Show("Nothing change!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Can not add Contract. Please try again!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        // Hiển thị thông tin hợp đồng theo id
+        internal Contract diplayCon(int id)
+        {
+            Contract cus = conDTO.diplayCon(id);
+            if (cus != null)
+            {
+                return cus;
+            }
+            return null;
+        }
+
+
     }
 }

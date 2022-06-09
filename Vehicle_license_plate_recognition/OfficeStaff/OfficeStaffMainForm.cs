@@ -28,7 +28,9 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
 
         private void OfficeStaffMainForm_Load(object sender, EventArgs e)
         {
-            txtIDStaff.Text = GlobalData.NameUser;
+
+            txtIDStaff.Text = GlobalData.idStaff.ToString();
+
         }
 
         private void aDDToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,6 +92,19 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddContract addContract = new AddContract();
+            addContract.ShowDialog();
+        }
+
+        private void editContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditContract editContract = new EditContract();
+            editContract.ShowDialog();
+
         }
     }
 }
