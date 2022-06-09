@@ -74,5 +74,22 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             SearchContract search = new SearchContract();
             search.ShowDialog();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteContract deleteContract = new DeleteContract();
+            deleteContract.ShowDialog();
+        }
+
+        private void button_timekeeping_Click(object sender, EventArgs e)
+        {
+            FormFaceRecognition formFace = new FormFaceRecognition();
+            formFace.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

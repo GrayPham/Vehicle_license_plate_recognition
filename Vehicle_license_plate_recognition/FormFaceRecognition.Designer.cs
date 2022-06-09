@@ -42,6 +42,7 @@
             this.button_cancel = new System.Windows.Forms.Button();
             this.richTextBox_licenseplates = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnConfim = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_recognize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_camera)).BeginInit();
             this.SuspendLayout();
@@ -175,11 +176,24 @@
             this.dateTimePicker1.TabIndex = 43;
             this.dateTimePicker1.Value = new System.DateTime(2022, 4, 3, 0, 0, 0, 0);
             // 
+            // btnConfim
+            // 
+            this.btnConfim.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnConfim.Location = new System.Drawing.Point(1261, 632);
+            this.btnConfim.Name = "btnConfim";
+            this.btnConfim.Size = new System.Drawing.Size(168, 53);
+            this.btnConfim.TabIndex = 44;
+            this.btnConfim.Text = "Confirm";
+            this.btnConfim.UseVisualStyleBackColor = false;
+            this.btnConfim.Click += new System.EventHandler(this.btnConfim_Click);
+            // 
             // FormFaceRecognition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 783);
+            this.Controls.Add(this.btnConfim);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.richTextBox_licenseplates);
             this.Controls.Add(this.button_cancel);
@@ -217,5 +231,6 @@
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.RichTextBox richTextBox_licenseplates;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnConfim;
     }
 }

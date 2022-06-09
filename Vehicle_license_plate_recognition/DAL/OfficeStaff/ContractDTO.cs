@@ -27,7 +27,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
         // Hiển thị khách theo mã id
         internal object getAllContract()
         {
-            var combo = db.Contracts.Select(u => new
+            var combo = db.Contracts.Where(u=> u.isDelete != true).Select(u => new
             {
                 Id = u.Id,
                 Name = u.NameContract,
@@ -46,11 +46,45 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
         // Kiểm tra id Customer đã tồn tại chưa
         internal object checkID(int idren)
         {
-            var test = db.Customers.Where(u => u.TypeID == idren).Select(u => new
+            var test = db.Customers.Where(u => u.TypeID == idren ).Select(u => new
             {
                 Id = u.Id,
             }).ToList();
             return test;
+        }
+
+        internal object getAllContractExprire()
+        {
+            var contract = db.Contracts.Where(u => u.ExpiryDate < DateTime.Now && u.isDelete !=true).Select(u => new
+            {
+                ID = u.Id,
+                NAME = u.NameContract,
+                CUSTOMER = u.IdRenter,
+                IdOfficeStaff = u.IdOfficeStaff,
+                CONTENT = u.Information,
+                PRICE = u.TotalValue,
+                TYPE = u.TypeConTract,
+                CREATIME = u.CreationTime,
+                EXPIRYDATE = u.ExpiryDate,
+            }).ToList();
+            return contract;
+        }
+
+        internal bool DeleteContractDTO(string idContract)
+        {
+            int contractID = Convert.ToInt32(idContract);
+            Contract con = db.Contracts.Where(u => u.Id == contractID).FirstOrDefault();
+            if (con != null)
+            {
+                con.isDelete = true;
+                con.DeleteDate = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

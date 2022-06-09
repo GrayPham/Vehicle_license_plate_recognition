@@ -57,6 +57,24 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
 
         }
 
+        internal bool DeleteContract(string idContract)
+        {
+            if (conDTO.DeleteContractDTO(idContract))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        internal object getAllContractExprire()
+        {
+            var contract = conDTO.getAllContractExprire();
+            return contract;
+        }
+
         // Ô nhập vào không được là số, kí hiệu
         public bool IsCharacter(string pValue)
         {

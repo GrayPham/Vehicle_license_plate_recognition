@@ -11,7 +11,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
     {
         internal object getAllContact()
         {
-            var contact = db.Contracts.Select(u => new
+            var contact = db.Contracts.Where(u => u.isDelete != true).Select(u => new
             {
                 ID = u.Id,
                 NAME = u.NameContract,
@@ -28,7 +28,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
 
         internal object getAllContactStill()
         {
-            var contact = db.Contracts.Where(u => u.ExpiryDate.Value < DateTime.Now).Select(u => new
+            var contact = db.Contracts.Where(u => u.ExpiryDate.Value < DateTime.Now && u.isDelete != true).Select(u => new
             {
                 ID = u.Id,
                 NAME = u.NameContract,
@@ -58,7 +58,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
 
         internal object getAllContactExpiryDate()
         {
-            var contact = db.Contracts.Where(u => u.ExpiryDate.Value > DateTime.Now).Select(u => new
+            var contact = db.Contracts.Where(u => u.ExpiryDate.Value > DateTime.Now && u.isDelete != true).Select(u => new
             {
                 ID = u.Id,
                 NAME = u.NameContract,

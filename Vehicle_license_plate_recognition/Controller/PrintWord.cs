@@ -23,7 +23,17 @@ namespace Vehicle_license_plate_recognition.Controller
 
                 #region 1 title
                 //Formatting Title  
-                string title = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM \n Độc Lập – Tự Do – Hạnh Phúc \n \n HỢP ĐỒNG THUÊ XE \n \n Số:" + idcontact + "–HĐTX";
+                string title;
+                if (type ==1)
+                {
+                    title = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM \n Độc Lập – Tự Do – Hạnh Phúc \n \n HỢP ĐỒNG THUÊ XE \n \n Số:" + idcontact + "–HĐTX";
+
+                }
+                else
+                {
+                    title = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM \n Độc Lập – Tự Do – Hạnh Phúc \n \n HỢP ĐỒNG CHO THUÊ XE \n \n Số:" + idcontact + "–HĐTX";
+
+                }
 
                 //Formatting Title  
                 // like using this we can set font family, font size, position, font color etc
@@ -74,14 +84,28 @@ namespace Vehicle_license_plate_recognition.Controller
                 #endregion
                 #region 3 object
 
-                //Formatting Title  
-                string objecttt = "BÊN A: (Bên thuê) \n\n" +
-                    "   -         Đại diện: " + NameStaff + "\t - Chức vụ: Nhân viên văn phòng\n\n" +
-                    "BÊN B: (Bên cho thuê)\n" +
-                    "   -         Tên đầy đủ: " + NameCustomer + "\n" +
-                    "   -         Điện thoại: " + PhoneCustomer + "\n" +
-                    "   -         Email: " + email + "\n\n";
-
+                //Formatting Title
+                //
+                string objecttt;
+                if (type == 1)
+                {
+                    objecttt = "BÊN A: (Bên thuê) \n\n" +
+                        "   -         Đại diện: " + NameStaff + "\t - Chức vụ: Nhân viên văn phòng\n\n" +
+                        "BÊN B: (Bên cho thuê)\n" +
+                        "   -         Tên đầy đủ: " + NameCustomer + "\n" +
+                        "   -         Điện thoại: " + PhoneCustomer + "\n" +
+                        "   -         Email: " + email + "\n\n";
+                }
+                else
+                {
+                    objecttt = "BÊN A: (Bên thuê) \n\n" +
+                        "   -         Tên đầy đủ: " + NameCustomer + "\n" +
+                        "   -         Điện thoại: " + PhoneCustomer + "\n" +
+                        "   -         Email: " + email + "\n\n"
+                    +
+                        "BÊN B: (Bên cho thuê)\n" +
+                        "   -         Đại diện: " + NameStaff + "\t - Chức vụ: Nhân viên văn phòng\n\n";
+                }
                 //Formatting Title  
                 // like using this we can set font family, font size, position, font color etc
 

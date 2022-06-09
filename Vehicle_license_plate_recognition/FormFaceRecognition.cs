@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicle_license_plate_recognition.Controller;
+using Vehicle_license_plate_recognition.Controller.Manager;
 
 namespace Vehicle_license_plate_recognition
 {
@@ -33,13 +34,17 @@ namespace Vehicle_license_plate_recognition
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.1.166";
 
-            server_path = "http://" + server_ip + ":8000/recognition";
+            server_path = "http://" + server_ip + ":8000/recognitionNV";
             try
             {
                 //Convert image to B64
                 String B64 = setting.ConvertImageToBase64String(pictureBox_recognize.Image);
                 String retStr = setting.sendPOST(server_path, B64);
                 richTextBox_licenseplates.Text = retStr;
+
+                //Diem Danh 
+
+
             }
             catch (Exception ex)
             {
@@ -52,6 +57,19 @@ namespace Vehicle_license_plate_recognition
         private void pictureBox_camera_Click(object sender, EventArgs e)
         {
 
+        }
+        ManagerStaff manager = new ManagerStaff();
+        private void btnConfim_Click(object sender, EventArgs e)
+        {
+            if(richTextBox_licenseplates.Text!= "" && richTextBox_licenseplates.Text != "")
+            {
+                int id =Convert.ToInt32( richTextBox_licenseplates.Text);
+                if (manager.checkIDStaff(id))
+                {
+                    //Kiem tra ngày tháng điểm danh
+                    MessageBox.Show("Successful attendance");
+                }
+            }
         }
     }
 }

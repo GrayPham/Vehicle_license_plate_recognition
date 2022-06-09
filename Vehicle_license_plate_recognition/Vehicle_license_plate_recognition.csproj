@@ -99,10 +99,12 @@
     <Compile Include="ComponentForm\GetFaceIDStaff.Designer.cs">
       <DependentUpon>GetFaceIDStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\Manager\AssignmentBLL.cs" />
     <Compile Include="Controller\OfficeStaff\ContractBLL.cs" />
     <Compile Include="Controller\OfficeStaff\SearchContractC.cs" />
     <Compile Include="Controller\OfficeStaff\turnover.cs" />
     <Compile Include="Controller\PrintWord.cs" />
+    <Compile Include="DAL\ManagerDTO\AssignmentDTO.cs" />
     <Compile Include="DAL\OfficeStaff\ContractDTO.cs" />
     <Compile Include="DAL\OfficeStaff\SearchContractCDAO.cs" />
     <Compile Include="DAL\OfficeStaff\TurnoverDAL.cs" />
@@ -359,12 +361,6 @@
     <Compile Include="OfficeStaff\FormWordContent.Designer.cs">
       <DependentUpon>FormWordContent.cs</DependentUpon>
     </Compile>
-    <Compile Include="OfficeStaff\ManagerContract.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OfficeStaff\ManagerContract.Designer.cs">
-      <DependentUpon>ManagerContract.cs</DependentUpon>
-    </Compile>
     <Compile Include="OfficeStaff\OfficeStaffMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,9 +471,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\FormWordContent.resx">
       <DependentUpon>FormWordContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OfficeStaff\ManagerContract.resx">
-      <DependentUpon>ManagerContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\OfficeStaffMainForm.resx">
       <DependentUpon>OfficeStaffMainForm.cs</DependentUpon>

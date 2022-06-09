@@ -233,7 +233,8 @@ namespace Vehicle_license_plate_recognition
 
         private void btnAttendance_Click(object sender, EventArgs e)
         {
-
+            FormFaceRecognition faceRecognition = new FormFaceRecognition();
+            faceRecognition.ShowDialog();
         }
 
         private void DVGManager_DoubleClick(object sender, EventArgs e)

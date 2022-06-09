@@ -36,8 +36,6 @@
             this.addContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchlStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +62,7 @@
             this.button_timekeeping.TabIndex = 47;
             this.button_timekeeping.Text = "Timekeeping";
             this.button_timekeeping.UseVisualStyleBackColor = true;
+            this.button_timekeeping.Click += new System.EventHandler(this.button_timekeeping_Click);
             // 
             // button_break
             // 
@@ -104,9 +103,7 @@
             this.contractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addContractToolStripMenuItem,
             this.editContractToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.managerToolStripMenuItem,
-            this.printToolStripMenuItem});
+            this.deleteToolStripMenuItem});
             this.contractToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contractToolStripMenuItem.Name = "contractToolStripMenuItem";
             this.contractToolStripMenuItem.Size = new System.Drawing.Size(142, 35);
@@ -130,18 +127,7 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
             this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // managerToolStripMenuItem
-            // 
-            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
-            this.managerToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
-            this.managerToolStripMenuItem.Text = "Manager";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
-            this.printToolStripMenuItem.Text = "Print";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // statusToolStripMenuItem
             // 
@@ -155,7 +141,7 @@
             // searchlStripMenuItem
             // 
             this.searchlStripMenuItem.Name = "searchlStripMenuItem";
-            this.searchlStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.searchlStripMenuItem.Size = new System.Drawing.Size(170, 36);
             this.searchlStripMenuItem.Text = "Search";
             this.searchlStripMenuItem.Click += new System.EventHandler(this.searchlStripMenuItem_Click);
             // 
@@ -243,6 +229,7 @@
             this.btnLogout.TabIndex = 53;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnShift
             // 
@@ -297,8 +284,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnShift;
-        private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cUSTOMERToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aDDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eDITToolStripMenuItem;

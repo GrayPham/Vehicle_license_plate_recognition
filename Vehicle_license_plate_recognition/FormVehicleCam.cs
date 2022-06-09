@@ -351,8 +351,6 @@ namespace Vehicle_license_plate_recognition
             }
         }
 
-
-
         private void btn_charge_Click(object sender, EventArgs e)
         {
             DateTime ChargeTime = DateTime.Now;

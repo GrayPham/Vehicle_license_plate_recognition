@@ -34,24 +34,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.DVGContract = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnSearchCus = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbId = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panalContract = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txb = new System.Windows.Forms.TextBox();
+            this.txbID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txbNameContract = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).BeginInit();
             this.panalContract.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbNameStaff
@@ -114,21 +111,6 @@
             this.panel1.Size = new System.Drawing.Size(769, 613);
             this.panel1.TabIndex = 4;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panalContract);
-            this.panel2.Controls.Add(this.btnSearchCus);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.lbId);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(3, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(516, 613);
-            this.panel2.TabIndex = 5;
-            // 
             // DVGContract
             // 
             this.DVGContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,6 +121,15 @@
             this.DVGContract.RowTemplate.Height = 24;
             this.DVGContract.Size = new System.Drawing.Size(769, 613);
             this.DVGContract.TabIndex = 0;
+            this.DVGContract.DoubleClick += new System.EventHandler(this.DVGContract_DoubleClick);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 513);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(516, 100);
+            this.panel4.TabIndex = 34;
             // 
             // btnDelete
             // 
@@ -149,6 +140,7 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
@@ -159,80 +151,29 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchCus
-            // 
-            this.btnSearchCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCus.Location = new System.Drawing.Point(394, 20);
-            this.btnSearchCus.Name = "btnSearchCus";
-            this.btnSearchCus.Size = new System.Drawing.Size(94, 34);
-            this.btnSearchCus.TabIndex = 33;
-            this.btnSearchCus.Text = "Search";
-            this.btnSearchCus.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(186, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 34);
-            this.textBox1.TabIndex = 32;
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(22, 23);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(146, 29);
-            this.lbId.TabIndex = 31;
-            this.lbId.Text = "ID Customer";
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 513);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(516, 100);
-            this.panel4.TabIndex = 34;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panalContract
             // 
-            this.panalContract.Controls.Add(this.txb);
+            this.panalContract.Controls.Add(this.txbID);
             this.panalContract.Controls.Add(this.label3);
-            this.panalContract.Controls.Add(this.textBox5);
+            this.panalContract.Controls.Add(this.txbNameContract);
             this.panalContract.Controls.Add(this.label4);
             this.panalContract.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panalContract.Location = new System.Drawing.Point(0, 83);
+            this.panalContract.Location = new System.Drawing.Point(0, 6);
             this.panalContract.Name = "panalContract";
-            this.panalContract.Size = new System.Drawing.Size(516, 430);
+            this.panalContract.Size = new System.Drawing.Size(516, 507);
             this.panalContract.TabIndex = 35;
             // 
-            // textBox5
+            // txbID
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(236, 183);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(252, 34);
-            this.textBox5.TabIndex = 23;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 189);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 29);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Name Contract";
-            // 
-            // txb
-            // 
-            this.txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb.Location = new System.Drawing.Point(236, 73);
-            this.txb.Name = "txb";
-            this.txb.Size = new System.Drawing.Size(252, 34);
-            this.txb.TabIndex = 25;
+            this.txbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbID.Location = new System.Drawing.Point(236, 73);
+            this.txbID.Name = "txbID";
+            this.txbID.ReadOnly = true;
+            this.txbID.Size = new System.Drawing.Size(252, 34);
+            this.txbID.TabIndex = 25;
+            this.txbID.Click += new System.EventHandler(this.txbID_Click);
             // 
             // label3
             // 
@@ -244,6 +185,37 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "ID Contract";
             // 
+            // txbNameContract
+            // 
+            this.txbNameContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNameContract.Location = new System.Drawing.Point(236, 183);
+            this.txbNameContract.Name = "txbNameContract";
+            this.txbNameContract.ReadOnly = true;
+            this.txbNameContract.Size = new System.Drawing.Size(252, 34);
+            this.txbNameContract.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 189);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(173, 29);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Name Contract";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panalContract);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(3, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(516, 613);
+            this.panel2.TabIndex = 5;
+            // 
             // DeleteContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,14 +226,14 @@
             this.Controls.Add(this.panel3);
             this.Name = "DeleteContract";
             this.Text = "DeleteContract";
+            this.Load += new System.EventHandler(this.DeleteContract_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).EndInit();
             this.panalContract.ResumeLayout(false);
             this.panalContract.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -275,17 +247,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DVGContract;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panalContract;
-        private System.Windows.Forms.Button btnSearchCus;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txb;
+        private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbNameContract;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
     }
 }
