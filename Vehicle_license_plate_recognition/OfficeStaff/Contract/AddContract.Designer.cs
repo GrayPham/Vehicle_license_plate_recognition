@@ -101,16 +101,16 @@
             // textBox_total
             // 
             this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_total.Location = new System.Drawing.Point(240, 469);
+            this.textBox_total.Location = new System.Drawing.Point(240, 464);
             this.textBox_total.Name = "textBox_total";
             this.textBox_total.Size = new System.Drawing.Size(285, 34);
-            this.textBox_total.TabIndex = 175;
+            this.textBox_total.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 474);
+            this.label3.Location = new System.Drawing.Point(23, 469);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 29);
             this.label3.TabIndex = 176;
@@ -122,7 +122,7 @@
             this.textBox_idcontract.Location = new System.Drawing.Point(242, 20);
             this.textBox_idcontract.Name = "textBox_idcontract";
             this.textBox_idcontract.Size = new System.Drawing.Size(286, 34);
-            this.textBox_idcontract.TabIndex = 173;
+            this.textBox_idcontract.TabIndex = 0;
             // 
             // label_3
             // 
@@ -171,7 +171,7 @@
             this.lbDetail.AutoSize = true;
             this.lbDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbDetail.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbDetail.Location = new System.Drawing.Point(435, 304);
+            this.lbDetail.Location = new System.Drawing.Point(433, 304);
             this.lbDetail.Name = "lbDetail";
             this.lbDetail.Size = new System.Drawing.Size(92, 18);
             this.lbDetail.TabIndex = 26;
@@ -293,7 +293,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(94, 739);
+            this.btnClose.Location = new System.Drawing.Point(97, 711);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(158, 45);
             this.btnClose.TabIndex = 6;
@@ -304,7 +304,7 @@
             // button_add
             // 
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.Location = new System.Drawing.Point(278, 739);
+            this.button_add.Location = new System.Drawing.Point(281, 711);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(165, 45);
             this.button_add.TabIndex = 7;
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 814);
+            this.ClientSize = new System.Drawing.Size(1191, 783);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

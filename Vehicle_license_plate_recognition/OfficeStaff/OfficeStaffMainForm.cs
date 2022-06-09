@@ -68,5 +68,13 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             addContract.ShowDialog();
             this.Visible = true;
         }
+
+        private void editContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditContract editContract = new EditContract();
+            this.Visible = false;
+            editContract.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

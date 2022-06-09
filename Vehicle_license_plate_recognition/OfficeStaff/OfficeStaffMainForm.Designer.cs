@@ -130,6 +130,7 @@
             this.editContractToolStripMenuItem.Name = "editContractToolStripMenuItem";
             this.editContractToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
             this.editContractToolStripMenuItem.Text = "Edit contract";
+            this.editContractToolStripMenuItem.Click += new System.EventHandler(this.editContractToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 

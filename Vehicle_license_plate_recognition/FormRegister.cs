@@ -219,7 +219,7 @@ namespace Vehicle_license_plate_recognition
         {
             pictureBox_image.BackColor = Color.Transparent;
 
-
+        }
 
         private void pictureBox_image_Click_1(object sender, EventArgs e)
         {

@@ -54,5 +54,26 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
             }).ToList();
             return test;
         }
+
+        // Update thông tin hợp đồng theo mã id
+        internal static void EditContract(int id, string name, string content, int staff, int idrenter, DateTime create, DateTime expiry, int type)
+        {
+            var contract = db.Contracts.Where(user => user.Id == id).FirstOrDefault();
+            contract.NameContract = name;
+            contract.Information = content;
+            contract.IdOfficeStaff = staff;
+            contract.IdRenter = idrenter;
+            contract.CreationTime = create;
+            contract.ExpiryDate = expiry;
+            contract.TypeConTract = type;
+            db.SaveChanges();
+        }
+
+        // Hiển thị khách theo mã id
+        internal Contract diplayCon(int id)
+        {
+            Contract cus = db.Contracts.Where(u => u.Id == id).FirstOrDefault();
+            return cus;
+        }
     }  
 }
