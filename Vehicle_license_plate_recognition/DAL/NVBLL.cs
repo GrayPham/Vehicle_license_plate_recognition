@@ -36,7 +36,13 @@ namespace Vehicle_license_plate_recognition.BLL
 
         internal object GetAllBillVehicleOfNV(int idStaff)
         {
-            var nguoigui = db.ThanhToans.Where(u=>u.IdStaff == idStaff).ToList();
+            var nguoigui = db.ThanhToans.Where(u=>u.IdStaff == idStaff ).Select(u => new
+            {
+                Staff =u.IdStaff,
+                ID = u.IdPayment,
+                Price = u.Price,
+                Type = u.IdTVehicle
+            }).ToList();
             return nguoigui;
         }
 

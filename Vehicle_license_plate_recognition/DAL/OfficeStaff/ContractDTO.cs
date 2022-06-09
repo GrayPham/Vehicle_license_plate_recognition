@@ -27,7 +27,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
         // Hiển thị khách theo mã id
         internal object getAllContract()
         {
-            var combo = db.Contracts.Where(u=> u.isDelete != true).Select(u => new
+            var combo = db.Contracts.Where(u=> u.isDelete == null).Select(u => new
             {
                 Id = u.Id,
                 Name = u.NameContract,

@@ -60,6 +60,7 @@
             // 
             // dataGridView_phancongtho
             // 
+            this.dataGridView_phancongtho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_phancongtho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_phancongtho.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView_phancongtho.Location = new System.Drawing.Point(0, 0);

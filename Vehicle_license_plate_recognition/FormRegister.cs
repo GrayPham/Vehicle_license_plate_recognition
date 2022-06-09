@@ -49,32 +49,37 @@ namespace Vehicle_license_plate_recognition
             else if (IsNumber(textBox_id.Text) == false)
             {
                 MessageBox.Show("ID must be numbers!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             // acount toan ki tu
             else if (IsCharacter(textBox_account.Text) == false)
             {
                 MessageBox.Show("Account must be characters and it has white space (or not)!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             // fullname toan ki tu
             else if (IsCharacter(textBox_fullname.Text) == false)
             {
                 MessageBox.Show("Full name must be characters and it has white space (or not)!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             // Phone Toàn số
             else if (IsNumber(textBox_phone.Text) == false)
             {
                 MessageBox.Show("Phone must be numbers!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                return;
             }
             // Phone number Xử lí đúng chuẩn
             else if (IsValidPhone(textBox_phone.Text) == false)
             {
                 MessageBox.Show("Please enter 9 or 10 numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             // Email Xử lí đúng chuẩn
             else if (IsValidEmail(tbEmail.Text) == false)
             {
                 MessageBox.Show("Email format error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
 

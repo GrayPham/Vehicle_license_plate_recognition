@@ -85,46 +85,53 @@ namespace Vehicle_license_plate_recognition
                 var q = test.NVs.Where(user => user.Account == textBox_username.Text && user.Password == textBox_pass.Text).FirstOrDefault();
                 //var q = (from p in test
                 //             where p.username == textbox_username.text && p.password == textbox_pass.text select p).first();
-                GlobalData.NameUser = q.HoVaTenNV;
-                GlobalData.SetIDStaff(q.IdStaff);
-                GlobalData.setImagePath(q.ImagePath);
-                int type = q.isManage == true ? 3 : q.isOfficeStaff == true ? 2 : 1;
-                GlobalData.SetTypeStaff(type);
-                if (q.LayOff == null)
-                {
-                    MessageBox.Show("You need to activate your account", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GetFaceIDStaff getFace = new GetFaceIDStaff();
-                    getFace.lbIDStaff.Text = q.IdStaff.ToString();
-                    this.Hide();
-                    getFace.ShowDialog();
-                    this.Visible = true;
-                }
-                if (q.isOfficeStaff == true && q != null)
-                {
-                    //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
-                    OfficeStaffMainForm menuForm = new OfficeStaffMainForm();
-                    this.Visible = false; //ẩn thôi chứ khum tắt
-                    menuForm.ShowDialog();
-                    this.Visible = true; //mở lại
-                }
-                if (q.isStaff == true && q != null)
-                {
+                if(q != null) {
+                    GlobalData.NameUser = q.HoVaTenNV;
+                    GlobalData.SetIDStaff(q.IdStaff);
+                    GlobalData.setImagePath(q.ImagePath);
+                    int type = q.isManage == true ? 3 : q.isOfficeStaff == true ? 2 : 1;
+                    GlobalData.SetTypeStaff(type);
+                    if (q.LayOff == null)
+                    {
+                        MessageBox.Show("You need to activate your account", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetFaceIDStaff getFace = new GetFaceIDStaff();
+                        getFace.lbIDStaff.Text = q.IdStaff.ToString();
+                        this.Hide();
+                        getFace.ShowDialog();
+                        this.Visible = true;
+                    }
+                    if (q.isOfficeStaff == true && q != null)
+                    {
+                        //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
+                        OfficeStaffMainForm menuForm = new OfficeStaffMainForm();
+                        this.Visible = false; //ẩn thôi chứ khum tắt
+                        menuForm.ShowDialog();
+                        this.Visible = true; //mở lại
+                    }
+                    if (q.isStaff == true && q != null)
+                    {
 
-                    //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
-                    FormStaff staffForm = new FormStaff();
-                    staffForm.txtIDStaff.Text = q.IdStaff.ToString();
-                    this.Visible = false; //ẩn thôi chứ khum tắt
-                    staffForm.ShowDialog();
-                    this.Visible = true; //mở lại
+                        //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
+                        FormStaff staffForm = new FormStaff();
+                        staffForm.txtIDStaff.Text = q.IdStaff.ToString();
+                        this.Visible = false; //ẩn thôi chứ khum tắt
+                        staffForm.ShowDialog();
+                        this.Visible = true; //mở lại
+                    }
+                    if (q.isManage == true && q != null)
+                    {
+                        //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
+                        FormManager managerForm = new FormManager();
+                        this.Visible = false; //ẩn thôi chứ khum tắt
+                        managerForm.ShowDialog();
+                        this.Visible = true; //mở lại
+                    }
                 }
-                if (q.isManage == true && q != null)
+                else
                 {
-                    //MỞ FORM MENU SAU KHI DANG NHAP THANH CONG
-                    FormManager managerForm = new FormManager();
-                    this.Visible = false; //ẩn thôi chứ khum tắt
-                    managerForm.ShowDialog();
-                    this.Visible = true; //mở lại
+                    MessageBox.Show("Login error", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
 
 
 

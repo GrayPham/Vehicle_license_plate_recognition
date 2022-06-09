@@ -178,7 +178,7 @@ namespace Vehicle_license_plate_recognition
             lbLoaiHinh.Text = "";
             String server_path;
             // Goi len server va tra ve ket qua
-            String server_ip = "192.168.1.166";
+            String server_ip = "172.16.31.69";
             if (TypeVehicle == 3)
             {
                 

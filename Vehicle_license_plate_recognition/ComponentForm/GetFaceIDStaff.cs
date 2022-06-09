@@ -29,7 +29,7 @@ namespace Vehicle_license_plate_recognition.ComponentForm
             lbInfor.Text = retStrGet;
             ManagerStaff managerStaff = new ManagerStaff();
             managerStaff.ActiveStaff(lbIDStaff.Text);
-            this.Close();
+
         }
     }
 }
