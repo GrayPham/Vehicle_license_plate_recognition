@@ -170,12 +170,6 @@
     <Compile Include="Manager\FormManager.Designer.cs">
       <DependentUpon>FormManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenu.Designer.cs">
-      <DependentUpon>FormMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,10 +307,10 @@
       <DependentUpon>QuanLiNhaXeEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="NomalObject\staffShow.cs" />
-    <Compile Include="OfficeStaff\AddContract.cs">
+    <Compile Include="OfficeStaff\Contract\AddContract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OfficeStaff\AddContract.Designer.cs">
+    <Compile Include="OfficeStaff\Contract\AddContract.Designer.cs">
       <DependentUpon>AddContract.cs</DependentUpon>
     </Compile>
     <Compile Include="OfficeStaff\Customer\AddCustomer.cs">
@@ -343,22 +337,22 @@
     <Compile Include="OfficeStaff\Customer\ManageCustomer.Designer.cs">
       <DependentUpon>ManageCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="OfficeStaff\DeleteContract.cs">
+    <Compile Include="OfficeStaff\Contract\DeleteContract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OfficeStaff\DeleteContract.Designer.cs">
+    <Compile Include="OfficeStaff\Contract\DeleteContract.Designer.cs">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="OfficeStaff\EditContract.cs">
+    <Compile Include="OfficeStaff\Contract\EditContract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OfficeStaff\EditContract.Designer.cs">
+    <Compile Include="OfficeStaff\Contract\EditContract.Designer.cs">
       <DependentUpon>EditContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="OfficeStaff\FormWordContent.cs">
+    <Compile Include="OfficeStaff\Contract\FormWordContent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OfficeStaff\FormWordContent.Designer.cs">
+    <Compile Include="OfficeStaff\Contract\FormWordContent.Designer.cs">
       <DependentUpon>FormWordContent.cs</DependentUpon>
     </Compile>
     <Compile Include="OfficeStaff\OfficeStaffMainForm.cs">
@@ -409,9 +403,6 @@
       <DependentUpon>FormManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
-      <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,7 +439,7 @@
     <EmbeddedResource Include="Manager\TasksManager\OpenPark.resx">
       <DependentUpon>OpenPark.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OfficeStaff\AddContract.resx">
+    <EmbeddedResource Include="OfficeStaff\Contract\AddContract.resx">
       <DependentUpon>AddContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\Customer\AddCustomer.resx">
@@ -463,13 +454,13 @@
     <EmbeddedResource Include="OfficeStaff\Customer\ManageCustomer.resx">
       <DependentUpon>ManageCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OfficeStaff\DeleteContract.resx">
+    <EmbeddedResource Include="OfficeStaff\Contract\DeleteContract.resx">
       <DependentUpon>DeleteContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OfficeStaff\EditContract.resx">
+    <EmbeddedResource Include="OfficeStaff\Contract\EditContract.resx">
       <DependentUpon>EditContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OfficeStaff\FormWordContent.resx">
+    <EmbeddedResource Include="OfficeStaff\Contract\FormWordContent.resx">
       <DependentUpon>FormWordContent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeStaff\OfficeStaffMainForm.resx">

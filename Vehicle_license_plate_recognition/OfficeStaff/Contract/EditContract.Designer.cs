@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnReset = new System.Windows.Forms.Button();
             this.textBox_idcontract = new System.Windows.Forms.TextBox();
             this.comboBox_select = new System.Windows.Forms.ComboBox();
             this.dateTimePicker_expiry = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +38,8 @@
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox_total = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,21 +65,12 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(957, 36);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(156, 45);
-            this.btnReset.TabIndex = 180;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
             // textBox_idcontract
             // 
             this.textBox_idcontract.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_idcontract.Location = new System.Drawing.Point(246, 28);
             this.textBox_idcontract.Name = "textBox_idcontract";
+            this.textBox_idcontract.ReadOnly = true;
             this.textBox_idcontract.Size = new System.Drawing.Size(286, 34);
             this.textBox_idcontract.TabIndex = 179;
             // 
@@ -117,22 +109,24 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(88, 482);
+            this.btnClose.Location = new System.Drawing.Point(93, 669);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(156, 45);
             this.btnClose.TabIndex = 29;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEditCustract
             // 
             this.btnEditCustract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustract.Location = new System.Drawing.Point(284, 482);
+            this.btnEditCustract.Location = new System.Drawing.Point(271, 669);
             this.btnEditCustract.Name = "btnEditCustract";
             this.btnEditCustract.Size = new System.Drawing.Size(156, 45);
             this.btnEditCustract.TabIndex = 28;
             this.btnEditCustract.Text = "EDIT";
             this.btnEditCustract.UseVisualStyleBackColor = true;
+            this.btnEditCustract.Click += new System.EventHandler(this.btnEditCustract_Click);
             // 
             // richTextBox_content
             // 
@@ -161,13 +155,13 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBox_total);
+            this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.textBox_idcontract);
             this.panel5.Controls.Add(this.comboBox_select);
             this.panel5.Controls.Add(this.dateTimePicker_expiry);
             this.panel5.Controls.Add(this.dateTimePicker_creation);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.btnClose);
-            this.panel5.Controls.Add(this.btnEditCustract);
             this.panel5.Controls.Add(this.richTextBox_content);
             this.panel5.Controls.Add(this.textBox_name);
             this.panel5.Controls.Add(this.label5);
@@ -178,14 +172,32 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 68);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(559, 534);
+            this.panel5.Size = new System.Drawing.Size(559, 758);
             this.panel5.TabIndex = 11;
+            // 
+            // textBox_total
+            // 
+            this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_total.Location = new System.Drawing.Point(247, 423);
+            this.textBox_total.Name = "textBox_total";
+            this.textBox_total.Size = new System.Drawing.Size(285, 34);
+            this.textBox_total.TabIndex = 180;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(28, 426);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 29);
+            this.label7.TabIndex = 181;
+            this.label7.Text = "Unit";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 94);
+            this.label3.Location = new System.Drawing.Point(28, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 29);
             this.label3.TabIndex = 177;
@@ -225,7 +237,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 146);
+            this.label4.Location = new System.Drawing.Point(25, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 29);
             this.label4.TabIndex = 10;
@@ -267,7 +279,7 @@
             this.radioButtonRental.AutoSize = true;
             this.radioButtonRental.Checked = true;
             this.radioButtonRental.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonRental.Location = new System.Drawing.Point(242, 23);
+            this.radioButtonRental.Location = new System.Drawing.Point(228, 22);
             this.radioButtonRental.Name = "radioButtonRental";
             this.radioButtonRental.Size = new System.Drawing.Size(88, 29);
             this.radioButtonRental.TabIndex = 2;
@@ -279,7 +291,7 @@
             // 
             this.CompanyRental.AutoSize = true;
             this.CompanyRental.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompanyRental.Location = new System.Drawing.Point(353, 22);
+            this.CompanyRental.Location = new System.Drawing.Point(336, 22);
             this.CompanyRental.Name = "CompanyRental";
             this.CompanyRental.Size = new System.Drawing.Size(203, 29);
             this.CompanyRental.TabIndex = 1;
@@ -296,6 +308,7 @@
             // 
             // DVGListContract
             // 
+            this.DVGListContract.AllowUserToAddRows = false;
             this.DVGListContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DVGListContract.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DVGListContract.Location = new System.Drawing.Point(0, 0);
@@ -325,7 +338,6 @@
             this.label2.Size = new System.Drawing.Size(155, 32);
             this.label2.TabIndex = 55;
             this.label2.Text = "Name Staff";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtIDStaff
             // 
@@ -348,7 +360,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnReset);
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.lbNameStaff);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtIDStaff);
@@ -363,7 +375,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 720);
+            this.ClientSize = new System.Drawing.Size(1188, 751);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnEditCustract);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -384,8 +398,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox textBox_idcontract;
         internal System.Windows.Forms.ComboBox comboBox_select;
         private System.Windows.Forms.DateTimePicker dateTimePicker_expiry;
@@ -413,5 +425,7 @@
         internal System.Windows.Forms.TextBox txtIDStaff;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox_total;
+        private System.Windows.Forms.Label label7;
     }
 }
