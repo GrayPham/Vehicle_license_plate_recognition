@@ -80,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtPlacePark);
             this.groupBox1.Controls.Add(this.label2);
@@ -135,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(689, 648);
+            this.label2.Location = new System.Drawing.Point(679, 654);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 32);
             this.label2.TabIndex = 44;
@@ -174,7 +175,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(689, 587);
+            this.label1.Location = new System.Drawing.Point(679, 583);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 40;
@@ -385,7 +386,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.comboBox1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 592);
@@ -395,6 +396,7 @@
             // 
             // pictureBox_camera
             // 
+            this.pictureBox_camera.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox_camera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_camera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_camera.Location = new System.Drawing.Point(0, 3);

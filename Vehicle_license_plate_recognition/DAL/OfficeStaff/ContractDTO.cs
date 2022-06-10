@@ -75,7 +75,7 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
         }
         internal object getAllContractExprire()
         {
-            var contract = db.Contracts.Where(u => u.ExpiryDate < DateTime.Now && u.isDelete !=true).Select(u => new
+            var contract = db.Contracts.Where(u => u.ExpiryDate < DateTime.Now && u.isDelete ==null).Select(u => new
             {
                 ID = u.Id,
                 NAME = u.NameContract,

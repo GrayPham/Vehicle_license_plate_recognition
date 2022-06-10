@@ -101,6 +101,7 @@
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -121,6 +122,7 @@
             this.button_add.TabIndex = 8;
             this.button_add.Text = "ADD NEW";
             this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // txtIDStaff
             // 
@@ -303,6 +305,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.nUDTypeCus);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnClose);

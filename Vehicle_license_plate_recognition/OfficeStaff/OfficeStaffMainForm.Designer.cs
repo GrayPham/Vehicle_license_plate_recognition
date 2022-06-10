@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnShift = new System.Windows.Forms.Button();
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mANAGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,22 +45,11 @@
             this.addContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button_timekeeping = new System.Windows.Forms.Button();
-            this.button_break = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataGridView_phancongtho = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phancongtho)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnShift
-            // 
-            this.btnShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnShift.Location = new System.Drawing.Point(12, 689);
-            this.btnShift.Name = "btnShift";
-            this.btnShift.Size = new System.Drawing.Size(237, 44);
-            this.btnShift.TabIndex = 62;
-            this.btnShift.Text = "SHIFT";
-            this.btnShift.UseVisualStyleBackColor = true;
             // 
             // txtIDStaff
             // 
@@ -87,24 +75,28 @@
             this.mANAGEToolStripMenuItem.Name = "mANAGEToolStripMenuItem";
             this.mANAGEToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
             this.mANAGEToolStripMenuItem.Text = "Manager Customer";
+            this.mANAGEToolStripMenuItem.Click += new System.EventHandler(this.mANAGEToolStripMenuItem_Click);
             // 
             // rEMOVEToolStripMenuItem
             // 
             this.rEMOVEToolStripMenuItem.Name = "rEMOVEToolStripMenuItem";
             this.rEMOVEToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
             this.rEMOVEToolStripMenuItem.Text = "Remove Customer";
+            this.rEMOVEToolStripMenuItem.Click += new System.EventHandler(this.rEMOVEToolStripMenuItem_Click);
             // 
             // eDITToolStripMenuItem
             // 
             this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
             this.eDITToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
             this.eDITToolStripMenuItem.Text = "Edit Customer";
+            this.eDITToolStripMenuItem.Click += new System.EventHandler(this.eDITToolStripMenuItem_Click);
             // 
             // aDDToolStripMenuItem
             // 
             this.aDDToolStripMenuItem.Name = "aDDToolStripMenuItem";
             this.aDDToolStripMenuItem.Size = new System.Drawing.Size(298, 36);
             this.aDDToolStripMenuItem.Text = "Add Customer";
+            this.aDDToolStripMenuItem.Click += new System.EventHandler(this.aDDToolStripMenuItem_Click);
             // 
             // cUSTOMERToolStripMenuItem
             // 
@@ -123,6 +115,7 @@
             this.totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
             this.totalRevenueToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
             this.totalRevenueToolStripMenuItem.Text = "Total revenue";
+            this.totalRevenueToolStripMenuItem.Click += new System.EventHandler(this.totalRevenueToolStripMenuItem_Click);
             // 
             // btnLogout
             // 
@@ -133,6 +126,7 @@
             this.btnLogout.TabIndex = 61;
             this.btnLogout.Text = "LOG OUT";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // turnoverToolStripMenuItem
             // 
@@ -155,14 +149,16 @@
             // searchlStripMenuItem
             // 
             this.searchlStripMenuItem.Name = "searchlStripMenuItem";
-            this.searchlStripMenuItem.Size = new System.Drawing.Size(170, 36);
+            this.searchlStripMenuItem.Size = new System.Drawing.Size(224, 36);
             this.searchlStripMenuItem.Text = "Search";
+            this.searchlStripMenuItem.Click += new System.EventHandler(this.searchlStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // editContractToolStripMenuItem
             // 
@@ -192,22 +188,13 @@
             // button_timekeeping
             // 
             this.button_timekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_timekeeping.Location = new System.Drawing.Point(1082, 689);
+            this.button_timekeeping.Location = new System.Drawing.Point(519, 683);
             this.button_timekeeping.Name = "button_timekeeping";
-            this.button_timekeeping.Size = new System.Drawing.Size(237, 44);
+            this.button_timekeeping.Size = new System.Drawing.Size(312, 44);
             this.button_timekeeping.TabIndex = 57;
             this.button_timekeeping.Text = "TIMEKEEPING";
             this.button_timekeeping.UseVisualStyleBackColor = true;
-            // 
-            // button_break
-            // 
-            this.button_break.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_break.Location = new System.Drawing.Point(476, 689);
-            this.button_break.Name = "button_break";
-            this.button_break.Size = new System.Drawing.Size(390, 44);
-            this.button_break.TabIndex = 56;
-            this.button_break.Text = "TAKE A BREAK";
-            this.button_break.UseVisualStyleBackColor = true;
+            this.button_timekeeping.Click += new System.EventHandler(this.button_timekeeping_Click);
             // 
             // menuStrip1
             // 
@@ -226,12 +213,13 @@
             // 
             // dataGridView_phancongtho
             // 
+            this.dataGridView_phancongtho.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView_phancongtho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_phancongtho.Location = new System.Drawing.Point(0, 122);
+            this.dataGridView_phancongtho.Location = new System.Drawing.Point(12, 122);
             this.dataGridView_phancongtho.Name = "dataGridView_phancongtho";
             this.dataGridView_phancongtho.RowHeadersWidth = 51;
             this.dataGridView_phancongtho.RowTemplate.Height = 24;
-            this.dataGridView_phancongtho.Size = new System.Drawing.Size(1319, 544);
+            this.dataGridView_phancongtho.Size = new System.Drawing.Size(1307, 544);
             this.dataGridView_phancongtho.TabIndex = 55;
             // 
             // OfficeStaffMainForm
@@ -239,12 +227,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1335, 739);
-            this.Controls.Add(this.btnShift);
             this.Controls.Add(this.txtIDStaff);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.button_timekeeping);
-            this.Controls.Add(this.button_break);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView_phancongtho);
             this.Name = "OfficeStaffMainForm";
@@ -260,8 +246,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnShift;
         internal System.Windows.Forms.TextBox txtIDStaff;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem mANAGEToolStripMenuItem;
@@ -279,7 +263,6 @@
         private System.Windows.Forms.ToolStripMenuItem addContractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contractToolStripMenuItem;
         private System.Windows.Forms.Button button_timekeeping;
-        private System.Windows.Forms.Button button_break;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.DataGridView dataGridView_phancongtho;
     }

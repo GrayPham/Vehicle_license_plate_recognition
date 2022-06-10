@@ -162,8 +162,8 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                 {
                     int idCus = Convert.ToInt32(id);
                     int typeCus = Convert.ToInt32(type);
-                    var checkChange = CustomerDTO.db.Customers.Where(test => test.Id == idCus || test.TypeID == typeCus || test.FullName == fname 
-                                                                     || test.BirthDate == birthdate || test.Email == email || test.Gender==gender || test.Phone == phone);
+                    //var checkChange = CustomerDTO.db.Customers.Where(test => test.Id == idCus || test.TypeID == typeCus || test.FullName == fname 
+                    //                                                 || test.BirthDate == birthdate || test.Email == email || test.Gender==gender || test.Phone == phone);
                     int born_year = birthdate.Year;
                     int this_year = DateTime.Now.Year;
                     // Check tuổi
@@ -171,17 +171,17 @@ namespace Vehicle_license_plate_recognition.Controller.OfficeStaff
                     {
                         MessageBox.Show("The Customer Age Must Be Between 15 and 100 year", "Invalid Birth Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (checkChange.Count() == 0)
+                    else //if (checkChange.Count() == 0)
                     {
                         getAllCustomer();
                         customerDTO.UpdateCustomer(idCus, typeCus, fname, birthdate, email, gender, phone);
                         MessageBox.Show("Updated successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else
-                    {
-                        MessageBox.Show("Nothing change!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //else
+                    //{
+                    //    MessageBox.Show("Nothing change!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    }
+                    //}
                     
 
                 }

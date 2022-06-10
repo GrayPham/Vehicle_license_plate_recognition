@@ -44,12 +44,6 @@
             this.btnAddPark = new System.Windows.Forms.Button();
             this.btnPhanQuyen = new System.Windows.Forms.Button();
             this.btnQLTacVu = new System.Windows.Forms.Button();
-            this.panelSubNVVP = new System.Windows.Forms.Panel();
-            this.btnDeleteOfficer = new System.Windows.Forms.Button();
-            this.btnFiredOfficer = new System.Windows.Forms.Button();
-            this.btnUpdateOfficer = new System.Windows.Forms.Button();
-            this.btnAddOfficer = new System.Windows.Forms.Button();
-            this.btnNVVP = new System.Windows.Forms.Button();
             this.panelQlNhanSuThoSubmenu = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFired = new System.Windows.Forms.Button();
@@ -72,7 +66,6 @@
             this.panelSideMenu.SuspendLayout();
             this.panelSubPhanCong.SuspendLayout();
             this.panelSubTacVu.SuspendLayout();
-            this.panelSubNVVP.SuspendLayout();
             this.panelQlNhanSuThoSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,8 +81,6 @@
             this.panelSideMenu.Controls.Add(this.btnAssignment);
             this.panelSideMenu.Controls.Add(this.panelSubTacVu);
             this.panelSideMenu.Controls.Add(this.btnQLTacVu);
-            this.panelSideMenu.Controls.Add(this.panelSubNVVP);
-            this.panelSideMenu.Controls.Add(this.btnNVVP);
             this.panelSideMenu.Controls.Add(this.panelQlNhanSuThoSubmenu);
             this.panelSideMenu.Controls.Add(this.btnQLNhanSuTho);
             this.panelSideMenu.Controls.Add(this.panelLogo);
@@ -108,7 +99,7 @@
             this.panelSubPhanCong.Controls.Add(this.btnAssignmentOfficer);
             this.panelSubPhanCong.Controls.Add(this.btnAssignmentStaff);
             this.panelSubPhanCong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubPhanCong.Location = new System.Drawing.Point(0, 875);
+            this.panelSubPhanCong.Location = new System.Drawing.Point(0, 663);
             this.panelSubPhanCong.Name = "panelSubPhanCong";
             this.panelSubPhanCong.Size = new System.Drawing.Size(179, 166);
             this.panelSubPhanCong.TabIndex = 8;
@@ -199,7 +190,7 @@
             this.btnAssignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignment.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAssignment.Location = new System.Drawing.Point(0, 829);
+            this.btnAssignment.Location = new System.Drawing.Point(0, 617);
             this.btnAssignment.Name = "btnAssignment";
             this.btnAssignment.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAssignment.Size = new System.Drawing.Size(179, 46);
@@ -219,7 +210,7 @@
             this.panelSubTacVu.Controls.Add(this.btnAddPark);
             this.panelSubTacVu.Controls.Add(this.btnPhanQuyen);
             this.panelSubTacVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubTacVu.Location = new System.Drawing.Point(0, 565);
+            this.panelSubTacVu.Location = new System.Drawing.Point(0, 353);
             this.panelSubTacVu.Name = "panelSubTacVu";
             this.panelSubTacVu.Size = new System.Drawing.Size(179, 264);
             this.panelSubTacVu.TabIndex = 6;
@@ -315,7 +306,7 @@
             this.btnPhanQuyen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPhanQuyen.Size = new System.Drawing.Size(179, 41);
             this.btnPhanQuyen.TabIndex = 0;
-            this.btnPhanQuyen.Text = "Yêu cầu phân quyền";
+            this.btnPhanQuyen.Text = "Role request";
             this.btnPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPhanQuyen.UseVisualStyleBackColor = true;
             this.btnPhanQuyen.Click += new System.EventHandler(this.btnPhanQuyen_Click);
@@ -327,7 +318,7 @@
             this.btnQLTacVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLTacVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLTacVu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnQLTacVu.Location = new System.Drawing.Point(0, 519);
+            this.btnQLTacVu.Location = new System.Drawing.Point(0, 307);
             this.btnQLTacVu.Name = "btnQLTacVu";
             this.btnQLTacVu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLTacVu.Size = new System.Drawing.Size(179, 46);
@@ -336,100 +327,6 @@
             this.btnQLTacVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLTacVu.UseVisualStyleBackColor = true;
             this.btnQLTacVu.Click += new System.EventHandler(this.btnQLTacVu_Click);
-            // 
-            // panelSubNVVP
-            // 
-            this.panelSubNVVP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
-            this.panelSubNVVP.Controls.Add(this.btnDeleteOfficer);
-            this.panelSubNVVP.Controls.Add(this.btnFiredOfficer);
-            this.panelSubNVVP.Controls.Add(this.btnUpdateOfficer);
-            this.panelSubNVVP.Controls.Add(this.btnAddOfficer);
-            this.panelSubNVVP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubNVVP.Location = new System.Drawing.Point(0, 353);
-            this.panelSubNVVP.Name = "panelSubNVVP";
-            this.panelSubNVVP.Size = new System.Drawing.Size(179, 166);
-            this.panelSubNVVP.TabIndex = 4;
-            // 
-            // btnDeleteOfficer
-            // 
-            this.btnDeleteOfficer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeleteOfficer.FlatAppearance.BorderSize = 0;
-            this.btnDeleteOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteOfficer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDeleteOfficer.Location = new System.Drawing.Point(0, 123);
-            this.btnDeleteOfficer.Name = "btnDeleteOfficer";
-            this.btnDeleteOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDeleteOfficer.Size = new System.Drawing.Size(179, 43);
-            this.btnDeleteOfficer.TabIndex = 3;
-            this.btnDeleteOfficer.Text = "Delete Officer";
-            this.btnDeleteOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteOfficer.UseVisualStyleBackColor = true;
-            this.btnDeleteOfficer.Click += new System.EventHandler(this.btnDeleteOfficer_Click);
-            // 
-            // btnFiredOfficer
-            // 
-            this.btnFiredOfficer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFiredOfficer.FlatAppearance.BorderSize = 0;
-            this.btnFiredOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiredOfficer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnFiredOfficer.Location = new System.Drawing.Point(0, 82);
-            this.btnFiredOfficer.Name = "btnFiredOfficer";
-            this.btnFiredOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnFiredOfficer.Size = new System.Drawing.Size(179, 41);
-            this.btnFiredOfficer.TabIndex = 2;
-            this.btnFiredOfficer.Text = "Officer Resigned / Fired";
-            this.btnFiredOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiredOfficer.UseVisualStyleBackColor = true;
-            this.btnFiredOfficer.Click += new System.EventHandler(this.btnFiredOfficer_Click);
-            // 
-            // btnUpdateOfficer
-            // 
-            this.btnUpdateOfficer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateOfficer.FlatAppearance.BorderSize = 0;
-            this.btnUpdateOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateOfficer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdateOfficer.Location = new System.Drawing.Point(0, 41);
-            this.btnUpdateOfficer.Name = "btnUpdateOfficer";
-            this.btnUpdateOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnUpdateOfficer.Size = new System.Drawing.Size(179, 41);
-            this.btnUpdateOfficer.TabIndex = 1;
-            this.btnUpdateOfficer.Text = "Update Officer";
-            this.btnUpdateOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateOfficer.UseVisualStyleBackColor = true;
-            this.btnUpdateOfficer.Click += new System.EventHandler(this.btnUpdateOfficer_Click);
-            // 
-            // btnAddOfficer
-            // 
-            this.btnAddOfficer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddOfficer.FlatAppearance.BorderSize = 0;
-            this.btnAddOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddOfficer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddOfficer.Location = new System.Drawing.Point(0, 0);
-            this.btnAddOfficer.Name = "btnAddOfficer";
-            this.btnAddOfficer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAddOfficer.Size = new System.Drawing.Size(179, 41);
-            this.btnAddOfficer.TabIndex = 0;
-            this.btnAddOfficer.Text = "Add Officer";
-            this.btnAddOfficer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddOfficer.UseVisualStyleBackColor = true;
-            this.btnAddOfficer.Click += new System.EventHandler(this.btnAddOfficer_Click);
-            // 
-            // btnNVVP
-            // 
-            this.btnNVVP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNVVP.FlatAppearance.BorderSize = 0;
-            this.btnNVVP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNVVP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNVVP.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnNVVP.Location = new System.Drawing.Point(0, 307);
-            this.btnNVVP.Name = "btnNVVP";
-            this.btnNVVP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNVVP.Size = new System.Drawing.Size(179, 46);
-            this.btnNVVP.TabIndex = 3;
-            this.btnNVVP.Text = "Officer";
-            this.btnNVVP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNVVP.UseVisualStyleBackColor = true;
-            this.btnNVVP.Click += new System.EventHandler(this.btnNVVP_Click);
             // 
             // panelQlNhanSuThoSubmenu
             // 
@@ -690,7 +587,6 @@
             this.panelSideMenu.ResumeLayout(false);
             this.panelSubPhanCong.ResumeLayout(false);
             this.panelSubTacVu.ResumeLayout(false);
-            this.panelSubNVVP.ResumeLayout(false);
             this.panelQlNhanSuThoSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -722,12 +618,6 @@
         private System.Windows.Forms.Button btnEditPark;
         private System.Windows.Forms.Button btnPhanQuyen;
         private System.Windows.Forms.Button btnQLTacVu;
-        private System.Windows.Forms.Panel panelSubNVVP;
-        private System.Windows.Forms.Button btnDeleteOfficer;
-        private System.Windows.Forms.Button btnFiredOfficer;
-        private System.Windows.Forms.Button btnUpdateOfficer;
-        private System.Windows.Forms.Button btnAddOfficer;
-        private System.Windows.Forms.Button btnNVVP;
         private System.Windows.Forms.Button btnQLNhanSuTho;
         private System.Windows.Forms.Panel panelButton;
         private System.Windows.Forms.Panel panelChildForm;

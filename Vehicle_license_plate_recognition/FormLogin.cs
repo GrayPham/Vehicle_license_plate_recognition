@@ -139,7 +139,7 @@ namespace Vehicle_license_plate_recognition
             //NOTE: "Please check your username and password again!"
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox_username.Select();
                 return;
             }

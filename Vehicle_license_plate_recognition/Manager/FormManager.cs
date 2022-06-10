@@ -37,7 +37,7 @@ namespace Vehicle_license_plate_recognition
         private void customizeDesing()
         {
             panelQlNhanSuThoSubmenu.Visible= false;
-            panelSubNVVP.Visible=false;
+            //panelSubNVVP.Visible=false;
             panelSubTacVu.Visible=false;
             panelSubPhanCong.Visible=false;
         }
@@ -47,10 +47,10 @@ namespace Vehicle_license_plate_recognition
             {
                 panelQlNhanSuThoSubmenu.Visible = false;
             }
-            if (panelSubNVVP.Visible == true)
-            {
-                panelSubNVVP.Visible = false;
-            }
+            //if (panelSubNVVP.Visible == true)
+            //{
+            //    panelSubNVVP.Visible = false;
+            //}
             if (panelSubTacVu.Visible == true)
             {
                 panelSubTacVu.Visible = false;
@@ -108,10 +108,10 @@ namespace Vehicle_license_plate_recognition
         }
         #endregion
         #region Quan Lí NV Văn phòng
-        private void btnNVVP_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelSubNVVP);
-        }
+        //private void btnNVVP_Click(object sender, EventArgs e)
+        //{
+        //    showSubMenu(panelSubNVVP);
+        //}
 
         private void btnAddOfficer_Click(object sender, EventArgs e)
         {

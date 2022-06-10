@@ -18,7 +18,7 @@ namespace Vehicle_license_plate_recognition.Controller
         {
             try
             {
-                string fileName = @"F:\export_word_HD1.docx";
+                string fileName = @"E:\export_word_HD1.docx";
                 var doc = DocX.Create(fileName);
 
                 #region 1 title

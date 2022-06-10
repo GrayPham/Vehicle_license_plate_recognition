@@ -122,20 +122,28 @@ namespace Vehicle_license_plate_recognition.OfficeStaff.Customer
         // Xóa khách
         private void button_remove_Click(object sender, EventArgs e)
         {
-            if (dataGridView_show.SelectedRows.Count > 0)
+            try
             {
-                if (MessageBox.Show("Do You Want To delete This Score?", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+                if (dataGridView_show.SelectedRows.Count > 0)
                 {
-                    int id = int.Parse(dataGridView_show.CurrentRow.Cells[0].Value.ToString());
-                    MessageBox.Show("Customer removed!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cBLL.DeleteCus(id);
-                    dataGridView_show.DataSource = cBLL.getAllCustomer();
+                    if (MessageBox.Show("Do You Want To delete This Score?", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        int id = int.Parse(dataGridView_show.CurrentRow.Cells[0].Value.ToString());
+                        MessageBox.Show("Customer removed!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cBLL.DeleteCus(id);
+                        dataGridView_show.DataSource = cBLL.getAllCustomer();
+                    }
                 }
-            }
-            else
+                else
+                {
+                    MessageBox.Show("List has nothing to remove!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }catch (Exception)
             {
-                MessageBox.Show("List has nothing to remove!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Can not delete!", "Remove Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
+
         }
 
         // Thêm khách

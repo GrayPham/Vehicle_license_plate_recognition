@@ -101,11 +101,13 @@
     </Compile>
     <Compile Include="Controller\Manager\AssignmentBLL.cs" />
     <Compile Include="Controller\OfficeStaff\ContractBLL.cs" />
+    <Compile Include="Controller\OfficeStaff\OfficeMainFormBLL.cs" />
     <Compile Include="Controller\OfficeStaff\SearchContractC.cs" />
     <Compile Include="Controller\OfficeStaff\turnover.cs" />
     <Compile Include="Controller\PrintWord.cs" />
     <Compile Include="DAL\ManagerDTO\AssignmentDTO.cs" />
     <Compile Include="DAL\OfficeStaff\ContractDTO.cs" />
+    <Compile Include="DAL\OfficeStaff\OfficeMainFormDTO.cs" />
     <Compile Include="DAL\OfficeStaff\SearchContractCDAO.cs" />
     <Compile Include="DAL\OfficeStaff\TurnoverDAL.cs" />
     <Compile Include="GlobalData.cs" />
