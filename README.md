@@ -13,9 +13,7 @@ HOW TO USE:
 * `Preprocess.py` contains functions for image processing
 * Remember to set up neccesary libraries in `requirements.txt` 
 
-Các bạn có thể tìm hiểu thêm tại [LINK YOUTUBE:](https://youtu.be/7erlCp6d5w8)
 
-More about this project on [YOUTUBE:](https://youtu.be/7erlCp6d5w8)
 
 Đọc file `Nhận diện biển số xe.docx` để biết thêm lý thuyết.
 
