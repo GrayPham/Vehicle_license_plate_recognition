@@ -11,6 +11,7 @@ using Vehicle_license_plate_recognition.Controller.Login;
 using Vehicle_license_plate_recognition.OfficeStaff.Customer;
 using Vehicle_license_plate_recognition.OfficeStaff.Status;
 using Vehicle_license_plate_recognition.OfficeStaff.Turnover;
+using Vehicle_license_plate_recognition.Controller.OfficeStaff;
 
 namespace Vehicle_license_plate_recognition.OfficeStaff
 {
@@ -19,17 +20,23 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
         public OfficeStaffMainForm()
         {
             InitializeComponent();
+  
         }
 
-        private void contractToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        OfficeMainFormBLL cBLL = new OfficeMainFormBLL();
 
         private void OfficeStaffMainForm_Load(object sender, EventArgs e)
         {
 
             txtIDStaff.Text = GlobalData.idStaff.ToString();
+            if (cBLL.getAllContract() != null)
+            {
+                dataGridView_phancongtho.DataSource = cBLL.getAllContract();
+            }
+            else
+            {
+                MessageBox.Show("Datagridview is empty!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }    
 
         }
 
@@ -47,6 +54,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             this.Visible = false;
             editCustomer.ShowDialog();
             this.Visible=true;
+
         }
 
         private void rEMOVEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,14 +63,7 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             this.Visible = false;
             deleteCustomer.ShowDialog();
             this.Visible = true;
-        }
 
-        private void mANAGEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ManageCustomer mg = new ManageCustomer();
-            this.Visible = false;
-            mg.ShowDialog();
-            this.Visible = true;
         }
 
         private void totalRevenueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,13 +77,6 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
             SearchContract search = new SearchContract();
             search.ShowDialog();
         }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DeleteContract deleteContract = new DeleteContract();
-            deleteContract.ShowDialog();
-        }
-
         private void button_timekeeping_Click(object sender, EventArgs e)
         {
             FormFaceRecognition formFace = new FormFaceRecognition();
@@ -97,14 +91,57 @@ namespace Vehicle_license_plate_recognition.OfficeStaff
         private void addContractToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContract addContract = new AddContract();
+            this.Visible = false;
             addContract.ShowDialog();
+            this.Visible = true;
+            if (cBLL.getAllContract() != null)
+            {
+                dataGridView_phancongtho.DataSource = cBLL.getAllContract();
+            }
+            else
+            {
+                MessageBox.Show("Datagridview is empty!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void mANAGEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageCustomer manageCustomer = new ManageCustomer();
+            this.Visible = false;
+            manageCustomer.ShowDialog();
+            this.Visible=true;
         }
 
         private void editContractToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditContract editContract = new EditContract();
+            this.Visible = false;
             editContract.ShowDialog();
+            this.Visible = true;
+            if (cBLL.getAllContract() != null)
+            {
+                dataGridView_phancongtho.DataSource = cBLL.getAllContract();
+            }
+            else
+            {
+                MessageBox.Show("Datagridview is empty!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteContract deleteContract = new DeleteContract();
+            this.Visible = false;
+            deleteContract.ShowDialog();
+            this.Visible = true;
+            if (cBLL.getAllContract() != null)
+            {
+                dataGridView_phancongtho.DataSource = cBLL.getAllContract();
+            }
+            else
+            {
+                MessageBox.Show("Datagridview is empty!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

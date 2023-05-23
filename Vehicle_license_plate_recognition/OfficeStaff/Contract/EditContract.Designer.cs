@@ -382,6 +382,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "EditContract";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditContract";
             this.Load += new System.EventHandler(this.EditContract_Load);
             this.panel1.ResumeLayout(false);

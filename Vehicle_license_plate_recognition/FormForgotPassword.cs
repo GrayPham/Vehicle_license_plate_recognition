@@ -61,35 +61,40 @@ namespace Vehicle_license_plate_recognition
                 QuanLiNhaXeEntities test = new QuanLiNhaXeEntities();
                 var q = test.NVs.Where(user => user.Email == textBox_email.Text).FirstOrDefault();
 
-
-                if (q != null)
+                try
                 {
-                    string from, pass, messageBody;
-                    Random rand = new Random();
-                    randomCode = (rand.Next(999999)).ToString();
+                    if (q != null)
+                    {
+                        string from, pass, messageBody;
+                        Random rand = new Random();
+                        randomCode = (rand.Next(999999)).ToString();
 
 
-                    MailMessage message = new MailMessage();
-                    to = (textBox_email.Text).ToString();
-                    from = "20110431@student.hcmute.edu.vn";
-                    pass = "26112001";
-                    messageBody = "Your reset code is " + randomCode;
-                    message.To.Add(to);
-                    message.From = new MailAddress(from);
-                    message.Body = messageBody;
-                    message.Subject = "Your code: ";
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com", 25); //SMTP là giao thức tiêu chuẩn để gửi email
-                    smtp.EnableSsl = true;  //là 1 chứng chỉ bảo mật 
-                                            //smtp.Port = 25; //cổng nhận gmail
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //thông qua mạng
-                    smtp.Credentials = new NetworkCredential(from, pass); //hỗ trợ đăng nhập cho bạn
-                    smtp.Send(message);
-                    MessageBox.Show("Code send successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MailMessage message = new MailMessage();
+                        to = (textBox_email.Text).ToString();
+                        from = "19110081@student.hcmute.edu.vn";
+                        pass = "29032002tn";
+                        messageBody = "Your reset code is " + randomCode;
+                        message.To.Add(to);
+                        message.From = new MailAddress(from);
+                        message.Body = messageBody;
+                        message.Subject = "Your code: ";
+                        SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587); //SMTP là giao thức tiêu chuẩn để gửi email
+                        smtp.EnableSsl = true;  //là 1 chứng chỉ bảo mật 
+                                                //smtp.Port = 587; //cổng nhận gmail
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //thông qua mạng
+                        smtp.Credentials = new NetworkCredential(from, pass); //hỗ trợ đăng nhập cho bạn
+                        smtp.Send(message);
+                        MessageBox.Show("Code send successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    else
+                        MessageBox.Show("Email is not exit!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                else
-                    MessageBox.Show("Email is not exit!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                catch (Exception)
+                {
+                    MessageBox.Show("Connection errors!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
         }

@@ -61,7 +61,12 @@ namespace Vehicle_license_plate_recognition.DAL.OfficeStaff
 
         //Xóa khách hàng theo mã id
         internal void DeleteCus(int id)
-        {           
+        {
+            var removeContract = db.Contracts.Where(u=> u.IdRenter == id).ToList();
+            foreach(var contract in removeContract)
+            {
+                db.Contracts.Remove(contract);
+            }    
             var remove = db.Customers.Where(u => u.Id == id).FirstOrDefault();
             db.Customers.Remove(remove);
             db.SaveChanges();

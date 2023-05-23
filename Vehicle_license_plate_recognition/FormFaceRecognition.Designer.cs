@@ -51,7 +51,7 @@
             // 
             this.btn_offcam.BackColor = System.Drawing.Color.Transparent;
             this.btn_offcam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_offcam.Location = new System.Drawing.Point(514, 679);
+            this.btn_offcam.Location = new System.Drawing.Point(464, 691);
             this.btn_offcam.Name = "btn_offcam";
             this.btn_offcam.Size = new System.Drawing.Size(221, 53);
             this.btn_offcam.TabIndex = 29;
@@ -62,7 +62,7 @@
             // 
             this.btn_cap.BackColor = System.Drawing.Color.Transparent;
             this.btn_cap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_cap.Location = new System.Drawing.Point(514, 620);
+            this.btn_cap.Location = new System.Drawing.Point(464, 632);
             this.btn_cap.Name = "btn_cap";
             this.btn_cap.Size = new System.Drawing.Size(221, 53);
             this.btn_cap.TabIndex = 28;
@@ -102,6 +102,7 @@
             // 
             // pictureBox_recognize
             // 
+            this.pictureBox_recognize.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox_recognize.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_recognize.Image")));
             this.pictureBox_recognize.Location = new System.Drawing.Point(1122, 51);
             this.pictureBox_recognize.Name = "pictureBox_recognize";
@@ -112,6 +113,7 @@
             // 
             // pictureBox_camera
             // 
+            this.pictureBox_camera.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox_camera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_camera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_camera.Location = new System.Drawing.Point(12, 12);
@@ -126,7 +128,7 @@
             // 
             this.btn_cam.BackColor = System.Drawing.Color.Transparent;
             this.btn_cam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_cam.Location = new System.Drawing.Point(514, 561);
+            this.btn_cam.Location = new System.Drawing.Point(464, 573);
             this.btn_cam.Name = "btn_cam";
             this.btn_cam.Size = new System.Drawing.Size(221, 53);
             this.btn_cam.TabIndex = 27;
@@ -137,7 +139,7 @@
             // 
             this.button_attendance.BackColor = System.Drawing.Color.Transparent;
             this.button_attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_attendance.Location = new System.Drawing.Point(1261, 487);
+            this.button_attendance.Location = new System.Drawing.Point(1257, 519);
             this.button_attendance.Name = "button_attendance";
             this.button_attendance.Size = new System.Drawing.Size(168, 53);
             this.button_attendance.TabIndex = 40;
@@ -149,7 +151,7 @@
             // 
             this.button_cancel.BackColor = System.Drawing.Color.Transparent;
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_cancel.Location = new System.Drawing.Point(1261, 546);
+            this.button_cancel.Location = new System.Drawing.Point(1257, 670);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(168, 53);
             this.button_cancel.TabIndex = 41;
@@ -180,7 +182,7 @@
             // 
             this.btnConfim.BackColor = System.Drawing.Color.Transparent;
             this.btnConfim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnConfim.Location = new System.Drawing.Point(1261, 632);
+            this.btnConfim.Location = new System.Drawing.Point(1257, 593);
             this.btnConfim.Name = "btnConfim";
             this.btnConfim.Size = new System.Drawing.Size(168, 53);
             this.btnConfim.TabIndex = 44;
@@ -192,6 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1657, 783);
             this.Controls.Add(this.btnConfim);
             this.Controls.Add(this.dateTimePicker1);

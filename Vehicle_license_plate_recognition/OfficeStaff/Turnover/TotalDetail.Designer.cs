@@ -265,7 +265,7 @@
             this.rBtnMouth.Name = "rBtnMouth";
             this.rBtnMouth.Size = new System.Drawing.Size(83, 50);
             this.rBtnMouth.TabIndex = 2;
-            this.rBtnMouth.Text = "By Mouth";
+            this.rBtnMouth.Text = "By Month";
             this.rBtnMouth.UseVisualStyleBackColor = true;
             this.rBtnMouth.CheckedChanged += new System.EventHandler(this.rBtnMouth_CheckedChanged);
             // 

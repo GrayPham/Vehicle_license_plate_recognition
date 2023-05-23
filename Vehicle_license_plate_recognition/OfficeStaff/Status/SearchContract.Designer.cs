@@ -34,6 +34,7 @@
             this.txtIDStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DVGContract = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPrintWord = new System.Windows.Forms.Button();
@@ -44,18 +45,18 @@
             this.rBtStillUse = new System.Windows.Forms.RadioButton();
             this.rBtnAllUse = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.DVGContract = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel3.Controls.Add(this.lbNameStaff);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtIDStaff);
@@ -115,8 +116,26 @@
             this.panel2.Size = new System.Drawing.Size(1507, 377);
             this.panel2.TabIndex = 9;
             // 
+            // DVGContract
+            // 
+            this.DVGContract.AllowUserToAddRows = false;
+            this.DVGContract.AllowUserToDeleteRows = false;
+            this.DVGContract.AllowUserToResizeRows = false;
+            this.DVGContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DVGContract.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DVGContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGContract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DVGContract.Location = new System.Drawing.Point(0, 0);
+            this.DVGContract.Name = "DVGContract";
+            this.DVGContract.RowHeadersWidth = 51;
+            this.DVGContract.RowTemplate.Height = 24;
+            this.DVGContract.Size = new System.Drawing.Size(1507, 377);
+            this.DVGContract.TabIndex = 0;
+            this.DVGContract.DoubleClick += new System.EventHandler(this.DVGContract_DoubleClick);
+            // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel4.Controls.Add(this.btnClose);
             this.panel4.Controls.Add(this.btnPrintWord);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -130,7 +149,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(14, 31);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(201, 51);
+            this.btnClose.Size = new System.Drawing.Size(220, 51);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -150,6 +169,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 95);
@@ -225,21 +245,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Type Contact";
             // 
-            // DVGContract
-            // 
-            this.DVGContract.AllowUserToAddRows = false;
-            this.DVGContract.AllowUserToDeleteRows = false;
-            this.DVGContract.AllowUserToResizeRows = false;
-            this.DVGContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGContract.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DVGContract.Location = new System.Drawing.Point(0, 0);
-            this.DVGContract.Name = "DVGContract";
-            this.DVGContract.RowHeadersWidth = 51;
-            this.DVGContract.RowTemplate.Height = 24;
-            this.DVGContract.Size = new System.Drawing.Size(1507, 377);
-            this.DVGContract.TabIndex = 0;
-            this.DVGContract.DoubleClick += new System.EventHandler(this.DVGContract_DoubleClick);
-            // 
             // SearchContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,13 +260,13 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGContract)).EndInit();
             this.ResumeLayout(false);
 
         }
